@@ -215,31 +215,32 @@ class ProductCard extends HTMLElement {
 		
 		this.innerHTML = `
         <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'}">
-          <a href="${this.product?.url}">
-            <img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
-				? 'contain'
-				: this.fitImageHeight
-					? this.fitImageHeight
-					: 'cover'} lazy"
-              src=${this.placeholder}
-              alt=${this.product?.image?.alt}
-              data-src=${this.product?.image?.url || this.product?.thumbnail}
-            />
-            ${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
-          </a>
-          ${this.fullImage ? `<a href="${this.product?.url}" aria-label=${this.product.name} class="s-product-card-overlay"></a>` : ''}
-          ${!this.horizontal && !this.fullImage ?
-				`<salla-button
-              shape="icon"
-              fill="outline"
-              color="light"
-              name="product-name-${this.product.id}"
-              aria-label="Add or remove to wishlist"
-              class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
-              onclick="salla.wishlist.toggle(${this.product.id})"
-              data-id="${this.product.id}">
-              <i class="sicon-heart"></i>
-            </salla-button>` : ``
+			<a href="${this.product?.url}">
+				<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
+					? 'contain'
+					: this.fitImageHeight
+						? this.fitImageHeight
+						: 'cover'} lazy"
+				  src=${this.placeholder}
+				  alt=${this.product?.image?.alt}
+				  data-src=${this.product?.image?.url || this.product?.thumbnail}
+				/>
+				${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
+			</a>
+			${this.fullImage ? `<a href="${this.product?.url}" aria-label=${this.product.name} class="s-product-card-overlay"></a>` : ''}
+			${!this.horizontal && !this.fullImage ? `
+				<salla-button
+					shape="icon"
+					fill="outline"
+					color="light"
+					name="product-name-${this.product.id}"
+					aria-label="Add or remove to wishlist"
+					class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
+					onclick="salla.wishlist.toggle(${this.product.id})"
+					data-id="${this.product.id}"
+				>
+					<i class="sicon-heart"></i>
+				</salla-button>` : ``
 			}
         </div>
 		<div class="s-product-card-content">
