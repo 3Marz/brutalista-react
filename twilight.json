@@ -209,7 +209,13 @@
             "description": null,
             "labelHTML": null,
             "icon": "sicon-keyboard_arrow_down",
-            "selected": [],
+            "selected": [
+                {
+                    "label": "مع زاوية",
+                    "value": "rounded-lg",
+                    "key": "0bcca6b1-b89c-4388-9014-972e87956b9c"
+                }
+            ],
             "options": [
                 {
                     "label": "بدون زاوية",
