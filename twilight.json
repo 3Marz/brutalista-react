@@ -202,7 +202,7 @@
             "icon": "sicon-format-text"
         },
         {
-            "id": "zaoet_alhoaf",
+            "id": "border_radius",
             "type": "boolean",
             "format": "checkbox",
             "label": "تنعيم زاوية الحواف",
