@@ -1,7 +1,7 @@
   
 // Wishlist Product entry
 .product-entry {
-  @apply h-full transition-shadow duration-300 bg-white hover:shadow-default rounded-lg justify-between flex relative;
+  @apply h-full transition-shadow duration-300 bg-white rounded-lg justify-between flex relative border-2 border-black shadow-[2px_2px_black];
 
   &--wishlist {
     @apply justify-between p-4 flex-col sm:flex-row;
@@ -70,7 +70,11 @@
 
     &-starting-price{
       @apply w-auto;
-  } 
+    } 
+
+    &-entry {
+      @apply border-2 border-black shadow-[2px_2px_black];
+    }
   }
 
 .pie-wrapper {
@@ -261,6 +265,20 @@
       &-fit-height.s-product-card-vertical .s-product-card-image {
         @apply flex-none sm:flex-1;
       }
+
+      &-image {
+        @apply p-3 bg-white;
+      }
+
+      &-price {
+        @apply text-lg;
+      }
+
+      &-content {
+        &-title {
+          @apply text-gray-700;
+        }
+      }
     }
     
     &-options-colors-wrapper{
@@ -270,6 +288,14 @@
         @apply m-0 rtl:m-0 ltr:m-0 w-auto;
     }
   }
+}
+
+// Card images 
+.s-product-card-image-cover {
+  @apply rounded-md ;
+}
+.s-product-card-image-contain {
+  @apply rounded-md bg-gray-200 ;
 }
 
 // Minimal card
@@ -343,8 +369,10 @@
 }
 
 .s-product-card-sale-price {
+  @apply items-center flex gap-1;
+
   h4{
-    @apply text-red-800 #{!important};
+    @apply text-lg text-red-500 #{!important};
   }
 
   span{
