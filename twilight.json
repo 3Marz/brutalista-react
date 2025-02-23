@@ -184,6 +184,48 @@
             "required": false,
             "value": false,
             "selected": false
+        },
+        {
+            "id": "line",
+            "type": "static",
+            "format": "line",
+            "label": "Line",
+            "icon": "sicon-minus"
+        },
+        {
+            "id": "altsmem",
+            "type": "static",
+            "format": "title",
+            "label": "التصميم",
+            "value": "التصميم",
+            "variant": "h6",
+            "icon": "sicon-format-text"
+        },
+        {
+            "id": "rounded_borders",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "زاوية الحواف",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-keyboard_arrow_down",
+            "selected": [],
+            "options": [
+                {
+                    "label": "بدون زاوية",
+                    "value": "rounded-none",
+                    "key": "c364bac4-68e5-45a9-8ab4-39d9691d38ed"
+                },
+                {
+                    "label": "مع زاوية",
+                    "value": "rounded-lg",
+                    "key": "0bcca6b1-b89c-4388-9014-972e87956b9c"
+                }
+            ],
+            "source": "Manual",
+            "multichoice": false,
+            "searchable": false,
+            "required": true
         }
     ],
     "components": [
