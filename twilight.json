@@ -202,35 +202,15 @@
             "icon": "sicon-format-text"
         },
         {
-            "id": "rounded_borders",
-            "type": "items",
-            "format": "dropdown-list",
-            "label": "زاوية الحواف",
+            "id": "zaoet_alhoaf",
+            "type": "boolean",
+            "format": "checkbox",
+            "label": "تنعيم زاوية الحواف",
             "description": null,
             "labelHTML": null,
-            "icon": "sicon-keyboard_arrow_down",
-            "selected": [
-                {
-                    "label": "مع زاوية",
-                    "value": "rounded-lg",
-                    "key": "0bcca6b1-b89c-4388-9014-972e87956b9c"
-                }
-            ],
-            "options": [
-                {
-                    "label": "بدون زاوية",
-                    "value": "rounded-none",
-                    "key": "c364bac4-68e5-45a9-8ab4-39d9691d38ed"
-                },
-                {
-                    "label": "مع زاوية",
-                    "value": "rounded-lg",
-                    "key": "0bcca6b1-b89c-4388-9014-972e87956b9c"
-                }
-            ],
-            "source": "Manual",
-            "multichoice": false,
-            "searchable": false,
+            "icon": "sicon-check-square",
+            "value": true,
+            "selected": true,
             "required": true
         }
     ],
