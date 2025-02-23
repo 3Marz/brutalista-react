@@ -202,16 +202,16 @@
             "icon": "sicon-format-text"
         },
         {
-            "id": "border_radius",
+            "id": "border-radius",
             "type": "boolean",
-            "format": "checkbox",
+            "format": "switch",
             "label": "تنعيم زاوية الحواف",
             "description": null,
             "labelHTML": null,
-            "icon": "sicon-check-square",
+            "icon": "sicon-toggle-off",
             "value": true,
             "selected": true,
-            "required": true
+            "required": false
         }
     ],
     "components": [
