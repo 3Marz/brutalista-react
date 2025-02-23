@@ -292,10 +292,11 @@
 
 // Card images 
 .s-product-card-image-cover {
-  @apply rounded-md ;
+  border-radius: var(--br) !important;
 }
 .s-product-card-image-contain {
-  @apply rounded-md bg-gray-200 ;
+  border-radius: var(--br) !important;
+  @apply bg-gray-200 ;
 }
 
 // Minimal card
