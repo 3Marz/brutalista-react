@@ -73,8 +73,7 @@
     } 
 
     &-entry {
-      border-radius: var(--border-radius);
-      @apply border-2 border-black shadow-[2px_2px_black];
+      @apply border-2 border-black shadow-[2px_2px_black] rounded-[var(--br)];
     }
   }
 
