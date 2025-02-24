@@ -4,8 +4,9 @@
     
   }
   &-element{
-    @apply shadow-neo
+    @apply rounded-neo
   }
+  /* Button Types */
   &-link{
     
   }
@@ -13,10 +14,11 @@
     
   }
   &-btn{
-    
+
   }
+  /* Button filling */
   &-solid{
-    
+    @apply border-2 border-black hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
     
@@ -24,6 +26,7 @@
   &-fill-none{
     
   }
+  /* Button sizes */
   &-large{
     
   }
@@ -33,6 +36,7 @@
   &-wide{
     
   }
+
   &-primary{
     
   }
