@@ -21,7 +21,7 @@
     @apply border-2 border-black hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
-    
+    @apply border-2 hover:border-black hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
   }
   &-fill-none{
     
@@ -37,8 +37,8 @@
     
   }
 
-  &-primary{
-    
+  &-primary:hover {
+    background-color: var(--color-primary) !important;
   }
   &-success{
     
@@ -80,7 +80,7 @@
     
   }
   &-primary-outline{
-    
+
   }
   &-success-outline{
     
@@ -92,7 +92,10 @@
     
   }
   &-light-outline{
-    
+
+    &:hover {
+      border-color: black !important;
+    }
   }
   &-gray-outline{
     

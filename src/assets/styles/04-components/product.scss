@@ -260,14 +260,14 @@
       }
     
       &-wishlist-added i {
-        @apply text-red-500
+        @apply text-red-500;
       }
       &-fit-height.s-product-card-vertical .s-product-card-image {
         @apply flex-none sm:flex-1;
       }
 
       &-image {
-        @apply p-3 bg-white;
+        @apply bg-white;
       }
 
       &-price {
@@ -297,6 +297,12 @@
 .s-product-card-image-contain {
   border-radius: var(--br) !important;
   @apply bg-gray-200 ;
+}
+
+.s-product-card-vertical {
+  .s-product-card-image {
+    @apply border-b-2 border-black;
+  }
 }
 
 // Minimal card
