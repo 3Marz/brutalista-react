@@ -54,6 +54,11 @@ salla-slider{
   }
 }
 
+// FIX for shadow not showing
+.swiper {
+  @apply pb-5
+}
+
 // Photos block slider
 salla-slider.photos-slider {
   .swiper-pagination-bullets.swiper-pagination-horizontal{
