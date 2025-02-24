@@ -4,24 +4,26 @@
     
   }
   &-element{
-    @apply rounded-neo
+    @apply rounded-neo shadow-black;
   }
   /* Button Types */
   &-link{
     
   }
   &-icon{
-    
+    border-radius: var(--br) !important;
   }
   &-btn{
-
+    &:hover {
+      opacity: 1 !important;
+    }
   }
   /* Button filling */
   &-solid{
     @apply border-2 border-black hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
-    @apply border-2 hover:border-black hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
+    @apply border-2 shadow-none hover:border-black hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
   }
   &-fill-none{
     
@@ -40,23 +42,23 @@
   &-primary:hover {
     background-color: var(--color-primary) !important;
   }
-  &-success{
-    
+  &-success {
+    @apply bg-success hover:bg-success; 
   }
   &-warning{
-    
+    @apply bg-warning hover:bg-warning; 
   }
   &-danger{
-    
+    @apply bg-danger hover:bg-danger; 
   }
   &-light{
-    
+    @apply bg-base hover:bg-base; 
   }
   &-gray{
-    
+    @apply bg-light hover:bg-light;
   }
   &-dark{
-    
+    @apply bg-neutral hover:bg-neutral;
   }
   &-primary-link{
     
@@ -83,13 +85,13 @@
 
   }
   &-success-outline{
-    
+    @apply border-success text-success hover:bg-success;   
   }
   &-warning-outline{
-    
+    @apply border-warning text-warning hover:bg-warning;   
   }
   &-danger-outline{
-    
+    @apply border-danger text-danger hover:bg-danger;   
   }
   &-light-outline{
 
