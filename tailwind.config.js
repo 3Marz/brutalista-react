@@ -37,9 +37,9 @@ module.exports = {
 				'success'	   : '#00B74A',
                 'danger'       : '#ff2919',
 				'warning'	   : '#fbc524',
-				'neutral'	   : '#5cd5c4',
-				'light'		   : '#f1f1f1',
-				'base'		   : '#E8EDF2'
+				'my-dark'	   : '#0E0F0F',
+				'my-gray'	   : '#4c4d4b',
+				'light'		   : '#C8C8C8',
             },
             spacing: {
               '3.75': '15px',

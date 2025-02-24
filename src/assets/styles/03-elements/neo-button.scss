@@ -23,7 +23,7 @@
     @apply border-2 border-black hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
-    @apply border-2 shadow-none hover:border-black hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
+    @apply border-2 shadow-[0px_0px_black] hover:border-black hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
   }
   &-fill-none{
     
@@ -52,13 +52,13 @@
     @apply bg-danger hover:bg-danger; 
   }
   &-light{
-    @apply bg-base hover:bg-base; 
+    @apply bg-light hover:bg-light text-black; 
   }
   &-gray{
-    @apply bg-light hover:bg-light;
+    @apply bg-my-gray hover:bg-my-gray;
   }
   &-dark{
-    @apply bg-neutral hover:bg-neutral;
+    @apply bg-my-dark hover:bg-my-dark;
   }
   &-primary-link{
     
@@ -94,16 +94,16 @@
     @apply border-danger text-danger hover:bg-danger;   
   }
   &-light-outline{
-
+    @apply border-light text-light hover:bg-light hover:text-black;   
     &:hover {
       border-color: black !important;
     }
   }
   &-gray-outline{
-    
+    @apply border-my-gray text-my-gray hover:bg-my-gray;   
   }
   &-dark-outline{
-    
+    @apply border-my-dark text-my-dark hover:bg-my-dark;   
   }
   &-disabled{
     
@@ -129,5 +129,9 @@
   &-hide{
 
   }
+}
+.s-fast-checkout-button {
+  border-width: 2px !important;
+  border-radius: var(--br) !important;
 }
 
