@@ -1,7 +1,7 @@
   
 // Wishlist Product entry
 .product-entry {
-  @apply h-full transition-shadow duration-300 bg-white rounded-lg justify-between flex relative border-2 border-black shadow-[2px_2px_black];
+  @apply h-full transition-shadow duration-300 bg-white rounded-lg justify-between flex relative border-2 border-black;
 
   &--wishlist {
     @apply justify-between p-4 flex-col sm:flex-row;
@@ -73,7 +73,7 @@
     } 
 
     &-entry {
-      @apply border-2 border-black shadow-[2px_2px_black] rounded-[var(--br)];
+      @apply border-2 border-black shadow-neo rounded-neo;
     }
   }
 

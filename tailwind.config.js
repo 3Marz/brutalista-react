@@ -46,10 +46,12 @@ module.exports = {
               '200' : '800px',
             },
             borderRadius       : {
+				'neo': 'var(--br)',
+
                 'large': '22px',
                 'big'  : '40px',
                 'tiny' : '3px',
-                DEFAULT: '.75rem',
+                DEFAULT: 'var(--br)',
             },
             fontSize           : {
                 'icon-lg'   : '33px',
