@@ -89,8 +89,11 @@
 
 			/* border radius */
 			--br: {{ theme.settings.get('border-radius') ? '0.75rem' : '0rem' }};
+
+			--x-shadow-offset: 4px;
+			--y-shadow-offset: 4px;
 			/* neo shadow offset */
-			--neo-shadow: 4px 4px black;
+			--neo-shadow: var(--x-shadow-offset) var(--y-shadow-offset) black;
 
         }
     </style>

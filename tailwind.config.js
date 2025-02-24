@@ -44,6 +44,9 @@ module.exports = {
               '116' : '464px',
               '132' : '528px',
               '200' : '800px',
+			  
+			  'x-shadow': 'var(--x-shadow-offset)',
+			  'y-shadow': 'var(--y-shadow-offset)',
             },
             borderRadius       : {
 				'neo': 'var(--br)',
