@@ -215,7 +215,11 @@ class ProductCard extends HTMLElement {
 		
 		this.innerHTML = `
         <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'} 
-					${!this.fullImage && this.horizontal ? 'border-s-2 border-black' : ''}">
+					${!this.horizontal && !this.fullImage && !this.minimal ? 
+							'border-b-2 border-black' : 
+							!this.fullImage ? 
+								'border-s-2 border-black': ''}"
+			>
 			<a href="${this.product?.url}">
 				<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
 					? 'contain'
