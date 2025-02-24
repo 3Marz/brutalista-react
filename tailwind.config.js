@@ -74,6 +74,7 @@ module.exports = {
                 'huge'    : '0px 3px 6px #00000029',
                 'progress': '0 5px 15px rgba(92, 213, 196, 0.4)',
                 'mobile': 'rgb(0 0 0 / 9%) 0px 2px 1px, rgb(0 0 0 / 9%) 0px 4px 2px, rgb(0 0 0 / 9%) 0px 8px 4px, rgb(0 0 0 / 9%) 0px 16px 18px, rgb(0 0 0 / 9%) -15px 10px 7px, rgb(0 0 0 / 9%) -20px 10px 20px, rgb(0 0 0 / 9%) -20px 10px 20px, rgb(0 0 0 / 9%) -25px 20px 20px',
+				'neo': 'var(--neo-shadow)'
             },
             width              : {
                 '18': '4.5rem',

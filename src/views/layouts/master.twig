@@ -87,7 +87,11 @@
             --color-primary-light: {{ theme.color.lighter(0.15) }};
             --color-primary-reverse: {{ theme.color.reverse_text }};
 
-			--br: {{ theme.settings.get('border-radius') ? '0.75rem' : '0rem' }} 
+			/* border radius */
+			--br: {{ theme.settings.get('border-radius') ? '0.75rem' : '0rem' }};
+			/* neo shadow offset */
+			--neo-shadow: 2px 2px black;
+
         }
     </style>
     {# tracking services, custom css feature. #}
