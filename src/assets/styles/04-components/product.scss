@@ -299,12 +299,6 @@
   @apply bg-gray-200 ;
 }
 
-.s-product-card-vertical {
-  .s-product-card-image {
-    @apply border-b-2 border-black;
-  }
-}
-
 // Minimal card
 .s-product-card-minimal .s-product-card-image{
   @apply rtl:rounded-r ltr:rounded-l;
