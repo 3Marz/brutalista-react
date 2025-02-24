@@ -33,7 +33,13 @@ module.exports = {
             colors             : {
                 'dark'         : '#1D1F1F',
                 'darker'       : '#0E0F0F',
-                'danger'       : '#AE0A0A'
+
+				'success'	   : '#00B74A',
+                'danger'       : '#ff2919',
+				'warning'	   : '#fbc524',
+				'neutral'	   : '#5cd5c4',
+				'light'		   : '#f1f1f1',
+				'base'		   : '#E8EDF2'
             },
             spacing: {
               '3.75': '15px',
