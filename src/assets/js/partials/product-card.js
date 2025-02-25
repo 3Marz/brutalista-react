@@ -237,10 +237,10 @@ class ProductCard extends HTMLElement {
 				<salla-button
 					shape="icon"
 					fill="outline"
-					color="light"
+					color="dark"
 					name="product-name-${this.product.id}"
 					aria-label="Add or remove to wishlist"
-					class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
+					class="s-product-card-wishlist-btn animated "
 					onclick="salla.wishlist.toggle(${this.product.id})"
 					data-id="${this.product.id}"
 				>
