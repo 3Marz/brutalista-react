@@ -1,3 +1,4 @@
+import { document } from 'postcss';
 import BasePage from '../base-page';
 class ProductCard extends HTMLElement {
 	constructor() {
@@ -310,19 +311,16 @@ class ProductCard extends HTMLElement {
 
 			${!this.hideAddBtn ?
 				`<div class="s-product-card-content-footer gap-2">
-					${this.horizontal || this.fullImage ?
-						<salla-add-product-button width="wide"
-							product-id="${this.product.id}"
-							product-status="${this.product.status}"
-							product-type="${this.product.type}"
-						>
-							${this.product.status == 'sale' ?
-								`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
-							}
-							<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
-						</salla-add-product-button>
-							: ""
-					}
+					<salla-add-product-button width="wide"
+						product-id="${this.product.id}"
+						product-status="${this.product.status}"
+						product-type="${this.product.type}"
+					>
+						${this.product.status == 'sale' ?
+							`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
+						}
+						<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
+					</salla-add-product-button>
 
 					${this.horizontal || this.fullImage ?
 						`<salla-button 
