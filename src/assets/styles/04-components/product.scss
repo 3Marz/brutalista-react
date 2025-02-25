@@ -307,7 +307,8 @@
   }
 }
 .s-product-card-minimal .s-product-card-wishlist-btn{
-  @apply opacity-100 bg-white;
+  background: white !important;
+  @apply opacity-100;
   &:hover{
     background-color: var(--my-dark) !important;
   }

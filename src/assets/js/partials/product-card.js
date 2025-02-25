@@ -235,6 +235,7 @@ class ProductCard extends HTMLElement {
 			${this.fullImage ? `<a href="${this.product?.url}" aria-label=${this.product.name} class="s-product-card-overlay"></a>` : ''}
 			${!this.horizontal && !this.fullImage ? `
 				<salla-button
+					size="${this.minimal ? "small" : "medium"}"
 					shape="icon"
 					fill="outline"
 					color="dark"
