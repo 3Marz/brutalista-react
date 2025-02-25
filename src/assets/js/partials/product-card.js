@@ -1,4 +1,3 @@
-import { document } from 'postcss';
 import BasePage from '../base-page';
 class ProductCard extends HTMLElement {
 	constructor() {
@@ -312,6 +311,7 @@ class ProductCard extends HTMLElement {
 			${!this.hideAddBtn ?
 				`<div class="s-product-card-content-footer gap-2">
 					<salla-add-product-button width="wide"
+						class="no-background"
 						product-id="${this.product.id}"
 						product-status="${this.product.status}"
 						product-type="${this.product.type}"

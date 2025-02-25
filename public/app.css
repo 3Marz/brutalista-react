@@ -4371,7 +4371,7 @@ salla-button.copied i:before {
   color:rgba(22, 163, 74, 1);
   color:rgba(22, 163, 74, var(--tw-text-opacity, 1));
 }
-.s-button-wrap {
+.no-background {
   background-color: transparent !important;
 }
 .btn{display:inline-flex;flex:1 1 0%;align-items:center;justify-content:center;white-space:nowrap;border-radius:var(--br);padding-left:1.5rem;padding-right:1.5rem;padding-bottom:0.625rem;padding-top:0.5rem;font-size:0.875rem;line-height:1.25rem;font-weight:700;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
