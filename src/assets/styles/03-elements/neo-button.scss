@@ -130,8 +130,9 @@
 
   }
 }
-.s-fast-checkout-button {
-  border-width: 2px !important;
-  border-radius: var(--br) !important;
+
+.s-add-product-button-mini-checkout {
+  --salla-fast-checkout-button-border-radius: var(--br) !important;
+
 }
 
