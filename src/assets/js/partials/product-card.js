@@ -240,7 +240,7 @@ class ProductCard extends HTMLElement {
 					color="dark"
 					name="product-name-${this.product.id}"
 					aria-label="Add or remove to wishlist"
-					class="s-product-card-wishlist-btn animated "
+					class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
 					onclick="salla.wishlist.toggle(${this.product.id})"
 					data-id="${this.product.id}"
 				>
@@ -310,30 +310,32 @@ class ProductCard extends HTMLElement {
 
 			${!this.hideAddBtn ?
 				`<div class="s-product-card-content-footer gap-2">
-					<salla-add-product-button fill="outline" width="wide"
-						product-id="${this.product.id}"
-						product-status="${this.product.status}"
-						product-type="${this.product.type}"
-					>
-						${this.product.status == 'sale' ?
-							`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
-						}
-						<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
-					</salla-add-product-button>
+					${this.horizontal || this.fullImage ?
+						<salla-add-product-button width="wide"
+							product-id="${this.product.id}"
+							product-status="${this.product.status}"
+							product-type="${this.product.type}"
+						>
+							${this.product.status == 'sale' ?
+								`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
+							}
+							<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
+						</salla-add-product-button>
+							: ""
+					}
 
-				${this.horizontal || this.fullImage ?
-					`<salla-button 
-						shape="icon" 
-						fill="outline" 
-						color="light" 
-						id="card-wishlist-btn-${this.product.id}-horizontal"
-						aria-label="Add or remove to wishlist"
-						class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
-						onclick="salla.wishlist.toggle(${this.product.id})"
-						data-id="${this.product.id}"
-					>
-						<i class="sicon-heart"></i> 
-					</salla-button>`
+					${this.horizontal || this.fullImage ?
+						`<salla-button 
+							shape="icon" 
+							color="dark" 
+							id="card-wishlist-btn-${this.product.id}-horizontal"
+							aria-label="Add or remove to wishlist"
+							class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
+							onclick="salla.wishlist.toggle(${this.product.id})"
+							data-id="${this.product.id}"
+						>
+							<i class="sicon-heart"></i> 
+						</salla-button>`
 					: ``}
 				</div>`
 				: ``}
