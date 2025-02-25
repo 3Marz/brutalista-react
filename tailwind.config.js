@@ -34,12 +34,12 @@ module.exports = {
                 'dark'         : '#1D1F1F',
                 'darker'       : '#0E0F0F',
 
-				'success'	   : '#00B74A',
-                'danger'       : '#ff2919',
-				'warning'	   : '#fbc524',
-				'my-dark'	   : '#0E0F0F',
-				'my-gray'	   : '#4c4d4b',
-				'light'		   : '#C8C8C8',
+				'success'	   : 'var(--success)',
+                'danger'       : 'var(--danger)',
+				'warning'	   : 'var(--warning)',
+				'my-dark'	   : 'var(--my-dark)',
+				'my-gray'	   : 'var(--my-gray)',
+				'light'		   : 'var(--light)',
             },
             spacing: {
               '3.75': '15px',

@@ -306,6 +306,12 @@
     background-color: var(--my-dark) !important;
   }
 }
+.s-product-card-minimal .s-product-card-wishlist-btn{
+  @apply opacity-100 bg-white;
+  &:hover{
+    background-color: var(--my-dark) !important;
+  }
+}
 
 // Minimal card
 .s-product-card-minimal .s-product-card-image{
