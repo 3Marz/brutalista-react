@@ -116,6 +116,10 @@
       }
     }
 
+    .sub-menu {
+      @apply rounded-t-none;
+    }
+
     .navbar-brand {
       img {
         max-height: 40px;

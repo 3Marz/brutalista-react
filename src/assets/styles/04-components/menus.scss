@@ -1,7 +1,11 @@
 
 // Main Menu
 .main-menu > li > a[href*="offer"]{
-  @apply text-red-800
+  @apply text-red-800;
+
+  span::after{
+    @apply bg-red-800;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -15,7 +19,28 @@
 
     li{
       > a{
-        @apply flex justify-between items-center transition duration-200 p-3 text-sm hover:translate-y-[-2px]; 
+        @apply font-bold flex justify-between items-center transition duration-200 p-3 text-sm hover:translate-y-[-2px]; 
+
+        > span {
+          @apply relative;
+        }
+        > span::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: black;
+          opacity: 0;
+          transition: opacity 300ms, transform 300ms;
+        }
+      }
+
+      /* Hover Animation */
+      > a:hover > span::after {
+        opacity: 1;
+        transform: translate3d(0, 4px, 0);
       }
 
       &.root-level{
@@ -32,33 +57,27 @@
     // }
 
     .has-children{
-      li a:hover,
-      .has-children:hover > a{
-        // color: var(--color-primary);
-        @apply bg-gray-200/20;
-      }
-
-      > a:after{
+      > a > i{
         font-family: 'sallaicons';
         content: "\e970";
-        @apply inline-block transition-transform duration-300 self-end mx-0.5 text-lg opacity-50 leading-4 no-underline;
+        @apply inline-block transition-transform duration-300 self-end mx-0.5 text-lg opacity-70 leading-4;
       }
 
+      &:hover > a > i{
+        opacity: 1;
+        transform: rotate(-90deg);
+      }
       &.root-level {
-        > a:after{
-          content: "\e96e";
-        }
 
-        &:hover > a:after{
+        &:hover > a > i{
           opacity: 1;
-          text-decoration: none;
-          transform: scaleY(-1);
+          transform: rotate(180deg);
         }
       }
     }
 
     .sub-menu {
-      @apply z-20 transition opacity-0 invisible absolute bg-white -translate-y-3 shadow-default rounded-b-md border-t border-gray-300/30;
+      @apply z-20 transition opacity-0 invisible absolute bg-white scale-75 rounded-b-neo rounded-t-neo border-2 border-black font-bold ;
 
       .sub-menu {
         top: -1px;
@@ -97,15 +116,13 @@
       > .sub-menu {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: scale(1);
       }
     }
   }
 
   .main-menu .sub-menu ul > li:not(:first-child) > .sub-menu{
-    border-top-right-radius: 0.375rem;
-    border-top-left-radius: 0.375rem;
-    border: none;
+    @apply rounded-neo;
   }
 }
 // Mobile Slide Menu

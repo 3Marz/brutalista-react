@@ -85,6 +85,9 @@ class NavigationMenu extends HTMLElement {
         <li class="${this.getDesktopClasses(menu, isRootMenu)}" ${menu.attrs}>
             <a href="${menu.url}" aria-label="${menu.title || 'category'}" ${menu.link_attrs}>
                 <span>${menu.title}</span>
+				${this.hasChildren(menu) ? `
+					<i class="sicon-keyboard_arrow_up"></i>
+					` : ``}
             </a>
             ${this.hasChildren(menu) ? `
                 <div class="sub-menu ${this.hasProducts(menu) ? 'w-full left-0 flex' : 'w-56'}">
