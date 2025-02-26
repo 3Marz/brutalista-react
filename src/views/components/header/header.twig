@@ -46,7 +46,7 @@
   </div>
 
   {# Main Nav #}
-  <div id="mainnav" class="main-nav-container border-y-2 border-black bg-white">
+  <div id="mainnav" class="main-nav-container">
       <div class="inner bg-inherit">
           <div class="container">
               <div class="flex items-stretch justify-between relative">
@@ -72,9 +72,21 @@
                             <i class="header-btn__icon sicon-user-circle"></i>
                           </button>
                       {% endif %}
-                      <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
-                        <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>
-                      </salla-cart-summary>
+                      <a class="header-btn relative"
+						href="{{ store.url }}/cart"
+					  >
+                        <i slot="icon" class="header-btn__icon icon sicon-cart2"></i>
+						{% if cart.items_count > 0 %}
+							<span class="absolute w-5 h-5 top-0 -end-1 text-xs text-white flex justify-center items-center bg-danger p-[5px] rounded-full aspect-square border border-black">
+								{{ cart.items_count }}
+							</span>
+						{% endif %}
+						<!--<i slot="icon" class="header-btn__icon icon fa-regular fa-cart-shopping"></i>-->
+						<!--<svg class="header-btn__icon icon" xmlns="http://www.w3.org/2000/svg">-->
+						<!--	<path fill="none" d="M0 0h24v24H0V0z"></path>-->
+						<!--	<path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0 0 20.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path>-->
+						<!--</svg>-->
+                      </a>
                   </div>
               </div>
           </div>
