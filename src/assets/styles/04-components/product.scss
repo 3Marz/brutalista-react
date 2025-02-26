@@ -73,7 +73,7 @@
     } 
 
     &-entry {
-      @apply border-2 border-black shadow-neo rounded-neo;
+      @apply border-2 border-black shadow-neo rounded-neo overflow-hidden;
     }
   }
 
@@ -291,11 +291,7 @@
 }
 
 // Card images 
-.s-product-card-image-cover {
-  border-radius: var(--br) !important;
-}
 .s-product-card-image-contain {
-  border-radius: var(--br) !important;
   @apply bg-gray-200 ;
 }
 
@@ -314,9 +310,9 @@
   }
 }
 
-// Minimal card
-.s-product-card-minimal .s-product-card-image{
-  @apply rtl:rounded-r ltr:rounded-l;
+.s-product-card-image,
+.s-product-card-full-image img {
+  border-radius: 0px !important;
 }
 
 .s-product-card-starting-price{
