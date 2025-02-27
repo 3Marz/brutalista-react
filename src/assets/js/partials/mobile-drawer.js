@@ -30,12 +30,17 @@ class MobileDrawer extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-		<details class="lg:hidden">
-			<summary>
-				open
+		<details class="lg:hidden group h-full">
+			<summary class="list-none [&::-webkit-details-marker]:hidden h-full">
+				<span class="group-open:hidden w-6 h-6">
+					<i class="sicon-menu text-2xl"></i>
+				</span>
+				<span class="hidden group-open:block w-6 h-6">
+					<i class="sicon-cancel text-2xl"></i>
+				</span>
 			</summary>
 
-			<div>
+			<div class="absolute">
 				propo
 			</div>
 		</details>
