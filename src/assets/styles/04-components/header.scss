@@ -107,7 +107,7 @@
       width: 100%;
       z-index: 29;
       // box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      border-bottom: 2px black solid;
+      border-bottom: 2px var(--bc) solid;
       transform: translate3d(0, -100%, 0);
 
       @media (max-width: 1024px){
@@ -161,7 +161,7 @@
   @apply border-none flex justify-center items-center outline-none transition-transform hover:translate-y-[-2px];
 
   &__icon{
-    @apply text-xl w-10 h-10 rounded-full flex items-center justify-center text-gray-700;
+    @apply text-xl w-10 h-10 rounded-full flex items-center justify-center text-bc;
     &.icon{
       @apply mr-[9px] rtl:ml-[9px] rtl:mr-[unset];
     }

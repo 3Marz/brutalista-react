@@ -40,6 +40,8 @@ module.exports = {
 				'my-dark'	   : 'var(--my-dark)',
 				'my-gray'	   : 'var(--my-gray)',
 				'light'		   : 'var(--light)',
+
+				'bc'	   : 'var(--bc)',
             },
             spacing: {
               '3.75': '15px',

@@ -168,57 +168,13 @@ class ProductCard extends HTMLElement {
 		this.shadowOnHover ? this.classList.add('s-product-card-shadow') : '';
 		this.product?.is_out_of_stock ? this.classList.add('s-product-card-out-of-stock') : '';
 		this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
-		//this.classList.add("border-2", "border-black", "shadow-[2px_2px_black]");
-		//this.innerHTML = `
-		//	<div class="h-full flex ${this.horizontal ? 'flex-row' : 'flex-col'} rounded-lg overflow-hidden border-2 border-black shadow-[2px_2px_black]">
-		//		<figure class="aspect-square flex justify-center items-center border-b-2 border-black">
-		//		  <a href="${this.product?.url}" class="w-full h-full">
-		//			<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
-		//				? 'contain'
-		//				: this.fitImageHeight
-		//					? this.fitImageHeight
-		//					: 'cover'} lazy w-full h-full bg-gray-200"
-		//			  src=${this.placeholder}
-		//			  alt=${this.product?.image?.alt}
-		//			  data-src=${this.product?.image?.url || this.product?.thumbnail}
-		//			/>
-		//			${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
-		//		  </a>
-		//		</figure>
-		//		<div class="p-3">
-		//			<h5>
-		//			  <a class="hover:underline" href="${this.product?.url}">${this.product?.name}</a>
-		//			</h5>
-		//
-		//			${this.product?.subtitle && !this.minimal ?
-		//				`<p class="s-product-card-content-subtitle opacity-80">${this.product?.subtitle}</p>`
-		//				: ``}
-		//
-		//			${this.isSpecial && this.product.discount_ends
-		//				? `<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${true}
-		//			labeled=${true} />`
-		//				: ``}
-		//
-		//			<div>
-		//				${this.product?.donation?.can_donate ? '' : this.getProductPrice()}
-		//				${this.product?.rating?.stars ?
-		//					`<div class="s-product-card-rating">
-		//						<i class="sicon-star2 before:text-orange-300"></i>
-		//						<span>${this.product.rating.stars}</span>
-		//					</div>`
-		//					: ``}
-		//			</div>
-		//
-		//		</div>
-		//	</div>
-		//`
 		
 		this.innerHTML = `
         <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'} 
 					${!this.horizontal && !this.fullImage && !this.minimal ? 
-							'border-b-2 border-black' : 
+							'border-b-2 border-bc' : 
 							!this.fullImage ? 
-								'border-s-2 border-black': ''}"
+								'border-s-2 border-bc': ''}"
 			>
 			<a href="${this.product?.url}">
 				<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)

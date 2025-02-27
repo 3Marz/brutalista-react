@@ -4,7 +4,7 @@
     
   }
   &-element{
-    @apply rounded-neo shadow-black;
+    @apply rounded-neo shadow-bc;
   }
   /* Button Types */
   &-link{
@@ -20,10 +20,10 @@
   }
   /* Button filling */
   &-solid{
-    @apply border-2 border-black hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
+    @apply border-2 border-bc hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
-    @apply border-2 shadow-[0px_0px_black] hover:border-black hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
+    @apply border-2 hover:border-bc hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
   }
   &-fill-none{
     
@@ -96,7 +96,7 @@
   &-light-outline{
     @apply border-light text-light hover:bg-light hover:text-black;   
     &:hover {
-      border-color: black !important;
+      border-color: var(--bc) !important;
     }
   }
   &-gray-outline{
