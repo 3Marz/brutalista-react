@@ -123,7 +123,7 @@ class NavigationMenu extends HTMLElement {
             <ul class="main-menu">${this.getMenus()}</ul>
             <button class="btn--close close-mobile-menu sicon-cancel lg:hidden"></button>
         </nav>
-        <button class="btn--close-sm close-mobile-menu sicon-cancel hidden"></button>`;
+        <button class="btn--close-sm close-mobile-menu sicon-cancel hidden border-b-2 border-bc"></button>`;
     }
 }
 

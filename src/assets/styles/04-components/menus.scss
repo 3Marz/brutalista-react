@@ -80,7 +80,7 @@
       @apply z-20 transition opacity-0 invisible absolute bg-white scale-75 rounded-b-neo rounded-t-neo border-2 border-bc font-bold ;
 
       .sub-menu {
-        top: -1px;
+        top: -2px;
         right: 100%;
 
         [dir="ltr"] & {
@@ -171,13 +171,18 @@
 
     &.mm-spn--navbar{
       &:after {
-        @apply transition-all duration-300 rtl:pr-12 ltr:pl-12 text-start opacity-90 font-bold border-b-2 border-bc;
+        @apply transition-all duration-300 rtl:pr-12 ltr:pl-12 text-start opacity-90 font-bold;
       }
 
       &.mm-spn--main{
         &:after{
           @apply rtl:pr-3 ltr:pl-3;
         }
+      }
+
+      ul::before {
+        opacity: 1;
+        border-top: 2px solid var(--bc);
       }
     }
 

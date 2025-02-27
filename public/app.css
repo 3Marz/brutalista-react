@@ -4861,7 +4861,7 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
   border-color: var(--color-main);
 }
   .main-menu .sub-menu .sub-menu {
-    top: -1px;
+    top: -2px;
     right: 100%;
   }
   [dir=ltr] .main-menu .sub-menu .sub-menu {
@@ -4919,13 +4919,17 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
     background: #ffffff;
   }
   .mm-spn ul.main-menu li:before{height:0.5rem;width:0.5rem}
-  .mm-spn.mm-spn--navbar:after{border-bottom-width:2px;border-color:var(--bc);text-align:left;font-weight:700;opacity:0.9;transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
+  .mm-spn.mm-spn--navbar:after{text-align:left;font-weight:700;opacity:0.9;transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
 .mm-spn.mm-spn--navbar:where([dir="ltr"], [dir="ltr"] *):after{text-align:left}
 .mm-spn.mm-spn--navbar:where([dir="rtl"], [dir="rtl"] *):after{text-align:right}
   .mm-spn.mm-spn--navbar:where([dir="ltr"], [dir="ltr"] *):after{padding-left:3rem}
   .mm-spn.mm-spn--navbar:where([dir="rtl"], [dir="rtl"] *):after{padding-right:3rem}
   .mm-spn.mm-spn--navbar.mm-spn--main:where([dir="ltr"], [dir="ltr"] *):after{padding-left:0.75rem}
   .mm-spn.mm-spn--navbar.mm-spn--main:where([dir="rtl"], [dir="rtl"] *):after{padding-right:0.75rem}
+  .mm-spn.mm-spn--navbar ul::before {
+    opacity: 1;
+    border-top: 2px solid var(--bc);
+  }
   [dir=rtl] .mm-spn.mm-spn--navbar:before {
     transform: rotate(135deg) translateY(77%);
     right: 20px;
