@@ -4696,7 +4696,7 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
 .topnav-link-item.right-side:first-child:where([dir="ltr"], [dir="ltr"] *){padding-left:0px}
 .topnav-link-item.right-side:first-child:where([dir="rtl"], [dir="rtl"] *){padding-right:0px}
 /* Main Nav */
-.main-nav-container{min-height:68px}
+.main-nav-container{display:flex;height:var(--navbar-height);align-items:center}
 @media (min-width: 1024px){
 .main-nav-container{min-height:84px}}
 .has-bg .main-nav-container, .has-bg .main-nav-container .sub-menu{background-color:var(--mainnav-bg)}
@@ -4718,6 +4718,7 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
   right: 0;
   left: 0;
   width: 100%;
+  height: var(--navbar-height);
   z-index: 29;
   border-bottom: 2px var(--bc) solid;
   transform: translate3d(0, -100%, 0);

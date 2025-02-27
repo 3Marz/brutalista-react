@@ -63,7 +63,7 @@
 
 /* Main Nav */
 .main-nav-container {
-  @apply min-h-[68px] lg:min-h-[84px];
+  @apply h-[var(--navbar-height)] lg:min-h-[84px] flex items-center;
   
   // Custom background Color
   .has-bg &,
@@ -105,6 +105,7 @@
       right: 0;
       left: 0;
       width: 100%;
+      height: var(--navbar-height);
       z-index: 29;
       // box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       border-bottom: 2px var(--bc) solid;
