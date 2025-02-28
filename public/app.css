@@ -4738,8 +4738,8 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
   line-height: 1;
 }
 .main-nav-container.fixed-pinned .main-menu > li > a {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 .main-nav-container.fixed-header .inner {
   transform: translate3d(0, 0, 0);
