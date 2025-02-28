@@ -31,7 +31,7 @@ class MobileDrawer extends HTMLElement {
 	render() {
 		this.innerHTML = `
 		<details class="lg:hidden group h-full">
-			<summary class="list-none [&::-webkit-details-marker]:hidden h-full">
+			<summary class="list-none [&::-webkit-details-marker]:hidden h-full flex justify-center items-center">
 				<span class="group-open:hidden w-6 h-6">
 					<i class="sicon-menu text-2xl"></i>
 				</span>
@@ -40,7 +40,7 @@ class MobileDrawer extends HTMLElement {
 				</span>
 			</summary>
 
-			<div class="absolute">
+			<div class="mobile-drawer absolute bg-white end-0 p-3 border-s-2 border-t-2 border-bc z-10">
 				propo
 			</div>
 		</details>
