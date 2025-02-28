@@ -164,7 +164,7 @@
   &__icon{
     @apply text-xl w-10 h-10 rounded-full flex items-center justify-center text-bc;
     &.icon{
-      @apply mr-[9px] rtl:ml-[9px] rtl:mr-[unset];
+      // @apply mr-[9px] rtl:ml-[9px] rtl:mr-[unset];
     }
   }
 }

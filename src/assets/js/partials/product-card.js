@@ -174,7 +174,7 @@ class ProductCard extends HTMLElement {
 					${!this.horizontal && !this.fullImage && !this.minimal ? 
 							'border-b-2 border-bc' : 
 							!this.fullImage ? 
-								'border-s-2 border-bc': ''}"
+								'ltr:border-r-2 rtl:border-l-2 border-bc': ''}"
 			>
 			<a href="${this.product?.url}">
 				<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
