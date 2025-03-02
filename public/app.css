@@ -4760,7 +4760,9 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
 .navbar-brand img{max-width:170px}}
 .header-btn{display:flex;align-items:center;justify-content:center;border-style:none;outline:2px solid transparent;outline-offset:2px;transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .header-btn:hover{--tw-translate-y:-2px;transform:translate(var(--tw-translate-x), -2px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
-.header-btn__icon{display:flex;height:2.5rem;width:2.5rem;align-items:center;justify-content:center;border-radius:9999px;font-size:1.25rem;line-height:1.75rem;color:var(--bc)}
+.header-btn__icon{display:flex;height:2.25rem;width:2.25rem;align-items:center;justify-content:center;border-radius:9999px;font-size:1.125rem;line-height:1.75rem;color:var(--bc)}
+@media (min-width: 1024px){
+.header-btn__icon{height:2.5rem;width:2.5rem;font-size:1.25rem;line-height:1.75rem}}
 salla-user-menu{flex-shrink:0}
 .s-cart-summary-total{display:none;font-weight:600;--tw-text-opacity:1;color:rgba(0, 0, 0, 1);color:rgba(0, 0, 0, var(--tw-text-opacity, 1))}
 .s-cart-summary-count{top:-0.125rem;--tw-bg-opacity:1;background-color:rgba(153, 27, 27, 1);background-color:rgba(153, 27, 27, var(--tw-bg-opacity, 1))}
@@ -4781,6 +4783,9 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
 #nav-cart span:where([dir="ltr"], [dir="ltr"] *){left:-0.5rem}
 #nav-cart span:where([dir="rtl"], [dir="rtl"] *){right:-0.5rem}
 .header-search .s-search-results{z-index:10}
+.secondary-seaerch-btn{display:none}
+@media (min-width: 1024px){
+.secondary-seaerch-btn{display:flex}}
 .store-footer{position:relative;margin-top:2rem;--tw-bg-opacity:1;background-color:rgba(14, 15, 15, 1);background-color:rgba(14, 15, 15, var(--tw-bg-opacity, 1));--tw-text-opacity:1;color:rgba(255, 255, 255, 1);color:rgba(255, 255, 255, var(--tw-text-opacity, 1))}
 @media (min-width: 640px){
 .store-footer{margin-top:4rem}}
@@ -4935,7 +4940,7 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
     background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));
     text-align:left;
     font-weight:700;
-    opacity:0.9;
+    opacity:0.7;
     transition-property:all;
     transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration:300ms;
@@ -4944,11 +4949,14 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
 .mm-spn.mm-spn--navbar:where([dir="rtl"], [dir="rtl"] *):after{text-align:right}
   .mm-spn.mm-spn--navbar:where([dir="ltr"], [dir="ltr"] *):after{padding-left:3rem}
   .mm-spn.mm-spn--navbar:where([dir="rtl"], [dir="rtl"] *):after{padding-right:3rem}
+  .mm-spn.mm-spn--navbar.mm-spn--main:after{opacity:0.7}
   .mm-spn.mm-spn--navbar.mm-spn--main:where([dir="ltr"], [dir="ltr"] *):after{padding-left:0.75rem}
   .mm-spn.mm-spn--navbar.mm-spn--main:where([dir="rtl"], [dir="rtl"] *):after{padding-right:0.75rem}
   .mm-spn.mm-spn--navbar ul::before {
     border-top: none;
   }
+  .mm-spn.mm-spn--navbar:before{opacity:1 !important}
+  .mm-spn.mm-spn--navbar:before{--tw-text-opacity:1;color:rgba(31, 41, 55, 1);color:rgba(31, 41, 55, var(--tw-text-opacity, 1))}
   [dir=rtl] .mm-spn.mm-spn--navbar:before {
     transform: rotate(135deg) translateY(77%);
     right: 20px;
@@ -4981,8 +4989,7 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
   }
   .mm-spn li:after {
     width: 100%;
-    border-color: #a3a3a3;
-    border-color: var(--infinte-color);
+    border-color: var(--bc);
     border-style: dashed;
   }
 }
@@ -5649,7 +5656,7 @@ input[type=radio].sr-only:checked ~ div.share-btns-list {
 }
 .s-product-card-content-sub{justify-content:flex-start;gap:0.75rem}
 .s-product-card-starting-price{width:auto}
-.s-product-card-entry{overflow:hidden;border-radius:var(--br);border-width:2px;border-color:var(--bc);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
+.s-product-card-entry{z-index:1;overflow:hidden;border-radius:var(--br);border-width:2px;border-color:var(--bc);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
 .pie-wrapper{position:absolute;top:0.625rem;display:flex;height:72px;width:72px;align-items:center;justify-content:center;color:#414042;color:var(--color-primary)}
 input[type=radio].sr-only div.pie-wrapper {
   transition: all 0.3s;
@@ -6382,17 +6389,36 @@ lite-youtube.lyt-activated > .lty-playbtn {
   /* Button filling */
   /* Button sizes */
 }
-.s-button-element{border-radius:var(--br);--tw-shadow-color:var(--bc);--tw-shadow:var(--tw-shadow-colored)}
+.s-button-element{position:relative;top:0px;left:0px;box-sizing:border-box;border-radius:var(--br);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
+.s-button-element:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--br);
+  border-width: 2px;
+  border-color: var(--bc);
+  background-color: white;
+  z-index: -1;
+  transition-property:all;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration:150ms;
+}
 .s-button-icon {
   border-radius: var(--br) !important;
 }
 .s-button-btn:hover {
   opacity: 1 !important;
 }
-.s-button-solid{border-width:2px;border-color:var(--bc);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
-.s-button-solid:hover{--tw-translate-x:var(--x-shadow-offset);--tw-translate-y:var(--y-shadow-offset);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));--tw-shadow:0 0 rgba(0,0,0,0);--tw-shadow-colored:0 0 rgba(0,0,0,0);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
+.s-button-solid{border-style:none !important}
+.s-button-solid{border-color:var(--bc);--tw-shadow:inset 0 0 0 2px var(--bc);--tw-shadow-colored:inset 0 0 0 2px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
+.s-button-solid::after{top:var(--y-shadow-offset);content:var(--tw-content);left:var(--x-shadow-offset)}
+.s-button-solid:hover{top:var(--y-shadow-offset);left:var(--x-shadow-offset)}
+.s-button-solid:hover::after{top:0px;content:var(--tw-content);left:0px}
 .s-button-outline{border-width:2px}
-.s-button-outline:hover{--tw-translate-x:calc(var(--x-shadow-offset) * -1);--tw-translate-y:calc(var(--y-shadow-offset) * -1);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));border-color:var(--bc);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
+.s-button-outline:hover{border-color:var(--bc)}
 .s-button-primary:hover {
   background-color: #414042 !important;
   background-color: var(--color-primary) !important;
