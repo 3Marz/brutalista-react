@@ -61,10 +61,9 @@ class ProductCard extends HTMLElement {
 			return `<div class="s-product-card-promotion-title">${this.product.promotion_title}</div>`
 		}
 		if (this.showQuantity && this.product?.quantity) {
-			return `<div
-        class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
+			return `<div class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
 		}
-		if (this.showQuantity && this.product?.is_out_of_stock) {
+		if (this.product?.is_out_of_stock) {
 			return `<div class="s-product-card-out-badge">${this.outOfStock}</div>`
 		}
 		return '';
@@ -155,7 +154,7 @@ class ProductCard extends HTMLElement {
 	}
 
 	render() {
-		this.classList.add('s-product-card-entry');
+		this.classList.add('flex', 'flex-col', 'gap-3', 'group', 'overflow-hidden', 'relative');
 		this.setAttribute('id', this.product.id);
 		!this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-vertical') : '';
 		this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-horizontal') : '';
@@ -168,134 +167,168 @@ class ProductCard extends HTMLElement {
 		this.shadowOnHover ? this.classList.add('s-product-card-shadow') : '';
 		this.product?.is_out_of_stock ? this.classList.add('s-product-card-out-of-stock') : '';
 		this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
-		
+
 		this.innerHTML = `
-        <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'} 
-					${!this.horizontal && !this.fullImage && !this.minimal ? 
-							'border-b-2 border-bc' : 
-							!this.fullImage ? 
-								'ltr:border-r-2 rtl:border-l-2 border-bc': ''}"
-			>
-			<a href="${this.product?.url}">
-				<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
-					? 'contain'
-					: this.fitImageHeight
-						? this.fitImageHeight
-						: 'cover'} lazy"
-				  src=${this.placeholder}
-				  alt=${this.product?.image?.alt}
-				  data-src=${this.product?.image?.url || this.product?.thumbnail}
-				/>
-				${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
-			</a>
-			${this.fullImage ? `<a href="${this.product?.url}" aria-label=${this.product.name} class="s-product-card-overlay"></a>` : ''}
-			${!this.horizontal && !this.fullImage ? `
-				<salla-button
-					size="${this.minimal ? "small" : "medium"}"
-					shape="icon"
-					fill="outline"
-					color="dark"
-					name="product-name-${this.product.id}"
-					aria-label="Add or remove to wishlist"
-					class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
-					onclick="salla.wishlist.toggle(${this.product.id})"
-					data-id="${this.product.id}"
+			<div class="h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-[var(--br)] overflow-hidden">
+				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
+					<img class="${salla.url.is_placeholder(this.product?.image?.url)
+						? 'object-contain'
+						: this.fitImageHeight
+							? this.fitImageHeight
+							: 'object-cover'} lazy"
+					  src=${this.placeholder}
+					  alt=${this.product?.image?.alt}
+					  data-src=${this.product?.image?.url || this.product?.thumbnail}
+					/>
+					${this.getProductBadge()}
+				</a>
+			</div>
+			<div class="flex flex-col gap-1 pb-2">
+				<h5>
+					<a class="hover:underline underline-offset-2 text-bc" href="${this.product?.url}">${this.product?.name}</a>
+				</h5>
+				${this.getProductPrice()}
+				<salla-add-product-button width="wide"
+					class="no-background"
+					product-id="${this.product.id}"
+					product-status="${this.product.status}"
+					product-type="${this.product.type}"
 				>
-					<i class="sicon-heart"></i>
-				</salla-button>` : ``
-			}
-        </div>
-		<div class="s-product-card-content">
-			${this.isSpecial && this.product?.quantity ?
-				`<div class="s-product-card-content-pie">
-					<span>
-						<b>${salla.helpers.number(this.product?.quantity)}</b>
-						${this.remained}
-					</span>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -1 36 34" class="s-product-card-content-pie-svg">
-						<circle cx="16" cy="16" r="15.9155" class="s-product-card-content-pie-svg-base" />
-						<circle cx="16" cy="16" r="15.9155" class="s-product-card-content-pie-svg-bar" />
-					</svg>
-				</div>`
-			: ``}
-
-			<div class="s-product-card-content-main ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
-				<h3 class="s-product-card-content-title">
-					<a href="${this.product?.url}">${this.product?.name}</a>
-				</h3>
-
-				${this.product?.subtitle && !this.minimal ?
-					`<p class="s-product-card-content-subtitle opacity-80">${this.product?.subtitle}</p>`
-				: ``}
+					${this.product.status == 'sale' ?
+						`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
+					}
+					<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
+				</salla-add-product-button>
 			</div>
-
-			${this.product?.donation && !this.minimal && !this.fullImage ?
-					`<salla-progress-bar donation=${JSON.stringify(this.product?.donation)}></salla-progress-bar>
-
-			<div class="s-product-card-donation-input">
-				${this.product?.donation?.can_donate ?
-					`<label for="donation-amount-${this.product.id}">${this.donationAmount} <span>*</span></label>
-
-				  <input
-					type="text"
-					onInput="${e => {
-							salla.helpers.inputDigitsOnly(e.target);
-							this.addBtn.donatingAmount = (e.target).value;
-						}}"
-					id="donation-amount-${this.product.id}"
-					name="donating_amount"
-					class="s-form-control"
-					placeholder="${this.donationAmount}" />`
-						: ``}
-			</div>`
-				: ''}
-
-			<div class="s-product-card-content-sub ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
-				${this.product?.donation?.can_donate ? '' : this.getProductPrice()}
-				${this.product?.rating?.stars ? `
-					<div class="s-product-card-rating">
-						<i class="sicon-star2 before:text-orange-300"></i>
-						<span>${this.product.rating.stars}</span>
-					</div>`
-					: ``}
-			</div>
-
-			${this.isSpecial && this.product.discount_ends
-				? `<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${true} labeled=${true} />`
-				: ``}
-
-
-			${!this.hideAddBtn ?
-				`<div class="s-product-card-content-footer gap-2">
-					<salla-add-product-button width="wide"
-						class="no-background"
-						product-id="${this.product.id}"
-						product-status="${this.product.status}"
-						product-type="${this.product.type}"
-					>
-						${this.product.status == 'sale' ?
-							`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
-						}
-						<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
-					</salla-add-product-button>
-
-					${this.horizontal || this.fullImage ?
-						`<salla-button 
-							shape="icon" 
-							color="dark" 
-							id="card-wishlist-btn-${this.product.id}-horizontal"
-							aria-label="Add or remove to wishlist"
-							class="s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
-							onclick="salla.wishlist.toggle(${this.product.id})"
-							data-id="${this.product.id}"
-						>
-							<i class="sicon-heart"></i> 
-						</salla-button>`
-					: ``}
-				</div>`
-				: ``}
-        </div>
-      `
+		`
+		
+		//this.innerHTML = `
+		//      <div class="${!this.fullImage ? 's-product-card-image' : 's-product-card-image-full'} 
+		//			${!this.horizontal && !this.fullImage && !this.minimal ? 
+		//					'' : 
+		//					!this.fullImage ? 
+		//						'': ''} border-2 border-bc shadow-neo !rounded-[var(--br)] group"
+		//	>
+		//	<a href="${this.product?.url}">
+		//		<img class="s-product-card-image-${salla.url.is_placeholder(this.product?.image?.url)
+		//			? 'contain'
+		//			: this.fitImageHeight
+		//				? this.fitImageHeight
+		//				: 'cover'} lazy"
+		//		  src=${this.placeholder}
+		//		  alt=${this.product?.image?.alt}
+		//		  data-src=${this.product?.image?.url || this.product?.thumbnail}
+		//		/>
+		//		${!this.fullImage && !this.minimal ? this.getProductBadge() : ''}
+		//	</a>
+		//	${this.fullImage ? `<a href="${this.product?.url}" aria-label=${this.product.name} class="s-product-card-overlay"></a>` : ''}
+		//	${!this.horizontal && !this.fullImage ? `
+		//		<salla-button
+		//			size="${this.minimal ? "small" : "medium"}"
+		//			shape="icon"
+		//			fill="outline"
+		//			color="dark"
+		//			name="product-name-${this.product.id}"
+		//			aria-label="Add or remove to wishlist"
+		//			class="group-hover:flex group-hover:!opacity-100 !opacity-0 transition-all hidden s-product-card-wishlist-btn animated ${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
+		//			onclick="salla.wishlist.toggle(${this.product.id})"
+		//			data-id="${this.product.id}"
+		//		>
+		//			<i class="sicon-heart"></i>
+		//		</salla-button>` : ``
+		//	}
+		//      </div>
+		//<div class="s-product-card-content">
+		//	${this.isSpecial && this.product?.quantity ?
+		//		`<div class="s-product-card-content-pie">
+		//			<span>
+		//				<b>${salla.helpers.number(this.product?.quantity)}</b>
+		//				${this.remained}
+		//			</span>
+		//			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -1 36 34" class="s-product-card-content-pie-svg">
+		//				<circle cx="16" cy="16" r="15.9155" class="s-product-card-content-pie-svg-base" />
+		//				<circle cx="16" cy="16" r="15.9155" class="s-product-card-content-pie-svg-bar" />
+		//			</svg>
+		//		</div>`
+		//	: ``}
+		//
+		//	<div class="s-product-card-content-main ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
+		//		<h3 class="s-product-card-content-title">
+		//			<a href="${this.product?.url}">${this.product?.name}</a>
+		//		</h3>
+		//
+		//		${this.product?.subtitle && !this.minimal ?
+		//			`<p class="s-product-card-content-subtitle opacity-80">${this.product?.subtitle}</p>`
+		//		: ``}
+		//	</div>
+		//
+		//	${this.product?.donation && !this.minimal && !this.fullImage ?
+		//			`<salla-progress-bar donation=${JSON.stringify(this.product?.donation)}></salla-progress-bar>
+		//
+		//	<div class="s-product-card-donation-input">
+		//		${this.product?.donation?.can_donate ?
+		//			`<label for="donation-amount-${this.product.id}">${this.donationAmount} <span>*</span></label>
+		//
+		//		  <input
+		//			type="text"
+		//			onInput="${e => {
+		//					salla.helpers.inputDigitsOnly(e.target);
+		//					this.addBtn.donatingAmount = (e.target).value;
+		//				}}"
+		//			id="donation-amount-${this.product.id}"
+		//			name="donating_amount"
+		//			class="s-form-control"
+		//			placeholder="${this.donationAmount}" />`
+		//				: ``}
+		//	</div>`
+		//		: ''}
+		//
+		//	<div class="s-product-card-content-sub ${this.isSpecial ? 's-product-card-content-extra-padding' : ''}">
+		//		${this.product?.donation?.can_donate ? '' : this.getProductPrice()}
+		//		${this.product?.rating?.stars ? `
+		//			<div class="s-product-card-rating">
+		//				<i class="sicon-star2 before:text-orange-300"></i>
+		//				<span>${this.product.rating.stars}</span>
+		//			</div>`
+		//			: ``}
+		//	</div>
+		//
+		//	${this.isSpecial && this.product.discount_ends
+		//		? `<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${true} labeled=${true} />`
+		//		: ``}
+		//
+		//
+		//	${!this.hideAddBtn ?
+		//		`<div class="s-product-card-content-footer gap-2">
+		//			<salla-add-product-button width="wide"
+		//				class="no-background"
+		//				product-id="${this.product.id}"
+		//				product-status="${this.product.status}"
+		//				product-type="${this.product.type}"
+		//			>
+		//				${this.product.status == 'sale' ?
+		//					`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
+		//				}
+		//				<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
+		//			</salla-add-product-button>
+		//
+		//			${this.horizontal || this.fullImage ?
+		//				`<salla-button 
+		//					shape="icon" 
+		//					color="dark" 
+		//					id="card-wishlist-btn-${this.product.id}-horizontal"
+		//					aria-label="Add or remove to wishlist"
+		//					class="${this.isInWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}"
+		//					onclick="salla.wishlist.toggle(${this.product.id})"
+		//					data-id="${this.product.id}"
+		//				>
+		//					<i class="sicon-heart"></i> 
+		//				</salla-button>`
+		//			: ``}
+		//		</div>`
+		//		: ``}
+		//      </div>
+		//    `
 
 		this.querySelectorAll('[name="donating_amount"]').forEach((element) => {
 			element.addEventListener('input', (e) => {

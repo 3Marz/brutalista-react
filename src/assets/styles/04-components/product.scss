@@ -73,7 +73,7 @@
     } 
 
     &-entry {
-      @apply border-2 border-bc shadow-neo rounded-neo overflow-hidden;
+      @apply rounded-none bg-transparent;
     }
   }
 
@@ -310,10 +310,10 @@
   }
 }
 
-.s-product-card-image,
-.s-product-card-full-image img {
-  border-radius: 0px !important;
-}
+// .s-product-card-image,
+// .s-product-card-full-image img {
+//   border-radius: 0px !important;
+// }
 
 .s-product-card-starting-price{
   @apply justify-start gap-2.5;
