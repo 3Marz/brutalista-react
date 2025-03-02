@@ -42,6 +42,7 @@ module.exports = {
 				'light'		   : 'var(--light)',
 
 				'bc'	   : 'var(--bc)',
+				'bg-base' : 'var(--base)'
             },
             spacing: {
               '3.75': '15px',
