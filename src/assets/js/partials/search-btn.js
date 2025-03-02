@@ -11,7 +11,7 @@ class SearchBtn extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-		<button class="header-btn" onclick="document.querySelector('salla-search').open()">
+		<button class="header-btn" onclick="if (!window.__cfRLUnblockHandlers) return false; salla.event.dispatch('search::open')">
 			<i class="sicon-search header-btn__icon"></i>
 		</button>
 		
