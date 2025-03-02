@@ -172,12 +172,12 @@
     &.mm-spn--navbar{
       &:after {
         height: var(--navbar-height) !important;
-        @apply transition-all duration-300 rtl:pr-12 ltr:pl-12 text-start opacity-90 font-bold border-b-2 border-bc z-2 bg-white;
+        @apply transition-all duration-300 rtl:pr-12 ltr:pl-12 text-start opacity-70 font-bold border-b-2 border-bc z-2 bg-white;
       }
 
       &.mm-spn--main{
         &:after{
-          @apply rtl:pr-3 ltr:pl-3;
+          @apply rtl:pr-3 ltr:pl-3 opacity-70;
         }
       }
 
@@ -188,10 +188,12 @@
     }
 
     &.mm-spn--navbar:before {
+      @apply text-gray-800 !opacity-100;
       [dir="rtl"] & {
         transform: rotate(135deg) translateY(77%);
         right: var(--mm-spn-item-indent);
         left: auto;
+
       }
     }
 
@@ -227,7 +229,7 @@
 
       &:after {
         width: 100%;
-        border-color: var(--infinte-color);
+        border-color: var(--bc);
         border-style: dashed;
       }
     }
