@@ -58,13 +58,21 @@ class ProductCard extends HTMLElement {
 
 	getProductBadge() {
 		if (this.product.promotion_title) {
-			return `<div class="s-product-card-promotion-title">${this.product.promotion_title}</div>`
+			return `
+				<div class="py-1 px-2 text-sm whitespace-nowrap absolute bg-primary border border-bc text-bg-base z-[3] top-2 right-2 rounded-neo">
+					${this.product.promotion_title}
+				</div>`
 		}
-		if (this.showQuantity && this.product?.quantity) {
-			return `<div class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
-		}
+		//if (this.showQuantity && this.product?.quantity) {
+		//	return `<div class="s-product-card-quantity">${this.remained} ${salla.helpers.number(this.product?.quantity)}</div>`
+		//}
 		if (this.product?.is_out_of_stock) {
-			return `<div class="s-product-card-out-badge">${this.outOfStock}</div>`
+			return `
+				<div class="absolute top-0 right-0 z-[3] w-32 h-32 overflow-hidden flex items-center justify-center">
+					<span class="text-center outline-2 outline outline-[#7a0000] border-y-2 border-yellow-50 border-dashed text-sm rotate-45 translate-x-6 -translate-y-6 px-4 py-1 w-[200%] bg-[#7a0000] text-yellow-50 absolute">
+						${this.outOfStock}
+					</span>
+				</div>`
 		}
 		return '';
 	}
@@ -154,7 +162,7 @@ class ProductCard extends HTMLElement {
 	}
 
 	render() {
-		this.classList.add('flex', 'flex-col', 'gap-3', 'group', 'overflow-hidden', 'relative');
+		this.classList.add('h-full', 'flex', 'flex-col', 'gap-3', 'group', 'overflow-visible', 'relative');
 		this.setAttribute('id', this.product.id);
 		!this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-vertical') : '';
 		this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-horizontal') : '';
@@ -169,9 +177,10 @@ class ProductCard extends HTMLElement {
 		this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
 
 		this.innerHTML = `
-			<div class="h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-[var(--br)] overflow-hidden">
+			${this.getProductBadge()}
+			<div class="h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
-					<img class="${salla.url.is_placeholder(this.product?.image?.url)
+					<img class="hover:scale-110 transition-transform ${salla.url.is_placeholder(this.product?.image?.url)
 						? 'object-contain'
 						: this.fitImageHeight
 							? this.fitImageHeight
@@ -180,25 +189,29 @@ class ProductCard extends HTMLElement {
 					  alt=${this.product?.image?.alt}
 					  data-src=${this.product?.image?.url || this.product?.thumbnail}
 					/>
-					${this.getProductBadge()}
 				</a>
 			</div>
-			<div class="flex flex-col gap-1 pb-2">
-				<h5>
-					<a class="hover:underline underline-offset-2 text-bc" href="${this.product?.url}">${this.product?.name}</a>
-				</h5>
-				${this.getProductPrice()}
-				<salla-add-product-button width="wide"
-					class="no-background"
-					product-id="${this.product.id}"
-					product-status="${this.product.status}"
-					product-type="${this.product.type}"
-				>
-					${this.product.status == 'sale' ?
-						`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
-					}
-					<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
-				</salla-add-product-button>
+			<div class="flex flex-grow justify-between flex-col gap-3 pb-2">
+				<div class="h-full w-full flex flex-col gap-2 px-2">
+					<h5>
+						<a class="hover:underline underline-offset-2 text-bc" href="${this.product?.url}">${this.product?.name}</a>
+					</h5>
+					${this.getProductPrice()}
+				</div>
+				
+				<div class="w-full">
+					<salla-add-product-button width="wide"
+						class="no-background"
+						product-id="${this.product.id}"
+						product-status="${this.product.status}"
+						product-type="${this.product.type}"
+					>
+						${this.product.status == 'sale' ?
+							`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
+						}
+						<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
+					</salla-add-product-button>
+				</div>
 			</div>
 		`
 		
