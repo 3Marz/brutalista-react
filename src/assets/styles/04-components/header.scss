@@ -63,7 +63,7 @@
 
 /* Main Nav */
 .main-nav-container {
-  @apply lg:min-h-[84px] flex items-center;
+  @apply lg:min-h-[84px] !h-auto flex items-center;
   
   // Custom background Color
   .has-bg &,

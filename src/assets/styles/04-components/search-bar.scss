@@ -6,6 +6,9 @@
   &-container {
     &-open {
 
+      .s-search-results {
+        @apply mt-4 rounded-neo border-2 border-bc shadow-neo;
+      }
     }
   }
   &-input {
@@ -21,10 +24,11 @@
 
   }
   &-results {
-
   }
   &-no-results{
-
+    .s-search-results {
+      @apply mt-4 rounded-neo border-2 border-bc shadow-neo;
+    }
   }
   &-container-open{
     
