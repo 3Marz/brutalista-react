@@ -59,7 +59,7 @@ class ProductCard extends HTMLElement {
 	getProductBadge() {
 		if (this.product.promotion_title) {
 			return `
-				<div class="py-1 px-2 text-sm whitespace-nowrap absolute bg-primary border border-bc text-bg-base z-[3] top-2 right-2 rounded-neo">
+				<div class="font-bold py-1 px-2 text-sm whitespace-nowrap absolute bg-primary border border-bc text-base-100 z-[3] top-2 right-2 rounded-neo">
 					${this.product.promotion_title}
 				</div>`
 		}
