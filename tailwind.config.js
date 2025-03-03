@@ -44,9 +44,9 @@ module.exports = {
 				'bc'	   : 'var(--bc)',
 				'bg-base' : 'var(--base)',
 				'base'	  : {
-					'100': 'var(--base-100)',
-					'200': 'var(--base-200)',
-					'300': 'var(--base-300)',
+					100: 'var(--base-100)',
+					200: 'var(--base-200)',
+					300: 'var(--base-300)',
 				}
             },
             spacing: {
