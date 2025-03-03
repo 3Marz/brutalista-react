@@ -494,15 +494,13 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .bottom-2{bottom:0.5rem}
 .left-0{left:0px}
 .right-0{right:0px}
+.right-2{right:0.5rem}
 .top-0{top:0px}
 .top-1\.5{top:0.375rem}
 .top-2{top:0.5rem}
 .top-24{top:6rem}
 .top-4{top:1rem}
 .top-full{top:100%}
-.right-3{right:0.75rem}
-.top-3{top:0.75rem}
-.right-2{right:0.5rem}
 .-z-1{z-index:-1}
 .z-10{z-index:10}
 .z-20{z-index:20}
@@ -688,13 +686,12 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!rounded-\[var\(--br\)\]{border-radius:var(--br) !important}
 .rounded{border-radius:var(--br)}
 .rounded-3xl{border-radius:1.5rem}
-.rounded-\[var\(--br\)\]{border-radius:var(--br)}
 .rounded-full{border-radius:9999px}
 .rounded-large{border-radius:22px}
 .rounded-lg{border-radius:0.5rem}
 .rounded-md{border-radius:0.375rem}
-.rounded-sm{border-radius:0.125rem}
 .rounded-neo{border-radius:var(--br)}
+.rounded-sm{border-radius:0.125rem}
 .rounded-b-none{border-bottom-right-radius:0px;border-bottom-left-radius:0px}
 .rounded-t-md{border-top-left-radius:0.375rem;border-top-right-radius:0.375rem}
 .border{border-width:1px}
@@ -712,8 +709,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .border-gray-200{--tw-border-opacity:1;border-color:rgba(229, 231, 235, 1);border-color:rgba(229, 231, 235, var(--tw-border-opacity, 1))}
 .border-green-300{--tw-border-opacity:1;border-color:rgba(134, 239, 172, 1);border-color:rgba(134, 239, 172, var(--tw-border-opacity, 1))}
 .border-primary{border-color:#414042;border-color:var(--color-primary)}
-.border-yellow-100{--tw-border-opacity:1;border-color:rgba(254, 249, 195, 1);border-color:rgba(254, 249, 195, var(--tw-border-opacity, 1))}
 .border-yellow-50{--tw-border-opacity:1;border-color:rgba(254, 252, 232, 1);border-color:rgba(254, 252, 232, var(--tw-border-opacity, 1))}
+.bg-\[\#7a0000\]{--tw-bg-opacity:1;background-color:rgba(122, 0, 0, 1);background-color:rgba(122, 0, 0, var(--tw-bg-opacity, 1))}
 .bg-black{--tw-bg-opacity:1;background-color:rgba(0, 0, 0, 1);background-color:rgba(0, 0, 0, var(--tw-bg-opacity, 1))}
 .bg-blue-50{--tw-bg-opacity:1;background-color:rgba(239, 246, 255, 1);background-color:rgba(239, 246, 255, var(--tw-bg-opacity, 1))}
 .bg-danger{background-color:var(--danger)}
@@ -724,7 +721,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .bg-inherit{background-color:inherit}
 .bg-primary{background-color:#414042;background-color:var(--color-primary)}
 .bg-white{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
-.bg-\[\#7a0000\]{--tw-bg-opacity:1;background-color:rgba(122, 0, 0, 1);background-color:rgba(122, 0, 0, var(--tw-bg-opacity, 1))}
 .bg-cover{background-size:cover}
 .bg-center{background-position:center}
 .bg-no-repeat{background-repeat:no-repeat}
@@ -809,7 +805,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .leading-none{line-height:1}
 .leading-normal{line-height:1.5}
 .leading-tight{line-height:1.25}
-.\!text-bc{color:var(--bc) !important}
 .\!text-primary{color:#414042 !important;color:var(--color-primary) !important}
 .\!text-red-800{--tw-text-opacity:1 !important;color:rgba(153, 27, 27, 1) !important;color:rgba(153, 27, 27, var(--tw-text-opacity, 1)) !important}
 .\!text-white{--tw-text-opacity:1 !important;color:rgba(255, 255, 255, 1) !important;color:rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important}
@@ -833,7 +828,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-red-700{--tw-text-opacity:1;color:rgba(185, 28, 28, 1);color:rgba(185, 28, 28, var(--tw-text-opacity, 1))}
 .text-red-800{--tw-text-opacity:1;color:rgba(153, 27, 27, 1);color:rgba(153, 27, 27, var(--tw-text-opacity, 1))}
 .text-white{--tw-text-opacity:1;color:rgba(255, 255, 255, 1);color:rgba(255, 255, 255, var(--tw-text-opacity, 1))}
-.text-yellow-100{--tw-text-opacity:1;color:rgba(254, 249, 195, 1);color:rgba(254, 249, 195, var(--tw-text-opacity, 1))}
 .text-yellow-50{--tw-text-opacity:1;color:rgba(254, 252, 232, 1);color:rgba(254, 252, 232, var(--tw-text-opacity, 1))}
 .underline{text-decoration-line:underline}
 .line-through{text-decoration-line:line-through}
