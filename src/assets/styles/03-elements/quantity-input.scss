@@ -1,0 +1,13 @@
+.s-quantity-input{
+
+  &-container{
+    @apply border-2 border-bc rounded-neo;
+  }
+
+  &-input{
+    @apply bg-transparent text-bc !border-none;
+  }
+  &-button{
+    @apply fill-bc;
+  }
+}
