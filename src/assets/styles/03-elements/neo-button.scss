@@ -23,7 +23,7 @@
     @apply duration-200 border-2 border-bc hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
-    @apply border-2 hover:border-bc hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
+    @apply bg-base-50 border-2 hover:border-bc hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
   }
   &-fill-none{
     
