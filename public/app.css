@@ -4446,7 +4446,6 @@ salla-button.copied i:before {
 .btn--wishlist{margin:0px}
 .btn--wishlist:where([dir="ltr"], [dir="ltr"] *){margin-left:0.125rem}
 .btn--wishlist:where([dir="rtl"], [dir="rtl"] *){margin-right:0.125rem}
-.btn--wishlist:hover{--tw-text-opacity:1;color:rgba(75, 85, 99, 1);color:rgba(75, 85, 99, var(--tw-text-opacity, 1))}
 .btn--wishlist.is-added{--tw-text-opacity:1;color:rgba(239, 68, 68, 1);color:rgba(239, 68, 68, var(--tw-text-opacity, 1))}
 .btn--rounded-gray{display:inline-flex;width:100%;align-items:center;justify-content:center;white-space:nowrap;border-radius:9999px;background-color:rgba(229, 231, 235, 0.5);padding-left:0.875rem;padding-right:0.875rem;padding-top:0.5rem;padding-bottom:0.5rem;font-size:0.875rem;line-height:1.25rem;font-weight:500;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;
   flex-grow: 0}
