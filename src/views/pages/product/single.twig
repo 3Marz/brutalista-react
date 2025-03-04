@@ -183,10 +183,10 @@
                     </div>
                 {% endif %}
 
-                <h1 class="text-xl md:text-2xl leading-10 font-bold mb-6 text-gray-800">{{ product.name }}</h1>
+                <h1 class="text-4xl md:text-5xl leading-10 font-bold mb-6 text-bc">{{ product.name }}</h1>
 
                 {% if product.subtitle %}
-                    <h2 class="product-entry__sub-title text-sm text-gray-500 leading-6 mb-2.5">
+                    <h2 class="product-entry__sub-title text-sm text-bc opacity-80 leading-6 mb-2.5">
                         {{ product.subtitle }}
                     </h2>
                 {% endif %}
@@ -323,31 +323,31 @@
 
                     {% hook 'product:single.form.end' %}
 
-                    <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
-                        <div class="center-between w-full">
-                            <label class="form-label">
-                                <b class="block">
-                                    {{ trans('pages.products.price') }}
-                                </b>
-                            </label>
-
-                            <div class="flex whitespace-nowrap price-wrapper gap-4 items-center">
-                              <div class="{{ product.is_on_sale ? '' : 'hidden' }} price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                                <h2 class="total-price text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h2>
-                                <span class="before-price text-gray-500 line-through">{{product.regular_price|money}}</span>
-                              </div>
-                              <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">
-                                {% if product.starting_price %} 
-                                  <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>
-                                {% endif %} 
-                                <h2 class="total-price font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
-                              </div>
-                            </div>
-
-                            <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold">{{ trans('pages.products.out_of_stock')}}</div>
-                        </div>
+                    <section class="flex bg-transparent p-5 sm:pb-0 rounded-md rounded-b-none">
+                        <!--<div class="center-between w-full">-->
+                        <!--    <label class="form-label">-->
+                        <!--        <b class="block">-->
+                        <!--            {{ trans('pages.products.price') }}-->
+                        <!--        </b>-->
+                        <!--    </label>-->
+                        <!---->
+                        <!--    <div class="flex whitespace-nowrap price-wrapper gap-4 items-center">-->
+                        <!--      <div class="{{ product.is_on_sale ? '' : 'hidden' }} price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">-->
+                        <!--        <h2 class="total-price text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h2>-->
+                        <!--        <span class="before-price text-gray-500 line-through">{{product.regular_price|money}}</span>-->
+                        <!--      </div>-->
+                        <!--      <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">-->
+                        <!--        {% if product.starting_price %} -->
+                        <!--          <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>-->
+                        <!--        {% endif %} -->
+                        <!--        <h2 class="total-price font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>-->
+                        <!--      </div>-->
+                        <!--    </div>-->
+                        <!---->
+                        <!--    <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold">{{ trans('pages.products.out_of_stock')}}</div>-->
+                        <!--</div>-->
                     </section>
-                    <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
+                    <section class="sticky-product-bar bg-base-100 p-5 rounded-neo border-2 border-bc shadow-neo">
                         {# Quantity #}
                         {% if product.is_hidden_quantity or product.type == 'booking' %}
                             <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
@@ -364,6 +364,7 @@
                         <salla-add-product-button
                                 {{theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : ''}}
                                 {{product.is_require_shipping ? 'required-shipping' : ''}}
+								quick-buy
                                 amount="{{ product.base_currency_price }}"
                                 class="mt-5 w-full sticky-product-bar__btn"
                                 product-status="{{ product.status }}"
