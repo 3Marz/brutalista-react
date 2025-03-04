@@ -1,7 +1,11 @@
 
+.s-form-control {
+  @apply border-bc bg-base-50;
+}
+
 .s-product-options{
   &-wrapper{
-
+    @apply bg-transparent;
   }
   &-option-container{
 

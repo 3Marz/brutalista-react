@@ -6518,6 +6518,8 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .s-quantity-input-input{border-style:none !important}
 .s-quantity-input-input{background-color:transparent;color:var(--bc)}
 .s-quantity-input-button{fill:var(--bc)}
+.s-form-control{border-color:var(--bc);background-color:var(--base-50)}
+.s-product-options-wrapper{background-color:transparent}
 .before\:text-orange-300::before{content:var(--tw-content);--tw-text-opacity:1;color:rgba(253, 186, 116, 1);color:rgba(253, 186, 116, var(--tw-text-opacity, 1))}
 .first\:rounded-t-md:first-child{border-top-left-radius:0.375rem;border-top-right-radius:0.375rem}
 .first\:pt-16:first-child{padding-top:4rem}
