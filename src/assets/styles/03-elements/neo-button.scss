@@ -94,7 +94,7 @@
     @apply border-danger text-danger hover:bg-danger;   
   }
   &-light-outline{
-    @apply border-light text-light hover:bg-light hover:text-black;   
+    @apply text-light !border-light hover:bg-light hover:text-black;   
     &:hover {
       border-color: var(--bc) !important;
     }
