@@ -4,15 +4,21 @@
     
   }
   &-container {
+    // @apply rounded-neo;
     &-open {
 
       .s-search-results {
-        @apply mt-4 rounded-neo border-2 border-bc shadow-neo;
+        @apply mt-4 rounded-md border-2 border-bc shadow-neo;
+      }
+
+      .s-search-input {
+        border-bottom-right-radius: 0.375rem !important;
+        border-bottom-left-radius: 0.375rem !important;
       }
     }
   }
   &-input {
-
+    // border-radius: var(--br) !important;
   }
   &-icon {
 
@@ -27,7 +33,11 @@
   }
   &-no-results{
     .s-search-results {
-      @apply mt-4 rounded-neo border-2 border-bc shadow-neo;
+      @apply mt-4 rounded-md border-2 border-bc shadow-neo;
+    }
+    .s-search-input {
+      border-bottom-right-radius: 0.375rem !important;
+      border-bottom-left-radius: 0.375rem !important;
     }
   }
   &-container-open{
