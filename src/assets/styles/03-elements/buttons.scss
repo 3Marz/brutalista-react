@@ -151,6 +151,9 @@ salla-button {
     &.light {
       @apply bg-transparent text-white border-white;
     }
+    &.base {
+      @apply bg-transparent text-base-100 border-base-100;
+    }
   }
 
   &--rounded-full {
