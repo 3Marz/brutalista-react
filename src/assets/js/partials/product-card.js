@@ -69,7 +69,7 @@ class ProductCard extends HTMLElement {
 		if (this.product?.is_out_of_stock) {
 			return `
 				<div class="absolute top-0 right-0 z-[3] w-32 h-32 overflow-hidden flex items-center justify-center">
-					<span class="text-center outline-2 outline outline-[#7a0000] border-y-2 border-yellow-50 border-dashed text-sm rotate-45 translate-x-6 -translate-y-6 px-4 py-1 w-[200%] bg-[#7a0000] text-yellow-50 absolute">
+					<span class="text-center outline-2 outline outline-[#7a0000] border-y-2 border-yellow-50 border-dashed text-xs md:text-sm rotate-45 translate-x-6 -translate-y-6 px-4 py-1 w-[200%] bg-[#7a0000] text-yellow-50 absolute">
 						${this.outOfStock}
 					</span>
 				</div>`
@@ -180,11 +180,11 @@ class ProductCard extends HTMLElement {
 			${this.getProductBadge()}
 			<div class="h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
-					<img class="hover:scale-110 transition-transform ${salla.url.is_placeholder(this.product?.image?.url)
-						? 'object-contain'
+					<img class="hover:scale-110 transition-transform w-full h-full bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
+						? 'contain'
 						: this.fitImageHeight
 							? this.fitImageHeight
-							: 'object-cover'} lazy"
+							: 'cover'} lazy"
 					  src=${this.placeholder}
 					  alt=${this.product?.image?.alt}
 					  data-src=${this.product?.image?.url || this.product?.thumbnail}
