@@ -105,7 +105,7 @@
 
                     {# Calories Badge #}
                     {% if product.calories %}
-                        <div class="absolute z-[2] top-4 rtl:left-4 ltr:right-4 bg-white shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
+                        <div class="absolute border border-base-200 z-[2] top-4 rtl:left-4 ltr:right-4 bg-base-50 shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
                             <span class="text-red-500 text-xl leading-none font-bold">{{ product.calories }}</span>
                             <span class="text-xs text-gray-500">{{ trans('pages.products.calories') }}</span>
                         </div>
@@ -152,12 +152,12 @@
                                     {% if loop.index < 5 %}
                                         <img src="{{ image.url }}"
                                              loading="eager"
-                                             class="object-cover w-full h-full bg-gray-100 rounded-md overflow-hidden"
+                                             class="object-cover w-full h-full bg-base-50 rounded-md overflow-hidden"
                                              title="{{ image.alt }}"
                                              alt="{{ image.alt }}"/>
                                     {% else %}
                                         <img data-src="{{ image.url }}" src="{{ 'images/s-empty.png' | cdn }}"
-                                             class="object-cover w-full h-full lazy bg-gray-100 rounded-md overflow-hidden"
+                                             class="object-cover w-full h-full lazy bg-base-50 rounded-md overflow-hidden"
                                              title="{{ image.alt }}"
                                              alt="{{ image.alt }}"/>
                                     {% endif %}
@@ -247,11 +247,11 @@
                 </div>
 
                 {% if product.tags|length and theme.settings.get('show_tags', true) %}
-                    <div class="mb-3">
+                    <div class="mb-5 space-x-2 rtl:space-x-reverse">
                         {% for tag in product.tags %}
                             <a href="{{ tag.url }}"
-                               class="rtl:ml-2 ltr:mr-2 inline-flex  text-gray-500 hover:text-primary underline text-sm mb-1">{{ tag.name }}
-                                ,</a>
+                               class="py-1 px-2 hover:shadow-neo transition-all border hover:bg-base-200 border-bc text-bc rounded-full text-xs">{{ tag.name }}
+                            </a>
                         {% endfor %}
                     </div>
                 {% endif %}
@@ -265,7 +265,7 @@
                             onclick="salla.wishlist.toggle({{ product.id }})"
                             shape="icon"
                             fill="outline"
-                            color="dark"
+                            color="light"
 							aria-label="add to wishlist">
                         <i class="sicon-heart"></i>
                     </salla-button>
