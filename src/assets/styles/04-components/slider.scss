@@ -1,5 +1,18 @@
 salla-slider{ 
   @apply block;
+
+  .s-slider-nav-arrow {
+    @apply border !border-solid border-base-300 hover:border-primary !bg-base-100 transition-all !shadow-none;
+    svg {
+      @apply fill-base-300 hover:fill-primary;
+    }
+    &.swiper-button-disabled {
+      @apply hover:border-base-300;
+      svg {
+        @apply fill-base-300;
+      }
+    }
+  }
   
   &.details-slider{
     .s-slider-container{ 
@@ -36,8 +49,8 @@ salla-slider{
 }
 
 .promotion-title{
-  @apply font-bold py-1 px-2 text-sm whitespace-nowrap absolute bg-primary border border-bc text-base-100 z-[3] top-2 right-2 rounded-neo;
-  @apply w-auto m-0 px-3 py-2 #{!important};
+  @apply font-bold px-2 py-0.5 sm:py-2 sm:px-3 text-xxs sm:text-sm md:text-sm whitespace-nowrap absolute bg-primary border border-bc text-base-100 z-[3] top-2 right-2 rounded-neo;
+  @apply w-auto m-0 #{!important};
 }
 
 .home-slider {
