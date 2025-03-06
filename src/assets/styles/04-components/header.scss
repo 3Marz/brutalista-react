@@ -98,7 +98,7 @@
   }
 
   &.fixed-pinned {
-    @apply bg-white;
+    @apply bg-base-50;
     .inner {
       position: fixed;
       top: 0;

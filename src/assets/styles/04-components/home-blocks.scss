@@ -46,7 +46,7 @@
 
 	.overlay-bg{
 		&:after{
-		  @apply content-[''] absolute top-0 bg-black/60 w-full h-full;
+		  @apply content-[''] absolute top-0 bg-black/30 w-full h-full;
 		}
 	  }
   }
@@ -289,8 +289,8 @@
     }
 
     &__display-all{
-      @apply block btn btn--outline border-base-100 btn--rounded-full;
-      @apply grow-0 bg-transparent text-base-100 #{!important};
+      @apply block btn btn--outline btn--rounded-full;
+      @apply grow-0 bg-transparent border-base-100 text-base-100 #{!important};
     }
   }
 }

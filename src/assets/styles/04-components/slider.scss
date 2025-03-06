@@ -95,7 +95,7 @@ salla-slider.photos-slider {
   }
   
   .swiper-pagination-bullet:not(.swiper-pagination-bullet-active){
-    @apply bg-gray-300;
+    @apply bg-base-300;
   }
   
   @media (max-width: 1024px) {
@@ -157,8 +157,8 @@ salla-slider{
   .swiper-pagination-bullet {
     width: 20px;
     border-radius: 5px;
-    background: #fff;
-    opacity: 0.3;
+    background: var(--base-300);
+    opacity: 1;
 
     &-active {
       opacity: 1;
