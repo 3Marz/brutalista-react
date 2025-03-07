@@ -178,9 +178,9 @@ class ProductCard extends HTMLElement {
 
 		this.innerHTML = `
 			${this.getProductBadge()}
-			<div class="h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden">
+			<div class="group/img h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
-					<img class="hover:scale-110 transition-transform w-full h-full bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
+					<img class="group-hover/img:scale-110 transition-transform w-full h-full bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
 						? 'contain'
 						: this.fitImageHeight
 							? this.fitImageHeight
@@ -190,6 +190,19 @@ class ProductCard extends HTMLElement {
 					  data-src=${this.product?.image?.url || this.product?.thumbnail}
 					/>
 				</a>
+				<salla-button
+					size="${this.minimal ? "small" : "medium"}"
+					shape="icon"
+					fill="outline"
+					color="dark"
+					name="product-name-${this.product.id}"
+					aria-label="Add or remove to wishlist"
+					class="group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 -translate-x-5 opacity-0 absolute bottom-1 left-1 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
+					onclick="salla.wishlist.toggle(${this.product.id})"
+					data-id="${this.product.id}"
+				>
+					<i class="sicon-heart"></i>
+				</salla-button>
 			</div>
 			<div class="flex flex-grow justify-between flex-col gap-3 pb-2">
 				<div class="h-full w-full flex flex-col gap-2 px-2">
