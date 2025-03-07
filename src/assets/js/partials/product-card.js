@@ -178,7 +178,7 @@ class ProductCard extends HTMLElement {
 
 		this.innerHTML = `
 			${this.getProductBadge()}
-			<div class="group/img h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
+			<div class="group/img aspect-square w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
 					<img class="group-hover/img:scale-110 transition-transform w-full h-full bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
 						? 'contain'
