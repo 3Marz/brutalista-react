@@ -923,7 +923,59 @@
             "title": "نص متحرك",
             "icon": "sicon-caret-left-double",
             "path": "home.marquee",
-            "fields": []
+            "fields": [
+                {
+                    "id": "moving_text",
+                    "type": "string",
+                    "format": "text",
+                    "label": "النص المتحرك",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "مثل: تخفيضات تصل الى 60%",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": "10",
+                    "maxLength": "60"
+                },
+                {
+                    "id": "default_colors",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "الوان إفتراضية من الثيم",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": false,
+                    "required": false
+                },
+                {
+                    "id": "bg_color",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون الخلفية",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#7a0000",
+                    "required": false
+                },
+                {
+                    "id": "border_color",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون الحافة",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#510000",
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": null,
