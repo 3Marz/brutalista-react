@@ -212,6 +212,18 @@
             "value": true,
             "selected": true,
             "required": false
+        },
+        {
+            "id": "cool_cart_page",
+            "type": "boolean",
+            "format": "switch",
+            "label": "تفعيل شكل ملخص الطلب المميز",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": true,
+            "required": false
         }
     ],
     "components": [
