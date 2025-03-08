@@ -917,6 +917,13 @@
                     "source": "brands"
                 }
             ]
+        },
+        {
+            "key": "478a5c1b-8ab0-4869-b3c1-d5d9d5e5a90c",
+            "title": "نص متحرك",
+            "icon": "sicon-list-play",
+            "path": "home.marquee",
+            "fields": []
         }
     ],
     "support_url": null,
