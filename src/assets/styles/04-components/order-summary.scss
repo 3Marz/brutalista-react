@@ -1,5 +1,5 @@
 
-.cart-summary {
+.ticket {
 
   filter: drop-shadow(1px 0px var(--bc))
           drop-shadow(-1px 0px var(--bc))
@@ -8,7 +8,7 @@
   
 }
 
-.cart-summary::before, .cart-summary::after {
+.ticket::before, .ticket::after {
 	content: '';
 	position: absolute;
 	left: 0px;
@@ -16,11 +16,11 @@
 	width: 100%;
 }
 
-.cart-summary::before {
+.ticket::before {
 	top: -6px;
 	background: radial-gradient(circle, transparent, transparent 50%, #FFFFFF 50%, #FFFFFF 100% ) -4px -8px / 14px 16px repeat-x,
 }
-.cart-summary::after {
+.ticket::after {
 	bottom: -6px;
 	background: radial-gradient(circle, transparent, transparent 50%, #FFFFFF 50%, #FFFFFF 100% ) -4px -2px / 14px 16px repeat-x,
 }

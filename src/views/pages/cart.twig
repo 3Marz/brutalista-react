@@ -159,7 +159,7 @@
             <!-- sidebar -->
             {% if cart.items|length %}
                 <div class="sticky top-24 w-full lg:w-96 rtl:lg:mr-8 ltr:lg:ml-8">
-                    <div class="bg-white p-5 xs:p-7 rounded-neo border border-bc mb-5 relative {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
+                    <div class="bg-white p-5 xs:p-7 mb-5 relative {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }} {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
                         <div class="flex rtl:space-x-reverse space-x-3 items-center">
                             <i class="bg-primary text-white rounded-icon sicon-shipping-fast {{ theme.is_rtl ? 'flip-x':'' }}"></i>
                             {% set is_free=cart.free_shipping_bar.has_free_shipping %}
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     {% if loyalty and user.loyalty_points %}
-                        <div class="mb-5 rounded-neo p-3 xs:p-7 bg-white border border-bc">
+                        <div class="mb-5 p-3 xs:p-7 bg-white {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }}">
                             <salla-loyalty customer-points='{{ user.loyalty_points }}'
                                 prize-points='{{ loyalty.prize.points }}'
                                 prize-title='{{ loyalty.prize.title }}'
@@ -190,7 +190,7 @@
                         </div>
                     {% endif %}
 
-                    <div class="bg-white p-2 xs:p-4 mb-5 relative transition-height duration-1000 cart-summary">
+                    <div class="bg-white p-2 xs:p-4 mb-5 relative transition-height duration-1000 {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }}">
 						<div class="w-full h-full border-2 border-dashed border-gray-300 p-3 space-y-4">
 							<h2 class="font-bold text-base ">{{ trans('pages.cart.summary') }}</h2>
 
