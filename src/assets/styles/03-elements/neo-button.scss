@@ -4,7 +4,7 @@
     
   }
   &-element{
-    @apply rounded-neo;
+    @apply shadow-[0px_0px_var(--bc)] rounded-neo;
   }
   /* Button Types */
   &-link{
