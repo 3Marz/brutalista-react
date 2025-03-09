@@ -1,0 +1,21 @@
+{#
+| Variable       | Type   | Description        |
+|----------------|--------|--------------------|
+| moving_text    | string | marquee text       |
+| default_colors | Bool   |                    |
+| bg_color       | string |                    |
+| border_color   | string |                    |
+#}
+
+<section class="w-full">
+	<div class="w-full justify-center whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ default_colors ? "bg-primary border-bc" : "bg-[#{ bg_color }] border-[#{ border-color }]" }}>
+
+		{% for i in range(0, 8) %}
+			<div class="text-2xl px-5 animate-[marquee-effect_1s_linear_infinite]">
+				{{moving_text}}
+			</div>
+		{% endfor %}
+
+	</div>
+</section>
+

@@ -1,0 +1,14 @@
+
+.marquee-item {
+  @apply text-2xl px-5;
+}
+
+@keyframes marquee-effect {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
