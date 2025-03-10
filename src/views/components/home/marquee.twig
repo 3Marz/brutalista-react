@@ -8,10 +8,10 @@
 #}
 
 <section class="s-block w-full">
-	<div class="w-full justify-center whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ component.default_colors ? "bg-primary border-bc" : "bg-[#{ component.bg_color }] border-[#{ component.border-color }]" }}" >
+	<div class="w-full justify-center whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ component.default_colors ? "bg-primary border-bc text-base-100" : "bg-[#{ component.bg_color }] border-[#{ component.border_color }] text-[#{ component.text_color}]" }}" >
 
 		{% for i in range(0, 10) %}
-			<div class="text-2xl px-5 animate-[marquee-effect_1s_linear_infinite]">
+			<div class="text-xl md:text-2xl px-5 animate-[marquee-effect_{{ component.animation_speed }}_linear_infinite]">
 				{{ component.moving_text }}
 			</div>
 		{% endfor %}

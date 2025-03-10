@@ -6661,6 +6661,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:text-5xl{font-size:3rem;line-height:1}
 .md\:text-base{font-size:1rem;line-height:1.5rem}
 .md\:text-sm{font-size:0.875rem;line-height:1.25rem}
+.md\:text-2xl{font-size:1.5rem;line-height:2rem}
 .md\:first\:pt-24:first-child{padding-top:6rem}}
 @media (min-width: 1024px){
 .lg\:not-sr-only{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}
