@@ -940,6 +940,21 @@
                     "maxLength": "60"
                 },
                 {
+                    "id": "animation_speed",
+                    "type": "number",
+                    "format": "units",
+                    "label": "سرعة التحرك (كل ما زاد تقل السرعة)",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": null,
+                    "icon": "sicon-percentage",
+                    "value": 3,
+                    "required": true,
+                    "unit": "s",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                {
                     "id": "default_colors",
                     "type": "boolean",
                     "format": "switch",
