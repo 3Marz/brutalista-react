@@ -1,17 +1,28 @@
 {#
-| Variable       | Type   | Description        |
-|----------------|--------|--------------------|
-| moving_text    | string | marquee text       |
-| default_colors | Bool   |                    |
-| bg_color       | string |                    |
-| border_color   | string |                    |
+| Variable        | Type   | Description        |
+|-----------------|--------|--------------------|
+| moving_text     | string | marquee text       |
+| animation_speed |		   |                    |
+| default_colors  | Bool   |                    |
+| bg_color        | string |                    |
+| border_color    | string |                    |
 #}
 
 <section class="s-block w-full">
-	<div class="w-full justify-center whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ component.default_colors ? "bg-primary border-bc text-base-100" : "bg-[#{ component.bg_color }] border-[#{ component.border_color }] text-[#{ component.text_color}]" }}" >
+	<div 
+		class="w-full justify-center whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ component.default_colors ? "bg-primary border-bc text-base-100" : "" }}"
+		style="{{ component.default_colors ? "" : "
+			background-color: #{component.bg_color};
+			border-color: #{component.border_color};
+			color: #{component.text_color};
+		" }}"
+	>
 
 		{% for i in range(0, 10) %}
-			<div class="text-xl md:text-2xl px-5 animate-[marquee-effect_{{ component.animation_speed }}_linear_infinite]">
+			<div 
+				class="text-sm md:text-base px-5 animate-[marquee-effect_linear_infinite]"
+				style="animation-duration: {{ component.animation_speed }}s;"
+			>
 				{{ component.moving_text }}
 			</div>
 		{% endfor %}
