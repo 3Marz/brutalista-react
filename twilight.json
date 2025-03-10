@@ -989,6 +989,18 @@
                     "icon": "sicon-format-fill",
                     "value": "#510000",
                     "required": false
+                },
+                {
+                    "id": "text_color",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون النص",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#ffffff",
+                    "required": false
                 }
             ]
         }
