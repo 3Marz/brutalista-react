@@ -3,7 +3,16 @@
   @apply text-2xl px-5;
 }
 
-@keyframes marquee-effect {
+@keyframes marquee-effect-rtl {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes marquee-effect-ltr {
   from {
     transform: translateX(0%);
   }
@@ -11,4 +20,3 @@
     transform: translateX(-100%);
   }
 }
-

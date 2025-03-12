@@ -10,7 +10,7 @@
 
 <section class="s-block w-full">
 	<div 
-		class="w-full justify-center whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ component.default_colors ? "bg-primary border-bc text-base-100" : "" }}"
+		class="w-full whitespace-nowrap flex overflow-hidden py-2 border-y-2 {{ component.default_colors ? "bg-primary border-bc text-base-100" : "" }}"
 		style="{{ component.default_colors ? "" : "
 			background-color: #{component.bg_color};
 			border-color: #{component.border_color};
@@ -20,7 +20,7 @@
 
 		{% for i in range(0, 10) %}
 			<div 
-				class="text-sm md:text-base px-5 animate-[marquee-effect_linear_infinite]"
+				class="text-sm md:text-base px-5 rtl:animate-[marquee-effect-rtl_linear_infinite] ltr:animate-[marquee-effect-ltr_linear_infinite]"
 				style="animation-duration: {{ component.animation_speed }}s;"
 			>
 				{{ component.moving_text }}
