@@ -356,7 +356,7 @@
 
   &--features{
     &__item{
-      @apply cursor-pointer bg-white transition-shadow duration-500 hover:shadow-default rounded-md flex-grow flex flex-col items-center px-4 py-8 md:px-8 text-center;
+      @apply cursor-pointer border-2 border-bc shadow-neo hover:shadow-none bg-base-50 duration-300 rounded-neo flex-grow flex flex-col items-center px-4 py-8 md:px-8 text-center;
 
       &:first-child{
         @apply col-span-2 md:col-span-1;
