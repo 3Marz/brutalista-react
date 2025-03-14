@@ -299,15 +299,20 @@
   Main Links Block
 */
 .slide--cat-entry {
-  @apply bg-white rounded-md h-36 p-3 text-center flex flex-col items-center justify-center transition duration-500 hover:shadow-default hover:text-gray-500 border border-gray-100;
+  @apply relative bg-white bg-cover bg-center bg-no-repeat rounded-neo aspect-square text-center flex flex-col items-center justify-center hover:shadow-neo border-2 border-bc;
+  transition: all 0.3s ease-in-out;
 
-  i {
-    @apply inline-block text-primary text-icon-lg mb-4;
+  &:hover {
+    background-size: 120%;
   }
 
-  h2 {
-    @apply font-bold text-sm;
-  }
+  // i {
+  //   @apply inline-block text-primary text-icon-lg mb-4;
+  // }
+  //
+  // h2 {
+  //   @apply font-bold text-sm;
+  // }
 }
 
 /*

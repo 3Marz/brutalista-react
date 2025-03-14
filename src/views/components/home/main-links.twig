@@ -24,13 +24,17 @@
               {% if component.show_cats %}
                 {% for cat in component.categories %}
                     <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ cat.url }}" class="slide--cat-entry">
-                            {% if cat.image %}
-                              <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-16 h-16 object-cover rounded-full mb-2.5 {{ cat.image ? '' : 'has-placeholder'}}" width="64" height="64" alt="{{ menu.title }}"/>
-                            {% else %}
-                              <i class="{{ cat.icon }}"></i>
-                            {% endif %}
-                            <h2>{{ cat.name }}</h2>
+                        <a href="{{ cat.url }}" class="slide--cat-entry" style="{{ cat.image ? "background-image: url(#{cat.image})" : "" }}">
+
+							<div class="bg-bc opacity-45 w-full h-full"></div>
+
+							<div class="absolute w-full h-full flex flex-col justify-center items-center text-5xl text-base-50 *:drop-shadow-lg">
+								{% if not cat.image %}
+								  <i class="{{ cat.icon }} mb-3"></i>
+								{% endif %}
+								<h2>{{ cat.name }}</h2>
+							</div>
+
                         </a>
                     </div>
                 {% endfor %}
