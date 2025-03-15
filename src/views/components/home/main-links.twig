@@ -28,11 +28,11 @@
 
 							<div class="bg-bc opacity-45 w-full h-full"></div>
 
-							<div class="absolute w-full h-full flex flex-col justify-center items-center text-5xl text-base-50 *:drop-shadow-lg">
+							<div class="absolute w-full h-full flex flex-col justify-center items-center text-lg sm:text-lg text-base-50 *:drop-shadow">
 								{% if not cat.image %}
 								  <i class="{{ cat.icon }} mb-3"></i>
 								{% endif %}
-								<h2>{{ cat.name }}</h2>
+								<p>{{ cat.name }}</p>
 							</div>
 
                         </a>
@@ -42,9 +42,9 @@
                 {% for link in component.links %}
                   {% if link.title %}
                     <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ link.url }}" class="slide--cat-entry">
-                            <i class="{{ link.icon }}"></i>
-                            <h2>{{ link.title }}</h2>
+                        <a href="{{ link.url }}" class="slide--cat-entry text-lg sm:text-lg">
+                            <i class="{{ link.icon }} mb-3"></i>
+                            <p class="after:!bg-bc">{{ link.title }}</p>
                         </a>
                     </div>
                   {% endif %}

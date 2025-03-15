@@ -299,20 +299,48 @@
   Main Links Block
 */
 .slide--cat-entry {
-  @apply relative bg-white bg-cover bg-center bg-no-repeat rounded-neo aspect-square text-center flex flex-col items-center justify-center hover:shadow-neo border-2 border-bc;
-  transition: all 0.3s ease-in-out;
+  @apply overflow-hidden relative bg-white bg-center bg-no-repeat rounded-neo aspect-square transition-all text-center flex flex-col items-center justify-center border-2 border-bc;
+  background-size: 100%;
 
   &:hover {
-    background-size: 120%;
+    background-size: 110%;
+
+    i {
+      // @apply translate-y-[-2px];
+    }
+    p {
+      // @apply translate-y-[-2px];
+    }
+    p::after {
+      opacity: 1;
+      width: 100%;
+      // transform: translate3d(0, 6px, 0);
+    }
   }
 
   // i {
   //   @apply inline-block text-primary text-icon-lg mb-4;
   // }
-  //
-  // h2 {
-  //   @apply font-bold text-sm;
-  // }
+  i {
+    @apply transition;
+  }
+
+  p {
+    @apply transition relative;
+  }
+ 
+  p::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(5px);
+    width: 0px;
+    height: 2px;
+    background-color: var(--base-50);
+    opacity: 0;
+    transition: opacity 300ms, width 300ms;
+  }
 }
 
 /*
