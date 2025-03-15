@@ -1,13 +1,33 @@
 
 .store-footer {
-  @apply relative bg-darker text-white mt-8 sm:mt-16;
+  @apply relative bg-bc text-base-100 mt-8 sm:mt-16;
+
+  .s-social-list {
+    @apply justify-center;
+  }
+
+  .s-contacts-icon, .s-social-link a { 
+    @apply border-none hover:opacity-100;
+  }
+  .s-contacts-icon svg {
+      @apply w-4 h-4;
+  }
+  .s-social-link a {
+    svg {
+      @apply w-5 h-5 transition duration-150;
+    }
+
+    &:hover svg {
+      @apply scale-110;
+    }
+  }
 
   a{
-    @apply transition-opacity hover:opacity-75;
+    @apply hover:underline underline-offset-2;
   }
 
   &__inner{
-    @apply bg-dark py-8 lg:py-16 border-b border-dashed border-b-white/10;
+    @apply bg-bc py-8 lg:py-16 border-b border-dashed border-b-base-100;
   }  
 
   h3{
@@ -15,11 +35,11 @@
   }
 
   .social-link {
-    @apply border rounded-full w-8 h-8 justify-center flex items-center hover:opacity-75 transition duration-300 text-sm
+    @apply border border-base-100 rounded-full w-8 h-8 justify-center flex items-center hover:underline transition duration-300 text-sm
   }
 
   .contact-social{
-    @apply mt-5 pt-5 border-t border-white/10;
+    @apply mt-5 pt-5 border-t border-base-100;
 
     ul {
       @apply mb-0;
@@ -27,23 +47,23 @@
   }
 
   .footer-is-light & {
-    @apply bg-gray-50 text-gray-700;
+    @apply bg-base-50 text-bc;
 
     .store-footer__inner {
-      @apply bg-gray-100 border-b-gray-200;
+      @apply bg-base-50 border-b-bc;
     }
 
     .social-link {
-      @apply border-gray-300;
+      @apply border-bc;
     }
 
     .contact-social{
-      @apply border-gray-100;
+      @apply border-bc;
     }
   }
 }
 
 
 .copyright-text p{
-  @apply text-gray-700;
+  @apply text-base-200;
 }
