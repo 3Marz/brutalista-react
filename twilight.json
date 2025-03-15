@@ -237,7 +237,7 @@
                     "type": "static",
                     "format": "description",
                     "id": "static-desc",
-                    "value": "<div ><h6 >معاينة العنصر</h6><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/images-slider-enhancement.png?v=1.1'></div>"
+                    "value": "<div ><h6 >معاينة العنصر</h6><img class='w-full' src='https://raw.githubusercontent.com/3Marz/Chip8-Emulator/main/assets/screenshot.png'></div>"
                 },
                 {
                     "type": "static",
@@ -306,6 +306,36 @@
                             "placeholder": "يمكنك إضافة تفاصيل إضافية هنا",
                             "minLength": 0,
                             "maxLength": 255
+                        },
+                        {
+                            "id": "slides.ns_alrabt",
+                            "type": "string",
+                            "format": "text",
+                            "label": "نص الرابط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "مثل: تسوق الان",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "slides.url",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "الرابط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
                         }
                     ]
                 }
