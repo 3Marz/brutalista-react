@@ -3792,6 +3792,10 @@ input[type=radio].sr-only:checked ~ div.s-wallet-table-tbody-tr a {
 }
 .s-wallet-table-tbody-tr a:where([dir="ltr"], [dir="ltr"] *){left:0px}
 .s-wallet-table-tbody-tr a:where([dir="rtl"], [dir="rtl"] *){right:0px}
+.\[--text-color\:var\(--base-100\)\;\]{--text-color:var(--base-100);}
+.\[--text-color\:var\(--base-50\)\;\]{--text-color:var(--base-50);}
+.\[--text-color\:var\(--bc\)\;\]{--text-color:var(--bc);}
+.\[--text-color\:var\(--bc-light\)\;\]{--text-color:var(--bc-light);}
 :root {
   --infinte-color: #a3a3a3;
   --main-text-color: var(--bc);
@@ -5435,23 +5439,18 @@ input[type=radio].sr-only:checked ~ div.s-block--slider-with-bg .slider-bg:befor
 .slide--cat-entry:hover {
   background-size: 110%;
 }
-.slide--cat-entry:hover p::after {
-  opacity: 1;
-  width: 100%;
+.slide--cat-entry:hover span {
+  background-size: 100% 2px;
 }
 .slide--cat-entry i{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
-.slide--cat-entry p{position:relative;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
-.slide--cat-entry p::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateY(5px);
-  width: 0px;
-  height: 2px;
-  background-color: var(--base-50);
-  opacity: 0;
-  transition: opacity 300ms, width 300ms;
+.slide--cat-entry span {
+  transition: background-size 300ms;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-image: linear-gradient(var(--text-color), var(--text-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
 }
 /*
   offers slider
@@ -6568,6 +6567,9 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
   background: radial-gradient(circle, transparent, transparent 50%, #FFFFFF 50%, #FFFFFF 100%) -4px -2px/14px 16px repeat-x;
 }
 .marquee-item{padding-left:1.25rem;padding-right:1.25rem;font-size:1.5rem;line-height:2rem}
+.marquee-container:hover * {
+  animation-play-state: paused;
+}
 @keyframes marquee-effect-rtl {
   from {
     transform: translateX(0%);
