@@ -3,6 +3,10 @@
   @apply text-2xl px-5;
 }
 
+.marquee-container:hover * {
+  animation-play-state: paused;
+}
+
 @keyframes marquee-effect-rtl {
   from {
     transform: translateX(0%);
