@@ -10,7 +10,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: white;
+      background: var(--base-50);
       transition: opacity 0.75s, visibility 0.75s;
       z-index: 9999;
   }
@@ -22,13 +22,21 @@
 
   .loader-init::after {
       content: "";
+	  background-image: url( {{ store.logo }} );
       width: 36px;
       height: 36px;
-      border: 3px solid #eee;
-      border-top-color: #5bd5c4;
-      border-radius: 50%;
+      /*border: 3px solid #eee;*/
+      /*border-top-color: #5bd5c4;*/
+      /*border-radius: 50%;*/
       animation: loading 0.75s ease infinite;
   }
+  /*.loader-init::after {*/
+  /* content: "";*/
+  /* width: 36px;*/
+  /* height: 36px;*/
+  /* border: 2px black;*/
+  /* animation: loading 0.75s ease infinite;*/
+  /*}*/
 
   @keyframes loading {
       from {
