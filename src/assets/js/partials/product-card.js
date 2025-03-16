@@ -59,7 +59,7 @@ class ProductCard extends HTMLElement {
 	getProductBadge() {
 		if (this.product.promotion_title) {
 			return `
-				<div class="promotion-title">
+				<div class="promotion-title pointer-events-none">
 					${this.product.promotion_title}
 				</div>`
 		}
@@ -68,7 +68,7 @@ class ProductCard extends HTMLElement {
 		//}
 		if (this.product?.is_out_of_stock) {
 			return `
-				<div class="absolute top-0 right-0 z-[3] w-32 h-32 overflow-hidden flex items-center justify-center">
+				<div class="absolute top-0 right-0 z-[3] w-32 h-32 overflow-hidden flex items-center justify-center pointer-events-none">
 					<span class="text-center outline-2 outline outline-[#7a0000] border-y-2 border-yellow-50 border-dashed text-xs md:text-sm rotate-45 translate-x-6 -translate-y-6 px-4 py-1 w-[200%] bg-[#7a0000] text-yellow-50 absolute">
 						${this.outOfStock}
 					</span>
