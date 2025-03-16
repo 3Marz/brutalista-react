@@ -308,14 +308,14 @@
     i {
       // @apply translate-y-[-2px];
     }
-    p {
-      // @apply translate-y-[-2px];
+    span {
+      background-size: 100% 2px;
     }
-    p::after {
-      opacity: 1;
-      width: 100%;
-      // transform: translate3d(0, 6px, 0);
-    }
+    // p::after {
+    //   opacity: 1;
+    //   width: 100%;
+    //   transform: translate3d(0, 6px, 0);
+    // }
   }
 
   // i {
@@ -325,22 +325,27 @@
     @apply transition;
   }
 
-  p {
-    @apply transition relative;
+  span {
+    transition: background-size 300ms;
+    text-decoration: none;
+    background-image: linear-gradient(var(--text-color), var(--text-color));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
   }
  
-  p::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(5px);
-    width: 0px;
-    height: 2px;
-    background-color: var(--base-50);
-    opacity: 0;
-    transition: opacity 300ms, width 300ms;
-  }
+  // p::after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   transform: translateY(5px);
+  //   width: 0px;
+  //   height: 2px;
+  //   background-color: var(--base-50);
+  //   opacity: 0;
+  //   transition: opacity 300ms, width 300ms;
+  // }
 }
 
 /*

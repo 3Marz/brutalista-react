@@ -24,7 +24,7 @@
               {% if component.show_cats %}
                 {% for cat in component.categories %}
                     <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ cat.url }}" class="slide--cat-entry" style="{{ cat.image ? "background-image: url(#{cat.image})" : "" }}">
+                        <a href="{{ cat.url }}" class="slide--cat-entry [--text-color:var(--base-100);]" style="{{ cat.image ? "background-image: url(#{cat.image})" : "" }}">
 
 							<div class="bg-bc opacity-45 w-full h-full"></div>
 
@@ -32,7 +32,9 @@
 								{% if not cat.image %}
 								  <i class="{{ cat.icon }} mb-3"></i>
 								{% endif %}
-								<p>{{ cat.name }}</p>
+								<div class="text-center">
+									<span>{{ cat.name }}</span>
+								</div>
 							</div>
 
                         </a>
@@ -42,9 +44,11 @@
                 {% for link in component.links %}
                   {% if link.title %}
                     <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ link.url }}" class="slide--cat-entry text-lg sm:text-lg">
+                        <a href="{{ link.url }}" class="slide--cat-entry text-lg sm:text-lg [--text-color:var(--bc-light);]">
                             <i class="{{ link.icon }} mb-3"></i>
-                            <p class="after:!bg-bc">{{ link.title }}</p>
+							<div class="text-center">
+								<span class="after:!bg-bc">{{ link.title }}</span>
+							</div>
                         </a>
                     </div>
                   {% endif %}
