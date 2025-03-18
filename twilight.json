@@ -322,26 +322,11 @@
                             "minLength": 6,
                             "maxLength": 30
                         },
-                        {
-                            "id": "slides.url",
-                            "type": "string",
-                            "format": "url",
-                            "inputType": "url",
-                            "label": "الرابط",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "e.g. https://salla.sa",
-                            "icon": "sicon-link",
-                            "value": null,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
-                        },
 						{
 							"type": "items",
 							"icon": "sicon-link",
-							"label": "رابط",
-							"id": "slides.ac_url",
+							"label": "الرابط",
+							"id": "slides.url",
 							"value": [],
 							"required": false,
 							"format": "variable-list",
