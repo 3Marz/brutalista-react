@@ -296,6 +296,27 @@
 }
 
 /*
+  Brutal Categories
+*/
+.cat-entry-br {
+
+  &:hover {
+    p {
+      background-size: 100% 2px;
+    }
+  }
+
+  p {
+    transition: background-size 300ms;
+    text-decoration: none;
+    background-image: linear-gradient(var(--base-300), var(--base-300));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+  }
+}
+
+/*
   Main Links Block
 */
 .slide--cat-entry {
