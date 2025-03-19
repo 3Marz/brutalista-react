@@ -545,6 +545,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-5{margin-top:1.25rem}
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
+.mt-auto{margin-top:auto}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -593,6 +594,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .min-h-\[34px\]{min-height:34px}
 .min-h-full{min-height:100%}
 .min-h-screen{min-height:100vh}
+.min-h-32{min-height:8rem}
 .\!w-36{width:9rem !important}
 .\!w-\[160px\]{width:160px !important}
 .w-10{width:2.5rem}
@@ -6632,6 +6634,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:h-44{height:11rem}
 .sm\:h-auto{height:auto}
 .sm\:h-full{height:100%}
+.sm\:min-h-44{min-height:11rem}
 .sm\:\!w-\[220px\]{width:220px !important}
 .sm\:w-4\/5{width:80%}
 .sm\:grow-0{flex-grow:0}
@@ -6715,6 +6718,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .lg\:hidden{display:none}
 .lg\:h-60{height:15rem}
 .lg\:min-h-\[528px\]{min-height:528px}
+.lg\:min-h-60{min-height:15rem}
 .lg\:w-10\/12{width:83.333333%}
 .lg\:w-24{width:6rem}
 .lg\:w-5\/12{width:41.666667%}
