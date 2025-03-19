@@ -1081,6 +1081,13 @@
                     "required": false
                 }
             ]
+        },
+        {
+            "key": "4db147de-aef1-4d88-b601-1d552cafc841",
+            "title": "تصنيفات مميزة  (بروتال)",
+            "icon": "sicon-ellipsis-filled",
+            "path": "home.categories",
+            "fields": []
         }
     ],
     "support_url": null,
