@@ -1087,7 +1087,23 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "العنوان هنا...",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": null,
