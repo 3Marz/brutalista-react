@@ -1118,6 +1118,13 @@
                     "required": false
                 }
             ]
+        },
+        {
+            "key": "6eae83e4-10f8-4c9d-b60f-4606d801b14e",
+            "title": "صور مربعة (بروتال)",
+            "icon": "sicon-images",
+            "path": "home.square-banner-brutal",
+            "fields": []
         }
     ],
     "support_url": null,
