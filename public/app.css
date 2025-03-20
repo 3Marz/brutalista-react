@@ -5277,10 +5277,10 @@ input[type=radio].sr-only:checked ~ div.s-block--hero-slider .swiper-slide .over
 }
 .banner--fixed img{display:block;width:100%;border-radius:var(--br);border-style:none;--tw-bg-opacity:1;background-color:rgba(243, 244, 246, 1);background-color:rgba(243, 244, 246, var(--tw-bg-opacity, 1));-o-object-fit:cover;object-fit:cover}
 /* Square Banner Block */
-.banner-entry{position:relative;height:200px;overflow:hidden;border-radius:var(--br);--tw-bg-opacity:1;background-color:rgba(243, 244, 246, 1);background-color:rgba(243, 244, 246, var(--tw-bg-opacity, 1));background-size:cover;background-position:center;background-repeat:no-repeat;padding:0.75rem;text-align:center;color:var(--base-100)}
+.banner-entry{position:relative;display:flex;height:200px;align-items:flex-end;justify-content:center;overflow:hidden;border-radius:var(--br);--tw-bg-opacity:1;background-color:rgba(243, 244, 246, 1);background-color:rgba(243, 244, 246, var(--tw-bg-opacity, 1));background-size:cover;background-position:center;background-repeat:no-repeat;padding:0.75rem;text-align:center;color:var(--base-100)}
 @media (min-width: 480px){
 .banner-entry{padding:1rem}}
-.banner-entry article{display:flex;height:100%;flex-direction:column;align-items:center;justify-content:center;padding:0.625rem}
+.banner-entry article{border-radius:var(--br);border-width:2px;border-color:var(--bc);background-color:var(--base-100);padding:0.625rem}
 .banner-entry.square-photos h3{height:100%;padding-left:0.75rem;padding-right:0.75rem}
 .banner-entry h3{display:flex;flex-direction:column;justify-content:center}
 @media (min-width: 480px){
@@ -6663,6 +6663,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:items-center{align-items:center}
 .sm\:justify-start{justify-content:flex-start}
 .sm\:gap-4{gap:1rem}
+.sm\:gap-5{gap:1.25rem}
 .sm\:gap-6{gap:1.5rem}
 .sm\:gap-8{gap:2rem}
 .sm\:p-1{padding:0.25rem}
