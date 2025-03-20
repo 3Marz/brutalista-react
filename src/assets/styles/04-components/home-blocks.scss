@@ -85,7 +85,7 @@
     @apply h-full px-3;
   }
 
-  h3{
+  h6{
     @apply flex flex-col justify-center xs:px-1;
    
     &.text-with-border{
@@ -101,19 +101,19 @@
     @apply line-clamp-2
   }
 
-  h3,p{
-    @apply opacity-0 hover:opacity-100 transition-all duration-300 relative z-1 translate-y-6;
+  h6,p{
+    @apply relative z-1;
   }
   
-  &:hover{
-    h3{
-      @apply opacity-100 translate-y-0;
-    }
-
-    p{
-      @apply opacity-80 translate-y-0;
-    }
-  }
+  // &:hover{
+  //   h3{
+  //     @apply opacity-100 translate-y-0;
+  //   }
+  //
+  //   p{
+  //     @apply opacity-80 translate-y-0;
+  //   }
+  // }
 
   .two-row &{
     &:first-child{
@@ -123,7 +123,7 @@
         @apply opacity-100;
       }
 
-      h3{
+      h6{
         @apply text-2xl leading-12;
       }
     }
