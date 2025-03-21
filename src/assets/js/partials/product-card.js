@@ -214,7 +214,7 @@ class ProductCard extends HTMLElement {
 						name="product-name-${this.product.id}"
 						aria-label="Add or remove to wishlist"
 						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 -translate-x-10 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
-						onclick="document.querySelector('quick-buy').loadProduct(${this.product.id})"
+						onclick="document.getElementById('quick-view-modal')?.loadProduct(${this.product.id})"
 					>
 						<i class="sicon-eye"></i>
 					</salla-button>
