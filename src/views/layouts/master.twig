@@ -64,6 +64,7 @@
     <script defer src="{{ 'main-menu.js'|asset }}"></script>
 	<script defer src="{{ 'mobile-drawer.js'|asset }}" ></script>
 	<script defer src="{{ 'search-btn.js'|asset }}" ></script>
+	<script defer src="{{ 'quick-view.js'|asset }}" ></script>
 
     {% block head_scripts %}{% endblock %}
 
@@ -150,6 +151,9 @@
 {% if user.type=='guest' %}
     <salla-login-modal></salla-login-modal>
 {% endif %}
+
+<quick-view></quick-view>
+
 {% block scripts %}{% endblock %}
 </body>
 </html>
