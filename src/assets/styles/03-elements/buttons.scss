@@ -187,6 +187,13 @@ salla-button {
   }
 }
 
+// share button on quick view modal
+.quick-view-share-button {
+  .s-social-share-btn {
+    background: transparent !important;
+  }
+}
+
 /*
 * Links ---------------------------------------------------
 */

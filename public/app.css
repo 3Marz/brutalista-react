@@ -630,8 +630,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .flex-grow{flex-grow:1}
 .basis-0{flex-basis:0px}
 .table-fixed{table-layout:fixed}
-.-translate-x-10{--tw-translate-x:-2.5rem;transform:translate(-2.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
-.-translate-x-5{--tw-translate-x:-1.25rem;transform:translate(-1.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .-translate-y-6{--tw-translate-y:-1.5rem;transform:translate(var(--tw-translate-x), -1.5rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .translate-x-6{--tw-translate-x:1.5rem;transform:translate(1.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), 0px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -4533,6 +4531,9 @@ button.btn--coupon:where([dir="rtl"], [dir="rtl"] *){left:0px;border-top-right-r
 button.btn--coupon .s-button-text{display:flex !important}
 salla-button.has-not-coupon button .icon, salla-button.has-coupon button .coupon-text{display:none}
 salla-button.has-coupon button{width:3rem;padding-left:0px;padding-right:0px}
+.quick-view-share-button .s-social-share-btn {
+  background: transparent !important;
+}
 /*
 * Links ---------------------------------------------------
 */
@@ -5536,7 +5537,7 @@ salla-slider .s-slider-nav-arrow svg{fill:var(--base-300)}
 salla-slider .s-slider-nav-arrow svg:hover{fill:#414042;fill:var(--color-primary)}
 salla-slider .s-slider-nav-arrow.swiper-button-disabled:hover{border-color:var(--base-300)}
 salla-slider .s-slider-nav-arrow.swiper-button-disabled svg{fill:var(--base-300)}
-salla-slider.details-slider .s-slider-container{background-color:var(--base-100)}
+salla-slider.details-slider .s-slider-container{background-color:transparent}
 salla-slider.details-slider .swiper-slide{position:relative;overflow:hidden;border-radius:var(--br);border-width:2px;border-color:var(--bc);background-color:var(--base-100);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
 salla-slider.details-slider salla-button.btn--wishlist{position:absolute;bottom:1rem;z-index:2}
 input[type=radio].sr-only divsalla-slider.details-slider salla-button.btn--wishlist {
@@ -5549,9 +5550,16 @@ input[type=radio].sr-only:checked ~ divsalla-slider.details-slider salla-button.
 salla-slider.details-slider salla-button.btn--wishlist{display:none}}
 salla-slider.details-slider salla-button.btn--wishlist:where([dir="ltr"], [dir="ltr"] *){left:1rem}
 salla-slider.details-slider salla-button.btn--wishlist:where([dir="rtl"], [dir="rtl"] *){right:1rem}
-salla-slider.details-slider .s-slider-block__title-nav{display:none}
-@media (min-width: 640px){
-salla-slider.details-slider .s-slider-block__title-nav{display:flex}}
+salla-slider.details-slider.modal-slider .s-slider-block__title-nav{width:-moz-fit-content;width:fit-content;
+  top: calc(100% - 1.25rem)}
+salla-slider.details-slider .s-slider-nav-arrow{border-style:solid !important;background-color:var(--base-50) !important;--tw-shadow:var(--neo-shadow) !important;--tw-shadow-colored:var(--neo-shadow) !important;box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow) !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow) !important}
+salla-slider.details-slider .s-slider-nav-arrow{border-width:1px;border-color:var(--bc);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
+salla-slider.details-slider .s-slider-nav-arrow:hover{border-color:#414042;border-color:var(--color-primary)}
+salla-slider.details-slider .s-slider-nav-arrow svg{fill:var(--bc)}
+salla-slider.details-slider .s-slider-nav-arrow svg:hover{fill:#414042;fill:var(--color-primary)}
+salla-slider.details-slider .s-slider-nav-arrow.swiper-button-disabled{--tw-shadow:0 0 rgba(0,0,0,0) !important;--tw-shadow-colored:0 0 rgba(0,0,0,0) !important;box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0) !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow) !important}
+salla-slider.details-slider .s-slider-nav-arrow.swiper-button-disabled{border-color:var(--base-200)}
+salla-slider.details-slider .s-slider-nav-arrow.swiper-button-disabled svg{fill:var(--base-200)}
 salla-slider .slide--one-fourth{height:auto;width:100%;max-width:250px}
 @media (min-width: 640px){
 salla-slider .slide--one-fourth{width:50%;max-width:320px}}
@@ -6565,7 +6573,9 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
   border-bottom-right-radius: 0.375rem !important;
   border-bottom-left-radius: 0.375rem !important;
 }
-.s-modal-body{border-width:2px;border-color:var(--bc);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
+.s-modal-close{border-bottom-right-radius:50%;background-color:var(--base-50)}
+.s-modal-close svg{fill:var(--bc)}
+.s-modal-body{max-height:100dvh;overflow:scroll;border-width:2px;border-color:var(--bc);background-color:var(--base-50);--tw-shadow:var(--neo-shadow);--tw-shadow-colored:var(--neo-shadow);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
 .s-quantity-input-container{border-radius:var(--br);border-width:2px;border-color:var(--bc);background-color:var(--base-50)}
 .s-quantity-input-input{border-style:none !important}
 .s-quantity-input-input{background-color:transparent;color:var(--bc)}
@@ -6706,6 +6716,8 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:w-72{width:18rem}
 .md\:w-96{width:24rem}
 .md\:w-auto{width:auto}
+.md\:-translate-x-10{--tw-translate-x:-2.5rem;transform:translate(-2.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.md\:-translate-x-5{--tw-translate-x:-1.25rem;transform:translate(-1.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
@@ -6726,6 +6738,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:text-5xl{font-size:3rem;line-height:1}
 .md\:text-base{font-size:1rem;line-height:1.5rem}
 .md\:text-sm{font-size:0.875rem;line-height:1.25rem}
+.md\:opacity-0{opacity:0}
 .md\:first\:pt-24:first-child{padding-top:6rem}}
 @media (min-width: 1024px){
 .lg\:not-sr-only{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}
@@ -6776,6 +6789,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .xl\:px-0{padding-left:0px;padding-right:0px}}
 @media (min-width: 480px){
 .xs\:top-5{top:1.25rem}
+.xs\:flex-row{flex-direction:row}
 .xs\:p-11{padding:2.75rem}
 .xs\:p-4{padding:1rem}
 .xs\:p-7{padding:1.75rem}}

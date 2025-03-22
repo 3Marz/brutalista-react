@@ -6,7 +6,10 @@
 
   }
   &-close {
-
+    @apply bg-base-50 rounded-br-[50%];
+    svg {
+      @apply fill-bc;
+    }
   }
   &-header {
 
@@ -54,7 +57,7 @@
 
   }
   &-body {
-    @apply border-2 border-bc shadow-neo;
+    @apply bg-base-50 border-2 border-bc shadow-neo max-h-dvh overflow-scroll;
   }
   &-padding {
 

@@ -191,15 +191,15 @@ class ProductCard extends HTMLElement {
 					/>
 				</a>
 				
-				<div class="absolute bottom-1 left-1 flex flex-col gap-2 group-hover:opacity-100 opacity-0">
+				<div class="absolute bottom-1 left-1 flex flex-col gap-2 group-hover:opacity-100 md:opacity-0">
 					<salla-button
-						size="${this.minimal ? "small" : "medium"}"
+						size="medium"
 						shape="icon"
 						fill="outline"
 						color="dark"
 						name="product-name-${this.product.id}"
 						aria-label="Add or remove to wishlist"
-						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 -translate-x-5 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
+						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 md:-translate-x-5 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
 						onclick="salla.wishlist.toggle(${this.product.id})"
 						data-id="${this.product.id}"
 					>
@@ -207,13 +207,13 @@ class ProductCard extends HTMLElement {
 					</salla-button>
 
 					<salla-button
-						size="${this.minimal ? "small" : "medium"}"
+						size="medium"
 						shape="icon"
 						fill="outline"
 						color="dark"
 						name="product-name-${this.product.id}"
 						aria-label="Add or remove to wishlist"
-						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 -translate-x-10 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
+						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 md:-translate-x-10 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
 						onclick="document.getElementById('quick-view-modal')?.loadProduct(${this.product.id})"
 					>
 						<i class="sicon-eye"></i>

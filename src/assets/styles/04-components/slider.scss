@@ -16,7 +16,7 @@ salla-slider{
   
   &.details-slider{
     .s-slider-container{ 
-      @apply bg-base-100;
+      @apply bg-transparent;
     }
 
     .swiper-slide{
@@ -27,8 +27,23 @@ salla-slider{
       @apply absolute rtl:right-4 ltr:left-4 bottom-4 z-[2] sm:hidden;
     }
 
-    .s-slider-block__title-nav{
-      @apply hidden sm:flex;
+    &.modal-slider {
+      .s-slider-block__title-nav{
+        @apply w-fit;
+        top: calc(100% - 1.25rem);
+      }
+    }
+    .s-slider-nav-arrow {
+      @apply border !border-solid border-bc hover:border-primary !bg-base-50 transition-all !shadow-neo;
+      svg {
+        @apply fill-bc hover:fill-primary;
+      }
+      &.swiper-button-disabled {
+        @apply border-base-200 !shadow-none;
+        svg {
+          @apply fill-base-200;
+        }
+      }
     }
   }
 
