@@ -1,0 +1,19 @@
+
+<section class="s-block container">
+	{% if component.title %}
+		<h3>{{ component.title }}</h3>
+	{% endif %}
+
+	<div>
+		{% for index, question in component.questions %}
+			<div class="tab">
+				<input type="checkbox" name="faq" id="accordion-{{ index }}" />
+				<label for="accordion-{{ index }}" class="tab__label">{{ question.question }}</label>
+				<div class="tab__content">
+					{{ question.answer }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>
+
