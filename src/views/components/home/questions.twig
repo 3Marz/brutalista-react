@@ -1,14 +1,21 @@
 
 <section class="s-block container">
 	{% if component.title %}
-		<h3>{{ component.title }}</h3>
+		<div class="s-block__title">
+			<div class="right-side">
+				<h2>{{ component.title }}</h2>
+			</div>
+		</div>
 	{% endif %}
 
-	<div>
+	<div class="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2">
 		{% for index, question in component.questions %}
-			<div class="tab">
+			<div class="tab group">
 				<input type="checkbox" name="faq" id="accordion-{{ index }}" />
-				<label for="accordion-{{ index }}" class="tab__label">{{ question.question }}</label>
+				<label for="accordion-{{ index }}" class="tab__label">
+					<p>{{ question.question }}</p>
+					<i class="group-hover:-translate-y-1 transition text-lg sicon-keyboard_arrow_down"></i>
+				</label>
 				<div class="tab__content">
 					{{ question.answer }}
 				</div>
