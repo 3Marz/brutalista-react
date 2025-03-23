@@ -1270,6 +1270,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "d6a9fe9f-9fdf-46ac-8663-ceaca83e40af",
+            "title": "أسئلة شائعة",
+            "icon": "sicon-help",
+            "path": "home.questions",
+            "fields": []
         }
     ],
     "support_url": null,
