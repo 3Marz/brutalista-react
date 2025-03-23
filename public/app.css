@@ -5516,13 +5516,11 @@ input[type=radio].sr-only:checked ~ div.s-block--slider-with-bg .slider-bg:befor
 .s-block--features__item:first-child{grid-column:span 2 / span 2}
 @media (min-width: 768px){
 .s-block--features__item:first-child{grid-column:span 1 / span 1}}
-.s-block--features__item .feature-icon{margin-bottom:0.75rem;display:flex;height:4rem;width:4rem;align-items:center;justify-content:center;overflow:hidden;border-radius:9999px;background-color:#414042;background-color:var(--color-primary)}
+.s-block--features__item .feature-icon{margin-bottom:0.75rem;display:flex;height:4rem;width:4rem;--tw-translate-y:0px;transform:translate(var(--tw-translate-x), 0px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));align-items:center;justify-content:center;overflow:hidden;border-radius:9999px;background-color:#414042;background-color:var(--color-primary);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .s-block--features__item .feature-icon i{font-size:1.875rem;line-height:2.25rem;color:#ff6767;color:var(--color-primary-reverse)}
 .s-block--features__item h2{margin-bottom:0.25rem;font-size:0.875rem;line-height:1.25rem;font-weight:700;--tw-text-opacity:1;color:rgba(31, 41, 55, 1);color:rgba(31, 41, 55, var(--tw-text-opacity, 1))}
 .s-block--features__item p{font-size:0.875rem;line-height:1.25rem;--tw-text-opacity:1;color:rgba(107, 114, 128, 1);color:rgba(107, 114, 128, var(--tw-text-opacity, 1))}
-.s-block--features__item:hover .feature-icon i {
-  animation: toRightFromLeft 0.3s forwards;
-}
+.s-block--features__item:hover .feature-icon{--tw-translate-y:-0.5rem;transform:translate(var(--tw-translate-x), -0.5rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .s-block--features + .s-block--features,
 .s-block--fixed-banner + .s-block--fixed-banner,
 .s-block--banners + .s-block--banners {
@@ -6581,6 +6579,12 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .s-quantity-input-button{fill:var(--bc)}
 .s-form-control{border-color:var(--bc);background-color:var(--base-50)}
 .s-product-options-wrapper{background-color:transparent}
+.s-product-options-colors-item label span {
+  border-color: var(--bc-light) !important;
+}
+.s-product-options-colors-item label div {
+  color: var(--bc-light) !important;
+}
 .ticket {
   filter: drop-shadow(1px 0px var(--bc)) drop-shadow(-1px 0px var(--bc)) drop-shadow(0px 1px var(--bc)) drop-shadow(0px -1px var(--bc));
 }
