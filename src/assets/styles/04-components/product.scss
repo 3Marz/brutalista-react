@@ -226,7 +226,7 @@
 }
 
 // product options file upload component
-.product-option-uploader{
+.product-option-uploader, salla-file-upload{
   .s-file-upload-wrapper{
     min-height: 120px;
     .filepond--list-scroller{
@@ -234,7 +234,7 @@
     }
     .filepond--drop-label {
       min-height: 120px !important;
-      @apply bg-white cursor-pointer border-dashed rounded-md border border-gray-200;
+      @apply bg-base-50 cursor-pointer border-dashed rounded-neo border-2 border-base-300;
     }
     .product-option-uploader-placholder{
       @apply flex flex-col justify-center items-center;

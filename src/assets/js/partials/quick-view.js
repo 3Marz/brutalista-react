@@ -19,7 +19,7 @@ class QuickViewModal extends HTMLElement {
 	}
 
 	loadProduct(prodId) {
-		salla.product.getDetails(prodId, ["images", "sold_quantity", "category"])
+		salla.product.getDetails(prodId, ["images", "sold_quantity", "category", "options"])
 			.then((res) => {
 				console.log(res)
 				document.querySelector('#quick-view-inner-modal')?.open();	
@@ -30,14 +30,6 @@ class QuickViewModal extends HTMLElement {
 				this.product = res.data
 				this.render()
 			})
-	}
-
-	getProductImages() {
-		if (!this.product) {
-			return	``
-		}
-
-
 	}
 	
 	getAddButtonLabel() {
@@ -55,6 +47,15 @@ class QuickViewModal extends HTMLElement {
 
 		// donating
 		return salla.lang.get('pages.products.donation_exceed');
+	}
+
+	getProductOptions () {
+		if (!this.product) { return }
+		return `
+			${this.product.options.length ? `
+				<salla-product-options class="!px-0" options="${ this.product.options }" product-id="${ this.product.id }"></salla-product-options>
+			` :	``}
+		`
 	}
 
 	render() {
@@ -123,34 +124,43 @@ class QuickViewModal extends HTMLElement {
 							` : ``}
 							<a class="text-2xl" href="${this.product.url}">${this.product.name}</a>
 							
-                            <div class="flex whitespace-nowrap price-wrapper gap-4 items-center">
-                              <div class="${ this.product.is_on_sale ? '' : 'hidden' } price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                                <h2 class="total-price text-red-800 font-bold text-xl inline-block">${ salla.money(this.product.sale_price) }</h2>
-                                <span class="before-price text-gray-500 line-through">${ salla.money(this.product.regular_price) }</span>
-                              </div>
-                              <div class="starting-or-normal-price gap-4 ${ this.product.is_on_sale ? 'hidden' : 'flex' }">
-                                ${ this.product.starting_price ? `
-									<span class="starting-price-title">${ salla.lang.get('pages.products.starting_price') }</span>
-								`: `` } 
-                                <h2 class="total-price font-bold text-xl inline-block"> ${ this.product.starting_price ? salla.money(this.product.starting_price) : salla.money(this.product.price) }</h2>
-                              </div>
-                            </div>
+							<form class="form product-form" enctype="multipart/form-data" method="post"
+								  onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
+								<input type="hidden" name="id" value="{{ product.id }}">
 
-							<salla-installment price="${ this.product.price }"></salla-installment>
+								<div class="flex whitespace-nowrap price-wrapper gap-4 items-center">
+								  <div class="${ this.product.is_on_sale ? '' : 'hidden' } price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
+									<h2 class="total-price text-red-800 font-bold text-xl inline-block">${ salla.money(this.product.sale_price) }</h2>
+									<span class="before-price text-gray-500 line-through">${ salla.money(this.product.regular_price) }</span>
+								  </div>
+								  <div class="starting-or-normal-price gap-4 ${ this.product.is_on_sale ? 'hidden' : 'flex' }">
+									${ this.product.starting_price ? `
+										<span class="starting-price-title">${ salla.lang.get('pages.products.starting_price') }</span>
+									`: `` } 
+									<h2 class="total-price font-bold text-xl inline-block"> ${ this.product.starting_price ? salla.money(this.product.starting_price) : salla.money(this.product.price) }</h2>
+								  </div>
+								</div>
 
-							<div class="w-full">
-								<salla-add-product-button width="wide"
-									class="no-background"
-									product-id="${this.product.id}"
-									product-status="${this.product.status}"
-									product-type="${this.product.type}"
-								>
-									${this.product.status == 'sale' ?
-										`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
-									}
-									<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
-								</salla-add-product-button>
-							</div>
+								${this.getProductOptions()}
+
+								<div class="w-full">
+									<salla-add-product-button width="wide"
+										product-id="${this.product.id}"
+										product-status="${this.product.status}"
+										product-type="${this.product.type}"
+										type="submit"
+										loader-position="end"
+									>
+										${this.product.status == 'sale' ?
+											`<i class="text-base sicon-${this.product.type == 'booking' ? 'calendar-time' : 'shopping-bag'}"></i>` : ``
+										}
+										<span>${this.product.add_to_cart_label ? this.product.add_to_cart_label : this.getAddButtonLabel()}</span>
+									</salla-add-product-button>
+								</div>
+
+								<salla-installment price="${ this.product.price }"></salla-installment>
+
+							</form>
 						</div>
 					`
 					:

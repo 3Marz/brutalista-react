@@ -7,7 +7,7 @@ salla-slider{
       @apply fill-base-300 hover:fill-primary;
     }
     &.swiper-button-disabled {
-      @apply hover:border-base-300;
+      @apply opacity-70 hover:border-base-300;
       svg {
         @apply fill-base-300;
       }
@@ -39,7 +39,7 @@ salla-slider{
         @apply fill-bc hover:fill-primary;
       }
       &.swiper-button-disabled {
-        @apply border-base-200 !shadow-none;
+        @apply opacity-70 border-base-200 !shadow-none;
         svg {
           @apply fill-base-200;
         }
