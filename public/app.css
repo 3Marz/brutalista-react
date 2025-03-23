@@ -718,6 +718,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .border-dashed{border-style:dashed}
 .border-double{border-style:double}
 .border-base-200{border-color:var(--base-200)}
+.border-base-300{border-color:var(--base-300)}
 .border-bc{border-color:var(--bc)}
 .border-blue-200{--tw-border-opacity:1;border-color:rgba(191, 219, 254, 1);border-color:rgba(191, 219, 254, var(--tw-border-opacity, 1))}
 .border-gray-100{--tw-border-opacity:1;border-color:rgba(243, 244, 246, 1);border-color:rgba(243, 244, 246, var(--tw-border-opacity, 1))}
@@ -726,7 +727,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .border-green-300{--tw-border-opacity:1;border-color:rgba(134, 239, 172, 1);border-color:rgba(134, 239, 172, var(--tw-border-opacity, 1))}
 .border-primary{border-color:#414042;border-color:var(--color-primary)}
 .border-yellow-50{--tw-border-opacity:1;border-color:rgba(254, 252, 232, 1);border-color:rgba(254, 252, 232, var(--tw-border-opacity, 1))}
-.border-base-300{border-color:var(--base-300)}
 .bg-\[\#7a0000\]{--tw-bg-opacity:1;background-color:rgba(122, 0, 0, 1);background-color:rgba(122, 0, 0, var(--tw-bg-opacity, 1))}
 .bg-base-100{background-color:var(--base-100)}
 .bg-base-200{background-color:var(--base-200)}
@@ -4924,7 +4924,7 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     opacity: 1;
     transform: rotate(180deg);
   }
-  .main-menu .sub-menu{visibility:hidden;position:absolute;z-index:20;--tw-scale-x:.75;--tw-scale-y:.75;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.75) scaleY(.75);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));border-bottom-right-radius:var(--br);border-bottom-left-radius:var(--br);border-top-left-radius:var(--br);border-top-right-radius:var(--br);border-width:2px;border-color:var(--bc);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));font-weight:700;opacity:0;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
+  .main-menu .sub-menu{visibility:hidden;position:absolute;z-index:20;--tw-scale-x:.75;--tw-scale-y:.75;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.75) scaleY(.75);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));border-bottom-right-radius:var(--br);border-bottom-left-radius:var(--br);border-top-left-radius:var(--br);border-top-right-radius:var(--br);border-width:1px;border-color:var(--bc);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));font-weight:700;opacity:0;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 input[type=radio].sr-only div.main-menu .sub-menu {
   transition: all 0.3s;
 }
