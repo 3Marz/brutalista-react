@@ -22,6 +22,16 @@
   &-colors-wrapper{
 
   }
+  &-colors-item {
+    label {
+      span {
+        border-color: var(--bc-light) !important;
+      }
+      div {
+        color: var(--bc-light) !important;
+      }
+    }  
+  }
   &-date-element{
 
   }
