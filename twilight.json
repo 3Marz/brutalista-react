@@ -1276,7 +1276,68 @@
             "title": "أسئلة شائعة",
             "icon": "sicon-help",
             "path": "home.questions",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "العنوان هنا...",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "questions",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الاسئلة",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "questions.question",
+                            "type": "string",
+                            "format": "text",
+                            "label": "السؤال",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "عنوان السؤال",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": "100"
+                        },
+                        {
+                            "id": "questions.answer",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "جواب السؤال",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "الجواب هنا",
+                            "icon": "sicon-typography",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 20,
+                            "maxLength": "500"
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "10"
+                }
+            ]
         }
     ],
     "support_url": null,
