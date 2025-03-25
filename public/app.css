@@ -5473,7 +5473,7 @@ input[type=radio].sr-only:checked ~ div.s-block--slider-with-bg .slider-bg:befor
   background-size: 110%;
 }
 .slide--cat-entry:hover span {
-  background-size: 100% 2px;
+  background-size: 100% 1px;
 }
 .slide--cat-entry i{transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .slide--cat-entry span {
@@ -5483,7 +5483,7 @@ input[type=radio].sr-only:checked ~ div.s-block--slider-with-bg .slider-bg:befor
   background-image: linear-gradient(var(--text-color), var(--text-color));
   background-position: 0 100%;
   background-repeat: no-repeat;
-  background-size: 0% 2px;
+  background-size: 0% 1px;
 }
 /*
   offers slider
@@ -6480,6 +6480,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .s-button-icon {
   border-radius: var(--br) !important;
 }
+.s-button-icon .s-button-text{overflow:visible}
 .s-button-btn:hover {
   opacity: 1 !important;
 }

@@ -11,6 +11,9 @@
     
   }
   &-icon{
+    .s-button-text {
+      @apply overflow-visible;
+    }
     border-radius: var(--br) !important;
   }
   &-btn{
