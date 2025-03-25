@@ -448,3 +448,14 @@ salla-quantity-input[max='1']{
     @apply cursor-not-allowed
   }
 }
+
+// count down
+salla-count-down {
+
+  &[boxed="true"] {
+    .s-count-down-item {
+      @apply bg-base-50 border-2 border-bc shadow-neo rounded-neo;
+    }
+  }
+}
+
