@@ -12,7 +12,7 @@
 		{% for index, question in component.questions %}
 			<div class="tab group">
 				<input type="checkbox" name="faq" id="accordion-{{ index }}" />
-				<label for="accordion-{{ index }}" class="tab__label">
+				<label for="accordion-{{ index }}" class="tab__label no-select">
 					<p>{{ question.question }}</p>
 					<i class="group-hover:-translate-y-1 transition text-lg sicon-keyboard_arrow_down"></i>
 				</label>

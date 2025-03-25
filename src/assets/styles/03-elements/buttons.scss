@@ -22,6 +22,16 @@ salla-button {
   background-color: transparent !important;
 }
 
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .btn {
   @apply transition duration-300 flex-1 inline-flex justify-center items-center px-6 pb-2.5 pt-2 text-sm font-bold rounded-neo hover:opacity-80 whitespace-nowrap;
 
