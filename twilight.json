@@ -1338,6 +1338,13 @@
                     "maxLength": "10"
                 }
             ]
+        },
+        {
+            "key": "081b0f6c-932c-4443-9407-6cb3e8aab8b1",
+            "title": "صور مربعة 2 (بورتال)",
+            "icon": "sicon-border-all",
+            "path": "home.square-photos",
+            "fields": []
         }
     ],
     "support_url": null,
