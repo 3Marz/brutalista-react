@@ -1344,7 +1344,65 @@
             "title": "صور مربعة 2 (بورتال)",
             "icon": "sicon-border-all",
             "path": "home.square-photos",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "العنوان هنا...",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "links",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الروابط",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "links.name",
+                            "type": "string",
+                            "format": "text",
+                            "label": "عنوان الرابط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "عنوان الرابط هنا",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "links.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة الرابط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        }
+                    ],
+                    "value": [],
+                    "minLength": "3",
+                    "maxLength": "3"
+                }
+            ]
         }
     ],
     "support_url": null,
