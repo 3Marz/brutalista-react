@@ -1472,7 +1472,65 @@
             "title": "صورة ونص (بروتال)",
             "icon": "sicon-envelope",
             "path": "home.photo-and-text",
-            "fields": []
+            "fields": [
+                {
+                    "id": "main-title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان الرئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "العنوان هنا",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "sub_text",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "النص الفرعي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "النص هنا",
+                    "icon": "sicon-typography",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": "10",
+                    "maxLength": "400"
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "الصورة",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": true
+                },
+                {
+                    "id": "link_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان الرابط",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": null,
