@@ -90,7 +90,7 @@ class ProductCard extends HTMLElement {
 		if (this.product.is_on_sale) {
 			price = `<div class="s-product-card-sale-price">
 						<h4>${this.getPriceFormat(this.product.sale_price)}</h4>
-						<span>${this.getPriceFormat(this.product?.regular_price)}</span>
+						<span class="${this.fullImage ? "!text-base-100" : ""}">${this.getPriceFormat(this.product?.regular_price)}</span>
 					</div>`;
 		}
 		else if (this.product.starting_price) {
@@ -100,7 +100,7 @@ class ProductCard extends HTMLElement {
 					</div>`
 		}
 		else {
-			price = `<h4 class="s-product-card-price">${this.getPriceFormat(this.product?.price)}</h4>`
+			price = `<h4 class="s-product-card-price ${this.fullImage ? "!text-base-100" : ""}">${this.getPriceFormat(this.product?.price)}</h4>`
 		}
 
 		return price;
@@ -162,14 +162,14 @@ class ProductCard extends HTMLElement {
 	}
 
 	render() {
-		this.classList.add('h-full', 'flex', 'flex-col', 'gap-3', 'group', 'overflow-visible', 'relative');
+		this.classList.add('h-full', 'w-full', 'flex', `${this.minimal ? "flex-row" : "flex-col"}`, 'gap-3', 'group', 'overflow-visible', 'relative');
 		this.setAttribute('id', this.product.id);
 		!this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-vertical') : '';
 		this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-horizontal') : '';
 		//this.isHorizontal = this.horizontal && !this.fullImage && !this.minimal
 		this.fitImageHeight && !this.isSpecial && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-fit-height') : '';
 		this.isSpecial ? this.classList.add('s-product-card-special') : '';
-		this.fullImage ? this.classList.add('s-product-card-full-image') : '';
+		//this.fullImage ? this.classList.add('s-product-card-full-image') : '';
 		this.minimal ? this.classList.add('s-product-card-minimal') : '';
 		this.product?.donation ? this.classList.add('s-product-card-donation') : '';
 		this.shadowOnHover ? this.classList.add('s-product-card-shadow') : '';
@@ -178,9 +178,9 @@ class ProductCard extends HTMLElement {
 
 		this.innerHTML = `
 			${this.getProductBadge()}
-			<div class="group/img aspect-square w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
+			<div class="group/img ${this.fullImage ? `h-full` : `aspect-square`}  w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
-					<img class="group-hover/img:scale-110 transition-transform w-full h-full bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
+					<img class="${this.fullImage ? 'brightness-75' : ''} group-hover/img:scale-110 transition-transform w-full h-full bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
 						? 'contain'
 						: this.fitImageHeight
 							? this.fitImageHeight
@@ -191,7 +191,7 @@ class ProductCard extends HTMLElement {
 					/>
 				</a>
 				
-				<div class="absolute bottom-1 left-1 flex flex-col gap-2 group-hover:opacity-100 md:opacity-0">
+				<div class="absolute ${this.fullImage ? "top-2" : "bottom-2"} left-1 flex flex-col gap-2 group-hover:opacity-100 md:opacity-0">
 					<salla-button
 						size="medium"
 						shape="icon"
@@ -221,12 +221,18 @@ class ProductCard extends HTMLElement {
 				</div>
 
 			</div>
-			<div class="flex flex-grow justify-between flex-col gap-3 pb-2">
-				<div class="h-full w-full flex flex-col gap-2 px-2">
-					<h5>
-						<a class="hover:underline underline-offset-2 text-bc" href="${this.product?.url}">${this.product?.name}</a>
+			<div class="${this.fullImage ? "absolute bottom-0 p-4" : "pb-2"} flex flex-grow justify-between w-full flex-col gap-3">
+				<div class="h-full w-full flex flex-col gap-2 ${this.isSpecial ? `lg:gap-4` : ``} px-2 ">
+					<h5 class="${this.isSpecial ? `lg:text-xl` : ``}">
+						<a class="hover:underline underline-offset-2 ${this.fullImage ? `text-base-100` : `text-bc`}" href="${this.product?.url}">${this.product?.name}</a>
 					</h5>
+					${this.isSpecial && this.product?.subtitle ? `
+						<p class="text-sm opacity-80">${this.product?.subtitle}</p>
+					` : ``}
 					${this.getProductPrice()}
+					${this.isSpecial && this.product.discount_ends
+						? `<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${true} labeled=${true} />`
+					: ``}
 				</div>
 				
 				<div class="w-full">
