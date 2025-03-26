@@ -1,0 +1,14 @@
+
+<section class="s-block container">
+	
+	<div class="flex">
+		<img class="lazy w-full h-full" src="{{ component.image }}" />
+		<div class="w-full h-full p-3 flex flex-col">
+			<h3>{{component.main_title}}</h3>
+			{% if component.sub_text %}
+				<p>{{component.sub_text}}</p>
+			{% endif %}
+		</div>
+	</div>
+
+</section>
