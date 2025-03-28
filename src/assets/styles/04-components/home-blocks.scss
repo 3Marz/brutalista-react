@@ -227,7 +227,7 @@
 
 .s-block--special-products{
   .tabs{
-    @apply mb-4 sm:mb-0 rtl:space-x-reverse space-x-2 md:space-x-8 whitespace-nowrap overflow-x-auto;
+    @apply mb-4 rtl:space-x-reverse space-x-2 md:space-x-4 whitespace-nowrap overflow-x-auto;
 
     &__item{
       @apply flex-1 gap-2.5 sm:gap-8;

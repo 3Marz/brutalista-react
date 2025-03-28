@@ -128,7 +128,7 @@ class QuickViewModal extends HTMLElement {
 								  onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
 								<input type="hidden" name="id" value="{{ product.id }}">
 
-								<div class="flex whitespace-nowrap price-wrapper gap-4 items-center">
+								<div class="flex whitespace-nowrap price-wrapper py-2 gap-4 items-center">
 								  <div class="${ this.product.is_on_sale ? '' : 'hidden' } price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
 									<h2 class="total-price text-red-800 font-bold text-xl inline-block">${ salla.money(this.product.sale_price) }</h2>
 									<span class="before-price text-gray-500 line-through">${ salla.money(this.product.regular_price) }</span>
