@@ -169,6 +169,30 @@
             "icon": "sicon-format-text"
         },
         {
+            "id": "bg_color",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون الخلفية",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#f2efdd",
+            "required": false
+        },
+        {
+            "id": "border_color",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون الحواف",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#3d081b",
+            "required": false
+        },
+        {
             "id": "border-radius",
             "type": "boolean",
             "format": "switch",
@@ -191,6 +215,36 @@
             "value": true,
             "selected": true,
             "required": false
+        },
+        {
+            "id": "y_shadow_offset",
+            "type": "number",
+            "format": "units",
+            "label": "ازاحة الظل العامودية ( y )",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "Insert value",
+            "icon": "sicon-percentage",
+            "value": 3,
+            "required": true,
+            "unit": "بكسل",
+            "minimum": 0,
+            "maximum": "20"
+        },
+        {
+            "id": "x_shadow_offset",
+            "type": "number",
+            "format": "units",
+            "label": "ازاحة الظل الافقية ( x )",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "Insert value",
+            "icon": "sicon-percentage",
+            "value": 0,
+            "required": true,
+            "unit": "بكسل",
+            "minimum": 0,
+            "maximum": "20"
         }
     ],
     "components": [
