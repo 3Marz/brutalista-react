@@ -87,15 +87,15 @@
 			/* border radius */
 			--br: {{ theme.settings.get('border-radius') ? '0.75rem' : '0rem' }};
 			/* border color */
-			--bc: #3d081b;
-			--bc-dark: {{ theme.color.darker(0.25, '#3d081b') }};
-			--bc-light: {{ theme.color.lighter(0.25, '#3d081b') }};
+			--bc: {{ theme.settings.get('border_color') }};
+			--bc-dark: {{ theme.color.darker(0.25, "#{theme.settings.get('border_color')}") }};
+			--bc-light: {{ theme.color.lighter(0.25, "#{theme.settings.get('border_color')}") }};
 			/* base background color */
-			--base: #f2efdd;
-			--base-50: {{ theme.color.lighter(0.075, '#f2efdd') }};
+			--base: {{ theme.settings.get('bg_color') }};
+			--base-50: {{ theme.color.lighter(0.075, "#{theme.settings.get('bg_color')}") }};
 			--base-100: var(--base);
-			--base-200: {{ theme.color.darker(0.18, '#f2efdd') }};
-			--base-300: {{ theme.color.darker(0.28, '#f2efdd') }};
+			--base-200: {{ theme.color.darker(0.18, "#{theme.settings.get('bg_color')}") }};
+			--base-300: {{ theme.color.darker(0.28, "#{theme.settings.get('bg_color')}") }};
 
 
 			--x-shadow-offset: 0px;
