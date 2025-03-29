@@ -193,6 +193,18 @@
             "required": false
         },
         {
+            "id": "shadow_color",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون الظل",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#3d081b",
+            "required": false
+        },
+        {
             "id": "border-radius",
             "type": "boolean",
             "format": "switch",
