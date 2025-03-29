@@ -101,7 +101,7 @@
 			--x-shadow-offset: {{ theme.settings.get("x_shadow_offset") }}px;
 			--y-shadow-offset: {{ theme.settings.get("y_shadow_offset") }}px;
 			/* neo shadow offset */
-			--neo-shadow: var(--x-shadow-offset) var(--y-shadow-offset) var(--bc);
+			--neo-shadow: var(--x-shadow-offset) var(--y-shadow-offset) {{ theme.settings.get("shadow_color") }};
 
 			--navbar-height: 55px;
 
