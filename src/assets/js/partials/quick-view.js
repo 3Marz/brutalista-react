@@ -95,9 +95,7 @@ class QuickViewModal extends HTMLElement {
 											` 
 												: 
 											`
-											<div class="w-full">
-												<img width="100%" src="${image.url}" />
-											</div>
+											<img width="100%" src="${image.url}" />
 											` }
 									`) }
 								</div>
