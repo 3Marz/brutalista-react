@@ -126,7 +126,7 @@ class QuickViewModal extends HTMLElement {
 							
 							<form class="form product-form" enctype="multipart/form-data" method="post"
 								  onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
-								<input type="hidden" name="id" value="{{ product.id }}">
+								<input type="hidden" name="id" value="${this.product.id}">
 
 								<div class="flex whitespace-nowrap price-wrapper py-2 gap-4 items-center">
 								  <div class="${ this.product.is_on_sale ? '' : 'hidden' } price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">
