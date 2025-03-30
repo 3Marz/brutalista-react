@@ -257,6 +257,18 @@
             "unit": "بكسل",
             "minimum": "-20",
             "maximum": "20"
+        },
+        {
+            "id": "hide_add_to_cart_button",
+            "type": "boolean",
+            "format": "switch",
+            "label": "اخفاء زر \"اضافة الى السلة\" في بطاقة المنتج",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": false,
+            "required": false
         }
     ],
     "components": [
