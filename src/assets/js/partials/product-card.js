@@ -235,7 +235,7 @@ class ProductCard extends HTMLElement {
 					: ``}
 				</div>
 				
-				<div class="w-full">
+				<div class="w-full custom-add-to-cart-button">
 					<salla-add-product-button width="wide"
 						class="no-background"
 						product-id="${this.product.id}"

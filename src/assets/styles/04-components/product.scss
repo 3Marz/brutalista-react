@@ -117,6 +117,13 @@
 
 }
 
+// Hide add to cart
+.hide-add-to-cart {
+  .custom-add-to-cart-button {
+    @apply hidden;
+  }
+}
+
 /* Add to cart sticky bar */
 @media (max-width: 640px) {
   .is-sticky-product-bar{

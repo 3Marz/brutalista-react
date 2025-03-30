@@ -547,6 +547,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
 .mt-auto{margin-top:auto}
+.\!mb-0{margin-bottom:0px !important}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -601,6 +602,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!w-\[160px\]{width:160px !important}
 .w-10{width:2.5rem}
 .w-12{width:3rem}
+.w-16{width:4rem}
 .w-18{width:4.5rem}
 .w-20{width:5rem}
 .w-24{width:6rem}
@@ -5790,6 +5792,7 @@ input[type=radio].sr-only:checked ~ div.pie-wrapper {
   color: #414042;
   color: var(--color-primary);
 }
+.hide-add-to-cart .custom-add-to-cart-button{display:none}
 /* Add to cart sticky bar */
 @media (max-width: 640px) {
   .is-sticky-product-bar.product-single{padding-bottom:7rem}
@@ -6743,6 +6746,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:h-\[400px\]{height:400px}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-2\/4{width:50%}
+.md\:w-20{width:5rem}
 .md\:w-24{width:6rem}
 .md\:w-40{width:10rem}
 .md\:w-5\/6{width:83.333333%}
