@@ -455,6 +455,14 @@ salla-count-down {
   &[boxed="true"] {
     .s-count-down-item {
       @apply bg-base-50 border-2 border-bc shadow-neo rounded-neo;
+
+      &-value {
+        @apply text-[var(--bc-dark)];
+      }
+
+      &-label {
+        @apply text-bc opacity-100;
+      }
     }
   }
 }
