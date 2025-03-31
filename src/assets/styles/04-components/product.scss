@@ -7,13 +7,13 @@ salla-gifting {
 
 // Wishlist Product entry
 .product-entry {
-  @apply h-full transition-shadow duration-300 bg-white rounded-lg justify-between flex relative border-2 border-bc;
+  @apply h-full transition-shadow duration-300 bg-white rounded-neo justify-between flex relative border-2 border-bc;
 
   &--wishlist {
     @apply justify-between p-4 flex-col sm:flex-row;
 
     .product-entry__image {
-      @apply overflow-hidden w-16 h-12 md:w-20 md:h-16 rounded-md;
+      @apply overflow-hidden w-16 h-12 md:w-20 md:h-16 rounded-neo;
     }
 
     salla-button{

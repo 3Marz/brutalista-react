@@ -51,6 +51,21 @@
   @apply relative from-primary to-primary-d p-5 text-primary-reverse rounded-md;
 }
 
+// Icons
+.s-placeholder-icon,
+.s-products-list-placeholder span svg {
+  fill: var(--bc) !important;
+}
+.s-products-list-placeholder {
+  span {
+    @apply bg-transparent mb-0;
+  }
+
+  p {
+    @apply text-[var(--bc-light)] pt-0;
+  }
+}
+
 /* Profile additional fields */
 .form--user-profile{
   .s-file-upload-wrapper{

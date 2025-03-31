@@ -285,36 +285,39 @@ salla-modal {
 .dots-bg {
   background-image: radial-gradient(
       circle at center,
-      var(--base-100) 0.25rem,
-      var(--color-primary) 0
-    ), radial-gradient(circle at center, var(--base-100) 0.25rem, var(--color-primary) 0);
-  background-size: 1.3rem 1.3rem;
+      var(--base-300) 0.1rem,
+      var(--base-100) 0
+    ), radial-gradient(circle at center, var(--base-300) 0.1rem, var(--base-100) 0);
+  background-size: 0.8rem 0.8rem;
   background-position: 0 0, 0.65rem 0.65rem;
 
   &.profile-header{
     .breadcrumbs {
+      .s-breadcrumb-item,
+      .s-breadcrumb-arrow svg,
       a,
       span,
       .arrow {
-        @apply text-white bg-primary;
+        @apply fill-bc opacity-100 text-bc bg-base-100;
       }
     }
   }
 
-  @media (max-width: 1024px){
-    &.profile-header{
-      background-image: none;
-
-      .breadcrumbs {
-        .s-breadcrumb-item,
-        a,
-        span,
-        .arrow {
-          @apply opacity-100 text-bc bg-transparent;
-        }
-      }
-    }
-  }
+  // @media (max-width: 1024px){
+  //   &.profile-header{
+  //     background-image: none;
+  //
+  //     .breadcrumbs {
+  //       .s-breadcrumb-item,
+  //       .s-breadcrumb-arrow svg,
+  //       a,
+  //       span,
+  //       .arrow {
+  //         @apply fill-bc opacity-100 text-bc bg-transparent;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 // Small badge
