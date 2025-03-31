@@ -281,6 +281,42 @@ salla-modal {
   }
 }
 
+// Dots Background
+.dots-bg {
+  background-image: radial-gradient(
+      circle at center,
+      var(--base-100) 0.25rem,
+      var(--color-primary) 0
+    ), radial-gradient(circle at center, var(--base-100) 0.25rem, var(--color-primary) 0);
+  background-size: 1.3rem 1.3rem;
+  background-position: 0 0, 0.65rem 0.65rem;
+
+  &.profile-header{
+    .breadcrumbs {
+      a,
+      span,
+      .arrow {
+        @apply text-white bg-primary;
+      }
+    }
+  }
+
+  @media (max-width: 1024px){
+    &.profile-header{
+      background-image: none;
+
+      .breadcrumbs {
+        .s-breadcrumb-item,
+        a,
+        span,
+        .arrow {
+          @apply opacity-100 text-bc bg-transparent;
+        }
+      }
+    }
+  }
+}
+
 // Small badge
 .badge {
   @apply p-1 min-w-[20px] h-5 rounded-full inline-flex items-center justify-center text-xs;

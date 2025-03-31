@@ -175,6 +175,67 @@ salla-user-menu{
   @apply shrink-0;
 }
 
+.s-user-menu{
+  &-wrapper{
+
+  }
+  &-toggler{
+
+  }
+  // Default trigger
+  &-trigger{
+    @apply bg-transparent py-0 transition hover:-translate-y-1;
+    &-avatar{
+      @apply w-7 h-7 !border-2 border-bc;
+    }
+    &-content{
+
+    }
+    &-hello{
+
+    }
+    &-name{
+
+    }
+    &-icon{
+
+    }
+  }
+  // Your custom trigger
+  &-trigger-slot{
+
+  }
+  &-dropdown{
+    @apply border-2 border-bc rounded-neo;
+    &-header{
+      img{
+
+      }
+      &-content{
+
+      }
+      &-close{
+
+      }
+    }
+    &-list{
+
+    }
+    &-item{
+      &-title{
+
+      }
+      &-badge{
+
+      }
+    }
+
+  }
+  &-inline{
+    
+  }
+}
+
 // cart summary
 .s-cart-summary-total{
   @apply text-black font-[600] hidden;
