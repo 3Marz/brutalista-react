@@ -196,10 +196,10 @@ class ProductCard extends HTMLElement {
 						size="medium"
 						shape="icon"
 						fill="outline"
-						color="dark"
+						color="${this.isInWishlist ? 'danger' : 'dark'}"
 						name="product-name-${this.product.id}"
 						aria-label="Add or remove to wishlist"
-						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 md:-translate-x-5 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
+						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 md:-translate-x-5 transition-all"
 						onclick="salla.wishlist.toggle(${this.product.id})"
 						data-id="${this.product.id}"
 					>
@@ -212,8 +212,8 @@ class ProductCard extends HTMLElement {
 						fill="outline"
 						color="dark"
 						name="product-name-${this.product.id}"
-						aria-label="Add or remove to wishlist"
-						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 md:-translate-x-10 transition-all ${this.isInWishlist ? '!text-red-500' : ''}"
+						aria-label="Quick view product"
+						class="group-hover:pointer-events-auto pointer-events-none group-hover:translate-x-0 md:-translate-x-10 transition-all"
 						onclick="document.getElementById('quick-view-modal')?.loadProduct(${this.product.id})"
 					>
 						<i class="sicon-eye"></i>
