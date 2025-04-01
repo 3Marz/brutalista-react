@@ -1,6 +1,19 @@
 salla-slider{ 
   @apply block;
 
+  .s-slider-block__title {
+    @apply min-h-0 justify-end;
+    &:has(.s-slider-block__title-right) {
+      @apply min-h-10;
+    }
+    &-right {
+      @apply px-0 absolute w-full text-center;
+      h2 {
+        @apply text-xl underline underline-offset-8 font-bold px-0;
+      }
+    }
+  }
+
   .s-slider-nav-arrow {
     @apply border !border-solid border-base-300 hover:border-primary !bg-base-100 transition-all !shadow-none;
     svg {
