@@ -5,7 +5,10 @@
     },
     "appBanner": {
       "download_now": "download now"
-    }
+    },
+	"productCard": {
+		"discountEnds": "Time left for discount"
+	}
   },
   "pages": {
     "cart": {

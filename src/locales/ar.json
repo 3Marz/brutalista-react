@@ -5,7 +5,10 @@
     },
     "appBanner": {
       "download_now": "حمله الان"
-    }
+    },
+	"productCard": {
+		"discountEnds": "الوقت المتبقي لنهاية العرض"
+	}
   },
   "pages": {
     "cart": {

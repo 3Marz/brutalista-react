@@ -49,6 +49,16 @@ salla-gifting {
   }
 }
 
+// offer products
+.product-offer-end {
+  salla-count-down {
+    .s-count-down-list {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+}
+
 
 // cart
 .cart-item{

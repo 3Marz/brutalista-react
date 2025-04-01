@@ -7,7 +7,7 @@ salla-slider{
       @apply min-h-10;
     }
     &-right {
-      @apply px-0 absolute w-full text-center;
+      @apply px-0 absolute w-full text-center pointer-events-none;
       h2 {
         @apply text-xl underline underline-offset-8 font-bold px-0;
       }

@@ -5567,7 +5567,7 @@ input[type=radio].sr-only:checked ~ div.s-block--slider-with-bg .slider-bg:befor
 salla-slider{display:block}
 salla-slider .s-slider-block__title{min-height:0px;justify-content:flex-end}
 salla-slider .s-slider-block__title:has(.s-slider-block__title-right){min-height:2.5rem}
-salla-slider .s-slider-block__title-right{position:absolute;width:100%;padding-left:0px;padding-right:0px;text-align:center}
+salla-slider .s-slider-block__title-right{pointer-events:none;position:absolute;width:100%;padding-left:0px;padding-right:0px;text-align:center}
 input[type=radio].sr-only divsalla-slider .s-slider-block__title-right {
   transition: all 0.3s;
 }
@@ -5765,6 +5765,10 @@ input[type=radio].sr-only:checked ~ div.share-btns-list {
 }
 .share-btns-list a{display:block;padding:0.75rem}
 .share-btns-list a:hover{color:#414042;color:var(--color-primary)}
+.product-offer-end salla-count-down .s-count-down-list {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .cart-item salla-conditional-fields > section{padding-left:0px;padding-right:0px;padding-top:0px}
 .cart-item salla-conditional-fields > section:last-child{margin-bottom:0px;padding-bottom:0px}
 .s-product-card-content-pie-svg-base {
@@ -6835,6 +6839,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .lg\:hidden{display:none}
 .lg\:min-h-60{min-height:15rem}
 .lg\:min-h-\[528px\]{min-height:528px}
+.lg\:w-1\/2{width:50%}
 .lg\:w-10\/12{width:83.333333%}
 .lg\:w-24{width:6rem}
 .lg\:w-5\/12{width:41.666667%}

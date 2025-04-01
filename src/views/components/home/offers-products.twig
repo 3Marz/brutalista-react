@@ -1,0 +1,17 @@
+
+<section class="s-block container overflow-hidden">
+	{% if component.products|length %}
+		<salla-slider
+			block-title="{{ component.title }}"
+			type="carousel"
+		>
+			<div slot="items">
+				{% for product in component.products %}
+						<div class="w-full lg:w-1/2">
+							<custom-salla-product-card class="product-offer-end" notBoxedCountDown isSpecial horizontal product="{{ product }}"></custom-salla-product-card>
+						</div>
+				{% endfor %}
+			</div>
+		</salla-slider>
+	{% endif %}
+</section>

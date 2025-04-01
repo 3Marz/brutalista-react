@@ -159,10 +159,12 @@ class ProductCard extends HTMLElement {
 		 *  Show quantity.
 		 */
 		this.showQuantity = this.hasAttribute('showQuantity');
+
+		this.notBoxedCountDown = this.hasAttribute('notBoxedCountDown');
 	}
 
 	render() {
-		this.classList.add('h-full', 'w-full', 'flex', `${this.minimal ? "flex-row" : "flex-col"}`, 'gap-3', 'group', 'overflow-visible', 'relative');
+		this.classList.add('h-full', 'w-full', 'flex', `${this.minimal || this.horizontal ? "flex-row" : "flex-col"}`, 'gap-3', 'group', 'overflow-visible', 'relative');
 		this.setAttribute('id', this.product.id);
 		!this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-vertical') : '';
 		this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-horizontal') : '';
@@ -230,10 +232,16 @@ class ProductCard extends HTMLElement {
 						<p class="text-sm opacity-80">${this.product?.subtitle}</p>
 					` : ``}
 					${this.getProductPrice()}
-					${this.isSpecial && this.product.discount_ends
-						? `<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${true} labeled=${true} />`
-					: ``}
 				</div>
+
+				${this.isSpecial && this.product.discount_ends
+					? `
+					<div class="h-full w-full text-center">
+						<p>${salla.lang.get('blocks.productCard.discountEnds')}</p>
+						<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${!this.notBoxedCountDown} labeled=${true} />
+					</div>
+					`
+				: ``}
 				
 				<div class="w-full custom-add-to-cart-button">
 					<salla-add-product-button width="wide"
