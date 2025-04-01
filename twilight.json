@@ -1639,6 +1639,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "d8a33b89-3f21-4d96-964f-cbc2dd9dec9f",
+            "title": "منتجات بعروض (بروتال)",
+            "icon": "sicon-percentage",
+            "path": "home.offers-products",
+            "fields": []
         }
     ],
     "support_url": null,
