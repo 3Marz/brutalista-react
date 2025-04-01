@@ -51,6 +51,7 @@ salla-gifting {
 
 // offer products
 .product-offer-end {
+  @apply sm:!flex-row !flex-col;
   salla-count-down {
     .s-count-down-list {
       padding-left: 0 !important;

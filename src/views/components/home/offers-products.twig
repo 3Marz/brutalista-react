@@ -4,10 +4,11 @@
 		<salla-slider
 			block-title="{{ component.title }}"
 			type="carousel"
+			auto-height
 		>
 			<div slot="items">
 				{% for product in component.products %}
-						<div class="w-full lg:w-1/2">
+						<div class="w-full">
 							<custom-salla-product-card class="product-offer-end" notBoxedCountDown isSpecial horizontal product="{{ product }}"></custom-salla-product-card>
 						</div>
 				{% endfor %}

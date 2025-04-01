@@ -34,6 +34,7 @@ class ProductCard extends HTMLElement {
 			this.startingPrice = salla.lang.get('pages.products.starting_price');
 			this.addToCart = salla.lang.get('pages.cart.add_to_cart');
 			this.outOfStock = salla.lang.get('pages.products.out_of_stock');
+			this.discountEnds = salla.lang.get('blocks.productCard.discountEnds');
 
 			// re-render to update translations
 			this.render();
@@ -237,8 +238,8 @@ class ProductCard extends HTMLElement {
 				${this.isSpecial && this.product.discount_ends
 					? `
 					<div class="h-full w-full text-center">
-						<p>${salla.lang.get('blocks.productCard.discountEnds')}</p>
-						<salla-count-down date="${this.formatDate(this.product.discount_ends)}" end-of-day=${true} boxed=${!this.notBoxedCountDown} labeled=${true} />
+						<p>${this.discountEnds}</p>
+						<salla-count-down size="sm" date="${this.formatDate(this.product.discount_ends)}" boxed=${!this.notBoxedCountDown} labeled=${true} />
 					</div>
 					`
 				: ``}
@@ -399,7 +400,7 @@ class ProductCard extends HTMLElement {
 		document.lazyLoadInstance?.update(this.querySelectorAll('.lazy'));
 
 		if (this.product?.quantity && this.isSpecial) {
-			this.initCircleBar();
+			// this.initCircleBar();
 		}
 	}
 }
