@@ -1646,37 +1646,50 @@
             "icon": "sicon-percentage",
             "path": "home.offers-products",
             "fields": [
-                {
-                    "type": "string",
-                    "icon": "sicon-format-text-alt",
-                    "label": "العنوان",
-                    "multilanguage": true,
-                    "id": "title",
-                    "value": null,
-                    "required": false,
-                    "format": "text",
-                    "description": null,
-                    "placeholder": "أدخل العنوان هنا...",
-                    "minLength": 0,
-                    "maxLength": 100
-                },
 				{
-                    "type": "items",
-                    "icon": "sicon-keyboard_arrow_down",
-                    "label": "منتجات",
-                    "id": "products",
-                    "format": "dropdown-list",
-                    "description": null,
-                    "selected": [],
-                    "options": [],
+                    "id": "offer",
+                    "type": "collection",
+                    "format": "collection",
                     "required": true,
-                    "multichoice": true,
-                    "source": "products",
-                    "searchable": true,
-                    "maxLength": 10,
                     "minLength": 1,
-                    "value": []
-                }
+                    "maxLength": 10,
+                    "label": null,
+                    "item_label": "العروض",
+					"fields": [
+						{
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "عنوان العرض",
+                            "multilanguage": true,
+                            "id": "slides.title",
+                            "value": null,
+                            "required": true,
+                            "format": "text",
+                            "description": "يتم عرضه على الصورة بحجم بارز جداً، مع إضافة تأثير دخول للنص يضيف لمسة جمالية على معرض الصور.",
+                            "placeholder": "يمكنك إضافة عنوان بارز هنا...",
+                            "hide": false,
+                            "minLength": 0,
+                            "maxLength": 40
+						},
+						{
+							"type": "items",
+							"icon": "sicon-keyboard_arrow_down",
+							"label": "منتجات",
+							"id": "products",
+							"format": "dropdown-list",
+							"description": null,
+							"selected": [],
+							"options": [],
+							"required": true,
+							"multichoice": true,
+							"source": "products",
+							"searchable": true,
+							"maxLength": 1,
+							"minLength": 1,
+							"value": []
+						}
+					]
+				}
 			]
         }
     ],
