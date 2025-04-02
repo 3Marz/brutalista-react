@@ -1,25 +1,24 @@
 
 <section class="s-block container overflow-hidden">
-	{% if component.products|length %}
-		<salla-slider
-			block-title="{{ component.title }}"
-			type="carousel"
-			auto-height
-		>
-			<div slot="items">
-				{% for product in component.products %}
-					<div class="w-full flex flex-col md:flex-row gap-3">
+	<salla-slider
+		type="carousel"
+		auto-height
+	>
+		<div slot="items">
+			{% for offer in component.offers %}
+				<div class="w-full flex flex-col md:flex-row gap-3">
 
-						<div class="w-full h-full">
-							<img class="h-full w-full object-cover" src="{{ product.image }}" />
-						</div>
-
-						<div class="w-full h-full flex justify-center flex-col items-center">
-						</div>
-
+					<div class="w-full h-full">
+						<img class="h-full w-full object-cover" src="{{ offer.product.image.url }}" />
 					</div>
-				{% endfor %}
-			</div>
-		</salla-slider>
-	{% endif %}
+
+					<div class="w-full h-full flex justify-center flex-col items-center">
+						<h2>{{ offer.title }}</h2>
+						<h3>{{ offer.product }}</h3>
+					</div>
+
+				</div>
+			{% endfor %}
+		</div>
+	</salla-slider>
 </section>
