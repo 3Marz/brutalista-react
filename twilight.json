@@ -1646,50 +1646,53 @@
             "icon": "sicon-percentage",
             "path": "home.offers-products",
             "fields": [
-				{
+                {
                     "id": "offers",
                     "type": "collection",
                     "format": "collection",
-                    "required": true,
-                    "minLength": 1,
-                    "maxLength": 10,
-                    "label": null,
-                    "item_label": "عروض",
-					"fields": [
-						{
-                            "type": "string",
-                            "icon": "sicon-format-text-alt",
-                            "label": "عنوان العرض",
-                            "multilanguage": true,
+                    "label": "العروض",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
                             "id": "offers.title",
-                            "value": null,
-                            "required": true,
+                            "type": "string",
                             "format": "text",
-                            "placeholder": "يمكنك إضافة عنوان بارز هنا...",
-                            "hide": false,
-                            "minLength": 0,
-                            "maxLength": 40
-						},
-						{
-							"type": "items",
-							"icon": "sicon-keyboard_arrow_down",
-							"label": "منتجات",
-							"id": "offers.product",
-							"format": "dropdown-list",
-							"description": null,
-							"selected": [],
-							"options": [],
-							"required": true,
-							"multichoice": false,
-							"source": "products",
-							"searchable": true,
-							"maxLength": 1,
-							"minLength": 1,
-							"value": []
-						}
-					]
-				}
-			]
+                            "label": "عنوان العرض",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "عنوان العرض هنا...",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": "40"
+                        },
+                        {
+                            "id": "offers.product",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "المنتج",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Products",
+                            "multichoice": false,
+                            "searchable": true,
+                            "required": true,
+                            "value": []
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "10"
+                }
+            ]
         }
     ],
     "support_url": null,
