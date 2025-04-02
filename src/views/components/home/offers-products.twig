@@ -8,14 +8,7 @@
 			{% for offer in component.offers %}
 				<div class="w-full flex flex-col md:flex-row gap-3">
 
-					<div class="w-full h-full">
-						<img class="h-full w-full object-cover" src="{{ offer.product.image.url }}" />
-					</div>
-
-					<div class="w-full h-full flex justify-center flex-col items-center">
-						<h2>{{ offer.title }}</h2>
-						<h3>{{ offer.product }}</h3>
-					</div>
+					<custom-salla-product-card product="{{ offer.product[0].name }}" fullImage></custom-salla-product-card>
 
 				</div>
 			{% endfor %}
