@@ -6,11 +6,7 @@
 	>
 		<div slot="items">
 			{% for offer in component.offers %}
-				<div class="w-full flex flex-col md:flex-row gap-3">
-
-					<custom-salla-product-card product="{{ offer.product[0].name }}" fullImage></custom-salla-product-card>
-
-				</div>
+				<discount-product-card product-id="{{ offer.product[0] }}" offer-title="{{ offer.title }}"></discount-product-card> 
 			{% endfor %}
 		</div>
 	</salla-slider>
