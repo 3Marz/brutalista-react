@@ -8,7 +8,6 @@ class DiscountProductCard extends HTMLElement {
 		// Parse product data
 		this.product_id = this.getAttribute('product-id');
 		this.offer_title = this.getAttribute('offer-title');
-		this.deadline_text = this.getAttribute('deadline-text');
 
 		if (window.app?.status === 'ready') {
 			this.onReady();
@@ -101,6 +100,11 @@ class DiscountProductCard extends HTMLElement {
 		this.classList.add('overflow-hidden', 'flex', 'flex-col', 'md:flex-row', 'w-full', 'md:h-96', 'border-2', 'border-bc', 'rounded-neo', 'shadow-neo')
 
 		if (!this.product) {
+			this.innerHTML = `
+				<div class="w-full h-full flex justify-center items-center p-5 md:p-0">
+					<span class="w-10 h-10 rounded-full border-4 border-b-bc border-base-300 animate-spin"></span>
+				</div>
+			`
 			return
 		}
 
