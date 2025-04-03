@@ -8,11 +8,16 @@ class DiscountProductCard extends HTMLElement {
 		// Parse product data
 		this.product_id = this.getAttribute('product-id');
 		this.offer_title = this.getAttribute('offer-title');
-		console.log(this.getAttribute("wtf"))
+		this.deadline_text = this.getAttribute('deadline-text');
 
-		if (!this.product_id) {
-			return
+		if (window.app?.status === 'ready') {
+			this.onReady();
+		} else {
+			document.addEventListener('theme::ready', () => this.onReady())
 		}
+	}
+
+	onReady() {
 
 		salla.lang.onLoaded(() => {
 			// Language
@@ -21,7 +26,7 @@ class DiscountProductCard extends HTMLElement {
 			this.startingPrice = salla.lang.get('pages.products.starting_price');
 			this.addToCart = salla.lang.get('pages.cart.add_to_cart');
 			this.outOfStock = salla.lang.get('pages.products.out_of_stock');
-			this.discountEnds = salla.lang.get('blocks.productCard.discountEnds');
+			this.discountEnds = salla.lang.get('pages.product_card.discount_ends');
 
 			// re-render to update translations
 			this.render();
@@ -42,7 +47,7 @@ class DiscountProductCard extends HTMLElement {
 	}
 
 	formatDate(date) {
-		let d = new Date(date);
+		let d = new Date(date * 1000) // this "* 1000" toke alot of time relize;
 		return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 	}
 
@@ -93,34 +98,28 @@ class DiscountProductCard extends HTMLElement {
 	}
 
 	render() {
-		this.classList.add('flex', 'flex-col', 'md:flex-row', 'w-[80%]', 'mx-4', 'gap-3', 'md:max-h-96', 'border-2', 'border-bc', 'rounded-neo', 'shadow-neo')
+		this.classList.add('flex', 'flex-col', 'md:flex-row', 'w-full', 'md:h-96', 'border-2', 'border-bc', 'rounded-neo', 'shadow-neo')
 
 		if (!this.product) {
 			return
 		}
 
 		this.innerHTML = `
-			<a href="${ this.product?.url }" class="w-full border-b-2 md:border-b-0 md:border-s-2 border-bc">
+			<a href="${ this.product?.url }" class="w-full h-80 md:h-auto border-b-2 md:border-b-0 md:border-s-2 border-bc">
 				<img
 					class="w-full h-full object-cover"
 					src="${ this.product?.image?.url || this.product?.thumbnail }" 
 				/>
 			</a>
 
-			<div class="w-full p-3 md:p-0 flex flex-col gap-3 justify-center items-center">
-				<h2 class="text-lg md:text-xl font-bold">${ this.offer_title }</h2>
+			<div class="w-full h-72 md:h-auto p-3 md:p-0 flex flex-col gap-2 md:gap-3 justify-center items-center">
 				<a href="${ this.product?.url }" class="text-base md:text-lg font-normal hover:underline underline-offset-4">${ this.product?.name }</a>
-				${this.product?.subtitle ? `
-					<p class="text-sm opacity-80">${ this.product?.subtitle }</p>
-				` : ``}
 				${ this.getProductPrice() }
 
 				${this.product.discount_ends
 					? `
-					<p>${this.product.discount_ends}</p>
-					<div class="h-full w-full text-center">
-						<p>${this.discountEnds}</p>
-						<salla-count-down size="sm" date="${this.formatDate(this.product.discount_ends)}" boxed="false" labeled=${true} />
+					<div class="w-full text-center">
+						<salla-count-down class="*:!my-0" size="sm" date="${this.formatDate(this.product.discount_ends)}" boxed="false" labeled=${true}></salla-count-down>
 					</div>
 					`
 				: ``}

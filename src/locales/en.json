@@ -5,10 +5,7 @@
     },
     "appBanner": {
       "download_now": "download now"
-    },
-	"productCard": {
-		"discountEnds": "Time left for discount"
-	}
+    }
   },
   "pages": {
     "cart": {
@@ -21,7 +18,10 @@
       "days_since_added": "days since it was added",
       "option_name": "Option name",
       "option_content": "Content"
-    }
+    },
+	"product_card": {
+		"discount_ends": "Time left for discount"
+	}
   },
   "common": {
     "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",

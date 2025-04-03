@@ -5,10 +5,7 @@
     },
     "appBanner": {
       "download_now": "حمله الان"
-    },
-	"productCard": {
-		"discountEnds": "الوقت المتبقي لنهاية العرض"
-	}
+    }  
   },
   "pages": {
     "cart": {
@@ -21,7 +18,10 @@
       "days_since_added": "أيام من إضافته",
       "option_name": "الخيار",
       "option_content": "المحتوى"
-    }
+    },
+	"product_card": {
+		"discount_ends": "الوقت المتبقي لنهاية العرض"
+	}
   },
   "common": {
     "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",
