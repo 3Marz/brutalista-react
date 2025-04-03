@@ -78,6 +78,30 @@
             "selected": false
         },
         {
+            "id": "lang_button_bottom",
+            "type": "boolean",
+            "format": "switch",
+            "label": "جعل زر اللغة و العملة اسفل الصفحة",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": true,
+            "required": false
+        },
+        {
+            "id": "show_store_name_footer",
+            "type": "boolean",
+            "format": "switch",
+            "label": "إظهار اسم المتجر بجانب الشعار",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": false,
+            "required": false
+        },
+        {
             "type": "static",
             "id": "static-line5",
             "format": "line"
