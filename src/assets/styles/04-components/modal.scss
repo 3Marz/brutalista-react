@@ -57,7 +57,7 @@
 
   }
   &-body {
-    @apply bg-base-50 border-2 border-bc shadow-neo max-h-dvh overflow-scroll;
+    @apply border-b-0 sm:border-b-2 bg-base-50 border-2 border-bc shadow-neo max-h-dvh overflow-scroll;
   }
   &-padding {
 

@@ -3,6 +3,13 @@
   &-inline{
     
   }
+
+  &-modal {
+    .s-modal-body {
+      @apply border-b-2 ;
+    }
+  }
+
   &-container {
     // @apply rounded-neo;
     &-open {
