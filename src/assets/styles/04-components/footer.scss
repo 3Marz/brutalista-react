@@ -2,6 +2,20 @@
 .store-footer {
   @apply relative bg-bc text-base-100 mt-8 sm:mt-16;
 
+  salla-apps-icons {
+    @apply text-center;
+    .s-apps-icons-list {
+      @apply justify-center;
+    }
+  }
+
+  .s-payments-list-item {
+    @apply rounded-md;
+  }
+  .btn--rounded-gray {
+    @apply border-base-100;
+  }
+
   .s-social-list {
     @apply justify-center;
   }
@@ -49,6 +63,10 @@
   .footer-is-light & {
     @apply bg-base-50 text-bc;
 
+    .s-payments-list-item {
+      @apply border border-base-200;
+    }
+
     .store-footer__inner {
       @apply bg-base-50 border-b-bc;
     }
@@ -59,6 +77,10 @@
 
     .contact-social{
       @apply border-bc;
+    }
+
+    .btn--rounded-gray {
+      @apply border-base-300;
     }
   }
 }
