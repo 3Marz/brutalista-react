@@ -69,7 +69,6 @@ class QuickViewModal extends HTMLElement {
 									id="details-slider-${this.product.id}"
 									class="details-slider modal-slider rounded-neo image-slider"
 									loop="true"
-									auto-height
 									show-thumbs-controls="false">
 								${this.product.promotion_title ? `
 									<div class="promotion-title">${ this.product.promotion_title }</div>

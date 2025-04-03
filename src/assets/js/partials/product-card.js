@@ -238,6 +238,7 @@ class ProductCard extends HTMLElement {
 				${this.isSpecial && this.product.discount_ends
 					? `
 					<div class="h-full w-full text-center">
+					<p>${this.product.discount_ends}</p>
 						<p>${this.discountEnds}</p>
 						<salla-count-down size="sm" date="${this.formatDate(this.product.discount_ends)}" boxed=${!this.notBoxedCountDown} labeled=${true} />
 					</div>
