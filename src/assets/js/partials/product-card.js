@@ -34,7 +34,6 @@ class ProductCard extends HTMLElement {
 			this.startingPrice = salla.lang.get('pages.products.starting_price');
 			this.addToCart = salla.lang.get('pages.cart.add_to_cart');
 			this.outOfStock = salla.lang.get('pages.products.out_of_stock');
-			this.discountEnds = salla.lang.get('blocks.productCard.discountEnds');
 
 			// re-render to update translations
 			this.render();
@@ -162,6 +161,7 @@ class ProductCard extends HTMLElement {
 		this.showQuantity = this.hasAttribute('showQuantity');
 
 		this.notBoxedCountDown = this.hasAttribute('notBoxedCountDown');
+		this.deadline_text = this.getAttribute('deadline-text');
 	}
 
 	render() {
@@ -238,7 +238,9 @@ class ProductCard extends HTMLElement {
 				${this.isSpecial && this.product.discount_ends
 					? `
 					<div class="h-full w-full text-center">
-						<p>${this.discountEnds}</p>
+						${this.deadline_text ? `
+							<p class="text-sm opacity-65">${this.deadline_text}</p>
+						` : ``}
 						<salla-count-down size="sm" date="${this.formatDate(this.product.discount_ends)}" boxed=${!this.notBoxedCountDown} labeled=${true} />
 					</div>
 					`

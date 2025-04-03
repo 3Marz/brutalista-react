@@ -26,6 +26,12 @@ salla-slider{
       }
     }
   }
+
+  &.discount-offer-slider {
+    .s-slider-block__title-nav {
+      @apply hidden sm:flex;
+    }
+  }
   
   &.details-slider{
     .s-slider-container{ 

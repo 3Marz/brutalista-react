@@ -98,7 +98,7 @@ class DiscountProductCard extends HTMLElement {
 	}
 
 	render() {
-		this.classList.add('flex', 'flex-col', 'md:flex-row', 'w-full', 'md:h-96', 'border-2', 'border-bc', 'rounded-neo', 'shadow-neo')
+		this.classList.add('overflow-hidden', 'flex', 'flex-col', 'md:flex-row', 'w-full', 'md:h-96', 'border-2', 'border-bc', 'rounded-neo', 'shadow-neo')
 
 		if (!this.product) {
 			return
