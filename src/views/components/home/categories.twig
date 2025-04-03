@@ -13,7 +13,7 @@
 		{% for cat in component.categories %}
 			<a href="{{ cat.url }}" class="cat-entry-br group justify-self-center text-bc flex flex-col gap-2 p-1 items-center justify-center">
 				
-				<div class="w-24 h-24 flex justify-center items-center text-xl rounded-neo bg-base-50 border border-bc overflow-hidden">
+				<div class="w-24 h-24 flex justify-center items-center text-xl rounded-full bg-base-50 border border-bc overflow-hidden">
 					{% if cat.image %}
 						<img src="{{ cat.image }}" class="w-full transition group-hover:scale-110 h-full object-cover" />
 					{% else %}
