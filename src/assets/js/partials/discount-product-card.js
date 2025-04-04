@@ -38,8 +38,6 @@ class DiscountProductCard extends HTMLElement {
 					console.log("what")
 					return
 				}
-				console.log("DISISI")
-				console.log(res)
 				this.product = res.data[0]
 				this.render()
 			})
