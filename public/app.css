@@ -694,6 +694,7 @@ to{transform:rotate(360deg)}}
 .space-y-px > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1px * (1 - 0));margin-top:calc(1px * (1 - var(--tw-space-y-reverse)));margin-top:calc(1px * calc(1 - 0));margin-top:calc(1px * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1px * 0);margin-bottom:calc(1px * var(--tw-space-y-reverse))}
 .divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * (1 - 0));border-top-width:calc(1px * (1 - var(--tw-divide-y-reverse)));border-top-width:calc(1px * calc(1 - 0));border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * 0);border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}
 .divide-base-300 > :not([hidden]) ~ :not([hidden]){border-color:var(--base-300)}
+.divide-base-200 > :not([hidden]) ~ :not([hidden]){border-color:var(--base-200)}
 .self-start{align-self:flex-start}
 .justify-self-center{justify-self:center}
 .overflow-auto{overflow:auto}
@@ -6721,6 +6722,8 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
   max-height: 10rem;
 }
 .tab input:checked ~ .tab__label i{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.s-orders-table-head{background-color:transparent}
+.s-orders-table-tbody-tr{margin-bottom:1rem;outline-style:solid;outline-width:2px;outline-color:var(--bc)}
 .\*\:\!my-0 > *{margin-top:0px !important;margin-bottom:0px !important}
 .\*\:\!rounded-none > *{border-radius:0px !important}
 .\*\:drop-shadow > *{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}
