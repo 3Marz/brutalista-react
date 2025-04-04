@@ -1,5 +1,5 @@
 
-class BurtalReviews extends HTMLElement {
+class BrutalReviews extends HTMLElement {
 	constructor() {
 		super()
 	}
@@ -44,4 +44,4 @@ class BurtalReviews extends HTMLElement {
 	}
 }
 
-customElements.define('brutal-reviews', BurtalReviews)
+customElements.define('brutal-reviews', BrutalReviews)
