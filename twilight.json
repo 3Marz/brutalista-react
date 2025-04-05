@@ -1740,6 +1740,43 @@
                     "maxLength": 30
                 },
                 {
+                    "id": "order_by",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "طريقة ترتيب التقيمات",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [
+                        {
+                            "label": "الاعلى تقيماً",
+                            "value": "highest",
+                            "key": "369dfaac-3b47-4981-bca7-c958b5df0d90"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "الاعلى تقيماً",
+                            "value": "highest",
+                            "key": "369dfaac-3b47-4981-bca7-c958b5df0d90"
+                        },
+                        {
+                            "label": "عشوائياً",
+                            "value": "random",
+                            "key": "c4a02069-48e4-498b-a4a9-8a8c85c147a6"
+                        },
+                        {
+                            "label": "الأحدث",
+                            "value": "newest",
+                            "key": "464bc698-0a31-4142-a5f9-53997749c6b3"
+                        }
+                    ],
+                    "source": "Manual",
+                    "multichoice": false,
+                    "searchable": true,
+                    "required": true
+                },
+                {
                     "id": "limit",
                     "type": "number",
                     "format": "integer",
@@ -1760,6 +1797,18 @@
                     "format": "switch",
                     "label": "إخفاء أسماء العملاء",
                     "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": false,
+                    "required": false
+                },
+                {
+                    "id": "display_all_url",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "عرض زر \"عرض الكل\"",
+                    "description": "عرض رابط يؤدي الى صفحة التعليقات",
                     "labelHTML": null,
                     "icon": "sicon-toggle-off",
                     "value": true,
