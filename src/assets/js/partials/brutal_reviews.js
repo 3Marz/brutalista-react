@@ -23,6 +23,7 @@ class BrutalReviews extends HTMLElement {
 					return
 				}
 				this.reviews = res.data
+				this.orderReviews()
 				this.render()
 			})
 	}
@@ -30,9 +31,14 @@ class BrutalReviews extends HTMLElement {
 	getProps() {
 		this.title = this.getAttribute('title');
 
-		this.hide_names = this.hasAttribute('hide-names');
+		this.hide_names = this.getAttribute('hide-names');
 
 		this.limit = this.getAttribute('limit');
+	}
+
+	orderReviews() {
+		if (!this.reviews) { return }
+		this.reviews.sort((a, b) => b.stars - a.stars)
 	}
 
 	render() {
@@ -46,10 +52,12 @@ class BrutalReviews extends HTMLElement {
 				type="fullwidth"
 				class="brutal-reviews-slider"
 				show-controls="true"
-				block-title=${this.title ? this.title : ""}
+				block-title="${this.title ? this.title : ''}"
+				auto-play
 			>
+				<div slot="items">
 				${this.reviews.map(review => `
-					<div class="mx-8 flex rounded-neo shadow-neo min-h-80 border-2 border-bc bg-base-50 w-[80%] md:w-1/2 xl:w-1/3 relative">
+					<div class="mx-6 flex rounded-neo shadow-neo min-h-80 border-2 border-bc bg-base-50 w-[80%] md:w-1/2 xl:w-1/3 relative">
 						<div class="border-2 rounded-full border-bc w-20 h-20 md:w-24 md:h-24 absolute overflow-hidden -translate-x-1/2 -translate-y-1/2 top-0 left-1/2">
 							<img class="w-full h-full object-cover" src=${review.avatar} />
 						</div>
@@ -68,7 +76,8 @@ class BrutalReviews extends HTMLElement {
 							</div>
 						</div>
 					</div>
-				`).join('')}
+				`).join('\n')}
+				</div>
 			</salla-slider>
 		`
 
