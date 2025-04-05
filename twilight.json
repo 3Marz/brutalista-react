@@ -1717,6 +1717,13 @@
                     "maxLength": "10"
                 }
             ]
+        },
+        {
+            "key": "629fff08-7693-483d-a2df-bf90f991efcc",
+            "title": "آراء العملاء (بروتال)",
+            "icon": "sicon-chat-person",
+            "path": "home.brutal_testimonials",
+            "fields": []
         }
     ],
     "support_url": null,
