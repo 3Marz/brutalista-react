@@ -13,8 +13,9 @@ class BrutalReviews extends HTMLElement {
 	}
 
 	onReady() {
+		this.getProps()
 
-		salla.api.component.getReviews({ per_page :5, type: "store", items:[]})
+		salla.api.component.getReviews({ per_page : this.limit, type: "store", items:[]})
 			.then((res) => {
 				if (!res.success) {
 					console.log("failed to get reviews")
@@ -22,9 +23,16 @@ class BrutalReviews extends HTMLElement {
 					return
 				}
 				this.reviews = res.data
-				console.log(res)
 				this.render()
 			})
+	}
+
+	getProps() {
+		this.title = this.getAttribute('title');
+
+		this.hide_names = this.hasAttribute('hide-names');
+
+		this.limit = this.getAttribute('limit');
 	}
 
 	render() {
@@ -38,7 +46,7 @@ class BrutalReviews extends HTMLElement {
 				type="fullwidth"
 				class="brutal-reviews-slider"
 				show-controls="true"
-				block-title="Brutal Reviews"
+				block-title=${this.title ? this.title : ""}
 			>
 				${this.reviews.map(review => `
 					<div class="mx-8 flex rounded-neo shadow-neo min-h-80 border-2 border-bc bg-base-50 w-[80%] md:w-1/2 xl:w-1/3 relative">
@@ -56,7 +64,7 @@ class BrutalReviews extends HTMLElement {
 							</div>
 							<div class="flex flex-col">
 								<salla-rating-stars value=${review.stars} ></salla-rating-stars>
-								<span class="text-lg">${review.name}</span>
+								${this.hide_names ? `` : `<span class="text-lg">${review.name}</span>`}
 							</div>
 						</div>
 					</div>
