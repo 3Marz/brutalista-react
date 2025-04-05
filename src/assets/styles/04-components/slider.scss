@@ -27,6 +27,15 @@ salla-slider{
     }
   }
 
+  &.brutal-reviews-slider {
+    .s-slider-container {
+      @apply pt-12
+    }
+    .s-slider-block__title-nav {
+      @apply hidden sm:flex;
+    }
+  }
+
   &.discount-offer-slider {
     .s-slider-block__title-nav {
       @apply hidden sm:flex;

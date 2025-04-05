@@ -35,10 +35,30 @@ class BrutalReviews extends HTMLElement {
 
 		this.innerHTML = `
 			<salla-slider 
+				type="fullwidth"
+				class="brutal-reviews-slider"
+				show-controls="true"
+				block-title="Brutal Reviews"
 			>
 				${this.reviews.map(review => `
-					<div class="mx-8 border-2 border-bc bg-base-50 w-full md:w-1/2 xl:w-1/3 h-96">
-						
+					<div class="mx-8 flex rounded-neo shadow-neo min-h-80 border-2 border-bc bg-base-50 w-[80%] md:w-1/2 xl:w-1/3 relative">
+						<div class="border-2 rounded-full border-bc w-20 h-20 md:w-24 md:h-24 absolute overflow-hidden -translate-x-1/2 -translate-y-1/2 top-0 left-1/2">
+							<img class="w-full h-full object-cover" src=${review.avatar} />
+						</div>
+
+						<div class="w-full flex flex-col text-center gap-5 justify-between px-4 py-6">
+							<div class="w-full h-10 flex justify-between px-6">
+								<i class="sicon-quote text-bc text-3xl ltr:rotate-180"></i>
+								<i class="sicon-quote text-bc text-3xl rtl:rotate-180"></i>
+							</div>
+							<div class="h-full flex justify-center items-center">
+								<p class="text-base text-bc opacity-80 line-clamp-5">${review.content}</p>
+							</div>
+							<div class="flex flex-col">
+								<salla-rating-stars value=${review.stars} ></salla-rating-stars>
+								<span class="text-lg">${review.name}</span>
+							</div>
+						</div>
 					</div>
 				`).join('')}
 			</salla-slider>

@@ -494,6 +494,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .bottom-2{bottom:0.5rem}
 .left-0{left:0px}
 .left-1{left:0.25rem}
+.left-1\/2{left:50%}
 .right-0{right:0px}
 .top-0{top:0px}
 .top-1\.5{top:0.375rem}
@@ -517,8 +518,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-1\.5{margin-left:0.375rem;margin-right:0.375rem}
 .mx-2{margin-left:0.5rem;margin-right:0.5rem}
 .mx-3{margin-left:0.75rem;margin-right:0.75rem}
-.my-2{margin-top:0.5rem;margin-bottom:0.5rem}
 .mx-8{margin-left:2rem;margin-right:2rem}
+.my-2{margin-top:0.5rem;margin-bottom:0.5rem}
 .\!mb-0{margin-bottom:0px !important}
 .-mb-52{margin-bottom:-13rem}
 .-mt-62{margin-top:-248px}
@@ -552,6 +553,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-auto{margin-top:auto}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.line-clamp-5{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5}
 .block{display:block}
 .inline-block{display:inline-block}
 .inline{display:inline}
@@ -591,13 +593,13 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-full{height:100%}
 .h-lg-banner{height:428px}
 .h-px{height:1px}
-.h-96{height:24rem}
 .max-h-0{max-height:0px}
 .max-h-8{max-height:2rem}
 .max-h-\[300px\]{max-height:300px}
 .max-h-full{max-height:100%}
 .min-h-32{min-height:8rem}
 .min-h-7{min-height:1.75rem}
+.min-h-80{min-height:20rem}
 .min-h-\[300px\]{min-height:300px}
 .min-h-\[34px\]{min-height:34px}
 .min-h-full{min-height:100%}
@@ -638,6 +640,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .flex-grow{flex-grow:1}
 .basis-0{flex-basis:0px}
 .table-fixed{table-layout:fixed}
+.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(-50%, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), -50%) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .-translate-y-6{--tw-translate-y:-1.5rem;transform:translate(var(--tw-translate-x), -1.5rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .translate-x-6{--tw-translate-x:1.5rem;transform:translate(1.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), 0px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -800,6 +804,7 @@ to{transform:rotate(360deg)}}
 .py-4{padding-top:1rem;padding-bottom:1rem}
 .py-5{padding-top:1.25rem;padding-bottom:1.25rem}
 .py-\[calc\(abs\(var\(--y-shadow-offset\)\)\)\]{padding-top:calc(abs(var(--y-shadow-offset)));padding-bottom:calc(abs(var(--y-shadow-offset)))}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem}
 .\!pt-1{padding-top:0.25rem !important}
 .pb-1{padding-bottom:0.25rem}
 .pb-10{padding-bottom:2.5rem}
@@ -823,6 +828,7 @@ to{transform:rotate(360deg)}}
 .pt-5{padding-top:1.25rem}
 .pt-6{padding-top:1.5rem}
 .pt-8{padding-top:2rem}
+.pt-14{padding-top:3.5rem}
 .text-center{text-align:center}
 .text-start{text-align:left}
 .text-end{text-align:right}
@@ -5606,6 +5612,10 @@ salla-slider .s-slider-nav-arrow svg:hover{fill:#414042;fill:var(--color-primary
 salla-slider .s-slider-nav-arrow.swiper-button-disabled{opacity:0.7}
 salla-slider .s-slider-nav-arrow.swiper-button-disabled:hover{border-color:var(--base-300)}
 salla-slider .s-slider-nav-arrow.swiper-button-disabled svg{fill:var(--base-300)}
+salla-slider.brutal-reviews-slider .s-slider-container{padding-top:3rem}
+salla-slider.brutal-reviews-slider .s-slider-block__title-nav{display:none}
+@media (min-width: 640px){
+salla-slider.brutal-reviews-slider .s-slider-block__title-nav{display:flex}}
 salla-slider.discount-offer-slider .s-slider-block__title-nav{display:none}
 @media (min-width: 640px){
 salla-slider.discount-offer-slider .s-slider-block__title-nav{display:flex}}
@@ -6800,7 +6810,8 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:pt-12{padding-top:3rem}
 .sm\:pt-20{padding-top:5rem}
 .sm\:text-lg{font-size:1.125rem;line-height:1.75rem}
-.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}
+.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}
+.sm\:text-base{font-size:1rem;line-height:1.5rem}}
 @media (min-width: 768px){
 .md\:sticky{position:sticky}
 .md\:mx-4{margin-left:1rem;margin-right:1rem}
@@ -6821,6 +6832,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:h-\[400px\]{height:400px}
 .md\:h-auto{height:auto}
 .md\:\!w-2\/4{width:50% !important}
+.md\:w-1\/2{width:50%}
 .md\:w-2\/4{width:50%}
 .md\:w-20{width:5rem}
 .md\:w-24{width:6rem}
@@ -6830,7 +6842,6 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:w-72{width:18rem}
 .md\:w-96{width:24rem}
 .md\:w-auto{width:auto}
-.md\:w-1\/2{width:50%}
 .md\:-translate-x-10{--tw-translate-x:-2.5rem;transform:translate(-2.5rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .md\:-translate-x-5{--tw-translate-x:-1.25rem;transform:translate(-1.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .md\:grid-flow-col{grid-auto-flow:column}
@@ -6939,6 +6950,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .ltr\:mr-3:where([dir="ltr"], [dir="ltr"] *){margin-right:0.75rem}
 .ltr\:mr-8:where([dir="ltr"], [dir="ltr"] *){margin-right:2rem}
 .ltr\:mr-auto:where([dir="ltr"], [dir="ltr"] *){margin-right:auto}
+.ltr\:rotate-180:where([dir="ltr"], [dir="ltr"] *){--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .ltr\:animate-\[marquee-effect-ltr_linear_infinite\]:where([dir="ltr"], [dir="ltr"] *){animation:marquee-effect-ltr linear infinite}
 .ltr\:rounded-l-none:where([dir="ltr"], [dir="ltr"] *){border-top-left-radius:0px;border-bottom-left-radius:0px}
 .ltr\:rounded-r-none:where([dir="ltr"], [dir="ltr"] *){border-top-right-radius:0px;border-bottom-right-radius:0px}
