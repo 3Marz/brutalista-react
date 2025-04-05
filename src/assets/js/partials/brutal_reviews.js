@@ -14,7 +14,7 @@ class BrutalReviews extends HTMLElement {
 
 	onReady() {
 
-		salla.api.component.getReviews({ per_page :5, type: "product", items:"testimonials"})
+		salla.api.component.getReviews({ per_page :5, type: "store", items:[]})
 			.then((res) => {
 				if (!res.success) {
 					console.log("failed to get reviews")
@@ -34,11 +34,14 @@ class BrutalReviews extends HTMLElement {
 		}
 
 		this.innerHTML = `
-			<div class="s-brutal-reviews">
+			<salla-slider 
+			>
 				${this.reviews.map(review => `
-					<h2>${review.content}</h2>
+					<div class="mx-8 border-2 border-bc bg-base-50 w-full md:w-1/2 xl:w-1/3 h-96">
+						
+					</div>
 				`).join('')}
-			</div>
+			</salla-slider>
 		`
 
 	}
