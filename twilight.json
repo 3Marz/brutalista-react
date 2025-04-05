@@ -1723,7 +1723,50 @@
             "title": "آراء العملاء (بروتال)",
             "icon": "sicon-chat-person",
             "path": "home.brutal_testimonials",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "العنوان هنا...",
+                    "icon": "sicon-format-text-alt",
+                    "value": "آراء العملاء",
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "limit",
+                    "type": "number",
+                    "format": "integer",
+                    "inputType": "number",
+                    "label": "أقصى عدد للتقيمات",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "عدد التقيمات التى ستظهر",
+                    "icon": "sicon-hashtag",
+                    "value": 5,
+                    "required": true,
+                    "minimum": "1",
+                    "maximum": "20"
+                },
+                {
+                    "id": "hide_names",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "إخفاء أسماء العملاء",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": false,
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": null,
