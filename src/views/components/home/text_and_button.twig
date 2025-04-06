@@ -1,0 +1,20 @@
+
+<section class="s-block">
+	<div class="w-full p-8 md:p-0 flex justify-center items-center {{ component.doted_bg ? 'dots-bg min-h-80' : '' }}">
+		<div class="rounded-neo md:max-w-3/4 text-center bg-base-100 gap-3 md:gap-5 flex flex-col items-center border-bc {{ component.doted_bg ? 'border-2 px-6 py-3 md:py-5' : '' }}">
+			{% if component.title %}
+				<h2 class="font-bold text-lg md:text-xl">{{ component.title }}</h2>
+			{% endif %}
+			
+			<p class="opacity-85">{{ component.text }}</p>
+
+			{% if component.button_title and component.url %}
+				<salla-button
+					href="{{ component.url }}"
+				>
+					{{ component.button_title }}
+				</salla-button>
+			{% endif %}
+		</div>
+	</div>
+</section>
