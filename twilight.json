@@ -1816,6 +1816,13 @@
                     "required": false
                 }
             ]
+        },
+        {
+            "key": "a899e36e-fa56-4cef-8eb8-3a011d5679ae",
+            "title": "نص مع زر (بروتال)",
+            "icon": "sicon-align-center",
+            "path": "home.text_and_button",
+            "fields": []
         }
     ],
     "support_url": null,
