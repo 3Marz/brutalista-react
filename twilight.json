@@ -1950,7 +1950,64 @@
             "title": "إحصائيات (بروتال)",
             "icon": "sicon-graph-line",
             "path": "home.stats",
-            "fields": []
+            "fields": [
+                {
+                    "id": "stats",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الإحصائيات",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "stats.icon",
+                            "type": "string",
+                            "format": "icon",
+                            "label": "أيقونة الإحصائية",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-user-circle",
+                            "value": "sicon-packed-box",
+                            "required": false
+                        },
+                        {
+                            "id": "stats.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "عنوان الإحصائية",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "العنوان هنا...",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": "3",
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "stats.number",
+                            "type": "number",
+                            "format": "integer",
+                            "inputType": "number",
+                            "label": "عدد الإحصائية",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "عدد الإحصائية هنا...",
+                            "icon": "sicon-hashtag",
+                            "value": 0,
+                            "required": true,
+                            "minimum": "1",
+                            "maximum": "9999999999999999999999"
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": null,
