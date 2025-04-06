@@ -14,8 +14,9 @@ class BrutalReviews extends HTMLElement {
 
 	onReady() {
 		this.getProps()
+		this.all_url = salla.url.get('testimonials')
 
-		salla.api.component.getReviews({ per_page : this.limit, type: "store", items:[]})
+		salla.api.component.getReviews({ per_page : 20, type: "store", items:[]})
 			.then((res) => {
 				if (!res.success) {
 					console.log("failed to get reviews")
@@ -34,11 +35,22 @@ class BrutalReviews extends HTMLElement {
 		this.hide_names = this.getAttribute('hide-names');
 
 		this.limit = this.getAttribute('limit');
+
+		this.order_by = this.getAttribute('order-by')
+
+		this.display_all_url = this.getAttribute('display-all-url')
 	}
 
 	orderReviews() {
 		if (!this.reviews) { return }
-		this.reviews.sort((a, b) => b.stars - a.stars)
+
+		switch (this.order_by) {
+			case "highest":
+				this.reviews.sort((a, b) => b.stars - a.stars)
+				break
+			case "newest":
+				this.reviews.sort((a, b) => b.date - a.date)
+		}
 	}
 
 	render() {
@@ -47,13 +59,20 @@ class BrutalReviews extends HTMLElement {
 			return
 		}
 
+		if (this.limit) {
+			this.reviews = this.reviews.slice(0, this.limit)
+		}
+
 		this.innerHTML = `
 			<salla-slider 
 				type="fullwidth"
 				class="brutal-reviews-slider"
 				show-controls="true"
-				block-title="${this.title ? this.title : ''}"
+				block-title="${this.title ? this.title : ' '}"
 				auto-play
+				${this.display_all_url ? 
+					`display-all-url="${this.all_url}"` 
+				: ``}
 			>
 				<div slot="items">
 				${this.reviews.map(review => `
