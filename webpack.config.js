@@ -18,6 +18,7 @@ module.exports = {
 		'search-btn': asset('js/partials/search-btn.js'),
 		'quick-view': asset('js/partials/quick-view.js'),
 		'brutal_reviews': asset('js/partials/brutal_reviews.js'),
+		'stats': asset('js/partials/stats.js'),
         checkout: [asset('js/cart.js'), asset('js/thankyou.js')],
         pages   : [asset('js/loyalty.js'), asset('js/brands.js'),],
         product : [asset('js/product.js'), asset('js/products.js')],
