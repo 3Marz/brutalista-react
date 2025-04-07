@@ -4,7 +4,7 @@
 		{% for stat in component.stats %}
 			<div class="pb-4 pt-5 px-7 border-2 border-base-300 border-dashed rounded-neo w-40 sm:w-52 md:w-60 flex flex-col items-center text-center">
 				<i class="{{ stat.icon }} mb-1 md:mb-2 text-2xl md:text-3xl"></i>
-				<stat-count class="text-xl md:text-2xl font-black stat-value" data-count="{{ stat.number }}">0</stat-count>
+				<stat-count class="text-xl md:text-2xl font-black stat-value" {{ stat.more_then ? 'more-then' : '' }} data-count="{{ stat.number }}">0</stat-count>
 				<p class="text-sm md:text-base">{{ stat.title }}</p>
 			</div>
 		{% endfor %}

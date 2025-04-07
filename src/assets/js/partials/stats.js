@@ -31,6 +31,7 @@ class StatCount extends HTMLElement {
 	}
 
 	onReady() {
+		this.moreThen = this.hasAttribute('more-then');
 		document.addEventListener("scroll", () => {
 			if (isScrolledIntoView(this)) {
 				this.startCount()
@@ -60,7 +61,13 @@ class StatCount extends HTMLElement {
 			this.norm = ease.inOutQuad(this.elaps / this.duration);
 			this.step = this.range * this.norm;
 			this.curr = this.start + this.step;
-			this.textContent = Math.trunc(this.curr);
+
+			if (this.moreThen) {
+				this.textContent = `+${Math.trunc(this.curr)}`;
+			} else {
+				this.textContent = Math.trunc(this.curr);
+			}
+
 			if (this.elaps < this.duration) {
 				requestAnimationFrame(loop);
 			}
