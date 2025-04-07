@@ -1989,18 +1989,6 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "stats.more_then",
-                            "type": "boolean",
-                            "format": "switch",
-                            "label": "أكثر من",
-                            "description": "علامة \"+\" بجانب الرقم",
-                            "labelHTML": null,
-                            "icon": "sicon-toggle-off",
-                            "value": true,
-                            "selected": true,
-                            "required": false
-                        },
-                        {
                             "id": "stats.number",
                             "type": "number",
                             "format": "integer",
@@ -2014,6 +2002,18 @@
                             "required": true,
                             "minimum": "1",
                             "maximum": "9999999999999999999999"
+                        },
+                        {
+                            "id": "stats.more_then",
+                            "type": "boolean",
+                            "format": "switch",
+                            "label": "أكثر من",
+                            "description": "علامة \"+\" بجانب الرقم",
+                            "labelHTML": null,
+                            "icon": "sicon-toggle-off",
+                            "value": true,
+                            "selected": true,
+                            "required": false
                         }
                     ],
                     "value": [],
