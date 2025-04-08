@@ -2,6 +2,7 @@
 const ease = {
   linear: t => t,
   inOutQuad: t => t<.5 ? 2*t*t : -1+(4-2*t)*t,
+  easeOutCubic: t => (--t)*t*t+1,
   // Find out more at: https://gist.github.com/gre/1650294
 };
 
@@ -31,7 +32,8 @@ class StatCount extends HTMLElement {
 	}
 
 	onReady() {
-		this.moreThen = this.hasAttribute('more-then');
+		this.moreThen = this.getAttribute('moreThen');
+
 		document.addEventListener("scroll", () => {
 			if (isScrolledIntoView(this)) {
 				this.startCount()
@@ -58,7 +60,7 @@ class StatCount extends HTMLElement {
 			if (this.elaps > this.duration) {
 				this.elaps = this.duration;
 			}
-			this.norm = ease.inOutQuad(this.elaps / this.duration);
+			this.norm = ease.easeOutCubic(this.elaps / this.duration);
 			this.step = this.range * this.norm;
 			this.curr = this.start + this.step;
 
