@@ -107,7 +107,7 @@ class DiscountProductCard extends HTMLElement {
 		}
 
 		this.innerHTML = `
-			<a href="${ this.product?.url }" class="w-full h-80 md:h-auto border-b-2 md:border-b-0 md:border-s-2 border-bc">
+			<a href="${ this.product?.url }" class="w-full h-80 md:h-auto border-b-2 md:border-b-0 md:ltr:border-r-2 md:rtl:border-l-2 border-bc">
 				<img
 					class="w-full h-full object-cover"
 					src="${ this.product?.image?.url || this.product?.thumbnail }" 

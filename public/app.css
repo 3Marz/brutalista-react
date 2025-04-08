@@ -6557,6 +6557,14 @@ lite-youtube.lyt-activated > .lty-playbtn {
   white-space: nowrap;
   width: 1px;
 }
+.s-social-share-btn.s-button-element {
+  border-color: var(--my-gray) !important;
+  color: var(--my-gray) !important;
+}
+.s-social-share-btn.s-button-element:hover {
+  background-color: var(--my-gray) !important;
+  color: white !important;
+}
 .s-button {
   /* Button Types */
   /* Button filling */
@@ -6806,7 +6814,6 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:gap-6{gap:1.5rem}
 .sm\:gap-8{gap:2rem}
 .sm\:border-b-0{border-bottom-width:0px}
-.sm\:border-s-2{border-left-width:2px}
 .sm\:p-1{padding:0.25rem}
 .sm\:pb-0{padding-bottom:0px}
 .sm\:pb-20{padding-bottom:5rem}
@@ -6866,7 +6873,6 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:space-y-0 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0px * (1 - 0));margin-top:calc(0px * (1 - var(--tw-space-y-reverse)));margin-top:calc(0px * calc(1 - 0));margin-top:calc(0px * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0px * 0);margin-bottom:calc(0px * var(--tw-space-y-reverse))}
 .md\:overflow-hidden{overflow:hidden}
 .md\:border-b-0{border-bottom-width:0px}
-.md\:border-s-2{border-left-width:2px}
 .md\:p-0{padding:0px}
 .md\:p-14{padding:3.5rem}
 .md\:p-8{padding:2rem}
@@ -6976,8 +6982,10 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .ltr\:even\:border-l:nth-child(even):where([dir="ltr"], [dir="ltr"] *){border-left-width:1px}
 .group:hover .group-hover\:ltr\:translate-x-1:where([dir="ltr"], [dir="ltr"] *){--tw-translate-x:0.25rem;transform:translate(0.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 @media (min-width: 640px){
+.sm\:ltr\:border-r-2:where([dir="ltr"], [dir="ltr"] *){border-right-width:2px}
 .sm\:ltr\:text-left:where([dir="ltr"], [dir="ltr"] *){text-align:left}}
 @media (min-width: 768px){
+.md\:ltr\:border-r-2:where([dir="ltr"], [dir="ltr"] *){border-right-width:2px}
 .ltr\:md\:pr-10:where([dir="ltr"], [dir="ltr"] *){padding-right:2.5rem}
 .ltr\:md\:pr-12:where([dir="ltr"], [dir="ltr"] *){padding-right:3rem}
 .ltr\:md\:pr-8:where([dir="ltr"], [dir="ltr"] *){padding-right:2rem}
@@ -7026,8 +7034,10 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .rtl\:even\:border-r:nth-child(even):where([dir="rtl"], [dir="rtl"] *){border-right-width:1px}
 .group:hover .group-hover\:rtl\:-translate-x-1:where([dir="rtl"], [dir="rtl"] *){--tw-translate-x:-0.25rem;transform:translate(-0.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 @media (min-width: 640px){
+.sm\:rtl\:border-l-2:where([dir="rtl"], [dir="rtl"] *){border-left-width:2px}
 .sm\:rtl\:text-right:where([dir="rtl"], [dir="rtl"] *){text-align:right}}
 @media (min-width: 768px){
+.md\:rtl\:border-l-2:where([dir="rtl"], [dir="rtl"] *){border-left-width:2px}
 .rtl\:md\:pl-10:where([dir="rtl"], [dir="rtl"] *){padding-left:2.5rem}
 .rtl\:md\:pl-12:where([dir="rtl"], [dir="rtl"] *){padding-left:3rem}
 .rtl\:md\:pl-8:where([dir="rtl"], [dir="rtl"] *){padding-left:2rem}

@@ -1,4 +1,15 @@
 
+.s-social-share-btn {
+  &.s-button-element {
+    border-color: var(--my-gray) !important;
+    color: var(--my-gray) !important;
+    &:hover {
+      background-color: var(--my-gray) !important;
+      color: white !important;
+    }
+  }
+}
+
 .s-button{
   &-wrap{
     
