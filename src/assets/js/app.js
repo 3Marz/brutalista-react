@@ -1,5 +1,6 @@
 import MobileMenu from 'mmenu-light';
-import Swal from 'sweetalert2';
+import Noty from 'noty';
+// import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
@@ -113,26 +114,37 @@ class App extends AppHelpers {
 	}
 
 	initiateNotifier() {
+		// salla.notify.setNotifier(function(message, type, data) {
+		// 	if (typeof message == 'object') {
+		// 		return Swal.fire(message).then(type);
+		// 	}
+		//
+		// 	return Swal.mixin({
+		// 		toast: true,
+		// 		position: salla.config.get('theme.is_rtl') ? 'top-start' : 'top-end',
+		// 		showConfirmButton: false,
+		// 		timer: 2000,
+		// 		didOpen: (toast) => {
+		// 			toast.addEventListener('mouseenter', Swal.stopTimer)
+		// 			toast.addEventListener('mouseleave', Swal.resumeTimer)
+		// 		}
+		// 	}).fire({
+		// 		icon: type,
+		// 		title: message,
+		// 		showCloseButton: true,
+		// 		timerProgressBar: true
+		// 	})
+		// });
 		salla.notify.setNotifier(function(message, type, data) {
-			if (typeof message == 'object') {
-				return Swal.fire(message).then(type);
-			}
-
-			return Swal.mixin({
-				toast: true,
-				position: salla.config.get('theme.is_rtl') ? 'top-start' : 'top-end',
-				showConfirmButton: false,
-				timer: 2000,
-				didOpen: (toast) => {
-					toast.addEventListener('mouseenter', Swal.stopTimer)
-					toast.addEventListener('mouseleave', Swal.resumeTimer)
-				}
-			}).fire({
-				icon: type,
-				title: message,
-				showCloseButton: true,
-				timerProgressBar: true
-			})
+			new Noty({
+				type: type,
+				text: message,
+				layout: salla.config.get('theme.is_rtl') ? 'topLeft' : 'topRight',
+				timeout: 2000,
+				progressBar: true,
+				closeWith: ['button', 'click'],
+				theme: "relax",
+			}).show()
 		});
 	}
 
@@ -326,7 +338,12 @@ class App extends AppHelpers {
 		});
 
 		salla.cart.event.onItemAdded((response, prodId) => {
-			app.element('salla-cart-summary').animateToCart(app.element(`#product-${prodId} img`));
+			this.anime("#cart-summary-btn", {
+				scale: [1.5, 1],
+				ease: 'outQuad',
+				alternate: true
+			})
+			// app.element('#cart-summary-btn').animateToCart(app.element(`#product-${prodId} img`));
 		});
 	}
 }

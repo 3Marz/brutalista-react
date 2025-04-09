@@ -73,3 +73,16 @@
 		}
 	}
 }
+// For Noty Library instad
+#noty_layout__topLeft {
+  @apply top-16 left-5 w-full sm:w-[330px];
+}
+#noty_layout__topRight {
+  @apply top-16 right-5 w-full sm:w-[330px];
+}
+.noty_close_button {
+  @apply rtl:left-[2px] rtl:right-auto;
+}
+// .noty_bar {
+//   border-radius: var(--br) !important;
+// }
