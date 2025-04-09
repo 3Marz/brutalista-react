@@ -565,6 +565,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!hidden{display:none !important}
 .hidden{display:none}
 .aspect-square{aspect-ratio:1 / 1}
+.aspect-\[4\/3\]{aspect-ratio:4/3}
 .\!h-36{height:9rem !important}
 .h-0{height:0px}
 .h-10{height:2.5rem}
@@ -6836,11 +6837,14 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .md\:table-row{display:table-row}
 .md\:grid{display:grid}
 .md\:hidden{display:none}
+.md\:aspect-auto{aspect-ratio:auto}
+.md\:aspect-\[4\/3\]{aspect-ratio:4/3}
 .md\:h-20{height:5rem}
 .md\:h-24{height:6rem}
 .md\:h-96{height:24rem}
 .md\:h-\[400px\]{height:400px}
 .md\:h-auto{height:auto}
+.md\:max-h-\[90dvh\]{max-height:90dvh}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-1\/2{width:50%}
 .md\:w-2\/4{width:50%}

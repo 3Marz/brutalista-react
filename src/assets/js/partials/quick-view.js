@@ -106,12 +106,12 @@ class QuickViewModal extends HTMLElement {
 								<salla-social-share class="inline-flex quick-view-share-button" aria-label="social share"></salla-social-share>
 
 								<salla-button
-										class="btn--wishlist animated no-background"
+										class="btn--wishlist animated"
 										data-id="${ this.product.id }"
 										onclick="salla.wishlist.toggle(${ this.product.id })"
 										shape="icon"
 										fill="outline"
-										color="light"
+										color="gray"
 										aria-label="add to wishlist">
 									<i class="sicon-heart"></i>
 								</salla-button>
