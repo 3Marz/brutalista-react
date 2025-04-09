@@ -6218,7 +6218,7 @@ salla-slider .swiper-slide {
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
 }
-.promotion-title{position:absolute;top:0.5rem;right:0.5rem;z-index:3;white-space:nowrap;border-radius:var(--br);border-width:1px;border-color:var(--bc);background-color:#414042;background-color:var(--color-primary);padding-left:0.5rem;padding-right:0.5rem;padding-top:0.125rem;padding-bottom:0.125rem;font-size:10px;font-weight:700;color:var(--base-100)}
+.promotion-title{position:absolute;top:0.5rem;right:0.5rem;z-index:3;max-width:80%;white-space:nowrap;border-radius:var(--br);border-width:1px;border-color:var(--bc);background-color:#414042;background-color:var(--color-primary);padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;font-size:0.75rem;line-height:1rem;font-weight:700;color:var(--base-100)}
 input[type=radio].sr-only div.promotion-title {
   transition: all 0.3s;
 }
