@@ -1107,8 +1107,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-auto{margin-top:auto}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
-.line-clamp-5{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5}
 .line-clamp-4{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4}
+.line-clamp-5{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5}
 .block{display:block}
 .inline-block{display:inline-block}
 .inline{display:inline}
@@ -1153,7 +1153,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-h-8{max-height:2rem}
 .max-h-\[300px\]{max-height:300px}
 .max-h-full{max-height:100%}
-.min-h-32{min-height:8rem}
 .min-h-7{min-height:1.75rem}
 .min-h-80{min-height:20rem}
 .min-h-\[34px\]{min-height:34px}
@@ -7362,7 +7361,6 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:h-4\/5{height:80%}
 .sm\:h-full{height:100%}
 .sm\:max-h-\[80dvh\]{max-height:80dvh}
-.sm\:min-h-44{min-height:11rem}
 .sm\:\!w-\[220px\]{width:220px !important}
 .sm\:w-4\/5{width:80%}
 .sm\:w-52{width:13rem}
@@ -7471,7 +7469,6 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .lg\:\!inline-block{display:inline-block !important}
 .lg\:flex{display:flex}
 .lg\:hidden{display:none}
-.lg\:min-h-60{min-height:15rem}
 .lg\:min-h-\[600px\]{min-height:600px}
 .lg\:w-10\/12{width:83.333333%}
 .lg\:w-24{width:6rem}
