@@ -119,6 +119,10 @@
       }
     }
 
+    .s-user-menu-dropdown {
+      @apply md:rounded-t-none;
+    }
+
     .sub-menu {
       @apply rounded-t-none;
     }
@@ -206,7 +210,7 @@ salla-user-menu{
 
   }
   &-dropdown{
-    @apply border-2 border-b-0 md:border-b-2 border-bc rounded-b-none md:rounded-b-neo rounded-neo;
+    @apply border-2 border-b-0 md:border-b-2 border-bc rounded-b-none rounded-t-neo md:rounded-t-neo md:rounded-b-neo;
     &-header{
       img{
 
