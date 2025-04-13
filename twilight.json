@@ -2026,7 +2026,84 @@
             "title": "فاصل (بروتال)",
             "icon": "sicon-hr",
             "path": "home.separator",
-            "fields": []
+            "fields": [
+                {
+                    "id": "theme_colors",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "ألوان أفترضية من الثيم",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": true,
+                    "required": false
+                },
+                {
+                    "id": "border_color",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون الفاصلة",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#000000",
+                    "required": false
+                },
+                {
+                    "id": "border_style",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "نوع الفاصلة",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [
+                        {
+                            "label": "خط عادي",
+                            "value": "solid",
+                            "key": "2dea66f7-c4cf-4c12-8623-f92456ebe717"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "خط عادي",
+                            "value": "solid",
+                            "key": "2dea66f7-c4cf-4c12-8623-f92456ebe717"
+                        },
+                        {
+                            "label": "خط متقطع",
+                            "value": "dasded",
+                            "key": "078836ec-d630-4170-8cf9-61371483f8be"
+                        },
+                        {
+                            "label": "خط مزدوج",
+                            "value": "double",
+                            "key": "6a4592a7-1d0e-45b0-9286-081447bdddbd"
+                        }
+                    ],
+                    "source": "Manual",
+                    "multichoice": false,
+                    "searchable": true,
+                    "required": false
+                },
+                {
+                    "id": "border_width",
+                    "type": "number",
+                    "format": "integer",
+                    "inputType": "number",
+                    "label": "عرض الفاصلة",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "عرض الخط",
+                    "icon": "sicon-hashtag",
+                    "value": 2,
+                    "required": false,
+                    "minimum": "1",
+                    "maximum": 50
+                }
+            ]
         }
     ],
     "support_url": null,
