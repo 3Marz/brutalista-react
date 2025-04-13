@@ -43,7 +43,7 @@ class StatCount extends HTMLElement {
 	}
 
 	startCount() {
-		this.duration = 1000;
+		this.duration = 700;
 
 		this.start = parseInt(this.textContent, 10); // Get start and end values
 		this.end = parseInt(this.dataset.count, 10);

@@ -5552,10 +5552,9 @@ input[type=radio].sr-only div.main-menu .sub-menu {
 input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
   border-color: var(--color-main);
 }
-  .main-menu .sub-menu .sub-menu {
-    top: -2px;
-    right: 100%;
-  }
+  .main-menu .sub-menu .sub-menu{border-radius:var(--br);
+    top: -1px;
+    right: 100%}
   [dir=ltr] .main-menu .sub-menu .sub-menu {
     left: 100%;
     right: auto;
@@ -7380,8 +7379,6 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:border-b-0{border-bottom-width:0px}
 .sm\:p-1{padding:0.25rem}
 .sm\:pb-0{padding-bottom:0px}
-.sm\:pb-20{padding-bottom:5rem}
-.sm\:pt-12{padding-top:3rem}
 .sm\:pt-20{padding-top:5rem}
 .sm\:text-lg{font-size:1.125rem;line-height:1.75rem}
 .sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}
