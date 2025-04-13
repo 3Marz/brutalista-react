@@ -2020,6 +2020,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "b134ede8-7102-4556-bbe1-e870f0139220",
+            "title": "فاصل (بروتال)",
+            "icon": "sicon-hr",
+            "path": "home.separator",
+            "fields": []
         }
     ],
     "support_url": null,
