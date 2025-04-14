@@ -39,6 +39,8 @@ class BrutalReviews extends HTMLElement {
 		this.order_by = this.getAttribute('order-by')
 
 		this.display_all_url = this.getAttribute('display-all-url')
+
+		this.position = this.getAttribute('slider-pos')
 	}
 
 	orderReviews() {
@@ -63,8 +65,13 @@ class BrutalReviews extends HTMLElement {
 			this.reviews = this.reviews.slice(0, this.limit)
 		}
 
+		if (!this.reviews.length) {
+			return
+		}
+
 		this.innerHTML = `
 			<salla-slider 
+				id="brutal-reviews-${this.position ? this.position : Math.floor(Math.random() * 100000)}"
 				type="fullwidth"
 				class="brutal-reviews-slider"
 				show-controls="true"
