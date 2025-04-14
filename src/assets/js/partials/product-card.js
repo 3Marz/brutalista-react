@@ -196,7 +196,7 @@ class ProductCard extends HTMLElement {
 					/>
 				</a>
 				
-				<div class="absolute ${this.fullImage ? "top-2" : "bottom-2"} left-1 flex flex-col gap-2 group-hover:opacity-100 md:opacity-0">
+				<div class="absolute ${this.fullImage ? "top-2" : "bottom-2"} left-1 flex flex-col gap-2 group-hover:opacity-100 md:opacity-0 transition">
 					<salla-button
 						size="medium"
 						shape="icon"
@@ -204,7 +204,7 @@ class ProductCard extends HTMLElement {
 						color="${this.isInWishlist ? 'danger' : 'dark'}"
 						name="product-name-${this.product.id}"
 						aria-label="Add or remove to wishlist"
-						class="group-hover:pointer-events-auto duration-300 pointer-events-none group-hover:translate-x-0 md:-translate-x-5 transition-all"
+						class="group-hover:pointer-events-auto duration-300 pointer-events-none group-hover:translate-x-0 md:-translate-x-8 transition-all"
 						onclick="salla.wishlist.toggle(${this.product.id})"
 						data-id="${this.product.id}"
 					>
@@ -218,7 +218,7 @@ class ProductCard extends HTMLElement {
 						color="dark"
 						name="product-name-${this.product.id}"
 						aria-label="Quick view product"
-						class="group-hover:pointer-events-auto duration-300 pointer-events-none group-hover:translate-x-0 md:-translate-x-10 transition-all"
+						class="group-hover:pointer-events-auto duration-300 pointer-events-none group-hover:translate-x-0 md:-translate-x-16 transition-all"
 						onclick="document.getElementById('quick-view-modal')?.loadProduct(${this.product.id})"
 					>
 						<i class="sicon-eye"></i>
