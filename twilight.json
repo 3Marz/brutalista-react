@@ -1101,6 +1101,18 @@
                     "maximum": 100
                 },
                 {
+                    "id": "top_margin",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "إضافة مسافة بين الشريط والعنصر الذي فوقه",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": false,
+                    "required": false
+                },
+                {
                     "id": "default_colors",
                     "type": "boolean",
                     "format": "switch",
