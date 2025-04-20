@@ -5892,7 +5892,7 @@ input[type=radio].sr-only div.s-block--hero-slider .swiper-slide .swiper-lazy:af
 input[type=radio].sr-only:checked ~ div.s-block--hero-slider .swiper-slide .swiper-lazy:after {
   border-color: var(--color-main);
 }
-.s-block--hero-slider .swiper-slide .overlay-bg:after{position:absolute;top:0px;height:100%;width:100%;background-color:rgba(0, 0, 0, 0.3);--tw-content:"";content:"";content:var(--tw-content)}
+.s-block--hero-slider .swiper-slide .overlay-bg:after{position:absolute;top:0px;height:100%;width:100%;background-color:rgba(0, 0, 0, 0.15);--tw-content:"";content:"";content:var(--tw-content)}
 input[type=radio].sr-only div.s-block--hero-slider .swiper-slide .overlay-bg:after {
   transition: all 0.3s;
 }

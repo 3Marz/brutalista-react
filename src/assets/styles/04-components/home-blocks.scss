@@ -46,7 +46,7 @@
 
 	.overlay-bg{
 		&:after{
-		  @apply content-[''] absolute top-0 bg-black/30 w-full h-full;
+		  @apply content-[''] absolute top-0 bg-black/15 w-full h-full;
 		}
 	  }
   }
