@@ -16,7 +16,7 @@ input[type="file"] {
 }
 
 body{
-  @apply bg-bg-base;
+  @apply bg-base-100;
   [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select{
     @apply focus:ring-0;
   }
@@ -279,6 +279,45 @@ salla-modal {
       }
     }
   }
+}
+
+// Dots Background
+.dots-bg {
+  background-image: radial-gradient(
+      circle at center,
+      var(--base-300) 0.1rem,
+      var(--base-100) 0
+    ), radial-gradient(circle at center, var(--base-300) 0.1rem, var(--base-100) 0);
+  background-size: 0.8rem 0.8rem;
+  background-position: 0 0, 0.4rem 0.4rem;
+
+  &.profile-header{
+    .breadcrumbs {
+      .s-breadcrumb-item,
+      .s-breadcrumb-arrow svg,
+      a,
+      span,
+      .arrow {
+        @apply fill-bc opacity-100 text-bc bg-base-100;
+      }
+    }
+  }
+
+  // @media (max-width: 1024px){
+  //   &.profile-header{
+  //     background-image: none;
+  //
+  //     .breadcrumbs {
+  //       .s-breadcrumb-item,
+  //       .s-breadcrumb-arrow svg,
+  //       a,
+  //       span,
+  //       .arrow {
+  //         @apply fill-bc opacity-100 text-bc bg-transparent;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 // Small badge

@@ -1,0 +1,63 @@
+
+.s-form-control {
+  @apply border-bc bg-base-50;
+}
+
+.s-product-options{
+  &-wrapper{
+    @apply bg-transparent;
+  }
+  &-option-container{
+
+  }
+  &-option{
+
+  }
+  &-option-label{
+
+  }
+  &-option-content{
+
+  }
+  &-colors-wrapper{
+
+  }
+  &-colors-item {
+    label {
+      span {
+        border-color: var(--bc-light) !important;
+      }
+      div {
+        color: var(--bc-light) !important;
+      }
+    }  
+  }
+  &-date-element{
+
+  }
+  &-time-element{
+    
+  }
+  &-datetime-element{
+
+  }
+  &-image-input{
+
+  }
+  &-multiple-options-wrapper{
+
+  }
+  &-splitter{
+
+  }
+  &-text{
+
+  }
+  &-textarea{
+
+  }
+  &-thumbnails-wrapper{
+
+  }
+}
+

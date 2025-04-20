@@ -63,7 +63,7 @@
 
 /* Main Nav */
 .main-nav-container {
-  @apply lg:min-h-[84px] flex items-center;
+  @apply lg:min-h-[84px] !h-auto flex items-center;
   
   // Custom background Color
   .has-bg &,
@@ -117,6 +117,10 @@
         top: -70px;
         height: 58px;
       }
+    }
+
+    .s-user-menu-dropdown {
+      @apply md:rounded-t-none;
     }
 
     .sub-menu {
@@ -173,6 +177,67 @@
 
 salla-user-menu{
   @apply shrink-0;
+}
+
+.s-user-menu{
+  &-wrapper{
+
+  }
+  &-toggler{
+
+  }
+  // Default trigger
+  &-trigger{
+    @apply bg-transparent py-0 transition hover:-translate-y-1;
+    &-avatar{
+      @apply w-7 h-7 !border-2 border-bc;
+    }
+    &-content{
+
+    }
+    &-hello{
+
+    }
+    &-name{
+
+    }
+    &-icon{
+
+    }
+  }
+  // Your custom trigger
+  &-trigger-slot{
+
+  }
+  &-dropdown{
+    @apply border-2 border-b-0 md:border-b-2 border-bc rounded-b-none rounded-t-neo md:rounded-t-neo md:rounded-b-neo;
+    &-header{
+      img{
+
+      }
+      &-content{
+
+      }
+      &-close{
+
+      }
+    }
+    &-list{
+
+    }
+    &-item{
+      &-title{
+
+      }
+      &-badge{
+
+      }
+    }
+
+  }
+  &-inline{
+    
+  }
 }
 
 // cart summary

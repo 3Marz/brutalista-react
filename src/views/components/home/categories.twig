@@ -1,0 +1,32 @@
+
+
+
+<section class="s-block container">
+
+	<div class="s-block__title">
+		<div class="right-side">
+		  <h2>{{ component.title }}</h2>
+		</div>
+	</div>
+
+	<div class="flex justify-center flex-wrap gap-x-10 gap-y-4">
+		{% for cat in component.categories %}
+			<a href="{{ cat.url }}" class="cat-entry-br group justify-self-center text-bc flex flex-col gap-2 p-1 items-center justify-center">
+				
+				<div class="w-24 h-24 flex justify-center items-center text-xl rounded-full bg-base-50 border border-bc overflow-hidden">
+					{% if cat.image %}
+						<img src="{{ cat.image }}" class="w-full transition group-hover:scale-110 h-full object-cover" />
+					{% else %}
+						<i class="{{ cat.icon }} group-hover:scale-110 transition"></i>
+					{% endif %}
+				</div>	
+
+				<p class="text-base font-bold">
+					{{ cat.name }}
+				</p>
+
+			</a>
+		{% endfor %}
+	</div>
+
+</section>

@@ -22,6 +22,16 @@ salla-button {
   background-color: transparent !important;
 }
 
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 .btn {
   @apply transition duration-300 flex-1 inline-flex justify-center items-center px-6 pb-2.5 pt-2 text-sm font-bold rounded-neo hover:opacity-80 whitespace-nowrap;
 
@@ -77,7 +87,7 @@ salla-button {
     @apply m-0 rtl:mr-0.5 ltr:ml-0.5;
 
     &:hover{
-      @apply text-gray-600;
+      // @apply text-gray-600;
     }
 
     &.is-added {
@@ -86,7 +96,7 @@ salla-button {
   }
 
   &--rounded-gray {
-    @apply inline-flex grow-0 justify-center w-full rounded-full px-3.5 py-2 items-center transition-colors bg-gray-200/50 hover:bg-gray-200/70 text-sm font-medium whitespace-nowrap;
+    @apply inline-flex grow-0 justify-center w-full rounded-md px-3.5 py-2 items-center transition-colors bg-gray-200/50 hover:bg-gray-200/70 text-sm font-medium whitespace-nowrap border border-base-300;
   }
 
   &--circle-gray {
@@ -118,7 +128,7 @@ salla-button {
   }
 
   &--collapse {
-    @apply w-full bg-gray-100 py-2.5 rtl:xs:pr-7 ltr:xs:pl-7 rtl:xs:pl-5 ltr:xs:pr-5 rtl:xs:pl-5 ltr:xs:pr-5 rounded-md flex items-center text-gray-700 justify-center text-sm;
+    @apply border border-base-300 w-full bg-base-50 py-2.5 rtl:xs:pr-7 ltr:xs:pl-7 rtl:xs:pl-5 ltr:xs:pr-5 rtl:xs:pl-5 ltr:xs:pr-5 rounded-neo flex items-center text-bc justify-center text-sm;
   }
 
   /* Disabled state */
@@ -151,6 +161,9 @@ salla-button {
     &.light {
       @apply bg-transparent text-white border-white;
     }
+    &.base {
+      @apply bg-transparent text-base-100 border-base-100;
+    }
   }
 
   &--rounded-full {
@@ -166,7 +179,7 @@ salla-button {
 * Coupon Button
 */
 button.btn--coupon {
-  @apply absolute top-0 rtl:left-0 ltr:right-0 rtl:rounded-r-none ltr:rounded-l-none shrink-0 h-[40px];
+  @apply absolute !shadow-none hover:!translate-y-0 hover:!translate-x-0 top-0 rtl:left-0 ltr:right-0 rtl:rounded-r-none ltr:rounded-l-none shrink-0 h-[40px];
 
   .s-button-text {
     @apply flex #{!important};
@@ -181,6 +194,13 @@ salla-button {
 
   &.has-coupon button {
     @apply w-12 px-0;
+  }
+}
+
+// share button on quick view modal
+.quick-view-share-button {
+  .s-social-share-btn {
+    background: transparent !important;
   }
 }
 

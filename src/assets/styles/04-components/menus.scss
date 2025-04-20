@@ -60,12 +60,17 @@
       > a > i{
         font-family: 'sallaicons';
         content: "\e970";
-        @apply inline-block transition-transform duration-300 self-end mx-0.5 text-lg opacity-70 leading-4;
+        @apply inline-block rtl:ml-0 transition-transform duration-300 self-end mx-0.5 text-lg opacity-70 leading-4;
       }
 
-      &:hover > a > i{
+      &:hover > a > i {
         opacity: 1;
-        transform: rotate(-90deg);
+        &:where([dir="rtl"], [dir="rtl"] *) {
+          transform: rotate(-90deg);
+        }
+        &:where([dir="ltr"], [dir="ltr"] *) {
+          transform: rotate(90deg);
+        }
       }
       &.root-level {
 
@@ -77,10 +82,11 @@
     }
 
     .sub-menu {
-      @apply z-20 transition opacity-0 invisible absolute bg-white scale-75 rounded-b-neo rounded-t-neo border-2 border-bc font-bold ;
+      @apply z-20 transition opacity-0 invisible absolute bg-white scale-75 rounded-b-neo rounded-t-neo border border-bc font-bold ;
 
       .sub-menu {
-        top: -2px;
+        @apply rounded-neo;
+        top: -1px;
         right: 100%;
 
         [dir="ltr"] & {
@@ -139,10 +145,11 @@
   }
   .mobile-menu {
       display: none;
-      @apply lg:hidden overflow-hidden rtl:border-l-2 ltr:border-r-2 border-bc;
+      @apply lg:hidden overflow-hidden;
   }
   .mm-ocd__content{
     overflow-y: auto;
+    @apply rtl:border-l-2 ltr:border-r-2 border-bc;
   }
   .mm-ocd-opened {
     .mobile-menu {

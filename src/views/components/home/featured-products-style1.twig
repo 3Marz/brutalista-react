@@ -18,11 +18,11 @@
 #}
 {% set component_id='featured-products-style1-' ~ position %}
 <section class="s-block s-block-tabs s-block--special-products container" id="{{ component_id }}">
-    <div class="s-block__title"> 
+    <div class="s-block__title lg:!justify-between"> 
       <div class="right-side">
         <h2>{{ main_product.title }}</h2>
       </div>
-      <div class="tabs hide-scroll hidden lg:flex">
+      <div class="py-[calc(abs(var(--y-shadow-offset)))] px-[calc(abs(var(--x-shadow-offset)))] tabs hide-scroll hidden lg:flex">
           {% for section in items %}
               <salla-button shape="link"
                       data-target="{{ component_id }}-{{ section.id }}"
@@ -37,11 +37,11 @@
     <div class="grid grid-cols-1 {{ main_product?'lg:grid-cols-2':''}} gap-8">
         {% if main_product %}
             <div class="flex flex-col">
-                <custom-salla-product-card shadow-on-hover product="{{main_product.product}}" isSpecial></custom-salla-product-card>  
+                <custom-salla-product-card deadline-text="{{ trans("pages.product_card.discount_ends") }}" product="{{main_product.product}}" isSpecial></custom-salla-product-card>  
             </div>
         {% endif %}
         <div class="flex flex-col">
-            <div class="tabs mb-4 sm:mb-8 hide-scroll lg:hidden">
+            <div class="tabs py-[calc(abs(var(--y-shadow-offset)))] px-[calc(abs(var(--x-shadow-offset)))] hide-scroll lg:hidden">
                 {% for section in items %}
                     <salla-button shape="link"
                             data-target="{{ component_id }}-{{ section.id }}"

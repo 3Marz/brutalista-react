@@ -1,0 +1,112 @@
+
+.s-modal {
+  &-container{
+  }
+  &-wrapper {
+
+  }
+  &-close {
+    @apply bg-base-50 rounded-br-[50%];
+    svg {
+      @apply fill-bc;
+    }
+  }
+  &-header {
+
+  }
+  &-header-inner {
+
+  }
+  &-header-content {
+
+  }
+  &-header-img {
+
+  }
+  &-icon {
+
+  }
+  &-bg-normal {
+
+  }
+  &-bg-success {
+
+  }
+  &-bg-error {
+
+  }
+  &-bg-primary {
+
+  }
+  &-text-success {
+
+  }
+  &-text-error {
+
+  }
+  &-title {
+
+  }
+  &-sub-title {
+
+  }
+  &-title-below {
+
+  }
+  &-body-slot {
+
+  }
+  &-body {
+    @apply border-b-0 sm:border-b-2 bg-base-50 border-2 border-bc shadow-neo max-h-dvh overflow-scroll;
+  }
+  &-padding {
+
+  }
+  &-spacer {
+
+  }
+  &-align-middle {
+
+  }
+  &-align-top {
+
+  }
+  &-align-bottom {
+
+  }
+  &-overlay {
+
+  }
+  &-overlay-leaving {
+
+  }
+  &-entering {
+
+  }
+  &-leaving {
+
+  }
+  &-is-center {
+
+  }
+  // modal sizes
+  &-xs {
+
+  }
+  &-sm {
+
+  }
+  &-md {
+
+  }
+  &-lg {
+
+  }
+  &-xl {
+
+  }
+  &-full {
+
+  }
+}
+

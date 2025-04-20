@@ -1,16 +1,30 @@
 
+.s-social-share-btn {
+  &.s-button-element {
+    border-color: var(--my-gray) !important;
+    color: var(--my-gray) !important;
+    &:hover {
+      background-color: var(--my-gray) !important;
+      color: white !important;
+    }
+  }
+}
+
 .s-button{
   &-wrap{
     
   }
   &-element{
-    @apply rounded-neo;
+    @apply shadow-[0px_0px_var(--bc)] rounded-neo;
   }
   /* Button Types */
   &-link{
     
   }
   &-icon{
+    .s-button-text {
+      @apply overflow-visible;
+    }
     border-radius: var(--br) !important;
   }
   &-btn{
@@ -23,7 +37,7 @@
     @apply duration-200 border-2 border-bc hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo
   }
   &-outline{
-    @apply border-2 hover:border-bc hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
+    @apply bg-base-50 border-2 hover:border-bc hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo
   }
   &-fill-none{
     
@@ -94,7 +108,7 @@
     @apply border-danger text-danger hover:bg-danger;   
   }
   &-light-outline{
-    @apply border-light text-light hover:bg-light hover:text-black;   
+    @apply text-light !border-light hover:bg-light hover:text-black;   
     &:hover {
       border-color: var(--bc) !important;
     }

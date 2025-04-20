@@ -1,6 +1,6 @@
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="profile-header gradient-bg">
+    <div class="profile-header dots-bg">
         <div class="container relative flex justify-between h-full items-center">
             {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
             <nav class="breadcrumbs w-full py-5 self-start">
@@ -12,7 +12,7 @@
     <div class="container lg:mb-24">
         <div class="flex items-start flex-col lg:flex-row ">
             <nav aria-label="Sidebar"
-                 class="shrink-0 lg:sticky top-24 lg:-mt-28 lg:shadow-default rounded-md lg:bg-white w-full lg:w-72 rtl:lg:ml-8 ltr:lg:mr-8 lg:pt-8 lg:pb-11 sidebar space-y-px">
+                 class="shrink-0 lg:sticky top-24 lg:-mt-28 lg:shadow-neo lg:border-2 lg:border-bc rounded-neo lg:bg-white w-full lg:w-72 rtl:lg:ml-8 ltr:lg:mr-8 lg:pt-8 lg:pb-11 sidebar space-y-px">
 
                 {% if is_page('customer.profile') %}
                     <div class="text-center md:mb-9">
@@ -31,7 +31,7 @@
                     <salla-user-menu inline></salla-user-menu>
                 </div>
             </nav>
-            <div class="main-content w-full flex-1 lg:pt-10 ">
+            <div class="main-content w-full flex-1 pt-10 ">
                 {% block inner_title %}
                     <h1 class="font-bold text-lg text-center sm:rtl:text-right sm:ltr:text-left mb-2">{{ page.title }}</h1>
                 {% endblock %}

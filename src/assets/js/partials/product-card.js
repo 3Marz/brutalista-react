@@ -59,7 +59,7 @@ class ProductCard extends HTMLElement {
 	getProductBadge() {
 		if (this.product.promotion_title) {
 			return `
-				<div class="py-1 px-2 text-sm whitespace-nowrap absolute bg-primary border border-bc text-bg-base z-[3] top-2 right-2 rounded-neo">
+				<div class="promotion-title pointer-events-none">
 					${this.product.promotion_title}
 				</div>`
 		}
@@ -68,8 +68,8 @@ class ProductCard extends HTMLElement {
 		//}
 		if (this.product?.is_out_of_stock) {
 			return `
-				<div class="absolute top-0 right-0 z-[3] w-32 h-32 overflow-hidden flex items-center justify-center">
-					<span class="text-center outline-2 outline outline-[#7a0000] border-y-2 border-yellow-50 border-dashed text-sm rotate-45 translate-x-6 -translate-y-6 px-4 py-1 w-[200%] bg-[#7a0000] text-yellow-50 absolute">
+				<div class="absolute top-0 right-0 z-[3] w-32 h-32 overflow-hidden flex items-center justify-center pointer-events-none">
+					<span class="text-center outline-2 outline outline-[#7a0000] border-y-2 border-yellow-50 border-dashed text-xs md:text-sm rotate-45 translate-x-6 -translate-y-6 px-4 py-1 w-[200%] bg-[#7a0000] text-yellow-50 absolute">
 						${this.outOfStock}
 					</span>
 				</div>`
@@ -90,7 +90,7 @@ class ProductCard extends HTMLElement {
 		if (this.product.is_on_sale) {
 			price = `<div class="s-product-card-sale-price">
 						<h4>${this.getPriceFormat(this.product.sale_price)}</h4>
-						<span>${this.getPriceFormat(this.product?.regular_price)}</span>
+						<span class="${this.fullImage ? "!text-base-100" : ""}">${this.getPriceFormat(this.product?.regular_price)}</span>
 					</div>`;
 		}
 		else if (this.product.starting_price) {
@@ -100,7 +100,7 @@ class ProductCard extends HTMLElement {
 					</div>`
 		}
 		else {
-			price = `<h4 class="s-product-card-price">${this.getPriceFormat(this.product?.price)}</h4>`
+			price = `<h4 class="s-product-card-price ${this.fullImage ? "!text-base-100" : ""}">${this.getPriceFormat(this.product?.price)}</h4>`
 		}
 
 		return price;
@@ -159,17 +159,20 @@ class ProductCard extends HTMLElement {
 		 *  Show quantity.
 		 */
 		this.showQuantity = this.hasAttribute('showQuantity');
+
+		this.notBoxedCountDown = this.hasAttribute('notBoxedCountDown');
+		this.deadline_text = this.getAttribute('deadline-text');
 	}
 
 	render() {
-		this.classList.add('h-full', 'flex', 'flex-col', 'gap-3', 'group', 'overflow-visible', 'relative');
+		this.classList.add('h-full', 'w-full', 'flex', `${this.minimal || this.horizontal ? "flex-row" : "flex-col"}`, 'gap-3', 'group', 'overflow-visible', 'relative');
 		this.setAttribute('id', this.product.id);
 		!this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-vertical') : '';
 		this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-horizontal') : '';
 		//this.isHorizontal = this.horizontal && !this.fullImage && !this.minimal
 		this.fitImageHeight && !this.isSpecial && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-fit-height') : '';
 		this.isSpecial ? this.classList.add('s-product-card-special') : '';
-		this.fullImage ? this.classList.add('s-product-card-full-image') : '';
+		//this.fullImage ? this.classList.add('s-product-card-full-image') : '';
 		this.minimal ? this.classList.add('s-product-card-minimal') : '';
 		this.product?.donation ? this.classList.add('s-product-card-donation') : '';
 		this.shadowOnHover ? this.classList.add('s-product-card-shadow') : '';
@@ -177,29 +180,75 @@ class ProductCard extends HTMLElement {
 		this.isInWishlist = !salla.config.isGuest() && salla.storage.get('salla::wishlist', []).includes(this.product.id);
 
 		this.innerHTML = `
-			${this.getProductBadge()}
-			<div class="h-44 lg:h-52 w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden">
+			${this.minimal || this.horizontal ? `` : `
+				${this.getProductBadge()}		
+			`}
+			<div class="group/img ${this.fullImage ? `h-full` : `aspect-square`}  w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
-					<img class="hover:scale-110 transition-transform ${salla.url.is_placeholder(this.product?.image?.url)
-						? 'object-contain'
+					<img class="${this.fullImage ? 'brightness-75' : ''} group-hover/img:scale-110 transition-transform w-full h-full duration-500 bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
+						? 'contain'
 						: this.fitImageHeight
 							? this.fitImageHeight
-							: 'object-cover'} lazy"
+							: 'cover'} lazy"
 					  src=${this.placeholder}
 					  alt=${this.product?.image?.alt}
 					  data-src=${this.product?.image?.url || this.product?.thumbnail}
 					/>
 				</a>
+				
+				<div class="absolute ${this.fullImage ? "top-2" : "bottom-2"} left-1 flex flex-col gap-2 group-hover:opacity-100 md:opacity-0 transition">
+					<salla-button
+						size="medium"
+						shape="icon"
+						fill="outline"
+						color="${this.isInWishlist ? 'danger' : 'dark'}"
+						name="product-name-${this.product.id}"
+						aria-label="Add or remove to wishlist"
+						class="group-hover:pointer-events-auto duration-300 pointer-events-none group-hover:translate-x-0 md:-translate-x-8 transition-all"
+						onclick="salla.wishlist.toggle(${this.product.id})"
+						data-id="${this.product.id}"
+					>
+						<i class="sicon-heart"></i>
+					</salla-button>
+
+					<salla-button
+						size="medium"
+						shape="icon"
+						fill="outline"
+						color="dark"
+						name="product-name-${this.product.id}"
+						aria-label="Quick view product"
+						class="group-hover:pointer-events-auto duration-300 pointer-events-none group-hover:translate-x-0 md:-translate-x-16 transition-all"
+						onclick="document.getElementById('quick-view-modal')?.loadProduct(${this.product.id})"
+					>
+						<i class="sicon-eye"></i>
+					</salla-button>
+				</div>
+
 			</div>
-			<div class="flex flex-grow justify-between flex-col gap-3 pb-2">
-				<div class="h-full w-full flex flex-col gap-2 px-2">
-					<h5>
-						<a class="hover:underline underline-offset-2 text-bc" href="${this.product?.url}">${this.product?.name}</a>
+			<div class="${this.fullImage ? "absolute bottom-0 p-4" : ""} flex flex-grow justify-between w-full flex-col gap-3">
+				<div class="h-full w-full flex flex-col gap-2 ${this.isSpecial ? `lg:gap-4` : ``} px-2 ">
+					<h5 class="${this.isSpecial ? `lg:text-xl` : ``}">
+						<a class="hover:underline underline-offset-2 ${this.fullImage ? `text-base-100` : `text-bc`}" href="${this.product?.url}">${this.product?.name}</a>
 					</h5>
+					${this.isSpecial && this.product?.subtitle ? `
+						<p class="text-sm opacity-80">${this.product?.subtitle}</p>
+					` : ``}
 					${this.getProductPrice()}
 				</div>
+
+				${this.isSpecial && this.product.discount_ends
+					? `
+					<div class="h-full w-full text-center">
+						${this.deadline_text ? `
+							<p class="text-sm opacity-65">${this.deadline_text}</p>
+						` : ``}
+						<salla-count-down size="sm" date="${this.formatDate(this.product.discount_ends)}" boxed=${!this.notBoxedCountDown} labeled=${true} />
+					</div>
+					`
+				: ``}
 				
-				<div class="w-full">
+				<div class="w-full custom-add-to-cart-button">
 					<salla-add-product-button width="wide"
 						class="no-background"
 						product-id="${this.product.id}"
@@ -355,7 +404,7 @@ class ProductCard extends HTMLElement {
 		document.lazyLoadInstance?.update(this.querySelectorAll('.lazy'));
 
 		if (this.product?.quantity && this.isSpecial) {
-			this.initCircleBar();
+			// this.initCircleBar();
 		}
 	}
 }

@@ -1,0 +1,25 @@
+
+.tab {
+  @apply relative;
+  input {
+    @apply hidden;
+  }
+
+  &__label {
+    @apply cursor-pointer border-b-2 border-base-300 pb-2 flex justify-between items-center text-base font-bold;
+  }
+
+  &__content {
+    @apply max-h-0 text-base duration-300 overflow-hidden transition-all;
+  }
+
+  input:checked ~ .tab__content {
+    max-height: 10rem;
+  }
+  input:checked ~ .tab__label {
+    i {
+      @apply rotate-180;
+    }
+  }
+}
+

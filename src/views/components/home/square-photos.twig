@@ -1,32 +1,25 @@
-{#
-| Variable          | Type   | Description                                                      |
-|-------------------|--------|------------------------------------------------------------------|
-| title             | string | Section title                                                    |
-| items[]           | array  | List of images                                                   |
-| items[].url       | Bool   | Should set overlay on the background or not                      |
-| items[].link_type | string | category,product,offers,page,external_link,brand                 |
-| items[].image.url | string |                                                                  |
-| items[].image.alt | string |                                                                  |
-| items[].text      | string | Visible title for the photo                                      |
-| position          | Int    | Sorting number start from zero                                   |
-#}
-<section class="s-block s-block--banners container">
-    {% if title %}
-        <div class="s-block__title">
-            <div class="right-side">
-                <h2>{{ title }}</h2>
-            </div>
-        </div>
-    {% endif %}
 
-    <div class="grid {{ items|length <= 3 ? 'one-row md:grid-cols-' ~ items|length : 'md:grid-cols-3 two-row' }} grid-flow-row gap-3 sm:gap-8">
-        {% for item in items %}
-            <a class="banner-entry square-photos {{ item.text ? 'has-overlay with-hover' : '' }}" href="{{ item.url }}" {% if item.link_type == 'external_link' %}target="_blank"{% endif %}>
-                <div class="lazy__bg lazy" data-bg="{{ item.image.url }}"></div>
-                {% if item.text %}
-                        <h3 class="text-with-border"><span>{{ item.text }}</span></h3> 
-                {% endif %}
-            </a>
-        {% endfor %}
-    </div>
+<section class="s-block container">
+
+	{% if component.title %}
+		<div class="s-block__title">
+			<div class="right-side">
+				<h2>{{ component.title }}</h2>
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="grid md:grid-cols-3 md:grid-flow-col gap-5">
+		{% for index, link in component.links %}
+			<a href="{{link.url}}" class="flex group flex-col gap-2 w-full h-full {%if index == 2%} row-span-2 col-span-2 {%endif%}">
+				<div class="w-full h-full rounded-neo overflow-hidden aspect-[4/3] border-2 border-bc shadow-neo ">
+					<img class="lazy w-full h-full object-cover transition group-hover:scale-105 duration-300" src="{{ link.image }}" />
+				</div>
+				<div class="text-lg md:text-xl items-center flex gap-2">
+					<p>{{ link.name }}</p>
+					<i class="group-hover:ltr:translate-x-1 group-hover:rtl:-translate-x-1 rtl:rotate-180 transition sicon-arrow-right"></i>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
 </section>

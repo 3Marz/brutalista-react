@@ -103,19 +103,9 @@
                         <div class="promotion-title">{{ product.promotion_title }}</div>
                     {% endif %}
 
-                    <salla-button
-                            class="btn--wishlist animated sws"
-                            data-id="{{ product.id }}"
-                            onclick="salla.wishlist.toggle({{ product.id }})"
-                            shape="icon"
-                            fill="outline"
-                            color="light">
-                        <i class="sicon-heart"></i>
-                    </salla-button>
-
                     {# Calories Badge #}
                     {% if product.calories %}
-                        <div class="absolute z-[2] top-4 rtl:left-4 ltr:right-4 bg-white shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
+                        <div class="absolute border border-base-200 z-[2] top-4 rtl:left-4 ltr:right-4 bg-base-50 shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
                             <span class="text-red-500 text-xl leading-none font-bold">{{ product.calories }}</span>
                             <span class="text-xs text-gray-500">{{ trans('pages.products.calories') }}</span>
                         </div>
@@ -162,12 +152,12 @@
                                     {% if loop.index < 5 %}
                                         <img src="{{ image.url }}"
                                              loading="eager"
-                                             class="object-cover w-full h-full bg-gray-100 rounded-md overflow-hidden"
+                                             class="object-cover w-full h-full bg-base-50 rounded-md overflow-hidden"
                                              title="{{ image.alt }}"
                                              alt="{{ image.alt }}"/>
                                     {% else %}
                                         <img data-src="{{ image.url }}" src="{{ 'images/s-empty.png' | cdn }}"
-                                             class="object-cover w-full h-full lazy bg-gray-100 rounded-md overflow-hidden"
+                                             class="object-cover w-full h-full lazy bg-base-50 rounded-md overflow-hidden"
                                              title="{{ image.alt }}"
                                              alt="{{ image.alt }}"/>
                                     {% endif %}
@@ -193,10 +183,10 @@
                     </div>
                 {% endif %}
 
-                <h1 class="text-xl md:text-2xl leading-10 font-bold mb-6 text-gray-800">{{ product.name }}</h1>
+                <h1 class="text-4xl md:text-5xl leading-10 font-bold mb-6 text-bc">{{ product.name }}</h1>
 
                 {% if product.subtitle %}
-                    <h2 class="product-entry__sub-title text-sm text-gray-500 leading-6 mb-2.5">
+                    <h2 class="product-entry__sub-title text-sm text-bc opacity-80 leading-6 mb-2.5">
                         {{ product.subtitle }}
                     </h2>
                 {% endif %}
@@ -223,6 +213,20 @@
                   </div>
                 </div>
 
+				<!--<div class="flex whitespace-nowrap price-wrapper gap-4 items-center">-->
+				<!--  <div class="{{ product.is_on_sale ? '' : 'hidden' }} price_is_on_sale space-x-2 rtl:space-x-reverse whitespace-nowrap">-->
+				<!--	<h2 class="total-price text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h2>-->
+				<!--	<span class="before-price text-gray-500 line-through">{{product.regular_price|money}}</span>-->
+				<!--  </div>-->
+				<!--  <div class="starting-or-normal-price gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">-->
+				<!--	{% if product.starting_price %} -->
+				<!--	  <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span>-->
+				<!--	{% endif %} -->
+				<!--	<h2 class="total-price font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>-->
+				<!--  </div>-->
+				<!--</div>-->
+				<!--            <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold">{{ trans('pages.products.out_of_stock')}}</div>-->
+
                 <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
                     {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
                     {% if product.has_read_more %}
@@ -243,32 +247,32 @@
                 </div>
 
                 {% if product.tags|length and theme.settings.get('show_tags', true) %}
-                    <div class="mb-3">
+                    <div class="mb-5 space-x-2 rtl:space-x-reverse">
                         {% for tag in product.tags %}
                             <a href="{{ tag.url }}"
-                               class="rtl:ml-2 ltr:mr-2 inline-flex  text-gray-500 hover:text-primary underline text-sm mb-1">{{ tag.name }}
-                                ,</a>
+                               class="py-1 px-2 hover:shadow-neo transition-all border hover:bg-base-200 border-bc text-bc rounded-full text-xs">{{ tag.name }}
+                            </a>
                         {% endfor %}
                     </div>
                 {% endif %}
 
-                <div class="flex rtl:space-x-reverse space-x-3">
+                <div class="flex rtl:space-x-reverse space-x-1">
                     <salla-social-share class="inline-flex mb-5" aria-label="social share"></salla-social-share>
 
                     <salla-button
-                            class="btn--wishlist animated hidden sm:inline-flex"
+                            class="btn--wishlist animated"
                             data-id="{{ product.id }}"
                             onclick="salla.wishlist.toggle({{ product.id }})"
                             shape="icon"
                             fill="outline"
-                            color="light"
+                            color="gray"
 							aria-label="add to wishlist">
                         <i class="sicon-heart"></i>
                     </salla-button>
                 </div>
 
                 {% if product.sold_quantity or product.can_show_remained_quantity %}
-                    <div class="bg-white py-2.5 mb-5 rounded-md inline-flex text-sm">
+                    <div class="py-2.5 mb-5 rounded-md inline-flex text-sm">
                         {% if product.sold_quantity %}
                             <div class="px-4 !text-red-800">
                                 <i class="sicon-fire rtl:ml-1.5 ltr:mr-1.5"></i> {{ trans('pages.products.sold') }}
@@ -285,7 +289,7 @@
                     </div>
                 {% endif %}
                 {% if product.sku %}
-                    <div class="mb-4 flex justify-between sm:grid sm:grid-cols-3 bg-white rounded-md px-4 py-2">
+                    <div class="mb-4 flex justify-between sm:grid sm:grid-cols-3 rounded-md px-4 py-2">
                         <div class="flex items-center">
                             <i class="sicon-barcode mx-1"></i>
                             {{ trans('pages.products.sku') }}
@@ -302,7 +306,7 @@
                 {% endif %}
 
                 {% if product.show_availability %}
-                    <section class="bg-white p-5 rounded-md mb-5 last:mb-0">
+                    <section class="p-5 rounded-md mb-5 last:mb-0">
                         <div class="center-between">
                             <label class="flex items-center text-base">
                                 <span class="sicon-location rtl:ml-1 ltr:mr-1"></span>
@@ -333,7 +337,7 @@
 
                     {% hook 'product:single.form.end' %}
 
-                    <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
+                    <section class="total-price-container flex bg-transparent p-5 sm:pb-0 border-2 border-bc border-b-0 rounded-neo rounded-b-none">
                         <div class="center-between w-full">
                             <label class="form-label">
                                 <b class="block">
@@ -357,23 +361,25 @@
                             <div class="out-of-stock min-h-7 leading-7 hidden text-base text-red-600 !opacity-50 font-bold">{{ trans('pages.products.out_of_stock')}}</div>
                         </div>
                     </section>
-                    <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
-                        {# Quantity #}
-                        {% if product.is_hidden_quantity or product.type == 'booking' %}
-                            <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
-                        {% else %}
-                            <div class="sticky-product-bar__quantity center-between mb-5">
-                                <label class="form-label font-bold">
-                                    {{ trans('pages.products.quantity') }}
-                                </label>
-                                <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
-                                  class="border-gray-200 flex justify-end"></salla-quantity-input>
-                            </div>
-                        {% endif %}
+                    <section class="sticky-product-bar bg-base-100 p-5 rounded-b-neo border-2 border-t-0 border-bc">
+						{# Quantity #}
+						{% if product.is_hidden_quantity or product.type == 'booking' %}
+							<input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
+						{% else %}
+							<div class="sticky-product-bar__quantity center-between">
+								<label class="form-label font-bold">
+									{{ trans('pages.products.quantity') }}
+								</label>
+								<salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
+								  class="border-gray-200 flex justify-end"></salla-quantity-input>
+							</div>
+						{% endif %}
+
                         {# Add to cart #}
                         <salla-add-product-button
                                 {{theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : ''}}
                                 {{product.is_require_shipping ? 'required-shipping' : ''}}
+								quick-buy
                                 amount="{{ product.base_currency_price }}"
                                 class="mt-5 w-full sticky-product-bar__btn"
                                 product-status="{{ product.status }}"
