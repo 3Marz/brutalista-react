@@ -301,6 +301,7 @@
             "title": "صور متحركة (بروتال)",
             "icon": "sicon-image-carousel",
             "path": "home.enhanced-slider",
+			"image": "https://l.top4top.io/p_3399ehf5o5.png",
             "fields": [
                 {
                     "type": "static",
@@ -460,15 +461,17 @@
         },
         {
             "key": "2b1b130b-5b37-422a-9683-e0fd367460c0",
-            "title": "روابط سريعة (بروتال)",
+            "title": "روابط سريعة (بورتال)",
             "icon": "sicon-layout-grid-rearrange",
             "path": "home.main-links",
+			"image": "https://k.top4top.io/p_3399c8v1p4.png",
+            "is_default": true,
             "fields": [
                 {
                     "type": "static",
                     "format": "description",
                     "id": "with-bg",
-                    "value": "<div ><h6 >معاينة العنصر</h6><img class='w-full' src='https://cdn.salla.network/images/themes/raed/main-links-with-bg.jpg?v=1.1'></div>",
+                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img class='w-full' src='https://cdn.salla.network/images/themes/raed/main-links-with-bg.jpg?v=1.1'></div>",
                     "conditions": [
                         {
                             "id": "merge_with_top_component",
@@ -481,7 +484,7 @@
                     "type": "static",
                     "format": "description",
                     "id": "without-bg",
-                    "value": "<div ><h6 >معاينة العنصر</h6><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/main-links.png?v=1.1'></div>",
+                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/main-links.png?v=1.1'></div>",
                     "conditions": [
                         {
                             "id": "merge_with_top_component",
@@ -519,13 +522,13 @@
                     "type": "static",
                     "format": "description",
                     "id": "static-desc",
-                    "value": "<small >* إزاحة كامل العنصر ومحتوياته مع العنصر السابق، وجعلهما يظهران كعنصر واحد متناسق، يكون ذا فائدة في حالة كان العنصر السابق هو (صور متحركة محسنة). </small>"
+                    "value": "<small style='margin: -36px 0 30px;display: block;'>* إزاحة كامل العنصر ومحتوياته مع العنصر السابق، وجعلهما يظهران كعنصر واحد متناسق، يكون ذا فائدة في حالة كان العنصر السابق هو (صور متحركة محسنة). </small>"
                 },
                 {
                     "type": "boolean",
                     "icon": "sicon-toggle-off",
                     "label": "عرض أسهم التحرك",
-                    "description": null,
+                    "description": "",
                     "id": "show_controls",
                     "format": "switch",
                     "required": false,
@@ -571,7 +574,7 @@
                     "required": true,
                     "minLength": 3,
                     "maxLength": 100,
-                    "item_label": "رابط",
+                    "item_label": "رابط ",
                     "value": [
                         {
                             "links.icon": "sicon-packed-box",
@@ -1022,6 +1025,7 @@
             "title": "الماركات التجارية (بروتال)",
             "icon": "sicon-award-ribbon",
             "path": "home.brands",
+			"image": "https://i.top4top.io/p_3399d4ady2.png",
             "fields": [
                 {
                     "type": "static",
@@ -1067,6 +1071,7 @@
             "title": "نص متحرك (بروتال)",
             "icon": "sicon-caret-left-double",
             "path": "home.marquee",
+			"image": "https://a.top4top.io/p_3399yez9f6.png",
             "fields": [
                 {
                     "id": "moving_text",
@@ -1165,6 +1170,7 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
+			"image": "https://h.top4top.io/p_3399akfyu1.png",
             "fields": [
                 {
                     "id": "title",
@@ -1354,6 +1360,7 @@
             "title": "أسئلة شائعة (بروتال)",
             "icon": "sicon-help",
             "path": "home.questions",
+			"image": "https://j.top4top.io/p_3399wkhgt3.png",
             "fields": [
                 {
                     "id": "title",
@@ -1678,6 +1685,7 @@
             "title": "منتجات بعروض (بروتال)",
             "icon": "sicon-percentage",
             "path": "home.offers-products",
+			"image": "https://b.top4top.io/p_3399tk8wp7.png",
             "fields": [
                 {
                     "id": "offers",
@@ -1732,6 +1740,7 @@
             "title": "آراء العملاء (بروتال)",
             "icon": "sicon-chat-person",
             "path": "home.brutal_testimonials",
+			"image": "https://c.top4top.io/p_3399ci7nz8.png",
             "fields": [
                 {
                     "id": "title",
@@ -1959,6 +1968,7 @@
             "title": "إحصائيات (بروتال)",
             "icon": "sicon-graph-line",
             "path": "home.stats",
+			"image": "https://e.top4top.io/p_33997zpti10.png",
             "fields": [
                 {
                     "id": "stats",
@@ -2036,6 +2046,7 @@
             "title": "فاصل (بروتال)",
             "icon": "sicon-hr",
             "path": "home.separator",
+			"image": "https://d.top4top.io/p_33998l3fy9.png",
             "fields": [
                 {
                     "id": "theme_colors",
