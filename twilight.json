@@ -1208,6 +1208,7 @@
             "title": "صور مربعة (بروتال)",
             "icon": "sicon-images",
             "path": "home.square-banner-brutal",
+			"image": "https://g.top4top.io/p_3399hrd0i4.png",
             "fields": [
                 {
                     "type": "static",
@@ -1429,6 +1430,7 @@
             "title": "صور مربعة 2 (بورتال)",
             "icon": "sicon-border-all",
             "path": "home.square-photos",
+			"image": "https://f.top4top.io/p_3399r2x6d3.png",
             "fields": [
                 {
                     "id": "title",
@@ -1557,6 +1559,7 @@
             "title": "صورة ونص (بروتال)",
             "icon": "sicon-envelope",
             "path": "home.photo-and-text",
+			"image": "https://e.top4top.io/p_3399nnrq62.png",
             "fields": [
                 {
                     "id": "main_title",
@@ -1840,6 +1843,7 @@
             "title": "نص مع زر (بروتال)",
             "icon": "sicon-align-center",
             "path": "home.text_and_button",
+			"image": "https://d.top4top.io/p_3399wtv8q1.png",
             "fields": [
                 {
                     "id": "title",
