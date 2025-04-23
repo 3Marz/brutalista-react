@@ -301,6 +301,7 @@
             "title": "صور متحركة (بروتال)",
             "icon": "sicon-image-carousel",
             "path": "home.enhanced-slider",
+			"image": "https://l.top4top.io/p_3399ehf5o5.png",
             "fields": [
                 {
                     "type": "static",
@@ -1001,6 +1002,7 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
+			"image": "https://l.top4top.io/p_3399akfu1.png",
             "fields": [
                 {
                     "id": "title",
