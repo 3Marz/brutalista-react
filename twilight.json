@@ -1002,7 +1002,7 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
-			"image": "https://l.top4top.io/p_3399akfu1.png",
+			"image": "https://h.top4top.io/p_3399akfyu1.png",
             "fields": [
                 {
                     "id": "title",
@@ -1265,6 +1265,12 @@
             "path": "home.square-photos",
             "image": "https://f.top4top.io/p_3399r2x6d3.png",
             "fields": [
+				{
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img class='w-full' src='https://f.top4top.io/p_3399r2x6d3.png'></div>"
+                },
                 {
                     "id": "title",
                     "type": "string",
@@ -1394,6 +1400,12 @@
             "path": "home.photo-and-text",
             "image": "https://e.top4top.io/p_3399nnrq62.png",
             "fields": [
+				{
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img class='w-full' src='https://e.top4top.io/p_3399nnrq62.png'></div>"
+                },
                 {
                     "id": "main_title",
                     "type": "string",
@@ -1523,6 +1535,18 @@
             "path": "home.offers-products",
             "image": "https://b.top4top.io/p_3399tk8wp7.png",
             "fields": [
+				{
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img class='w-full' src='https://j.top4top.io/p_3400m3acx1.png'></div>"
+                },
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "static-note",
+                    "value": "<h4 >يستحسن استخدام منتجات بعروض لها تاريخ إنهاء لكي يتم عرض العد التنازلي</h4>"
+                },
                 {
                     "id": "offers",
                     "type": "collection",
@@ -1678,6 +1702,12 @@
             "path": "home.text_and_button",
             "image": "https://d.top4top.io/p_3399wtv8q1.png",
             "fields": [
+				{
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img class='w-full' src='https://d.top4top.io/p_3399wtv8q1.png'></div>"
+                },
                 {
                     "id": "title",
                     "type": "string",
@@ -1700,7 +1730,7 @@
                     "label": "النص",
                     "description": null,
                     "labelHTML": null,
-                    "placeholder": "Your text here",
+                    "placeholder": "النص الفرعي هنا...",
                     "icon": "sicon-typography",
                     "value": null,
                     "multilanguage": true,
