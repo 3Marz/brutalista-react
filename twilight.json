@@ -1001,7 +1001,6 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
-            "image": "https://h.top4top.io/p_3399akfyu1.png",
             "fields": [
                 {
                     "id": "title",
@@ -1012,7 +1011,7 @@
                     "labelHTML": null,
                     "placeholder": "العنوان هنا...",
                     "icon": "sicon-format-text-alt",
-                    "value": null,
+                    "value": "تسوق حسب الأقسام",
                     "multilanguage": true,
                     "required": true,
                     "minLength": 6,
@@ -1030,7 +1029,8 @@
                     "source": "categories",
                     "multichoice": true,
                     "searchable": true,
-                    "required": false
+                    "required": false,
+                    "value": []
                 }
             ]
         },
