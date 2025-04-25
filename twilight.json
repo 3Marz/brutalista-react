@@ -26,6 +26,12 @@
     ],
     "settings": [
         {
+            "type": "boolean",
+            "id": "is_more_button_enabled",
+            "label": "عرض (زر الكل) في الصفحة الرئيسية",
+            "format": "switch"
+        },
+        {
             "id": "line",
             "type": "static",
             "format": "line",
@@ -142,17 +148,6 @@
             "value": true,
             "selected": false,
             "required": false
-        },
-        {
-            "type": "static",
-            "id": "static-Liney",
-            "format": "line"
-        },
-        {
-            "type": "boolean",
-            "id": "is_more_button_enabled",
-            "label": "عرض (زر الكل) في الصفحة الرئيسية",
-            "format": "switch"
         },
         {
             "type": "static",
