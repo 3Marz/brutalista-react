@@ -39,6 +39,15 @@
             "icon": "sicon-minus"
         },
         {
+            "id": "begin_title",
+            "type": "static",
+            "format": "description",
+            "label": null,
+            "value": "<h3 >تخصيص بروتال</h3>",
+            "variant": "h1",
+            "icon": "sicon-format-size"
+        },
+        {
             "id": "altsmem",
             "type": "static",
             "format": "title",
