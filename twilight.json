@@ -42,8 +42,8 @@
             "id": "altsmem",
             "type": "static",
             "format": "title",
-            "label": "التصميم",
-            "value": "التصميم",
+            "label": "الخيارات العامة",
+            "value": "الخيارات العامة",
             "variant": "h6",
             "icon": "sicon-format-text"
         },
@@ -301,7 +301,7 @@
             "title": "صور متحركة (بروتال)",
             "icon": "sicon-image-carousel",
             "path": "home.enhanced-slider",
-			"image": "https://l.top4top.io/p_3399ehf5o5.png",
+            "image": "https://l.top4top.io/p_3399ehf5o5.png",
             "fields": [
                 {
                     "type": "static",
@@ -1002,7 +1002,7 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
-			"image": "https://h.top4top.io/p_3399akfyu1.png",
+            "image": "https://h.top4top.io/p_3399akfyu1.png",
             "fields": [
                 {
                     "id": "title",
@@ -1265,7 +1265,7 @@
             "path": "home.square-photos",
             "image": "https://f.top4top.io/p_3399r2x6d3.png",
             "fields": [
-				{
+                {
                     "type": "static",
                     "format": "description",
                     "id": "with-bg",
@@ -1400,7 +1400,7 @@
             "path": "home.photo-and-text",
             "image": "https://e.top4top.io/p_3399nnrq62.png",
             "fields": [
-				{
+                {
                     "type": "static",
                     "format": "description",
                     "id": "with-bg",
@@ -1535,7 +1535,7 @@
             "path": "home.offers-products",
             "image": "https://b.top4top.io/p_3399tk8wp7.png",
             "fields": [
-				{
+                {
                     "type": "static",
                     "format": "description",
                     "id": "with-bg",
@@ -1702,7 +1702,7 @@
             "path": "home.text_and_button",
             "image": "https://d.top4top.io/p_3399wtv8q1.png",
             "fields": [
-				{
+                {
                     "type": "static",
                     "format": "description",
                     "id": "with-bg",
