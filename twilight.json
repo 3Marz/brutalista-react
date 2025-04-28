@@ -221,7 +221,14 @@
             "placeholder": "e.g. https://hostname.com/image.png",
             "icon": "sicon-image",
             "value": null,
-            "required": false
+            "required": false,
+			"conditions": [
+				{
+					"id": "footer_is_dark",
+					"operation": "=",
+					"value": true
+				}
+			]
         },
         {
             "id": "lang_button_bottom",
