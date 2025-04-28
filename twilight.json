@@ -43,7 +43,7 @@
             "type": "static",
             "format": "description",
             "label": null,
-            "value": "<div  ><h3>تخصيص بروتال</h3></div>",
+            "value": "<div style='padding: 10px;background: #f2efdd;text-align: center;border-radius: 10px;color: black;border: 2px solid black;box-shadow: 0px 4px black;'  ><h3>تخصيص بروتال</h3></div>",
             "variant": "h1",
             "icon": "sicon-format-size"
         },

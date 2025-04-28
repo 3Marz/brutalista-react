@@ -4,7 +4,7 @@
 			<div class="lg:col-span-2 rtl:lg:pl-20 ltr:lg:pr-20 gap-2 text-center flex flex-col justify-center items-center">
 				<a href="{{ link('/') }}" class="flex flex-col text-center justify-center items-center m-0">
 					<div class="w-22 h-22 md:w-28 md:h-28">
-						<img class="w-full h-full object-contain" src="{{ store.logo }}"/>
+						<img class="w-full h-full object-contain" src="{{ theme.settings.get('sub_logo') ? theme.settings.get('sub_logo') : store.logo }}"/>
 					</div>
 					{% if theme.settings.get('show_store_name_footer') %}
 						<h3 class="!mb-0">{{store.name}}</h3>
