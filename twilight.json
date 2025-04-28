@@ -43,7 +43,7 @@
             "type": "static",
             "format": "description",
             "label": null,
-            "value": "<div style='margin-bottom:15px;text-align:center;text-decoration:underline;text-underline-offset:8px' ><h3>تخصيص بروتال</h3></div>",
+            "value": "<div  ><h3>تخصيص بروتال</h3></div>",
             "variant": "h1",
             "icon": "sicon-format-size"
         },
@@ -210,6 +210,18 @@
             "required": false,
             "value": true,
             "selected": false
+        },
+        {
+            "id": "sub_logo",
+            "type": "string",
+            "format": "image",
+            "label": "الشعار البديل",
+            "description": "شعار متجر بديل ﻷسفل الصفحة يستخدم إذا كان الشعار الاساسي غير متناسق مع الخلفية الداكنة",
+            "labelHTML": null,
+            "placeholder": "e.g. https://hostname.com/image.png",
+            "icon": "sicon-image",
+            "value": null,
+            "required": false
         },
         {
             "id": "lang_button_bottom",
