@@ -1454,7 +1454,7 @@
                     "multilanguage": true,
                     "required": true,
                     "minLength": 6,
-                    "maxLength": 30
+                    "maxLength": 60
                 },
                 {
                     "id": "sub_text",
