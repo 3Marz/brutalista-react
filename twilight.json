@@ -222,13 +222,13 @@
             "icon": "sicon-image",
             "value": null,
             "required": false,
-			"conditions": [
-				{
-					"id": "footer_is_dark",
-					"operation": "=",
-					"value": true
-				}
-			]
+            "conditions": [
+                {
+                    "id": "footer_is_dark",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "id": "lang_button_bottom",
@@ -2029,7 +2029,7 @@
             ]
         }
     ],
-    "support_url": null,
+    "support_url": "https://3marz.github.io/brutal-docs/docs/intro",
     "description": {
         "ar": null,
         "en": null
