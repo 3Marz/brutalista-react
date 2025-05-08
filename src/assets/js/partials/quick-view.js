@@ -120,6 +120,10 @@ class QuickViewModal extends HTMLElement {
 								<a class="text-lg text-bc opacity-60" href="${this.product.category.url}">${ this.product.category.name }</a>
 							` : ``}
 							<a class="text-2xl" href="${this.product.url}">${this.product.name}</a>
+
+							<article class="article article--main text-sm relative leading-6 line-clamp-4"
+								${ this.product.description }
+							</article>
 							
 							<form class="form product-form" enctype="multipart/form-data" method="post"
 								  onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
