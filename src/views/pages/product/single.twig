@@ -183,7 +183,7 @@
                     </div>
                 {% endif %}
 
-                <h1 class="text-4xl md:text-5xl leading-10 font-bold mb-6 text-bc">{{ product.name }}</h1>
+                <h1 class="text-4xl md:text-5xl/14 font-bold mb-6 text-bc">{{ product.name }}</h1>
 
                 {% if product.subtitle %}
                     <h2 class="product-entry__sub-title text-sm text-bc opacity-80 leading-6 mb-2.5">
@@ -377,9 +377,9 @@
 
                         {# Add to cart #}
                         <salla-add-product-button
+								quick-buy
                                 {{theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : ''}}
                                 {{product.is_require_shipping ? 'required-shipping' : ''}}
-								quick-buy
                                 amount="{{ product.base_currency_price }}"
                                 class="mt-5 w-full sticky-product-bar__btn"
                                 product-status="{{ product.status }}"
@@ -399,7 +399,9 @@
                         </salla-add-product-button>
                     </section>
                     {% if product.is_giftable %}
-                        <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
+						<div class="mt-5 rounded-neo bg-white border-2 border-bc">
+							<salla-gifting class="" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}" {{ product.is_require_shipping ? 'physical-products' : ''  }}></salla-gifting>
+						</div>
                     {% endif %}
                 </form>
 

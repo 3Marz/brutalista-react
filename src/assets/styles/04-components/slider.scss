@@ -43,6 +43,11 @@ salla-slider{
   }
   
   &.details-slider{
+    // for selected thumb slider border radius
+    .swiper-slide::after{
+      visibility: hidden !important;
+    }
+
     .s-slider-container{ 
       @apply bg-transparent;
     }
@@ -249,12 +254,6 @@ model-viewer[style*="width"]:before{
   .swiper-slide img{
     @apply min-h-[380px] max-h-[480px] md:max-h-[680px];
   }
-}
-
-// for selected thumb slider border radius
-.swiper-slide::after{
-  border-radius: calc(var(--br) - 3px) !important;
-  visibility: hidden !important;
 }
 
 .swiper-slide-thumb-active {
