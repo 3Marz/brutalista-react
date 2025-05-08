@@ -19,6 +19,8 @@ module.exports = {
 		'quick-view': asset('js/partials/quick-view.js'),
 		'brutal_reviews': asset('js/partials/brutal_reviews.js'),
 		'stats': asset('js/partials/stats.js'),
+        'main-menu' : asset('js/partials/main-menu.js'),
+        'wishlist-card': asset('js/partials/wishlist-card.js'),
         checkout: [asset('js/cart.js'), asset('js/thankyou.js')],
         pages   : [asset('js/loyalty.js'), asset('js/brands.js'),],
         product : [asset('js/product.js'), asset('js/products.js')],

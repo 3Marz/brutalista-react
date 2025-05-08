@@ -377,9 +377,9 @@
 
                         {# Add to cart #}
                         <salla-add-product-button
+								quick-buy
                                 {{theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : ''}}
                                 {{product.is_require_shipping ? 'required-shipping' : ''}}
-								quick-buy
                                 amount="{{ product.base_currency_price }}"
                                 class="mt-5 w-full sticky-product-bar__btn"
                                 product-status="{{ product.status }}"
@@ -399,7 +399,7 @@
                         </salla-add-product-button>
                     </section>
                     {% if product.is_giftable %}
-                        <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
+                        <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}" {{ product.is_require_shipping ? 'physical-products' : ''  }}></salla-gifting>
                     {% endif %}
                 </form>
 
