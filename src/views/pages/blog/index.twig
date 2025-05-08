@@ -76,10 +76,10 @@
                       auto-height
                       show-controls="false" 
                       pagination
-                      class="blog-slider block rounded overflow-hidden mb-2.5 lg:mb-8">
+                      class="blog-slider block overflow-hidden mb-2.5 lg:mb-8">
                         <div slot="items">
                             {% for article in slides %}
-                                <div class="swiper-slide has-overlay blog-slider__slide h-[300px] md:h-[400px] relative bg-border-color flex justify-center {{ article.has_image ? '' : 'no-thumb' }}">
+                                <div class="swiper-slide overflow-hidden rounded-neo has-overlay blog-slider__slide h-[300px] md:h-[400px] relative bg-border-color flex justify-center {{ article.has_image ? '' : 'no-thumb' }}">
                                     <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-50':'object-cover h-full w-full' }}"
                                          src="{{ article.image.url }}" alt="{{ article.image.alt }}">
                                     <div class="absolute z-10 bottom-0 rtl:right-0 ltr:left-0 p-4 pb-10 rtl:lg:pr-10 ltr:lg:pl-10 lg:pb-20">
@@ -119,10 +119,10 @@
 
                     <salla-infinite-scroll class="grid md:grid-cols-2 gap-2.5 md:gap-8" next-page="{{ articles.next_page }}" autoload>
                         {% for article in articles %}
-                            <div class='list-block post-entry relative h-full transition-shadow duration-500 bg-white hover:shadow-default rounded-lg justify-around overflow-hidden flex flex-col'>
+                            <div class='list-block post-entry relative h-full transition border-2 border-bc bg-base-50 hover:-translate-y-1 shadow-neo rounded-neo justify-around overflow-hidden flex flex-col'>
                                 <a href="{{ article.url }}"
-                                   class='post-entry__image relative overflow-hidden hover:opacity-90 w-full h-56 bg-border-color flex items-center justify-center'>
-                                    <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-60':'h-full w-full object-cover' }}"
+                                   class='post-entry__image group border-b-2 border-bc relative overflow-hidden w-full h-56 bg-border-color flex items-center justify-center'>
+                                    <img class="group-hover:scale-105 transition {{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-60':'h-full w-full object-cover' }}"
                                          src="{{ article.image.url }}"
                                          alt="{{ article.image.alt }}">
                                 </a>
