@@ -98,7 +98,12 @@
   }
 
   &.fixed-pinned {
-    @apply bg-white;
+    .header-is-dark & {
+      @apply bg-bc text-base-50;
+    }
+    .header-is-light & {
+      @apply bg-white;
+    }
     .inner {
       position: fixed;
       top: 0;

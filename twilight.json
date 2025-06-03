@@ -208,6 +208,17 @@
             "variant": "h6"
         },
         {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "الوضع الداكن للرأس",
+            "description": null,
+            "id": "header_is_dark",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
             "id": "header_is_sticky",
             "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
             "description": "يُنصح بالغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة",
