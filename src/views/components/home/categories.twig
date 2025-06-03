@@ -1,7 +1,7 @@
 
 
 
-<section class="s-block container {{ component.use_theme_bg ? "" : "bg-[#{component.custom_bg_color}]" }}">
+<section class="s-block container">
 
 	<div class="s-block__title">
 		<div class="right-side">
@@ -13,7 +13,7 @@
 		{% for cat in component.categories %}
 			<a href="{{ cat.url }}" class="cat-entry-br group justify-self-center text-bc flex flex-col gap-2 p-1 items-center justify-center">
 				
-				<div class="w-24 h-24 flex justify-center items-center text-xl rounded-full bg-base-50 border border-bc overflow-hidden">
+				<div class="md:w-24 md:h-24 w-20 h-20 flex justify-center items-center text-xl rounded-full bg-base-50 border border-bc overflow-hidden">
 					{% if cat.image %}
 						<img src="{{ cat.image }}" class="w-full transition group-hover:scale-110 h-full object-cover" />
 					{% else %}
