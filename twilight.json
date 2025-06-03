@@ -2073,7 +2073,59 @@
             "title": "بنرات (بروتال)",
             "icon": "sicon-frame-image",
             "path": "home.banners_brutal",
-            "fields": []
+            "fields": [
+                {
+                    "id": "full_banners",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "بنرات عريضة",
+                    "description": "البنرات توصل لنهاية الصفحة من اليمين واليسار",
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": false,
+                    "required": false
+                },
+                {
+                    "id": "top_margin",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "أضافة مسافة بين البنرات والعنصر الذي فوقه",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": true,
+                    "required": false
+                },
+                {
+                    "id": "banners",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "البنرات",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "banners.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "البنر",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "10"
+                }
+            ]
         }
     ],
     "support_url": "https://3marz.github.io/brutal-docs/docs/intro",
