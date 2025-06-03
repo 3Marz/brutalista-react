@@ -1097,37 +1097,6 @@
                     "searchable": true,
                     "required": false,
                     "value": []
-                },
-                {
-                    "id": "line",
-                    "type": "static",
-                    "format": "line",
-                    "label": "Line",
-                    "icon": "sicon-minus"
-                },
-                {
-                    "id": "use_theme_bg",
-                    "type": "boolean",
-                    "format": "switch",
-                    "label": "استعمال خلفية الثيم",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-toggle-off",
-                    "value": true,
-                    "selected": true,
-                    "required": false
-                },
-                {
-                    "id": "custom_bg_color",
-                    "type": "string",
-                    "format": "color",
-                    "inputType": "color",
-                    "label": "لون خلفية خاص للعنصر",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-format-fill",
-                    "value": "#ffffff",
-                    "required": false
                 }
             ]
         },
