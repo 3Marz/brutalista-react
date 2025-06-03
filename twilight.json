@@ -1078,6 +1078,7 @@
             "title": "تصنيفات مميزة  (بروتال)",
             "icon": "sicon-ellipsis-filled",
             "path": "home.categories",
+            "image": "https://h.top4top.io/p_3399akfyu1.png",
             "fields": [
                 {
                     "id": "title",
