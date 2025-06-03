@@ -2080,8 +2080,15 @@
                     "format": "title",
                     "label": "تنبيه",
                     "value": "يجب أن تكون جميع البنرات بنفس المقاس !",
-                    "variant": "h3",
+                    "variant": "h4",
                     "icon": "sicon-format-text"
+                },
+                {
+                    "id": "line",
+                    "type": "static",
+                    "format": "line",
+                    "label": "Line",
+                    "icon": "sicon-minus"
                 },
                 {
                     "id": "full_banners",
