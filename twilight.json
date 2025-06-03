@@ -2099,6 +2099,18 @@
                     "required": false
                 },
                 {
+                    "id": "rounded_banners",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "تنعيم حواف البنرات",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": true,
+                    "required": false
+                },
+                {
                     "id": "banners",
                     "type": "collection",
                     "format": "collection",

@@ -4,12 +4,16 @@
     type="carousel" 
     autoplay
     pagination
+    centered
+    show-controls="false"
+    id="brutal-banner-{{position}}"
+    class="banner-slider"
   >
     <div slot="items">
-      {% for banner in component.banners %}
+      {% for index, banner in component.banners %}
         <div class="w-full">
           <a href="{{ banner.url ? banner.url : '#' }}">
-            <img loading="eager" src="{{ banner.image }}" class="w-full object-contain" alt="{{store.name}} image-slider-{{index}}"></img>
+            <img loading="eager" src="{{ banner.image }}" class="w-full object-contain {{ component.rounded_banners ? "rounded-xl" : "" }}" alt="{{store.name}} banner-slider-{{index}}"></img>
           </a>
         </div>
       {% endfor %}

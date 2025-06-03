@@ -115,6 +115,13 @@ salla-slider{
   }
 }
 
+// brutal banner slider
+salla-slider.banner-slider {
+  .swiper {
+    padding: 0 !important; 
+  }
+}
+
 // FIX for shadow not showing
 .swiper {
   @apply pb-5
@@ -203,13 +210,16 @@ salla-slider.photos-slider {
 // bullet pagination -------
 salla-slider{
   .swiper-pagination-bullet {
-    width: 20px;
+    @apply transition-all duration-300;
+    width: 10px;
+    height: 10px;
     border-radius: 5px;
-    background: var(--base-300);
+    background: var(--base-200);
     opacity: 1;
 
     &-active {
       opacity: 1;
+      width: 20px;
       background-color: var(--color-primary);
     }
   }
@@ -217,6 +227,7 @@ salla-slider{
   .swiper-pagination-bullets.swiper-pagination-horizontal{
     @apply bottom-3 sm:bottom-6; 
   }
+
 }
 
 
