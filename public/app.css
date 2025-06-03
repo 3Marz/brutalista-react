@@ -5367,7 +5367,7 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
 .menu-item{font-size:0.875rem;line-height:1.25rem}}
 .menu-item.logout{--tw-text-opacity:1;color:rgba(248, 113, 113, 1);color:rgba(248, 113, 113, var(--tw-text-opacity, 1))}
 .menu-item.is-active{background-color:rgba(229, 231, 235, 0.2);color:#414042;color:var(--color-primary)}
-.header-is-dark .store-header{border-bottom-width:2px;--tw-border-opacity:1;border-bottom-color:rgba(0, 0, 0, 1);border-bottom-color:rgba(0, 0, 0, var(--tw-border-opacity, 1));background-color:#414042;background-color:var(--color-primary);color:var(--base-50)}
+.header-is-dark .store-header{border-bottom-width:2px;border-bottom-color:var(--bc);background-color:#414042;background-color:var(--color-primary);color:var(--base-50)}
 .header-is-dark .store-header .header-btn__icon{color:var(--base-50)}
 .header-is-dark .store-header .s-user-menu-trigger-avatar{border-color:var(--base-50)}
 /* Sticky Header */
@@ -5375,7 +5375,7 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
   transition: top 0.5s, transform 0.5s, opacity 0.4s;
 }
 .header-is-dark .main-nav-container.fixed-pinned{background-color:#414042;background-color:var(--color-primary);color:var(--base-50)}
-.header-is-dark .main-nav-container.fixed-pinned .inner{--tw-border-opacity:1;border-bottom-color:rgba(0, 0, 0, 1);border-bottom-color:rgba(0, 0, 0, var(--tw-border-opacity, 1))}
+.header-is-dark .main-nav-container.fixed-pinned .inner{border-bottom-color:var(--bc)}
 .header-is-dark .main-nav-container.fixed-pinned .header-btn__icon{color:var(--base-50)}
 .header-is-dark .main-nav-container.fixed-pinned .s-user-menu-trigger-avatar{border-color:var(--base-50)}
 .header-is-light .main-nav-container.fixed-pinned{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
