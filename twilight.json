@@ -2067,6 +2067,13 @@
                     "maximum": 50
                 }
             ]
+        },
+        {
+            "key": "18d3a9d9-e4f6-415c-a3b4-eb3913d252f0",
+            "title": "بنرات (بروتال)",
+            "icon": "sicon-frame-image",
+            "path": "home.banners_brutal",
+            "fields": []
         }
     ],
     "support_url": "https://3marz.github.io/brutal-docs/docs/intro",
