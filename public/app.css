@@ -5366,13 +5366,19 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
 .menu-item{font-size:0.875rem;line-height:1.25rem}}
 .menu-item.logout{--tw-text-opacity:1;color:rgba(248, 113, 113, 1);color:rgba(248, 113, 113, var(--tw-text-opacity, 1))}
 .menu-item.is-active{background-color:rgba(229, 231, 235, 0.2);color:#414042;color:var(--color-primary)}
+.header-is-dark .store-header{border-bottom-width:2px;--tw-border-opacity:1;border-bottom-color:rgba(0, 0, 0, 1);border-bottom-color:rgba(0, 0, 0, var(--tw-border-opacity, 1));background-color:var(--bc);color:var(--base-50)}
+.header-is-dark .store-header .header-btn__icon{color:var(--base-50)}
+.header-is-dark .store-header .s-user-menu-trigger-avatar{border-color:var(--base-50)}
 /* Sticky Header */
 .main-nav-container.animated .inner {
   transition: top 0.5s, transform 0.5s, opacity 0.4s;
 }
-.header-is-dark .main-nav-container.fixed-pinned{background-color:var(--bc)}
+.header-is-dark .main-nav-container.fixed-pinned{background-color:var(--bc);color:var(--base-50)}
+.header-is-dark .main-nav-container.fixed-pinned .inner{--tw-border-opacity:1;border-bottom-color:rgba(0, 0, 0, 1);border-bottom-color:rgba(0, 0, 0, var(--tw-border-opacity, 1))}
+.header-is-dark .main-nav-container.fixed-pinned .header-btn__icon{color:var(--base-50)}
+.header-is-dark .main-nav-container.fixed-pinned .s-user-menu-trigger-avatar{border-color:var(--base-50)}
 .header-is-light .main-nav-container.fixed-pinned{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
-.main-nav-container.fixed-pinned .inner {
+.main-nav-container.fixed-pinned .inner{border-bottom-width:2px;border-color:var(--bc);
   position: fixed;
   top: 0;
   right: 0;
@@ -5381,9 +5387,7 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
   height: -moz-fit-content;
   height: fit-content;
   z-index: 29;
-  border-bottom: 2px var(--bc) solid;
-  transform: translate3d(0, -100%, 0);
-}
+  transform: translate3d(0, -100%, 0)}
 @media (max-width: 1024px) {
   .main-nav-container.fixed-pinned .inner {
     transform: none;
@@ -5547,7 +5551,7 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
     opacity: 1;
     transform: rotate(180deg);
   }
-  .main-menu .sub-menu{visibility:hidden;position:absolute;z-index:20;--tw-scale-x:.75;--tw-scale-y:.75;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.75) scaleY(.75);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));border-bottom-right-radius:var(--br);border-bottom-left-radius:var(--br);border-top-left-radius:var(--br);border-top-right-radius:var(--br);border-width:1px;border-color:var(--bc);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));font-weight:700;opacity:0;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
+  .main-menu .sub-menu{visibility:hidden;position:absolute;z-index:20;--tw-scale-x:.75;--tw-scale-y:.75;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.75) scaleY(.75);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));border-bottom-right-radius:var(--br);border-bottom-left-radius:var(--br);border-top-left-radius:var(--br);border-top-right-radius:var(--br);border-width:1px;border-color:var(--bc);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));font-weight:700;color:var(--bc);opacity:0;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 input[type=radio].sr-only div.main-menu .sub-menu {
   transition: all 0.3s;
 }
@@ -7500,6 +7504,7 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .lg\:bg-white{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
 .lg\:p-8{padding:2rem}
 .lg\:px-0{padding-left:0px;padding-right:0px}
+.lg\:py-0{padding-top:0px;padding-bottom:0px}
 .lg\:pb-11{padding-bottom:2.75rem}
 .lg\:pb-2{padding-bottom:0.5rem}
 .lg\:pb-20{padding-bottom:5rem}

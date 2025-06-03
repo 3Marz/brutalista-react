@@ -82,7 +82,7 @@
     }
 
     .sub-menu {
-      @apply z-20 transition opacity-0 invisible absolute bg-white scale-75 rounded-b-neo rounded-t-neo border border-bc font-bold ;
+      @apply z-20 transition opacity-0 invisible absolute bg-white scale-75 rounded-b-neo rounded-t-neo border border-bc font-bold text-bc;
 
       .sub-menu {
         @apply rounded-neo;
