@@ -2075,6 +2075,15 @@
             "path": "home.banners_brutal",
             "fields": [
                 {
+                    "id": "tnbeh",
+                    "type": "static",
+                    "format": "title",
+                    "label": "تنبيه",
+                    "value": "يجب أن تكون جميع البنرات بنفس المقاس !",
+                    "variant": "h3",
+                    "icon": "sicon-format-text"
+                },
+                {
                     "id": "full_banners",
                     "type": "boolean",
                     "format": "switch",
