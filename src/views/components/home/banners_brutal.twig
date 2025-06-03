@@ -1,0 +1,19 @@
+
+<section class="{{ component.top_margin ? "s-block" : ""}} {{ component.full_banners ? "" : "container" }}">
+  <salla-slider
+    type="carousel" 
+    autoplay
+    pagination
+  >
+    <div slot="items">
+      {% for banner in component.banners %}
+        <div class="w-full">
+          <a href="{{ banner.url ? banner.url : '#' }}">
+            <img loading="eager" src="{{ banner.image }}" class="w-full object-contain" alt="{{store.name}} image-slider-{{index}}"></img>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </salla-slider>
+</section>
+
