@@ -194,7 +194,7 @@ class ProductCard extends HTMLElement {
 			`}
 			<div class="group/img ${this.fullImage ? `h-full` : `aspect-square`}  w-full border-2 border-bc shadow-neo rounded-neo overflow-hidden relative">
 				<a class="w-full h-full flex items-center justify-center overflow-hidden" href="${this.product?.url}">
-					<img class="${this.fullImage ? 'brightness-75' : ''} group-hover/img:scale-110 transition-transform w-full h-full duration-500 bg-base-300 object-${salla.url.is_placeholder(this.product?.image?.url)
+					<img class="${this.fullImage ? 'brightness-75' : ''} group-hover/img:scale-110 transition-transform w-full h-full duration-500 object-${salla.url.is_placeholder(this.product?.image?.url)
 						? 'contain'
 						: this.fitImageHeight
 							? this.fitImageHeight
