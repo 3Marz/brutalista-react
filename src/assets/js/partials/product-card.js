@@ -165,7 +165,16 @@ class ProductCard extends HTMLElement {
 	}
 
 	render() {
-		this.classList.add('h-full', 'w-full', 'flex', `${this.minimal || this.horizontal ? "flex-row" : "flex-col"}`, 'gap-3', 'group', 'overflow-visible', 'relative', 'px-0.5', 'pb-5');
+		this.classList.add('h-full',
+      'w-full',
+      'flex',
+      `${this.minimal || this.horizontal ? "flex-row" : "flex-col"}`,
+      'gap-3',
+      'group',
+      'overflow-visible',
+      'relative',
+      `${this.fullImage ? 'px-0' : 'px-0.5'}`,
+      `${this.fullImage ? 'pb-8' : 'pb-5'}`);
 		this.setAttribute('id', this.product.id);
 		!this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-vertical') : '';
 		this.horizontal && !this.fullImage && !this.minimal ? this.classList.add('s-product-card-horizontal') : '';

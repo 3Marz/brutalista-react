@@ -23,17 +23,17 @@
           <div slot="items">
               {% if component.show_cats %}
                 {% for cat in component.categories %}
-                    <div class="swiper-slide slide--one-sixth">
+                    <div class="swiper-slide w-1/3 sm:w-1/4 lg:w-1/6">
                         <a href="{{ cat.url }}" class="slide--cat-entry [--text-color:var(--base-100);]" style="{{ cat.image ? "background-image: url(#{cat.image})" : "" }}">
 
 							<div class="bg-bc opacity-45 w-full h-full"></div>
 
-							<div class="absolute w-full h-full flex flex-col justify-center items-center text-lg sm:text-lg text-base-50 *:drop-shadow">
+							<div class="absolute w-full h-full flex flex-col justify-center items-center text-lg sm:text-sm text-base-50 *:drop-shadow">
 								{% if not cat.image %}
-								  <i class="{{ cat.icon }} mb-3"></i>
+								  <i class="{{ cat.icon }} mb-1 lg:mb-3"></i>
 								{% endif %}
 								<div class="text-center">
-									<span>{{ cat.name }}</span>
+									<span class="text-xs sm:text-sm md:text-base lg:text-lg">{{ cat.name }}</span>
 								</div>
 							</div>
 
@@ -43,11 +43,11 @@
               {% else %}
                 {% for link in component.links %}
                   {% if link.title %}
-                    <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ link.url }}" class="slide--cat-entry text-lg sm:text-lg [--text-color:var(--bc-light);]">
-                            <i class="{{ link.icon }} mb-3"></i>
+                    <div class="swiper-slide w-1/3 sm:w-1/4 lg:w-1/6">
+                        <a href="{{ link.url }}" class="slide--cat-entry text-lg sm:text-sm [--text-color:var(--bc-light);]">
+                            <i class="{{ link.icon }} mb-1 lg:mb-3"></i>
 							<div class="text-center">
-								<span class="after:!bg-bc">{{ link.title }}</span>
+								<span class="after:!bg-bc text-xs sm:text-sm md:text-base lg:text-lg">{{ link.title }}</span>
 							</div>
                         </a>
                     </div>
