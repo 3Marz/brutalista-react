@@ -43,6 +43,9 @@ salla-slider{
   }
   
   &.details-slider{
+    .swiper {
+      @apply pb-0;
+    }
     // for selected thumb slider border radius
     .swiper-slide::after{
       visibility: hidden !important;
@@ -123,9 +126,9 @@ salla-slider.banner-slider {
 }
 
 // FIX for shadow not showing
-// .swiper {
-//   @apply pb-5
-// }
+.swiper {
+  @apply pb-5
+}
 
 // Photos block slider
 salla-slider.photos-slider {

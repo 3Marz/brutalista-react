@@ -6186,6 +6186,7 @@ salla-slider.brutal-reviews-slider .s-slider-block__title-nav{display:flex}}
 salla-slider.discount-offer-slider .s-slider-block__title-nav{display:none}
 @media (min-width: 640px){
 salla-slider.discount-offer-slider .s-slider-block__title-nav{display:flex}}
+salla-slider.details-slider .swiper{padding-bottom:0px}
 salla-slider.details-slider .swiper-slide::after {
   visibility: hidden !important;
 }
@@ -6253,6 +6254,7 @@ input[type=radio].sr-only:checked ~ div.promotion-title {
 salla-slider.banner-slider .swiper {
   padding: 0 !important;
 }
+.swiper{padding-bottom:1.25rem}
 salla-slider.photos-slider .swiper-pagination-bullets.swiper-pagination-horizontal{bottom:0px}
 salla-slider.photos-slider .swiper{padding-bottom:2.5rem}
 salla-slider.photos-slider .swiper:where([dir="ltr"], [dir="ltr"] *){padding-right:1.5rem}
