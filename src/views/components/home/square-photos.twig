@@ -12,7 +12,7 @@
 	<div class="grid md:grid-cols-3 md:grid-flow-col gap-5">
 		{% for index, link in component.links %}
 			<a href="{{link.url}}" class="flex group flex-col gap-2 w-full h-full {%if index == 2%} row-span-2 col-span-2 {%endif%}">
-				<div class="w-full h-full rounded-neo overflow-hidden aspect-[4/3] border-2 border-bc bg-white shadow-neo ">
+				<div class="w-full h-full rounded-neo overflow-hidden aspect-[4/3] border-2 border-bc shadow-neo ">
 					<img class="lazy w-full h-full transition group-hover:scale-105 duration-300"  
 					style="object-fit: {{ theme.settings.get('squar_photo_bg_image_size', 'cover') }};"
 					src="{{ link.image }}" />

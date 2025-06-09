@@ -6,7 +6,7 @@
 		{% for index, banner in component.banners %}
 			<a 
 				href="{{banner.url}}" 
-				class="text-bc p-4 group flex justify-center items-end rounded-neo border-2 border-bc bg-white bg-center bg-no-repeat {% if index == 0 or index == 2 or index == 3 %} row-span-2 {% endif %}"
+				class="text-bc p-4 group flex justify-center items-end rounded-neo border-2 border-bc bg-center bg-no-repeat {% if index == 0 or index == 2 or index == 3 %} row-span-2 {% endif %}"
 				style="
 					background-image: url({{banner.image}});
 					background-size: {{ theme.settings.get('squar_photo_bg_image_size', 'cover') }};
@@ -24,7 +24,7 @@
 		{% for index, banner in component.banners %}
 			<a 
 				href="{{banner.url}}" 
-				class="text-bc p-2 group flex justify-center items-end rounded-neo border-2 border-bc bg-white bg-center bg-no-repeat {% if index == 0 or index == 2 or index == 3 or index == 4 %} row-span-2 {% endif %}"
+				class="text-bc p-2 group flex justify-center items-end rounded-neo border-2 border-bc bg-center bg-no-repeat {% if index == 0 or index == 2 or index == 3 or index == 4 %} row-span-2 {% endif %}"
 				style="
 					background-image: url({{banner.image}});
 					background-size: {{ theme.settings.get('squar_photo_bg_image_size', 'cover') }};
