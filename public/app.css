@@ -1312,7 +1312,6 @@ to{transform:rotate(360deg)}}
 .bg-\[\#7a0000\]{--tw-bg-opacity:1;background-color:rgba(122, 0, 0, 1);background-color:rgba(122, 0, 0, var(--tw-bg-opacity, 1))}
 .bg-base-100{background-color:var(--base-100)}
 .bg-base-200{background-color:var(--base-200)}
-.bg-base-300{background-color:var(--base-300)}
 .bg-base-50{background-color:var(--base-50)}
 .bg-bc{background-color:var(--bc)}
 .bg-black{--tw-bg-opacity:1;background-color:rgba(0, 0, 0, 1);background-color:rgba(0, 0, 0, var(--tw-bg-opacity, 1))}
@@ -6254,7 +6253,6 @@ input[type=radio].sr-only:checked ~ div.promotion-title {
 salla-slider.banner-slider .swiper {
   padding: 0 !important;
 }
-.swiper{padding-bottom:1.25rem}
 salla-slider.photos-slider .swiper-pagination-bullets.swiper-pagination-horizontal{bottom:0px}
 salla-slider.photos-slider .swiper{padding-bottom:2.5rem}
 salla-slider.photos-slider .swiper:where([dir="ltr"], [dir="ltr"] *){padding-right:1.5rem}
@@ -7401,8 +7399,8 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .sm\:p-1{padding:0.25rem}
 .sm\:pb-0{padding-bottom:0px}
 .sm\:pt-20{padding-top:5rem}
-.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}
-.sm\:text-base{font-size:1rem;line-height:1.5rem}}
+.sm\:text-base{font-size:1rem;line-height:1.5rem}
+.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}
 @media (min-width: 768px){
 .md\:sticky{position:sticky}
 .md\:mx-4{margin-left:1rem;margin-right:1rem}
