@@ -179,7 +179,7 @@
     &.mm-spn--navbar{
       &:after {
         height: var(--navbar-height) !important;
-        @apply transition-all duration-300 rtl:pr-12 ltr:pl-12 text-start opacity-70 font-bold border-b-2 border-bc z-2 bg-white;
+        @apply transition-all duration-300 rtl:pr-12 ltr:pl-12 text-start opacity-60 font-bold border-b-2 border-bc z-2 bg-white;
       }
 
       &.mm-spn--main{
