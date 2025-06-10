@@ -301,12 +301,12 @@
 .cat-entry-br {
 
   &:hover {
-    p {
+    span {
       background-size: 100% 2px;
     }
   }
 
-  p {
+  span {
     transition: background-size 300ms;
     text-decoration: none;
     background-image: linear-gradient(var(--base-300), var(--base-300));
