@@ -130,6 +130,18 @@
             "required": false
         },
         {
+            "id": "text_color",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون الخط",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#000000",
+            "required": false
+        },
+        {
             "id": "border-radius",
             "type": "boolean",
             "format": "switch",
