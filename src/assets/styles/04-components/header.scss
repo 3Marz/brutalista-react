@@ -223,7 +223,7 @@ salla-user-menu{
   &-trigger{
     @apply bg-transparent py-0 transition hover:-translate-y-1;
     &-avatar{
-      @apply w-7 h-7 !border-2 border-bc;
+      @apply w-7 h-7 !border-2 border-text-color;
     }
     &-content{
 

@@ -94,7 +94,7 @@ class BrutalReviews extends HTMLElement {
 								<i class="sicon-quote text-bc text-3xl rtl:rotate-180"></i>
 							</div>
 							<div class="h-full flex justify-center items-center">
-								<p class="text-base text-bc opacity-80 line-clamp-5">${review.content}</p>
+								<p class="text-base text-text-color opacity-80 line-clamp-5">${review.content}</p>
 							</div>
 							<div class="flex flex-col">
 								<salla-rating-stars value=${review.stars} ></salla-rating-stars>

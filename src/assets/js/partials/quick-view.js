@@ -64,7 +64,7 @@ class QuickViewModal extends HTMLElement {
 			<div class="flex flex-col gap-4 xs:flex-row h-full">
 				${this.product != null ? 
 					`
-						<div class="w-full h-full">
+						<div class="w-full md:w-1/2 h-full">
 							<salla-slider
 									id="details-slider-${this.product.id}"
 									class="details-slider modal-slider rounded-neo image-slider"
@@ -101,7 +101,7 @@ class QuickViewModal extends HTMLElement {
 
 							</salla-slider>
 						</div>
-						<div class="w-full h-full flex flex-col gap-4">
+						<div class="w-full md:w-1/2 h-full flex flex-col gap-4">
 							<div class="flex rtl:space-x-reverse space-x-1">
 								<salla-social-share class="inline-flex quick-view-share-button" aria-label="social share"></salla-social-share>
 
@@ -117,13 +117,16 @@ class QuickViewModal extends HTMLElement {
 								</salla-button>
 							</div>
 							${ this.product.category ? `
-								<a class="text-lg text-bc opacity-60" href="${this.product.category.url}">${ this.product.category.name }</a>
+								<a class="text-lg text-text-color opacity-60" href="${this.product.category.url}">${ this.product.category.name }</a>
 							` : ``}
+
 							<a class="text-2xl" href="${this.product.url}">${this.product.name}</a>
 
-							<article class="article article--main text-sm relative leading-6 line-clamp-4"
-								${ this.product.description }
-							</article>
+              ${ this.product.description ? `
+                <article class="article article--main text-sm relative leading-6 line-clamp-4">
+                  ${ this.product.description }
+                </article>
+              ` : ``}
 							
 							<form class="form product-form" enctype="multipart/form-data" method="post"
 								  onsubmit="return salla.form.onSubmit('cart.addItem', event)" >

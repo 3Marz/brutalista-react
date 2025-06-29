@@ -238,7 +238,7 @@ class ProductCard extends HTMLElement {
 			<div class="${this.fullImage ? "absolute bottom-0 p-4" : ""} flex flex-grow justify-between w-full flex-col gap-3">
 				<div class="h-full w-full flex flex-col gap-2 ${this.isSpecial ? `lg:gap-4` : ``} px-2 ">
 					<h5 class="${this.isSpecial ? `lg:text-xl` : ``}">
-						<a class="hover:underline underline-offset-2 ${this.fullImage ? `text-base-100` : `text-bc`}" href="${this.product?.url}">${this.product?.name}</a>
+						<a class="hover:underline underline-offset-2 ${this.fullImage ? `text-base-100` : `text-text-color`}" href="${this.product?.url}">${this.product?.name}</a>
 					</h5>
 					${this.isSpecial && this.product?.subtitle ? `
 						<p class="text-sm opacity-80">${this.product?.subtitle}</p>

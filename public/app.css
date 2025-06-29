@@ -4397,7 +4397,7 @@ input[type=radio].sr-only:checked ~ div.s-wallet-table-tbody-tr a {
 .\[--text-color\:var\(--bc-light\)\;\]{--text-color:var(--bc-light);}
 :root {
   --infinte-color: #a3a3a3;
-  --main-text-color: var(--bc);
+  --main-text-color: var(--text-color);
   --main-text-color-dark: #2b2d34;
   /* current */
   --color-primary: #5cd5c4;
@@ -5434,7 +5434,7 @@ salla-user-menu{flex-shrink:0}
 .s-user-menu-trigger{background-color:transparent;padding-top:0px;padding-bottom:0px;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .s-user-menu-trigger:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), -0.25rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .s-user-menu-trigger-avatar{border-width:2px !important}
-.s-user-menu-trigger-avatar{height:1.75rem;width:1.75rem;border-color:var(--bc)}
+.s-user-menu-trigger-avatar{height:1.75rem;width:1.75rem;border-color:var(--text-color)}
 .s-user-menu-dropdown{border-bottom-right-radius:0px;border-bottom-left-radius:0px;border-top-left-radius:var(--br);border-top-right-radius:var(--br);border-width:2px;border-bottom-width:0px;border-color:var(--bc)}
 @media (min-width: 768px){
 .s-user-menu-dropdown{border-top-left-radius:var(--br);border-top-right-radius:var(--br);border-bottom-right-radius:var(--br);border-bottom-left-radius:var(--br);border-bottom-width:2px}}
@@ -6203,7 +6203,7 @@ salla-slider.details-slider salla-button.btn--wishlist{display:none}}
 salla-slider.details-slider salla-button.btn--wishlist:where([dir="ltr"], [dir="ltr"] *){left:1rem}
 salla-slider.details-slider salla-button.btn--wishlist:where([dir="rtl"], [dir="rtl"] *){right:1rem}
 salla-slider.details-slider.modal-slider .s-slider-block__title-nav{width:-moz-fit-content;width:fit-content;
-  top: calc(100% - 1.25rem)}
+  top: calc(100% - 0.5rem)}
 salla-slider.details-slider .s-slider-nav-arrow{border-style:solid !important;background-color:var(--base-50) !important;--tw-shadow:var(--neo-shadow) !important;--tw-shadow-colored:var(--neo-shadow) !important;box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), var(--tw-shadow) !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow) !important}
 salla-slider.details-slider .s-slider-nav-arrow{border-width:1px;border-color:var(--bc);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 salla-slider.details-slider .s-slider-nav-arrow:hover{border-color:#414042;border-color:var(--color-primary)}
