@@ -239,7 +239,7 @@
   }
 
   .tab-trigger{
-    @apply text-bc font-bold leading-7;
+    @apply text-text-color font-bold leading-7;
 
     &.is-active button{
       @apply text-primary border-primary;
@@ -373,7 +373,7 @@
   offers slider
 */
 .slide--offer-entry {
-  @apply bg-white rounded-md h-36 text-center flex flex-col items-center justify-between text-bc transition duration-500 hover:shadow-default border border-gray-200;
+  @apply bg-white rounded-md h-36 text-center flex flex-col items-center justify-between text-text-color transition duration-500 hover:shadow-default border border-gray-200;
 }
 
 
@@ -430,11 +430,11 @@
       }
 
       h2{
-        @apply font-bold text-sm text-bc mb-1;
+        @apply font-bold text-sm text-text-color mb-1;
       }
 
       p{
-        @apply text-sm text-bc;
+        @apply text-sm text-text-color;
       }
 
       &:hover {

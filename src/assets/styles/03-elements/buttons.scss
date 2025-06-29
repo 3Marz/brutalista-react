@@ -128,7 +128,7 @@ salla-button {
   }
 
   &--collapse {
-    @apply border border-base-300 w-full bg-base-50 py-2.5 rtl:xs:pr-7 ltr:xs:pl-7 rtl:xs:pl-5 ltr:xs:pr-5 rtl:xs:pl-5 ltr:xs:pr-5 rounded-neo flex items-center text-bc justify-center text-sm;
+    @apply border border-base-300 w-full bg-base-50 py-2.5 rtl:xs:pr-7 ltr:xs:pl-7 rtl:xs:pl-5 ltr:xs:pr-5 rtl:xs:pl-5 ltr:xs:pr-5 rounded-neo flex items-center text-text-color justify-center text-sm;
   }
 
   /* Disabled state */

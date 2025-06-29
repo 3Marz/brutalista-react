@@ -298,7 +298,7 @@ salla-modal {
       a,
       span,
       .arrow {
-        @apply fill-bc opacity-100 text-bc bg-base-100;
+        @apply fill-bc opacity-100 text-text-color bg-base-100;
       }
     }
   }
@@ -313,7 +313,7 @@ salla-modal {
   //       a,
   //       span,
   //       .arrow {
-  //         @apply fill-bc opacity-100 text-bc bg-transparent;
+  //         @apply fill-bc opacity-100 text-text-color bg-transparent;
   //       }
   //     }
   //   }

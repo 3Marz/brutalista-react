@@ -61,7 +61,7 @@
   }
 
   .footer-is-light & {
-    @apply bg-base-50 text-bc;
+    @apply bg-base-50 text-text-color;
 
     .s-payments-list-item {
       @apply border border-base-200;

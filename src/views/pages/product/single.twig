@@ -183,10 +183,10 @@
                     </div>
                 {% endif %}
 
-                <h1 class="text-xl/8 md:text-2xl/10 font-bold mb-6 text-bc">{{ product.name }}</h1>
+                <h1 class="text-xl/8 md:text-2xl/10 font-bold mb-6 text-text-color">{{ product.name }}</h1>
 
                 {% if product.subtitle %}
-                    <h2 class="product-entry__sub-title text-sm text-bc opacity-80 leading-6 mb-2.5">
+                    <h2 class="product-entry__sub-title text-sm text-text-color opacity-80 leading-6 mb-2.5">
                         {{ product.subtitle }}
                     </h2>
                 {% endif %}
@@ -250,7 +250,7 @@
                     <div class="mb-5 space-x-2 rtl:space-x-reverse">
                         {% for tag in product.tags %}
                             <a href="{{ tag.url }}"
-                               class="py-1 px-2 hover:shadow-neo transition-all border hover:bg-base-200 border-bc text-bc rounded-full text-xs">{{ tag.name }}
+                               class="py-1 px-2 hover:shadow-neo transition-all border hover:bg-base-200 border-bc text-text-color rounded-full text-xs">{{ tag.name }}
                             </a>
                         {% endfor %}
                     </div>

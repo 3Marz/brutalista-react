@@ -201,7 +201,7 @@
   @apply border-none flex justify-center items-center outline-none transition-transform hover:translate-y-[-2px];
 
   &__icon{
-    @apply text-lg lg:text-xl w-9 h-9 lg:w-10 lg:h-10 rounded-full flex items-center justify-center text-bc;
+    @apply text-lg lg:text-xl w-9 h-9 lg:w-10 lg:h-10 rounded-full flex items-center justify-center text-text-color;
     &.icon{
       // @apply mr-[9px] rtl:ml-[9px] rtl:mr-[unset];
     }
