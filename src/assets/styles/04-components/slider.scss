@@ -100,7 +100,7 @@ salla-slider{
 }
 
 .promotion-title{
-  @apply max-w-[80%] font-bold px-2 py-1 sm:py-2 sm:px-3 text-xs sm:text-sm md:text-sm whitespace-nowrap absolute bg-primary border border-bc text-base-100 z-[3] top-2 right-2 rounded-neo;
+  @apply truncate max-w-full font-bold px-2 py-1 sm:py-2 sm:px-3 text-xs sm:text-sm md:text-sm whitespace-nowrap absolute bg-primary border border-bc text-base-100 z-[3] top-2 right-2 rounded-neo;
   @apply w-auto m-0 #{!important};
 }
 

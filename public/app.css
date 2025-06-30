@@ -1077,6 +1077,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-3{margin-left:0.75rem;margin-right:0.75rem}
 .mx-6{margin-left:1.5rem;margin-right:1.5rem}
 .my-2{margin-top:0.5rem;margin-bottom:0.5rem}
+.mx-auto{margin-left:auto;margin-right:auto}
 .\!mb-0{margin-bottom:0px !important}
 .-mb-52{margin-bottom:-13rem}
 .-mt-62{margin-top:-248px}
@@ -1262,7 +1263,6 @@ to{transform:rotate(360deg)}}
 .divide-base-300 > :not([hidden]) ~ :not([hidden]){border-color:var(--base-300)}
 .self-start{align-self:flex-start}
 .justify-self-center{justify-self:center}
-.overflow-auto{overflow:auto}
 .overflow-hidden{overflow:hidden}
 .overflow-visible{overflow:visible}
 .overflow-x-hidden{overflow-x:hidden}
@@ -1367,6 +1367,7 @@ to{transform:rotate(360deg)}}
 .py-5{padding-top:1.25rem;padding-bottom:1.25rem}
 .py-6{padding-top:1.5rem;padding-bottom:1.5rem}
 .py-\[calc\(abs\(var\(--y-shadow-offset\)\)\)\]{padding-top:calc(abs(var(--y-shadow-offset)));padding-bottom:calc(abs(var(--y-shadow-offset)))}
+.\!px-\[0\.625rem\]{padding-left:0.625rem !important;padding-right:0.625rem !important}
 .\!pt-1{padding-top:0.25rem !important}
 .pb-1{padding-bottom:0.25rem}
 .pb-10{padding-bottom:2.5rem}
@@ -6323,7 +6324,7 @@ salla-slider .swiper-slide {
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
 }
-.promotion-title{position:absolute;top:0.5rem;right:0.5rem;z-index:3;max-width:80%;white-space:nowrap;border-radius:var(--br);border-width:1px;border-color:var(--bc);background-color:#414042;background-color:var(--color-primary);padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;font-size:0.75rem;line-height:1rem;font-weight:700;color:var(--base-100)}
+.promotion-title{position:absolute;top:0.5rem;right:0.5rem;z-index:3;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:var(--br);border-width:1px;border-color:var(--bc);background-color:#414042;background-color:var(--color-primary);padding-left:0.5rem;padding-right:0.5rem;padding-top:0.25rem;padding-bottom:0.25rem;font-size:0.75rem;line-height:1rem;font-weight:700;color:var(--base-100)}
 input[type=radio].sr-only div.promotion-title {
   transition: all 0.3s;
 }

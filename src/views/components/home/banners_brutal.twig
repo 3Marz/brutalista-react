@@ -11,7 +11,7 @@
   >
     <div slot="items">
       {% for index, banner in component.banners %}
-        <div class="w-full">
+        <div class="w-full !px-[0.625rem]">
           <a href="{{ banner.url ? banner.url : '#' }}">
             <img loading="eager" src="{{ banner.image }}" class="w-full object-contain {{ component.rounded_banners ? "rounded-xl" : "" }}" alt="{{store.name}} banner-slider-{{index}}"></img>
           </a>
