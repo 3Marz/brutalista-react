@@ -1,6 +1,6 @@
 
 .s-form-control {
-  @apply border-bc bg-base-50;
+  @apply border-bc bg-white;
 }
 
 .s-product-options{
@@ -25,10 +25,11 @@
   &-colors-item {
     label {
       span {
-        border-color: var(--bc-light) !important;
+        border-color: var(--bc) !important;
       }
       div {
-        color: var(--bc-light) !important;
+        color: var(--text-color) !important;
+        opacity: 80% !important;
       }
     }  
   }
@@ -57,7 +58,9 @@
 
   }
   &-thumbnails-wrapper{
-
+    p {
+      @apply opacity-80 !text-text-color;
+    }
   }
 }
 

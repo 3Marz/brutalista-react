@@ -232,7 +232,7 @@ class App extends AppHelpers {
 			event.preventDefault();
 			salla.storage.set('statusAd-' + ad.dataset.id, 'dismissed');
 
-			anime({
+			this.anime({
 				targets: '.salla-advertisement',
 				opacity: [1, 0],
 				duration: 300,
@@ -283,7 +283,7 @@ class App extends AppHelpers {
 				const content = document.querySelector('#' + trigger.dataset.show);
 				const state = { isOpen: false }
 
-				const onOpen = () => anime({
+				const onOpen = () => this.anime({
 					targets: content,
 					duration: 225,
 					height: content.scrollHeight,
@@ -291,7 +291,7 @@ class App extends AppHelpers {
 					easing: 'easeOutQuart',
 				});
 
-				const onClose = () => anime({
+				const onClose = () => this.anime({
 					targets: content,
 					duration: 225,
 					height: 0,
