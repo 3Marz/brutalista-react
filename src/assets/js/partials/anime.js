@@ -1,6 +1,5 @@
-import { default as AnimeJS } from 'animejs';
+import AnimeJS from 'animejs';
 
-console.log(AnimeJS)
 window.anime = AnimeJS;
 
 class Anime {

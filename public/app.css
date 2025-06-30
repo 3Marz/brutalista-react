@@ -1514,7 +1514,7 @@ to{transform:rotate(360deg)}}
 .dark .s-input:focus{border-color:#414042;border-color:var(--color-primary)}
 @media (min-width: 640px){
 .s-input{font-size:0.875rem;line-height:1.25rem}}
-.s-input{height:2.5rem;width:100%;border-radius:var(--br);border-color:var(--base-300);background-color:var(--base-50);font-size:0.875rem;line-height:1.25rem;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
+.s-input{height:2.5rem;width:100%;border-radius:var(--br);border-color:var(--base-300);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));font-size:0.875rem;line-height:1.25rem;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
 .s-input:focus{border-color:#414042;border-color:var(--color-primary);--tw-ring-color:transparent}
 .dark .s-input:focus{border-color:#414042;border-color:var(--color-primary)}
 .s-input {
@@ -5086,7 +5086,7 @@ input[type=text]:disabled {
 .form-label{margin-top:1px}}
 @media (min-width: 768px){
 .form-label{margin-bottom:0px}}
-.form-input{height:2.5rem;width:100%;border-radius:var(--br);border-color:var(--base-300);background-color:var(--base-50);font-size:0.875rem;line-height:1.25rem;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
+.form-input{height:2.5rem;width:100%;border-radius:var(--br);border-color:var(--base-300);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));font-size:0.875rem;line-height:1.25rem;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
 .form-input:focus{border-color:#414042;border-color:var(--color-primary);--tw-ring-color:transparent}
 .dark .form-input:focus{border-color:#414042;border-color:var(--color-primary)}
 .form-input {
@@ -5189,7 +5189,7 @@ input[type=radio].sr-only:checked ~ div.btn--close {
 .btn--close-sm{position:fixed;bottom:0px;z-index:50;height:51px;width:51px;--tw-translate-x:-100%;transform:translate(-100%, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));--tw-bg-opacity:1;background-color:rgba(239, 68, 68, 1);background-color:rgba(239, 68, 68, var(--tw-bg-opacity, 1));font-size:1.25rem;line-height:1.75rem;--tw-text-opacity:1;color:rgba(255, 255, 255, 1);color:rgba(255, 255, 255, var(--tw-text-opacity, 1));opacity:0;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:300ms}
 .btn--close-sm:where([dir="ltr"], [dir="ltr"] *){right:0px}
 .btn--close-sm:where([dir="rtl"], [dir="rtl"] *){left:0px}
-.btn--collapse{display:flex;width:100%;align-items:center;justify-content:center;border-radius:var(--br);border-width:1px;border-color:var(--base-300);background-color:var(--base-50);padding-top:0.625rem;padding-bottom:0.625rem;font-size:0.875rem;line-height:1.25rem;color:var(--text-color)}
+.btn--collapse{display:flex;width:100%;align-items:center;justify-content:center;border-radius:var(--br);border-width:1px;border-color:var(--base-300);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));padding-top:0.625rem;padding-bottom:0.625rem;font-size:0.875rem;line-height:1.25rem;color:var(--text-color)}
 @media (min-width: 480px){
 .btn--collapse:where([dir="ltr"], [dir="ltr"] *){padding-left:1.75rem;padding-right:1.25rem}
 .btn--collapse:where([dir="rtl"], [dir="rtl"] *){padding-right:1.75rem;padding-left:1.25rem}}
@@ -6440,7 +6440,12 @@ salla-gifting .s-list-tile-item{gap:0.75rem;--tw-bg-opacity:1;background-color:r
 @media (min-width: 768px){
 .product-entry--wishlist .product-entry__image{height:4rem;width:5rem}}
 .product-entry--wishlist salla-button{display:flex}
+.s-comment-form-input{border-color:var(--base-300) !important}
+.s-comment-form-input{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
+.s-comment-form-input:focus{border-color:#414042 !important;border-color:var(--color-primary) !important}
 .s-comments-page{padding-top:4rem}
+.s-comments-item{border-color:var(--base-300)}
+.s-comments-item-content{color:var(--text-color);opacity:0.7}
 .s-comments-item-avatar-img{border-width:2px;border-color:var(--bc)}
 .s-comments-product{margin-bottom:1rem;background-color:var(--base-100);padding-top:1rem;padding-bottom:1rem}
 @media (min-width: 768px){
@@ -6603,7 +6608,9 @@ input[type=radio].sr-only:checked ~ div.model-viewer__poster {
   border-width:2px;
   border-style:dashed;
   border-color:var(--base-300);
-  background-color:var(--base-50);
+  --tw-bg-opacity:1;
+  background-color:rgba(255, 255, 255, 1);
+  background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1));
 }
 .product-option-uploader .s-file-upload-wrapper .filepond--drop-label *, salla-file-upload .s-file-upload-wrapper .filepond--drop-label * {
   pointer-events: none;
@@ -7293,6 +7300,13 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .s-button-gray-outline:hover{background-color:var(--my-gray)}
 .s-button-dark-outline{border-color:var(--my-dark);color:var(--my-dark)}
 .s-button-dark-outline:hover{background-color:var(--my-dark)}
+.s-button-disabled {
+  color: var(--base-300) !important;
+  border-color: var(--base-300) !important;
+}
+.s-button-disabled {
+  opacity: 0.7;
+}
 .s-add-product-button-mini-checkout {
   --salla-fast-checkout-button-border-radius: var(--br) !important;
 }
@@ -7363,10 +7377,11 @@ input[type=radio].sr-only:checked ~ div.drawer-background {
 .s-quantity-input-input{border-style:none !important}
 .s-quantity-input-input{background-color:transparent;color:var(--text-color)}
 .s-quantity-input-button{fill:var(--bc)}
-.s-form-control{border-color:var(--bc);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
+.s-form-control{border-color:var(--base-300);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity, 1))}
+.s-form-control:focus{border-color:#414042;border-color:var(--color-primary)}
 .s-product-options-wrapper{background-color:transparent}
 .s-product-options-colors-item label span {
-  border-color: var(--bc) !important;
+  border-color: var(--base-300) !important;
 }
 .s-product-options-colors-item label div {
   color: var(--text-color) !important;

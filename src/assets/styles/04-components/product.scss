@@ -22,9 +22,21 @@ salla-gifting {
   }
 }
 
+.s-comment-form-input {
+  @apply bg-white !border-base-300 focus:!border-primary;
+}
+
 .s-comments {
   &-page {
     @apply pt-16;
+  }
+
+  &-item {
+    @apply border-base-300;
+  }
+
+  &-item-content {
+    @apply text-text-color opacity-70;
   }
 
   &-item-avatar-img {
@@ -262,7 +274,7 @@ salla-gifting {
     }
     .filepond--drop-label {
       min-height: 120px !important;
-      @apply bg-base-50 cursor-pointer border-dashed rounded-neo border-2 border-base-300;
+      @apply bg-white cursor-pointer border-dashed rounded-neo border-2 border-base-300;
     }
     .product-option-uploader-placholder{
       @apply flex flex-col justify-center items-center;

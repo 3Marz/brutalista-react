@@ -24,7 +24,6 @@ class QuickViewModal extends HTMLElement {
 				console.log(res)
 				document.querySelector('#quick-view-inner-modal')?.open();	
 				if (!res.success) {
-					console.log("what")
 					return
 				}
 				this.product = res.data

@@ -35,7 +35,6 @@ class DiscountProductCard extends HTMLElement {
 		salla.product.api.fetchOptions([this.product_id])
 			.then((res) => {
 				if (!res.success) {
-					console.log("what")
 					return
 				}
 				this.product = res.data[0]

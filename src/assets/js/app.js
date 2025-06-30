@@ -232,7 +232,7 @@ class App extends AppHelpers {
 			event.preventDefault();
 			salla.storage.set('statusAd-' + ad.dataset.id, 'dismissed');
 
-			this.anime({
+			anime({
 				targets: '.salla-advertisement',
 				opacity: [1, 0],
 				duration: 300,
@@ -277,40 +277,40 @@ class App extends AppHelpers {
 		}
 	}
 
-	initiateCollapse() {
-		document.querySelectorAll('.btn--collapse')
-			.forEach((trigger) => {
-				const content = document.querySelector('#' + trigger.dataset.show);
-				const state = { isOpen: false }
+initiateCollapse() {
+    document.querySelectorAll('.btn--collapse')
+      .forEach((trigger) => {
+        const content = document.querySelector('#' + trigger.dataset.show);
+        const state = { isOpen: false }
 
-				const onOpen = () => this.anime({
-					targets: content,
-					duration: 225,
-					height: content.scrollHeight,
-					opacity: [0, 1],
-					easing: 'easeOutQuart',
-				});
+        const onOpen = () => anime({
+          targets: content,
+          duration: 225,
+          height: content.scrollHeight,
+          opacity: [0, 1],
+          easing: 'easeOutQuart',
+        });
 
-				const onClose = () => this.anime({
-					targets: content,
-					duration: 225,
-					height: 0,
-					opacity: [1, 0],
-					easing: 'easeOutQuart',
-				})
+        const onClose = () => anime({
+          targets: content,
+          duration: 225,
+          height: 0,
+          opacity: [1, 0],
+          easing: 'easeOutQuart',
+        })
 
-				const toggleState = (isOpen) => {
-					state.isOpen = !isOpen
-					this.toggleElementClassIf(content, 'is-closed', 'is-opened', () => isOpen);
-				}
+        const toggleState = (isOpen) => {
+          state.isOpen = !isOpen
+          this.toggleElementClassIf([content, trigger], 'is-closed', 'is-opened', () => isOpen);
+        }
 
-				trigger.addEventListener('click', () => {
-					const { isOpen } = state
-					toggleState(isOpen)
-					isOpen ? onClose() : onOpen();
-				})
-			});
-	}
+        trigger.addEventListener('click', () => {
+          const { isOpen } = state
+          toggleState(isOpen)
+          isOpen ? onClose() : onOpen();
+        })
+      });
+  }
 
 
 	/**

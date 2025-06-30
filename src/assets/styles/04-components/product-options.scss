@@ -1,6 +1,6 @@
 
 .s-form-control {
-  @apply border-bc bg-white;
+  @apply border-base-300 focus:border-primary bg-white;
 }
 
 .s-product-options{
@@ -25,7 +25,7 @@
   &-colors-item {
     label {
       span {
-        border-color: var(--bc) !important;
+        border-color: var(--base-300) !important;
       }
       div {
         color: var(--text-color) !important;
