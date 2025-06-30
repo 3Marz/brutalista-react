@@ -1077,7 +1077,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-3{margin-left:0.75rem;margin-right:0.75rem}
 .mx-6{margin-left:1.5rem;margin-right:1.5rem}
 .my-2{margin-top:0.5rem;margin-bottom:0.5rem}
-.mx-auto{margin-left:auto;margin-right:auto}
 .\!mb-0{margin-bottom:0px !important}
 .-mb-52{margin-bottom:-13rem}
 .-mt-62{margin-top:-248px}
@@ -1343,6 +1342,7 @@ to{transform:rotate(360deg)}}
 .p-8{padding:2rem}
 .p-\[5px\]{padding:5px}
 .\!px-0{padding-left:0px !important;padding-right:0px !important}
+.\!px-\[0\.625rem\]{padding-left:0.625rem !important;padding-right:0.625rem !important}
 .\!py-1\.5{padding-top:0.375rem !important;padding-bottom:0.375rem !important}
 .\!py-3{padding-top:0.75rem !important;padding-bottom:0.75rem !important}
 .px-0{padding-left:0px;padding-right:0px}
@@ -1367,7 +1367,6 @@ to{transform:rotate(360deg)}}
 .py-5{padding-top:1.25rem;padding-bottom:1.25rem}
 .py-6{padding-top:1.5rem;padding-bottom:1.5rem}
 .py-\[calc\(abs\(var\(--y-shadow-offset\)\)\)\]{padding-top:calc(abs(var(--y-shadow-offset)));padding-bottom:calc(abs(var(--y-shadow-offset)))}
-.\!px-\[0\.625rem\]{padding-left:0.625rem !important;padding-right:0.625rem !important}
 .\!pt-1{padding-top:0.25rem !important}
 .pb-1{padding-bottom:0.25rem}
 .pb-10{padding-bottom:2.5rem}
