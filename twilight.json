@@ -2231,6 +2231,13 @@
                     "maxLength": "10"
                 }
             ]
+        },
+        {
+            "key": "e8a5c10c-df66-4156-9dbf-62d57e8e5720",
+            "title": "آراء عملاء مخصصة (بروتال)",
+            "icon": "sicon-gold-badge",
+            "path": "home.custom-reviews-brutal",
+            "fields": []
         }
     ],
     "support_url": "https://3marz.github.io/brutal-docs/docs/intro",
