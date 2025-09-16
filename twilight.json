@@ -2237,7 +2237,95 @@
             "title": "آراء عملاء مخصصة (بروتال)",
             "icon": "sicon-gold-badge",
             "path": "home.custom-reviews-brutal",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "العنوان هنا...",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": "1",
+                    "maxLength": "100"
+                },
+                {
+                    "id": "reviews",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "التقيمات",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "reviews.profile_img",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة العرض",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        },
+                        {
+                            "id": "reviews.name",
+                            "type": "string",
+                            "format": "text",
+                            "label": "الاسم",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "الاسم هنا",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "reviews.text",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "محتوى التقييم",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "النص هنا",
+                            "icon": "sicon-typography",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": false,
+                            "minLength": 20,
+                            "maxLength": 255
+                        },
+                        {
+                            "id": "reviews.stars",
+                            "type": "number",
+                            "format": "slider",
+                            "inputType": "range",
+                            "label": "عدد النجوم",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-pin",
+                            "value": "5",
+                            "required": false,
+                            "step": "1",
+                            "minimum": "0",
+                            "maximum": "5"
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "10"
+                }
+            ]
         }
     ],
     "support_url": "https://3marz.github.io/brutal-docs/docs/intro",
