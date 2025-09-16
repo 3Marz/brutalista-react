@@ -2237,6 +2237,7 @@
             "title": "آراء عملاء مخصصة (بروتال)",
             "icon": "sicon-gold-badge",
             "path": "home.custom-reviews-brutal",
+            "image": "https://l.top4top.io/p_35468vvq51.png",
             "fields": [
                 {
                     "id": "title",
