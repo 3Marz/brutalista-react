@@ -163,6 +163,10 @@
 	<quick-view class="w-full h-full"></quick-view>
 </salla-modal>
 
+{% if store.scope %}
+    <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
+{% endif %}
+
 {% block scripts %}{% endblock %}
 </body>
 </html>
