@@ -57,6 +57,13 @@ class ProductCard extends HTMLElement {
 	}
 
 	getProductBadge() {
+    if (this.product?.preorder?.label) {
+			return `
+        <div class="promotion-title pointer-events-none">
+          ${this.product.preorder.label}
+        </div>`
+    }
+
 		if (this.product.promotion_title) {
 			return `
 				<div class="promotion-title pointer-events-none">
@@ -107,6 +114,10 @@ class ProductCard extends HTMLElement {
 	}
 
 	getAddButtonLabel() {
+    if(this.product.has_preorder_campaign) {
+        return salla.lang.get('pages.products.pre_order_now');
+    }
+
 		if (this.product.status === 'sale' && this.product.type === 'booking') {
 			return salla.lang.get('pages.cart.book_now');
 		}
