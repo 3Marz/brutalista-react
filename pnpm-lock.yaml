@@ -40,14 +40,14 @@ importers:
         specifier: ^7.28.5
         version: 7.29.0(@babel/core@7.29.0)
       '@salla.sa/twilight':
-        specifier: ^2.14.345
-        version: 2.14.353(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)
+        specifier: ^2.14.468
+        version: 2.14.468(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)
       '@salla.sa/twilight-components':
-        specifier: ^2.14.345
-        version: 2.14.353(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)
+        specifier: ^2.14.468
+        version: 2.14.468(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(lit@3.3.3)(webpack@5.105.0)
       '@salla.sa/twilight-tailwind-theme':
-        specifier: ^2.14.345
-        version: 2.14.353
+        specifier: ^2.14.468
+        version: 2.14.468
       '@tailwindcss/forms':
         specifier: ^0.5.2
         version: 0.5.10(tailwindcss@3.4.17)
@@ -863,6 +863,9 @@ packages:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
 
+  '@googlemaps/markerclusterer@2.6.2':
+    resolution: {integrity: sha512-U6uVhq8iWhiIckA89sgRu8OK35mjd6/3CuoZKWakKEf0QmRRWpatlsPb3kqXkoWSmbcZkopRiI4dnW6DQSd7bQ==}
+
   '@isaacs/balanced-match@4.0.1':
     resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
     engines: {node: 20 || >=22}
@@ -929,6 +932,12 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
+  '@lit-labs/ssr-dom-shim@1.6.0':
+    resolution: {integrity: sha512-VHb0ALPMTlgKjM6yIxxoQNnpKyUKLD04VzeQdsiXkMqkvYlAHxq9glGLmgbb889/1GsohSOAjvQYoiBppXFqrQ==}
+
+  '@lit/reactive-element@2.1.2':
+    resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
+
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -970,36 +979,42 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@parcel/watcher-linux-arm-musl@2.5.1':
     resolution: {integrity: sha512-6E+m/Mm1t1yhB8X412stiKFG3XykmgdIOqhjWj+VL8oHkKABfu/gjFj8DvLrYVHSBNC+/u5PeNrujiSQ1zwd1Q==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@parcel/watcher-linux-arm64-glibc@2.5.1':
     resolution: {integrity: sha512-LrGp+f02yU3BN9A+DGuY3v3bmnFUggAITBGriZHUREfNEzZh/GO06FF5u2kx8x+GBEUYfyTGamol4j3m9ANe8w==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-musl@2.5.1':
     resolution: {integrity: sha512-cFOjABi92pMYRXS7AcQv9/M1YuKRw8SZniCDw0ssQb/noPkRzA+HBDkwmyOJYp5wXcsTrhxO0zq1U11cK9jsFg==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@parcel/watcher-linux-x64-glibc@2.5.1':
     resolution: {integrity: sha512-GcESn8NZySmfwlTsIur+49yDqSny2IhPeZfXunQi48DMugKeZ7uy1FX83pO0X22sHntJ4Ub+9k34XQCX+oHt2A==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@parcel/watcher-linux-x64-musl@2.5.1':
     resolution: {integrity: sha512-n0E2EQbatQ3bXhcH2D1XIAANAcTZkQICBPVaxMeaCVBtOpBZpWJuf7LwyWPSBDITb7In8mqQgJ7gH8CILCURXg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@parcel/watcher-win32-arm64@2.5.1':
     resolution: {integrity: sha512-RFzklRvmc3PkjKjry3hLF9wD7ppR4AKcWNzH7kXR7GUe0Igb3Nz8fyPwtZCSquGrhU5HhUNDr/mKBqj7tqA2Vw==}
@@ -1027,22 +1042,37 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@salla.sa/applepay@2.14.353':
-    resolution: {integrity: sha512-NxlbpAlqMGOLuzLcqbEkcRE+ZSix1DrKPrMuzx4wA7PJ3eb2QetP66fO8touxvPkJPa3SoPcnvghwwMBK5FG9A==}
+  '@salla.sa/applepay@2.14.468':
+    resolution: {integrity: sha512-e5HVOi+y/7nXS1JNSK1OAshj2qJLkmcqlLkoMB+tAI+kvIoacd4D26Gsy6FpU3IepX0l4AA3cq/mxroIph67fQ==}
 
-  '@salla.sa/base@2.14.353':
-    resolution: {integrity: sha512-7LZG+4TiMo0xdHgG0xCdhXPleKY4RBHsARzLBdYEOEg6rGFEIHvC24QjoHZnG0/4cP3GLkl1JV/pEqFJYnpUsQ==}
+  '@salla.sa/base@2.14.468':
+    resolution: {integrity: sha512-3y2NtdDf5NR5W39eCOxNxajM/G9IaS9fVXpE+vVs53ILvVrRlkVnHVHmbC/EqbsnIHyKM5H/noBHHOD16NfRXw==}
 
-  '@salla.sa/twilight-components@2.14.353':
-    resolution: {integrity: sha512-cdnVJNbSPsO6zkbju6yXnPT901xP9hFast+09oUC3Rf5rbfCV7xIby0llpI5ZC7aXlnB6e26Fv7ZDXJSwzVPYg==}
+  '@salla.sa/twilight-components@2.14.468':
+    resolution: {integrity: sha512-0IJkcnGiFBXxgDSibttuFL2cPe/hIlT+EFmCx3w9TFPBCnJd4RG5T3k9cH+HSyngONs7x2UzIUFuxkx0qoVkkQ==}
 
-  '@salla.sa/twilight-tailwind-theme@2.14.353':
-    resolution: {integrity: sha512-LS/uJhMUNvEEdZxjsaFGSstRmIpRldKNzSfkPbDN8B9MJBKtCl+c0yHPC4TObY/DomsjYbg6A/sk+EjrgwSHvw==}
+  '@salla.sa/twilight-tailwind-theme@2.14.468':
+    resolution: {integrity: sha512-ZDR3hG3TbycSq5miKFaQD+QJP/DzO88d8NboDzg+YN6i++7UojCcd7LJDr8BkfNoRHy5B8eJQA3/xLpcISUpeA==}
 
-  '@salla.sa/twilight@2.14.353':
-    resolution: {integrity: sha512-Bl30DPzoJBbYUfxlbfbS5xAarKsjVjZHSSzvcr9WG9Fqul7mJ17/lledws5ppcxv3SBsigZX9hZX5fDKzqu5JA==}
+  '@salla.sa/twilight@2.14.468':
+    resolution: {integrity: sha512-fbFQptYMEr/fxeFj9H4t6RsUNeT9o0Fy0tJpX+uWTWO2qtwm8ykiy8P9Dky2wO5R3Y8aE0hTLlmEJpZPoDvMwA==}
     peerDependencies:
       webpack: ^4 || ^5
+
+  '@salla.sa/ui-address-autocomplete-widget@1.2.1':
+    resolution: {integrity: sha512-T6XD2RQpE2eJZVZuflv54n54W/nw5ujtQjjF17/nqeXEsSwSC9zs3qKJAgSwKm/T1RuZWXrbfQCzdbNANDJX+Q==}
+
+  '@salla.sa/ui-google-map-render@1.2.1':
+    resolution: {integrity: sha512-rWkBbfKl5q8RzjnowI/WBiTEyt0PnDTYTUbjEVYpcA41yR8IDUlCWqHxGgWnFw4WkTUuLhO0F/x0jCGhvE0fPA==}
+    peerDependencies:
+      '@googlemaps/markerclusterer': ^2.6.2
+      '@salla.sa/ui-address-autocomplete-widget': ^1.0
+      lit: ^3.3.2
+    peerDependenciesMeta:
+      '@googlemaps/markerclusterer':
+        optional: true
+      '@salla.sa/ui-address-autocomplete-widget':
+        optional: true
 
   '@sinclair/typebox@0.34.48':
     resolution: {integrity: sha512-kKJTNuK3AQOrgjjotVxMrCn1sUJwM76wMszfq1kdU4uYVJjvEWuFQ6HgvLt4Xz3fSmZlTOxJ/Ie13KnIcWQXFA==}
@@ -1080,6 +1110,9 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/geojson@7946.0.16':
+    resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
+
   '@types/googlemaps@3.43.3':
     resolution: {integrity: sha512-ZWNoz/O8MPEpiajvj7QiqCY8tTLFNqNZ/a+s+zTV58wFVNAvvqV4bdGfnsjTb5Cs4V6wEsLrX8XRhmnyYJ2Tdg==}
     deprecated: 'Types for the Google Maps browser API have moved to @types/google.maps. Note: these types are not for the googlemaps npm package, which is a Node API.'
@@ -1102,6 +1135,12 @@ packages:
   '@types/node@22.13.5':
     resolution: {integrity: sha512-+lTU0PxZXn0Dr1NBtC7Y8cR21AJr87dLLU953CWA6pMxxv/UDc7jYAY90upcrie1nRcD6XNG5HOYEDtgW5TxAg==}
 
+  '@types/supercluster@7.1.3':
+    resolution: {integrity: sha512-Z0pOY34GDFl3Q6hUFYf3HkTwKEE02e7QgtJppBt+beEAxnyOpJua+voGFvxINBHa06GwLFFym7gRPY2SiKIfIA==}
+
+  '@types/trusted-types@2.0.7':
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
@@ -1110,6 +1149,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -1376,8 +1416,15 @@ packages:
     resolution: {integrity: sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg==}
     engines: {node: '>=8'}
 
+  class-variance-authority@0.7.0:
+    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+
   clone-deep@4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
+    engines: {node: '>=6'}
+
+  clsx@2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
 
   color-convert@2.0.1:
@@ -1717,6 +1764,10 @@ packages:
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
+  fast-equals@5.4.0:
+    resolution: {integrity: sha512-jt2DW/aNFNwke7AUd+Z+e6pz39KO5rzdbbFCg2sGafS4mk13MI7Z8O5z9cADNn5lhGODIgLwug6TZO2ctf7kcw==}
+    engines: {node: '>=6.0.0'}
+
   fast-glob@3.3.3:
     resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
     engines: {node: '>=8.6.0'}
@@ -2014,6 +2065,9 @@ packages:
     resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
     engines: {node: '>=18'}
 
+  kdbush@4.1.0:
+    resolution: {integrity: sha512-e9vurzrXJQrFX6ckpHP3bvj5l+9CnYzkxDNnNQ1h2QTqdWsUAJgXiKdGNcOa1EY85dU8KbQ+z/FdQdB7P+9yfQ==}
+
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
@@ -2027,6 +2081,15 @@ packages:
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
+
+  lit-element@4.2.2:
+    resolution: {integrity: sha512-aFKhNToWxoyhkNDmWZwEva2SlQia+jfG0fjIWV//YeTaWrVnOxD89dPKfigCUspXFmjzOEUQpOkejH5Ly6sG0w==}
+
+  lit-html@3.3.3:
+    resolution: {integrity: sha512-el8M6jK2o3RXBnrSHX3ZKrsN8zEV63pSExTO1wYJz7QndGYZ8353e2a5PPX+qHe2aGayfnchQmkAojaWAREOIA==}
+
+  lit@3.3.3:
+    resolution: {integrity: sha512-fycuvZg/hkpozL00lm1pEJH5nN/lr9ZXd6mJI2HSN4+Bzc+LDNdEApJ6HFbPkdFNHLvOplIIuJvxkS4XUxqirw==}
 
   lite-youtube-embed@0.2.0:
     resolution: {integrity: sha512-XXXAk5sbvtjjwbie3XG+6HppgTm1HTGL/Uk9z9NkJH53o7puZLur434heHzAjkS60hZB3vT4ls25zl5rMiX4EA==}
@@ -2850,6 +2913,9 @@ packages:
     resolution: {integrity: sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
+
+  supercluster@8.0.1:
+    resolution: {integrity: sha512-IiOea5kJ9iqzD2t7QJq/cREyLHTtSmUT6gQsweojg9WH2sYJqZK9SswTu6jrscO6D1G5v5vYZ9ru/eq85lXeZQ==}
 
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
@@ -3980,6 +4046,12 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
+  '@googlemaps/markerclusterer@2.6.2':
+    dependencies:
+      '@types/supercluster': 7.1.3
+      fast-equals: 5.4.0
+      supercluster: 8.0.1
+
   '@isaacs/balanced-match@4.0.1': {}
 
   '@isaacs/brace-expansion@5.0.1':
@@ -4062,6 +4134,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@lit-labs/ssr-dom-shim@1.6.0': {}
+
+  '@lit/reactive-element@2.1.2':
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.6.0
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -4138,26 +4216,30 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@salla.sa/applepay@2.14.353':
+  '@salla.sa/applepay@2.14.468':
     dependencies:
       axios: 1.10.0
     transitivePeerDependencies:
       - debug
 
-  '@salla.sa/base@2.14.353':
+  '@salla.sa/base@2.14.468':
     dependencies:
       '@types/applepayjs': 14.0.9
       eventemitter2: 6.4.9
       lodash: 4.17.21
       store: 2.0.12
 
-  '@salla.sa/twilight-components@2.14.353(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)':
+  '@salla.sa/twilight-components@2.14.468(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(lit@3.3.3)(webpack@5.105.0)':
     dependencies:
-      '@salla.sa/applepay': 2.14.353
-      '@salla.sa/twilight': 2.14.353(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)
-      '@salla.sa/twilight-tailwind-theme': 2.14.353
+      '@googlemaps/markerclusterer': 2.6.2
+      '@salla.sa/applepay': 2.14.468
+      '@salla.sa/twilight': 2.14.468(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)
+      '@salla.sa/twilight-tailwind-theme': 2.14.468
+      '@salla.sa/ui-address-autocomplete-widget': 1.2.1
+      '@salla.sa/ui-google-map-render': 1.2.1(@googlemaps/markerclusterer@2.6.2)(@salla.sa/ui-address-autocomplete-widget@1.2.1)(lit@3.3.3)
       '@types/node': 20.17.19
       animejs: 3.2.2
+      class-variance-authority: 0.7.0
       filepond: 4.32.7
       filepond-plugin-file-poster: 2.5.1(filepond@4.32.7)
       filepond-plugin-file-validate-size: 2.2.8(filepond@4.32.7)
@@ -4176,15 +4258,16 @@ snapshots:
       - '@jitsu/protocols'
       - '@types/dlv'
       - debug
+      - lit
       - supports-color
       - webpack
 
-  '@salla.sa/twilight-tailwind-theme@2.14.353': {}
+  '@salla.sa/twilight-tailwind-theme@2.14.468': {}
 
-  '@salla.sa/twilight@2.14.353(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)':
+  '@salla.sa/twilight@2.14.468(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)(webpack@5.105.0)':
     dependencies:
       '@jitsu/js': 1.10.1(@jitsu/protocols@1.10.1)(@types/dlv@1.1.5)
-      '@salla.sa/base': 2.14.353
+      '@salla.sa/base': 2.14.468
       axios: 1.10.0
       infinite-scroll: 4.0.1
       jwt-decode: 4.0.0
@@ -4196,6 +4279,17 @@ snapshots:
       - '@types/dlv'
       - debug
       - supports-color
+
+  '@salla.sa/ui-address-autocomplete-widget@1.2.1':
+    dependencies:
+      lit: 3.3.3
+
+  '@salla.sa/ui-google-map-render@1.2.1(@googlemaps/markerclusterer@2.6.2)(@salla.sa/ui-address-autocomplete-widget@1.2.1)(lit@3.3.3)':
+    dependencies:
+      lit: 3.3.3
+    optionalDependencies:
+      '@googlemaps/markerclusterer': 2.6.2
+      '@salla.sa/ui-address-autocomplete-widget': 1.2.1
 
   '@sinclair/typebox@0.34.48': {}
 
@@ -4231,6 +4325,8 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
+  '@types/geojson@7946.0.16': {}
+
   '@types/googlemaps@3.43.3': {}
 
   '@types/istanbul-lib-coverage@2.0.6': {}
@@ -4252,6 +4348,12 @@ snapshots:
   '@types/node@22.13.5':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/supercluster@7.1.3':
+    dependencies:
+      '@types/geojson': 7946.0.16
+
+  '@types/trusted-types@2.0.7': {}
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -4558,11 +4660,17 @@ snapshots:
 
   ci-info@4.4.0: {}
 
+  class-variance-authority@0.7.0:
+    dependencies:
+      clsx: 2.0.0
+
   clone-deep@4.0.1:
     dependencies:
       is-plain-object: 2.0.4
       kind-of: 6.0.3
       shallow-clone: 3.0.1
+
+  clsx@2.0.0: {}
 
   color-convert@2.0.1:
     dependencies:
@@ -4882,6 +4990,8 @@ snapshots:
 
   fast-deep-equal@3.1.3: {}
 
+  fast-equals@5.4.0: {}
+
   fast-glob@3.3.3:
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -5149,6 +5259,8 @@ snapshots:
 
   jwt-decode@4.0.0: {}
 
+  kdbush@4.1.0: {}
+
   kind-of@6.0.3: {}
 
   lang.js@1.1.14: {}
@@ -5156,6 +5268,22 @@ snapshots:
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
+
+  lit-element@4.2.2:
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.6.0
+      '@lit/reactive-element': 2.1.2
+      lit-html: 3.3.3
+
+  lit-html@3.3.3:
+    dependencies:
+      '@types/trusted-types': 2.0.7
+
+  lit@3.3.3:
+    dependencies:
+      '@lit/reactive-element': 2.1.2
+      lit-element: 4.2.2
+      lit-html: 3.3.3
 
   lite-youtube-embed@0.2.0: {}
 
@@ -5945,6 +6073,10 @@ snapshots:
       mz: 2.7.0
       pirates: 4.0.6
       ts-interface-checker: 0.1.13
+
+  supercluster@8.0.1:
+    dependencies:
+      kdbush: 4.1.0
 
   supports-color@7.2.0:
     dependencies:
