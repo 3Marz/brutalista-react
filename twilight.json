@@ -24,6 +24,12 @@
         "menu-images",
         "filters"
     ],
+    "groups": [
+        {"id": "general", "icon": "sicon-home", "type": "main", "label": "خيارات الثيم العامة"},
+        {"id": "header", "icon": "sicon-add_row_before", "type": "header", "label": "خيارات اعلى الصفحة"},
+        {"id": "footer", "icon": "sicon-add_row_after", "type": "footer", "label": "خيارات اسفل الصفحة"},
+        {"id": "product-page", "icon": "sicon-clothes-hanger", "type": "page", "label": "خيارات صفحة المنتج"}
+    ],
     "settings": [
         {
             "id": "squar_photo_bg_image_size",
@@ -62,36 +68,14 @@
             "format": "switch"
         },
         {
-            "id": "line",
-            "type": "static",
-            "format": "line",
-            "label": "Line",
-            "icon": "sicon-minus"
-        },
-        {
             "id": "begin_title",
             "type": "static",
             "format": "description",
             "label": null,
             "value": "<div style='padding: 10px;background: #f2efdd;text-align: center;border-radius: 10px;color: black;border: 2px solid black;box-shadow: 0px 4px black;'  ><h3>تخصيص بروتال</h3></div>",
             "variant": "h1",
-            "icon": "sicon-format-size"
-        },
-        {
-            "id": "line2",
-            "type": "static",
-            "format": "line",
-            "label": "Line",
-            "icon": "sicon-minus"
-        },
-        {
-            "id": "altsmem",
-            "type": "static",
-            "format": "title",
-            "label": "الخيارات العامة",
-            "value": "الخيارات العامة",
-            "variant": "h6",
-            "icon": "sicon-format-text"
+            "icon": "sicon-format-size",
+            "groups": ["general"]
         },
         {
             "id": "bg_color",
@@ -103,7 +87,8 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#f2efdd",
-            "required": false
+            "required": false,
+            "groups": ["general"]
         },
         {
             "id": "border_color",
@@ -115,7 +100,8 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#3d081b",
-            "required": false
+            "required": false,
+            "groups": ["general"]
         },
         {
             "id": "shadow_color",
@@ -127,7 +113,8 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#3d081b",
-            "required": false
+            "required": false,
+            "groups": ["general"]
         },
         {
             "id": "text_color",
@@ -139,7 +126,8 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#000000",
-            "required": false
+            "required": false,
+            "groups": ["general"]
         },
         {
             "id": "border-radius",
@@ -151,7 +139,8 @@
             "icon": "sicon-toggle-off",
             "value": true,
             "selected": true,
-            "required": false
+            "required": false,
+            "groups": ["general"]
         },
         {
             "id": "cool_cart_page",
@@ -163,7 +152,8 @@
             "icon": "sicon-toggle-off",
             "value": true,
             "selected": true,
-            "required": false
+            "required": false,
+            "groups": ["general"]
         },
         {
             "id": "y_shadow_offset",
@@ -178,7 +168,8 @@
             "required": true,
             "unit": "بكسل",
             "minimum": "-20",
-            "maximum": "20"
+            "maximum": "20",
+            "groups": ["general"]
         },
         {
             "id": "x_shadow_offset",
@@ -193,7 +184,8 @@
             "required": true,
             "unit": "بكسل",
             "minimum": "-20",
-            "maximum": "20"
+            "maximum": "20",
+            "groups": ["general"]
         },
         {
             "id": "hide_add_to_cart_button",
@@ -205,19 +197,8 @@
             "icon": "sicon-toggle-off",
             "value": true,
             "selected": false,
-            "required": false
-        },
-        {
-            "type": "static",
-            "id": "static-line1",
-            "format": "line"
-        },
-        {
-            "type": "static",
-            "format": "title",
-            "id": "static-label2",
-            "value": "خيارات أعلى الصفحة",
-            "variant": "h6"
+            "required": false,
+            "groups": ["general"]
         },
         {
             "type": "boolean",
@@ -228,7 +209,8 @@
             "format": "switch",
             "required": false,
             "value": false,
-            "selected": false
+            "selected": false,
+            "groups": ["header"]
         },
         {
             "id": "header_is_sticky",
@@ -239,19 +221,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
-        },
-        {
-            "type": "static",
-            "id": "static-line3",
-            "format": "line"
-        },
-        {
-            "type": "static",
-            "format": "title",
-            "id": "static-label4",
-            "value": "خيارات أسفل الصفحة",
-            "variant": "h6"
+            "selected": true,
+            "groups": ["header"]
         },
         {
             "type": "boolean",
@@ -262,7 +233,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": false
+            "selected": false,
+            "groups": ["footer"]
         },
         {
             "id": "sub_logo",
@@ -281,7 +253,8 @@
                     "operation": "=",
                     "value": true
                 }
-            ]
+            ],
+            "groups": ["footer"]
         },
         {
             "id": "lang_button_bottom",
@@ -293,7 +266,8 @@
             "icon": "sicon-toggle-off",
             "value": true,
             "selected": true,
-            "required": false
+            "required": false,
+            "groups": ["footer"]
         },
         {
             "id": "show_store_name_footer",
@@ -305,19 +279,8 @@
             "icon": "sicon-toggle-off",
             "value": true,
             "selected": false,
-            "required": false
-        },
-        {
-            "type": "static",
-            "id": "static-line5",
-            "format": "line"
-        },
-        {
-            "type": "static",
-            "format": "title",
-            "id": "static-label6",
-            "value": "خيارات صفحة المنتج",
-            "variant": "h6"
+            "required": false,
+            "groups": ["footer"]
         },
         {
             "type": "boolean",
@@ -328,7 +291,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "groups": ["product-page"]
         },
         {
             "type": "boolean",
@@ -339,7 +303,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "groups": ["product-page"]
         },
         {
             "type": "boolean",
@@ -350,7 +315,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "groups": ["product-page"]
         },
         {
             "type": "boolean",
@@ -361,7 +327,8 @@
             "format": "switch",
             "required": false,
             "value": true,
-            "selected": true
+            "selected": true,
+            "groups": ["product-page"]
         },
         {
             "id": "slider_background_size",
@@ -391,7 +358,8 @@
                 }
             ],
             "source": "Manual",
-            "required": true
+            "required": true,
+            "groups": ["product-page"]
         },
         {
             "type": "boolean",
@@ -402,7 +370,8 @@
             "format": "switch",
             "required": false,
             "value": false,
-            "selected": false
+            "selected": false,
+            "groups": ["product-page"]
         }
     ],
     "components": [
