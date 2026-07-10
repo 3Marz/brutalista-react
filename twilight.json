@@ -26,8 +26,8 @@
     ],
     "groups": [
         {"id": "general", "icon": "sicon-home", "type": "main", "label": "خيارات الثيم العامة"},
-        {"id": "header", "icon": "sicon-add_row_before", "type": "header", "label": "خيارات اعلى الصفحة"},
-        {"id": "footer", "icon": "sicon-add_row_after", "type": "footer", "label": "خيارات اسفل الصفحة"},
+        {"id": "header", "icon": "sicon-add_row_before", "type": "header", "label": "Header"},
+        {"id": "footer", "icon": "sicon-add_row_after", "type": "footer", "label": "Footer"},
         {"id": "product-page", "icon": "sicon-clothes-hanger", "type": "page", "label": "خيارات صفحة المنتج"}
     ],
     "settings": [
