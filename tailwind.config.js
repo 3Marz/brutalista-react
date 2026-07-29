@@ -41,6 +41,8 @@ module.exports = {
 				'my-gray'	   : 'var(--my-gray)',
 				'light'		   : 'var(--light)',
 
+              'primary-dark': 'var(--color-primary-dark)',
+
         'text-color': 'var(--text-color)',
 
 				'bc'	   : 'var(--bc)',
