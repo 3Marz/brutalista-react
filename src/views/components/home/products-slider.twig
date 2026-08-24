@@ -10,10 +10,11 @@
 <section id="best-offers-{{ position }}-slider" class="s-block s-block--best-offers container overflow-hidden">
   {% if products|length %}
     <salla-products-slider
-            source="selected"
+            data-testid="store-home-products-slider-widget"
+            source="{{ products.source }}"
             limit="{{ limit }}"
             autoplay
-            source-value="[{{ products|map((product) => product.id)|join(',') }}]"
+            source-value="{{ products.source_value|json_encode }}"
             display-all-url="{{display_all_url}}"
             block-title="{{ title }}"
             block-subTitle="{{ sub_title|raw }}"
