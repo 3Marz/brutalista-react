@@ -3,8 +3,6 @@ module.exports = {
     content: [
         "src/views/**/*.twig",
         "src/assets/js/**/*.js",
-        //todo:: inject it via the plugin or easier way
-        'node_modules/@salla.sa/twilight-tailwind-theme/safe-list-css.txt',
     ],
     darkMode: 'class', // or 'media' or 'class'
     theme   : {
@@ -34,25 +32,29 @@ module.exports = {
                 'dark'         : '#1D1F1F',
                 'darker'       : '#0E0F0F',
 
-				'success'	   : 'var(--success)',
+                'success'	   : 'var(--success)',
                 'danger'       : 'var(--danger)',
-				'warning'	   : 'var(--warning)',
-				'my-dark'	   : 'var(--my-dark)',
-				'my-gray'	   : 'var(--my-gray)',
-				'light'		   : 'var(--light)',
+                'warning'	   : 'var(--warning)',
+                'my-dark'	   : 'var(--my-dark)',
+                'my-gray'	   : 'var(--my-gray)',
+                'light'		   : 'var(--light)',
+                'primary'         : 'var(--color-primary)',
+                'primary-d'       : 'var(--color-primary-dark)',
+                'primary-l'       : 'var(--color-primary-light)',
+                'primary-reverse' : 'var(--color-primary-reverse)',
 
-              'primary-dark': 'var(--color-primary-dark)',
+                'primary-dark': 'var(--color-primary-dark)',
 
-        'text-color': 'var(--text-color)',
+                'text-color': 'var(--text-color)',
 
-				'bc'	   : 'var(--bc)',
-				'bg-base' : 'var(--base)',
-				'base'	  : {
-					50 : 'var(--base-50)' ,
-					100: 'var(--base-100)',
-					200: 'var(--base-200)',
-					300: 'var(--base-300)',
-				}
+                'bc'	   : 'var(--bc)',
+                'bg-base' : 'var(--base)',
+                'base'	  : {
+                    50 : 'var(--base-50)' ,
+                    100: 'var(--base-100)',
+                    200: 'var(--base-200)',
+                    300: 'var(--base-300)',
+                }
             },
             spacing: {
               '3.75': '15px',
@@ -159,7 +161,6 @@ module.exports = {
       outline: false,
     },
     plugins: [
-      require('@salla.sa/twilight-tailwind-theme'),
       require('@tailwindcss/forms'),
       require('@tailwindcss/line-clamp'),
     ],
