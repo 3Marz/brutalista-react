@@ -87,23 +87,23 @@
                                             
                                         </a>
                                         <div class="space-y-1">
-                                            <h1 class="text-gray-900 leading-6 text-lg">
+                                            <h1 class="text-text-color opacity-85 leading-6 text-lg">
                                                 <a href="{{ item.url }}" class="text-base">{{ item.product_name }}</a>
                                             </h1>
 
-                                            <span class="text-sm text-gray-500 line-through item-regular-price {{ item.offer ? '' : 'hidden' }}" >{{ item.product_price|money }}</span>
-                                            <span class="inline-flex gap-1 leading-4 text-sm text-gray-500 line-through item-original-price {{ item.is_on_sale ? '' : 'hidden' }}" id="original_price">{{ item.original_price|money }}</span>
-                                            <span class="inline-flex gap-1 leading-4 item-price {{ item.has_discount ?  'text-red-800' : 'text-sm text-gray-500' }}" id="has_discount">{{ item.price|money }}</span>
+                                            <span class="text-sm text-text-color opacity-70 line-through item-regular-price {{ item.offer ? '' : 'hidden' }}" >{{ item.product_price|money }}</span>
+                                            <span class="inline-flex gap-1 leading-4 text-sm text-text-color opacity-70 line-through item-original-price {{ item.is_on_sale ? '' : 'hidden' }}" id="original_price">{{ item.original_price|money }}</span>
+                                            <span class="inline-flex gap-1 leading-4 item-price {{ item.has_discount ?  'text-red-800' : 'text-sm text-text-color opacity-70' }}" id="has_discount">{{ item.price|money }}</span>
 
                                             {% if item.weight_label %}
-                                            <p class="text-sm text-gray-500 "> {{ trans('pages.products.weight') }}
+                                            <p class="text-sm text-text-color opacity-70"> {{ trans('pages.products.weight') }}
                                              <span>{{ item.weight_label }}</span>
                                             </p>
                                             {% endif %}
 
                                             <span class="old-offers flex items-center gap-1 mx-1.5  {{ item.detailed_offers ? 'hidden' : '' }}">
-                                                <i class="sicon-discount-calculator text-gray-500 offer-icon {{ item.offer?'':'hidden' }}"></i>
-                                                <span class="text-sm text-gray-500 offer-name {{ item.offer ?  '' : 'hidden' }}">{{ item.offer.names }}</span>
+                                                <i class="sicon-discount-calculator text-text-color opacity-70 offer-icon {{ item.offer?'':'hidden' }}"></i>
+                                                <span class="text-sm text-text-color opacity-70 offer-name {{ item.offer ?  '' : 'hidden' }}">{{ item.offer.names }}</span>
                                             </span>
                                             {# Cart Item Offers #}
                                             <salla-cart-item-offers
@@ -177,7 +177,7 @@
             <!-- sidebar -->
             {% if cart.items|length %}
                 <div class="sticky top-24 w-full lg:w-96 rtl:lg:mr-8 ltr:lg:ml-8">
-                    <div class="bg-white p-5 xs:p-7 mb-5 relative {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }} {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
+                    <div class="bg-base-50 p-5 xs:p-7 mb-5 relative {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }} {{ cart.free_shipping_bar ? '' : 'hidden' }}" id="free-shipping">
                         <div class="flex rtl:space-x-reverse space-x-3 items-center">
                             <i class="bg-primary text-white rounded-icon sicon-shipping-fast {{ theme.is_rtl ? 'flip-x':'' }}"></i>
                             {% set is_free=cart.free_shipping_bar.has_free_shipping %}
@@ -206,11 +206,11 @@
                         </salla-loyalty-panel>
                     {% endif %}
 
-                    <div id="cart-gifting" class="{{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }} bg-white xs:p-2 mb-5 relative  {{gift.enabled ? '' : 'hidden' }}">
+                    <div id="cart-gifting" class="{{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }} bg-base-50 xs:p-2 mb-5 relative  {{gift.enabled ? '' : 'hidden' }}">
                         <salla-gifting id="salla-gifting" class="mt-5" widget-title="{{ trans("pages.cart.gift_widget_title") }}"  widget-subtitle="{{ gift.text }}" class="mt-5" {{gift.type}}-products  vertical></salla-gifting>
                     </div>
 
-                    <div class="bg-white p-2 xs:p-4 mb-5 relative transition-height duration-1000 {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }}">
+                    <div class="bg-base-50 p-2 xs:p-4 mb-5 relative transition-height duration-1000 {{ theme.settings.get('cool_cart_page') ? "ticket" : "border-2 border-bc rounded-neo shadow-neo" }}">
 						<div class="w-full h-full {{ theme.settings.get('cool_cart_page') ? "border-2 border-dashed border-gray-300" : "" }} p-3 space-y-4">
 							<h2 class="font-bold text-base ">{{ trans('pages.cart.summary') }}</h2>
 

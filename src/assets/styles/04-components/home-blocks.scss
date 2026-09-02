@@ -446,6 +446,10 @@
   }
 }
 
+.s-cart-coupons-coupon-label {
+  @apply text-text-color opacity-70;
+}
+
 // repeated block with narrow top spacing
 .s-block--features + .s-block--features,
 .s-block--fixed-banner + .s-block--fixed-banner,
