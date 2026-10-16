@@ -1,11 +1,29 @@
-allowBuilds:
-  '@parcel/watcher': set this to true or false
-  bufferutil: set this to true or false
-  es5-ext: set this to true or false
-  utf-8-validate: set this to true or false
+# This starter kit is its own pnpm workspace root, so a scaffolded copy
+# carries these settings with it (pnpm 10+ reads settings here, not .npmrc).
+packages:
+  - '.'
+
+# Salla ships fixes on the beta channel; exempt the scope from pnpm's
+# release-age delay so fresh releases install immediately.
 minimumReleaseAgeExclude:
-  - '@salla.sa/applepay@2.14.525'
-  - '@salla.sa/base@2.14.525'
-  - '@salla.sa/twilight-components@2.14.525'
-  - '@salla.sa/twilight-tailwind-theme@2.14.525'
-  - '@salla.sa/twilight@2.14.525'
+  - '@salla.sa/*'
+
+# Skip the pre-run lockfile sweep; run `pnpm install` explicitly when deps change.
+verifyDepsBeforeRun: false
+
+# Build scripts required by the toolchain (vite/esbuild, the SSR runtime, sharp, …).
+allowBuilds:
+  '@parcel/watcher': true
+  '@sentry/cli': true
+  bufferutil: true
+  es5-ext: true
+  esbuild: true
+  protobufjs: true
+  sharp: true
+  utf-8-validate: true
+  workerd: true
+
+# Security patches for versions the engine's Cloudflare tooling pins; drop once the engine ships them.
+overrides:
+  'undici@>=7.0.0 <7.29.1': 7.29.1
+  'sharp@>=0.35.0 <0.35.5': 0.35.5
