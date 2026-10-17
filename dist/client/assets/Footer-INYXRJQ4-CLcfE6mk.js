@@ -1,0 +1,1 @@
+export{ht as Footer}from"./shared-home-BfEhk7CK.js";

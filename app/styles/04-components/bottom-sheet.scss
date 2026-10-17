@@ -22,7 +22,7 @@
 }
 
 .bottom-sheet {
-  @apply absolute inset-x-0 bottom-0 flex max-h-[85vh] flex-col rounded-t bg-white shadow-2xl;
+  @apply absolute inset-x-0 bottom-0 flex max-h-[85vh] flex-col rounded-t-neo border-2 border-bc bg-base-50 shadow-neo;
   padding-bottom: var(--safe-bottom);
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -39,7 +39,7 @@
 }
 
 .bottom-sheet__handle {
-  @apply mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-gray-300;
+  @apply mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-base-300;
 }
 
 .bottom-sheet__head {
@@ -47,11 +47,11 @@
 }
 
 .bottom-sheet__title {
-  @apply text-base font-bold text-gray-900;
+  @apply text-base font-bold text-text-color;
 }
 
 .bottom-sheet__close {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-800;
+  @apply inline-flex h-9 w-9 items-center justify-center rounded-neo border-2 border-bc bg-base-50 text-my-gray transition-colors hover:bg-base-200 hover:text-text-color;
 
   svg {
     @apply h-5 w-5;

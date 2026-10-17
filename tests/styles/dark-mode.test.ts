@@ -38,43 +38,45 @@ describe('footer_is_dark (body.footer-is-dark)', () => {
   // still theme-owned: the footer-menu item colors, which depend on the
   // `--stacked` / `--inline` modifier classes this theme's own Footer usage
   // adds, not something the shared component could style itself.
-  it('darkens the footer menu items, not a generic Tailwind shade', async () => {
+  it('keeps the footer menu items on the light base-100 ink of the brutal footer', async () => {
     const root = await compile('footer.scss');
 
     const stacked = declarations(
       root,
       'body.footer-is-dark .store-footer__menu--stacked .s-menu-footer-item'
     );
-    expect(stacked.color).toContain('rgb(255 255 255');
+    expect(stacked.color).toBe('var(--base-100)');
 
     const inline = declarations(
       root,
       'body.footer-is-dark .store-footer__menu--inline .s-menu-footer-item'
     );
-    expect(inline.color).toContain('rgb(255 255 255');
-    expect(inline['border-color']).toBe('rgb(255 255 255 / 0.1)');
+    expect(inline.color).toBe('var(--base-100)');
+    expect(inline['border-color']).toBe('var(--base-100)');
   });
 });
 
 describe('topnav_is_dark (body.topnav-is-dark)', () => {
-  it('darkens the header top bar like the Twig Raed .top-navbar', async () => {
+  it('paints the header top bar on the brutal `bc` band', async () => {
     const root = await compile('header.scss');
 
     const topnav = declarations(root, 'body.topnav-is-dark .site-header__topnav');
-    expect(topnav['background-color']).toContain('rgb(29 31 31'); // dark #1D1F1F
-    expect(topnav.color).toContain('rgb(209 213 219'); // gray-300
+    expect(topnav['background-color']).toBe('var(--bc)');
+    expect(topnav['border-color']).toBe('var(--bc)');
+    expect(topnav.color).toBe('var(--base-100)');
   });
 
   it('darkens the lite header bar, the only bar that layout has', async () => {
     const root = await compile('header.scss');
 
     const bar = declarations(root, 'body.topnav-is-dark .site-header--lite .site-header__bar');
-    expect(bar['background-color']).toContain('rgb(29 31 31'); // dark #1D1F1F
+    expect(bar['background-color']).toBe('var(--bc)');
 
     const action = declarations(
       root,
       'body.topnav-is-dark .site-header--lite .site-header__bar .header-action'
     );
-    expect(action.color).toContain('rgb(209 213 219'); // gray-300
+    expect(action.color).toBe('var(--base-100)');
+    expect(action['border-color']).toBe('var(--base-100)');
   });
 });

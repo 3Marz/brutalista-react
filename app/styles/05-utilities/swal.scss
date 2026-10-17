@@ -42,12 +42,12 @@
 				}
 
 				&-timer-progress-bar {
-					background: #ddd;
+					background: var(--base-300);
 				}
 			}
 
 			&.swal2-icon-error {
-				@apply bg-red-400;
+				@apply bg-danger;
 
 				* {
 					@apply text-white;
@@ -64,7 +64,7 @@
 			}
 
 			&.swal2-icon-success {
-				@apply bg-green-500;
+				@apply bg-success;
 
 				* {
 					@apply text-white;

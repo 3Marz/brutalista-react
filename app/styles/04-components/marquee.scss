@@ -1,0 +1,30 @@
+/*
+  Marquee (`home.marquee`) — an infinite scrolling text strip.
+  Ported from the Twig theme's `04-components/marquee.scss`.
+*/
+
+.marquee-item {
+  @apply text-2xl px-5;
+}
+
+.marquee-container:hover * {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-effect-rtl {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes marquee-effect-ltr {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

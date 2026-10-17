@@ -1,12 +1,12 @@
 // Wishlist Product entry
 .product-entry {
-  @apply h-full transition-shadow duration-300 bg-white hover:shadow-default rounded justify-between flex relative;
+  @apply h-full transition-shadow duration-300 bg-base-50 hover:shadow-neo rounded-neo border-2 border-bc shadow-neo justify-between flex relative;
 
   &--wishlist {
     @apply justify-between p-4 flex-col sm:flex-row;
 
     .product-entry__image {
-      @apply overflow-hidden w-16 h-12 md:w-20 md:h-16 rounded;
+      @apply overflow-hidden w-16 h-12 md:w-20 md:h-16 rounded-neo;
     }
 
     salla-button {
@@ -21,7 +21,7 @@
   }
 
   &-product {
-    @apply border-y border-gray-200 py-4 md:py-14;
+    @apply bg-base-100 border-y border-base-300 py-4 md:py-14;
 
     .s-comments-container {
       @apply container;
@@ -31,7 +31,7 @@
 
 // share list
 .share-btns-list {
-  @apply absolute z-10 overflow-hidden opacity-0 top-12 bg-white flex items-center flex-col shadow-huge rounded;
+  @apply absolute z-10 overflow-hidden opacity-0 top-12 bg-base-50 border-2 border-bc flex items-center flex-col shadow-neo rounded-neo;
 
   a {
     @apply block p-3 hover:text-primary;
@@ -180,7 +180,7 @@
       button,
       .s-button-btn,
       .s-button-element {
-        @apply w-9 h-9 min-w-0 m-0 p-0 flex-none inline-flex items-center justify-center rounded-full border border-gray-200 bg-white;
+        @apply w-9 h-9 min-w-0 m-0 p-0 flex-none inline-flex items-center justify-center rounded-neo border-2 border-bc bg-base-50;
       }
 
       svg {
@@ -192,20 +192,20 @@
        child — the add-to-cart's own `.s-button-wrap` is nested, so `>` keeps
        this off it) */
     > .s-button-wrap .s-button-icon {
-      @apply w-9 h-9 min-w-0 m-0 p-0 inline-flex items-center justify-center rounded-full border border-gray-200 bg-white;
+      @apply w-9 h-9 min-w-0 m-0 p-0 inline-flex items-center justify-center rounded-neo border-2 border-bc bg-base-50;
 
       svg {
         @apply w-4 h-4;
       }
     }
 
-    /* solid, pill-rounded add-to-cart, matched to the wishlist button height
+    /* solid, add-to-cart matched to the wishlist button height
        (the engine renders it as fill="outline") */
     .s-button-btn {
-      @apply h-9 bg-primary text-primary-reverse border-primary rounded-full;
+      @apply h-9 bg-primary text-primary-reverse border-2 border-bc rounded-neo shadow-neo;
 
       &:hover {
-        @apply bg-primary-d text-primary-reverse border-primary-d opacity-100;
+        @apply bg-primary-d text-primary-reverse border-bc opacity-100;
       }
 
       svg {
@@ -340,15 +340,15 @@ salla-gifting {
   overflow: visible;
 }
 
-/* Promotion badge — pill on the image corner */
+/* Promotion badge — brutal tag on the image corner */
 .s-product-card-promotion-title {
   top: 0.75rem;
   inset-inline-start: 0.75rem;
   inset-inline-end: auto;
   padding: 0.375rem 0.75rem;
-  border-radius: 9999px;
+  border-radius: var(--br);
   max-width: calc(100% - 1.5rem);
-  @apply bg-red-800 text-white text-[11px] font-semibold leading-none shadow-sm;
+  @apply bg-danger text-white text-[11px] font-semibold leading-none border-2 border-bc shadow-neo;
 }
 
 /* Add to cart sticky bar */
@@ -363,7 +363,7 @@ salla-gifting {
     }
 
     .sticky-product-bar {
-      @apply flex flex-wrap flex-col gap-2.5 sm:gap-4 fixed z-[2] bottom-0 p-3 justify-between items-center shadow-[-1px_-2px_9px_0_rgba(0,0,0,0.05)] transition duration-700 delay-500 translate-y-100 opacity-0 ease-elastic;
+      @apply flex flex-wrap flex-col gap-2.5 sm:gap-4 fixed z-[2] bottom-0 p-3 justify-between items-center border-2 border-bc bg-base-50 shadow-neo transition duration-700 delay-500 translate-y-100 opacity-0 ease-elastic;
       /* Floats inset from the screen edges, matching the bottom nav's own
          rounded pill (mobile-bottom-bar.scss) rather than running flush edge
          to edge. */
@@ -458,12 +458,12 @@ salla-gifting {
 }
 
 .s-toggle .s-toggle-switcher-has-text:before {
-  @apply content-[attr(data-switcher-text)] font-bold text-center text-gray-400 text-xs leading-[22px];
+  @apply content-[attr(data-switcher-text)] font-bold text-center text-my-gray text-xs leading-[22px];
   font-family: arial, serif;
 }
 
 .s-toggle .s-toggle-input:checked + div.s-toggle-switcher-bg-white:before {
-  @apply text-gray-600 border-white bg-white;
+  @apply text-text-color border-base-100 bg-base-50;
 }
 
 // product options file upload component
@@ -475,14 +475,14 @@ salla-gifting {
     }
     .filepond--drop-label {
       min-height: 120px !important;
-      @apply bg-white cursor-pointer border-dashed rounded border border-gray-200;
+      @apply bg-base-50 cursor-pointer border-dashed rounded-neo border-2 border-bc;
     }
     .product-option-uploader-placholder {
       @apply flex flex-col justify-center items-center;
       &-icon {
         @apply mb-1;
         i {
-          color: #7c8082;
+          color: var(--my-gray);
           @apply text-xl;
         }
       }
@@ -500,11 +500,11 @@ salla-gifting {
 .s-product {
   &-card {
     &-full-image salla-add-product-button {
-      @apply bg-white rounded;
+      @apply bg-base-50 rounded-neo;
     }
 
     &-wishlist-added i {
-      @apply text-red-500;
+      @apply text-danger;
     }
     &-fit-height.s-product-card-vertical .s-product-card-image {
       @apply flex-none sm:flex-1;
@@ -679,14 +679,13 @@ salla-gifting {
   }
 
   .product-gallery__bar-btn {
-    @apply relative inline-flex h-10 w-10 items-center justify-center rounded text-gray-800;
+    @apply relative inline-flex h-10 w-10 items-center justify-center rounded-neo text-text-color;
     pointer-events: auto;
     /* `!important` — the store's Twig CSS otherwise strips the background off
        `<salla-social-share>` */
-    background-color: #fff !important;
-    box-shadow:
-      0 4px 14px rgb(0 0 0 / 5%),
-      0 1px 3px rgb(0 0 0 / 3%);
+    background-color: var(--base-50) !important;
+    border: 2px solid var(--bc);
+    box-shadow: var(--neo-shadow);
 
     svg {
       @apply h-5 w-5;
@@ -768,7 +767,7 @@ salla-gifting {
 }
 
 .s-rating-stars-reviews {
-  @apply text-gray-500;
+  @apply text-my-gray;
 }
 
 /* Product details column — shrink the raw 30x32 star SVGs, tighten the row
@@ -818,11 +817,29 @@ salla-gifting {
 
 .s-product-card-sale-price {
   h4 {
-    @apply text-red-800 #{!important};
+    @apply text-danger #{!important};
   }
 
   span {
     @apply text-inherit;
+  }
+}
+
+/* Boxed countdown (offer/sale) — brutal tag, as in the Twig theme's
+   `salla-count-down[boxed="true"]`. */
+salla-count-down {
+  &[boxed='true'] {
+    .s-count-down-item {
+      @apply bg-base-50 border-2 border-bc shadow-neo rounded-neo;
+
+      &-value {
+        color: var(--bc-dark);
+      }
+
+      &-label {
+        @apply text-text-color opacity-100;
+      }
+    }
   }
 }
 
@@ -838,12 +855,12 @@ salla-gifting {
 
 // bank offer corner badge
 #offer-corner-badge {
-  @apply float-left absolute bg-red-600 text-white transform rtl:-rotate-45 ltr:rotate-45 px-12 py-1 h-auto w-auto border-0 m-0 z-1 rtl:top-3 ltr:top-5 rtl:-left-12 ltr:-right-14;
+  @apply float-left absolute bg-danger text-white transform rtl:-rotate-45 ltr:rotate-45 px-12 py-1 h-auto w-auto border-0 m-0 z-1 rtl:top-3 ltr:top-5 rtl:-left-12 ltr:-right-14;
 }
 
 // cart options
 .cart-options {
-  @apply bg-white border-dashed border border-gray-400 rounded;
+  @apply bg-base-50 border-dashed border-2 border-bc rounded-neo;
   salla-product-options {
     @apply mb-0 pt-0;
 
@@ -855,11 +872,11 @@ salla-gifting {
     }
 
     .s-form-control {
-      @apply rounded border-gray-200;
+      @apply rounded-neo border-bc;
     }
 
     .s-datetime-picker-input {
-      @apply rounded border-gray-200;
+      @apply rounded-neo border-bc;
     }
 
     .s-product-options-multiple-options-wrapper {
@@ -877,20 +894,20 @@ salla-gifting {
   @apply w-full max-w-[120px];
 }
 
-/* Product-page add-to-cart — pill-rounded, matching the product-card button */
+/* Product-page add-to-cart — brutal square, matching the product-card button */
 .sticky-product-bar__btn {
   .s-button-btn,
   .s-button-element {
-    @apply rounded-full;
+    @apply rounded-neo;
   }
 }
 
 /* Buy-now button (`<salla-mini-checkout-widget>`, a shadow-DOM widget from the
-   CDN) — same pill as add-to-cart. The widget reads its radius from this custom
+   CDN) — same radius as add-to-cart. The widget reads its radius from this custom
    property (its own `:host` default is 0.375rem); a value set on the host element
    from out here wins. */
 .s-add-product-button-main .s-add-product-button-mini-checkout {
-  --salla-fast-checkout-button-border-radius: 9999px;
+  --salla-fast-checkout-button-border-radius: var(--br);
 }
 
 /* The deferred loader wraps `salla-add-product-button` in a bare <div> that
@@ -983,4 +1000,17 @@ salla-gifting {
   inset-inline: 0;
   top: 0;
   z-index: 2;
+}
+
+/* `hide_add_to_cart_button` setting (ThemeLayout adds `hide-add-to-cart` to
+   <body>) — drops the add-to-cart button inside every product card, as the Twig
+   theme's `.hide-add-to-cart .custom-add-to-cart-button`. The deferred loader
+   wraps `salla-add-product-button` in a bare <div>, so target both. */
+body.hide-add-to-cart {
+  .s-product-card-content-footer {
+    > salla-add-product-button,
+    > div:has(salla-add-product-button) {
+      display: none #{!important};
+    }
+  }
 }

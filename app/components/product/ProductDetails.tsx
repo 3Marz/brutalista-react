@@ -65,9 +65,9 @@ export function ProductDetails({
 
       <div className="mb-2.5 flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-xl md:text-2xl leading-10 font-bold text-gray-800">{product.name}</h1>
+          <h1 className="text-xl md:text-2xl leading-10 font-bold text-text-color">{product.name}</h1>
           {product.subtitle && (
-            <h2 className="product-entry__sub-title text-sm text-gray-500 leading-6 font-normal">
+            <h2 className="product-entry__sub-title text-sm text-my-gray leading-6 font-normal">
               {product.subtitle}
             </h2>
           )}
@@ -111,7 +111,7 @@ export function ProductDetails({
             <Fragment key={tag.name}>
               <Link
                 to={tag.url}
-                className="rtl:ml-2 ltr:mr-2 inline-flex text-gray-500 hover:text-primary underline text-sm mb-1"
+                className="rtl:ml-2 ltr:mr-2 inline-flex text-my-gray hover:text-primary underline text-sm mb-1"
               >
                 {tag.name}
               </Link>
@@ -211,7 +211,7 @@ function ProductPrice({ product }: { product: Product }) {
         <p className="text-red-800 font-bold text-xl inline-block">
           {product.sale_price} <CurrencySymbol currency={priceCurrency} />
         </p>
-        <span className="text-gray-500 line-through">
+        <span className="text-my-gray line-through">
           {product.regular_price} <CurrencySymbol currency={priceCurrency} />
         </span>
       </div>

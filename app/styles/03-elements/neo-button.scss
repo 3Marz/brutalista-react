@@ -1,0 +1,118 @@
+/*
+  Neo-brutalist buttons — ported from the Twig theme's
+  `03-elements/neo-button.scss`.
+
+  Solid buttons carry a hard `shadow-neo` and, on hover, "press" into the
+  surface by translating by the shadow offset and dropping the shadow; outline
+  buttons do the reverse (rise out of the surface). Colours stay on the
+  merchant palette so every variant follows the theme settings.
+*/
+
+.s-social-share-btn {
+  &.s-button-element {
+    border-color: var(--my-gray) !important;
+    color: var(--my-gray) !important;
+
+    &:hover {
+      background-color: var(--my-gray) !important;
+      color: white !important;
+    }
+  }
+}
+
+.s-button {
+  &-element {
+    @apply shadow-[0px_0px_var(--bc)] rounded-neo;
+  }
+
+  &-icon {
+    .s-button-text {
+      @apply overflow-visible;
+    }
+
+    border-radius: var(--br) !important;
+  }
+
+  &-btn {
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  /* Button filling */
+  &-solid {
+    @apply duration-200 border-2 border-bc hover:translate-x-x-shadow hover:translate-y-y-shadow hover:shadow-none shadow-neo;
+  }
+
+  &-outline {
+    @apply bg-base-50 border-2 hover:border-bc hover:-translate-x-x-shadow hover:-translate-y-y-shadow hover:shadow-neo;
+  }
+
+  /* Colour variants */
+  &-primary:hover {
+    background-color: var(--color-primary) !important;
+  }
+
+  &-success {
+    @apply bg-success hover:bg-success;
+  }
+
+  &-warning {
+    @apply bg-warning hover:bg-warning;
+  }
+
+  &-danger {
+    @apply bg-danger hover:bg-danger;
+  }
+
+  &-light {
+    @apply bg-light hover:bg-light text-black;
+  }
+
+  &-gray {
+    @apply bg-my-gray hover:bg-my-gray;
+  }
+
+  &-dark {
+    @apply bg-my-dark hover:bg-my-dark;
+  }
+
+  /* Outline colour variants */
+  &-success-outline {
+    @apply border-success text-success hover:bg-success;
+  }
+
+  &-warning-outline {
+    @apply border-warning text-warning hover:bg-warning;
+  }
+
+  &-danger-outline {
+    @apply border-danger text-danger hover:bg-danger;
+  }
+
+  &-light-outline {
+    @apply text-light !border-light hover:bg-light hover:text-black;
+
+    &:hover {
+      border-color: var(--bc) !important;
+    }
+  }
+
+  &-gray-outline {
+    @apply border-my-gray text-my-gray hover:bg-my-gray;
+  }
+
+  &-dark-outline {
+    @apply border-my-dark text-my-dark hover:bg-my-dark;
+  }
+
+  &-disabled {
+    opacity: 0.7;
+    color: var(--base-300) !important;
+    border-color: var(--base-300) !important;
+  }
+}
+
+.s-add-product-button-mini-checkout {
+  --salla-fast-checkout-button-border-radius: var(--br) !important;
+}

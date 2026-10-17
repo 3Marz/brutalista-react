@@ -4,7 +4,7 @@
   Markup: app/components/product/ProductListPage.tsx
 */
 .s-catalog-toolbar {
-  @apply mb-6 flex min-h-[3.25rem] flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-full border border-gray-200 bg-white px-3;
+  @apply mb-6 flex min-h-[3.25rem] flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded border-2 border-bc bg-base-50 px-3 shadow-neo;
 
   &__group {
     @apply flex items-center;
@@ -12,7 +12,7 @@
 
   /* pushes the options group to the far end when there is no filter group */
   &__options {
-    @apply ms-auto divide-x rtl:divide-x-reverse divide-gray-200;
+    @apply ms-auto divide-x rtl:divide-x-reverse divide-bc;
   }
 
   &__filters {
@@ -20,21 +20,21 @@
   }
 
   &__count {
-    @apply whitespace-nowrap px-4 text-sm text-gray-500;
+    @apply whitespace-nowrap px-4 text-sm text-my-gray;
   }
 
   &__views {
     @apply flex items-center gap-1 px-3;
 
     button {
-      @apply inline-flex h-8 w-8 items-center justify-center rounded text-gray-400 transition-colors hover:text-gray-700;
+      @apply inline-flex h-8 w-8 items-center justify-center rounded text-my-gray transition-colors hover:text-text-color;
 
       svg {
         @apply h-[18px] w-[18px];
       }
 
       &[aria-pressed='true'] {
-        @apply bg-gray-100 text-gray-900;
+        @apply bg-base-200 text-text-color;
       }
     }
   }
@@ -43,11 +43,11 @@
     /* raw `cursor: pointer` — the `.cursor-pointer` utility also sets
        `pointer-events: none` on every child (common.scss), which would stop the
        overlaid <select> from opening. */
-    @apply relative flex items-center gap-1.5 whitespace-nowrap px-4 text-sm text-gray-700;
+    @apply relative flex items-center gap-1.5 whitespace-nowrap px-4 text-sm text-text-color;
     cursor: pointer;
 
     svg {
-      @apply h-4 w-4 shrink-0 text-gray-400;
+      @apply h-4 w-4 shrink-0 text-my-gray;
     }
 
     select {
@@ -58,15 +58,15 @@
   }
 
   &__filters-toggle {
-    @apply h-9 items-center gap-2 rounded-full px-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100;
+    @apply h-9 items-center gap-2 rounded px-3 text-sm font-medium text-text-color transition-colors hover:bg-base-200;
 
     svg {
-      @apply h-[18px] w-[18px] text-gray-400;
+      @apply h-[18px] w-[18px] text-my-gray;
     }
   }
 
   &__filters-trigger {
-    @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100;
+    @apply inline-flex h-9 w-9 items-center justify-center rounded text-my-gray transition-colors hover:bg-base-200;
 
     svg {
       @apply h-5 w-5;
@@ -82,7 +82,7 @@
 #filters-menu,
 #filters-menu-mobile {
   .s-filters-widget-container {
-    @apply border-b border-gray-100 py-3.5;
+    @apply border-b border-base-300 py-3.5;
     margin-bottom: 0;
 
     &:last-child {
@@ -107,17 +107,17 @@
   content and make the add-to-cart solid + pill, matching the grid card.
 */
 .s-products-list-horizontal-cards .s-product-card-horizontal {
-  @apply gap-4 overflow-hidden rounded border border-gray-100 sm:gap-6;
+  @apply gap-4 overflow-hidden rounded border-2 border-bc bg-base-50 shadow-neo sm:gap-6;
 
   .s-product-card-content {
     @apply py-3 rtl:pl-4 ltr:pr-4;
   }
 
-  /* solid, pill add-to-cart (engine renders it fill="outline") */
+  /* add-to-cart is already solid + rounded by the card rules */
   salla-add-product-button {
     .s-button-btn,
     .s-button-element {
-      @apply rounded-full border-primary bg-primary text-primary-reverse;
+      @apply rounded border-primary bg-primary text-primary-reverse;
     }
 
     .s-button-btn:hover,

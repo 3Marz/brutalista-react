@@ -11,6 +11,8 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import themeTranslations from 'virtual:twilight/theme-translations';
 import devSchema from 'virtual:twilight/schema';
 import { ThemeLayout } from '../components/layout/ThemeLayout';
+import { ThemeTokens } from '../components/layout/ThemeTokens';
+import type { BrutalTokenSettings } from '../components/layout/ThemeTokens';
 import { HOME_ROUTE_ID, PRODUCT_ROUTE_ID } from '../lib/routeIds';
 import appCssUrl from '../styles/app.css?url';
 import homeCriticalCss from '../styles/critical.scss?inline';
@@ -47,6 +49,10 @@ function RootComponent() {
             their first screen has painted. Other routes: the full sheet blocks, as before. */}
         <ThemeStylesheet href={appCssUrl} critical={CRITICAL_CSS} />
         <ThemeHeadContent />
+        {/* Brutal design tokens (`--base*`, `--bc*`, `--neo-shadow`, …) from theme settings. */}
+        <ThemeTokens
+          settings={ctx.settings?.theme?.settings as unknown as BrutalTokenSettings | undefined}
+        />
       </head>
       <body suppressHydrationWarning>
         <noscript>

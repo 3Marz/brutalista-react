@@ -181,7 +181,7 @@ function AttachmentsSection({
             >
               <div className="pt-4">
                 <textarea
-                  className="animated animatedfadeInDown fadeInDown form-input h-16 bg-gray-50 block"
+                  className="animated animatedfadeInDown fadeInDown form-input h-16 bg-base-50 block"
                   placeholder={t('pages.products.notes_placeholder')}
                   name="notes"
                   cols={30}
@@ -240,7 +240,7 @@ function StickyPriceDisplay({ product, priceBump }: { product: Product; priceBum
           <span className="price-bump__now total-price text-red-800 font-bold text-xl inline-block">
             {product.sale_price} <CurrencySymbol currency={priceCurrency} />
           </span>
-          <span className="before-price text-gray-500 line-through">
+          <span className="before-price text-my-gray line-through">
             {product.regular_price} <CurrencySymbol currency={priceCurrency} />
           </span>
         </div>
@@ -296,7 +296,7 @@ function StickyQuantityField({ product }: { product: Product }) {
       value={1}
       name="quantity"
       aria-label={t('pages.products.quantity')}
-      className="border-gray-200 flex ms-auto"
+      className="border-bc flex ms-auto"
     />
   );
 }
@@ -325,7 +325,7 @@ function StickyProductBar({
     el?.setAttribute('type', 'submit');
   }, []);
   return (
-    <section className="sticky-product-bar bg-white">
+    <section className="sticky-product-bar bg-base-50">
       {/* Live price on the start side, quantity stepper on the end side
           (replaces the standalone price section and the "Quantity" label). */}
       <div className="sticky-product-bar__quantity center-between mb-5">
@@ -378,7 +378,7 @@ function StickyProductBar({
  * Differs from the engine version: the form is a `flex flex-col gap-8` column and its
  * section blocks (weight / size-guide, attachments, price, quantity) render flat:
  * no `bg-white` card padding, no `rounded`, no per-block `mb`. The sticky
- * add-to-cart bar keeps `bg-white` for its mobile fixed-position backdrop.
+ * add-to-cart bar keeps `bg-base-50` for its mobile fixed-position backdrop.
  * Upgrade notes: `FORKS.md`.
  */
 export function AddToCartForm({

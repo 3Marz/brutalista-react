@@ -1,0 +1,1 @@
+import{Dt as e,Rn as t,un as n}from"./shared-home-BfEhk7CK.js";var r=t(),i=async()=>{await window.salla?.cart.api.priceQuote?.()};function a(){let{t}=n();return(0,r.jsx)(e,{id:`request-price-quote-btn`,className:`btn--oval btn--md`,fill:`outline`,onClick:i,children:t(`pages.cart.request_price_quote`,`Request for Quotation`)})}export{a as PriceQuoteButton};

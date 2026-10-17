@@ -3,14 +3,10 @@
 */
 .s-block {
   &__title {
-    @apply center-between mb-4 md:mb-8;
-
-    .right-side {
-      @apply rtl:pl-8 ltr:pr-8;
-    }
+    @apply flex justify-center items-center mb-4 md:mb-8 gap-4;
 
     h2 {
-      @apply text-lg font-bold relative leading-[1.2];
+      @apply underline underline-offset-8 mb-2 text-xl font-bold relative leading-[1.2];
     }
 
     p {
@@ -36,7 +32,7 @@
 */
 .s-block--hero-slider {
   .swiper-slide {
-    @apply relative bg-gray-800;
+    @apply relative bg-base-300;
     aspect-ratio: 1 / 0.5;
 
     @media (min-width: 640px) {
@@ -139,14 +135,14 @@
 
   &--fixed {
     img {
-      @apply w-full object-cover rounded border-none block bg-gray-100;
+      @apply w-full object-cover rounded-neo border-none block bg-base-200;
     }
   }
 }
 
 /* Square Banner Block */
 .banner-entry {
-  @apply h-[200px] min-h-[200px] bg-gray-100 text-white text-center p-3 xs:p-4 rounded overflow-hidden relative !bg-cover !bg-no-repeat !bg-center;
+  @apply h-[200px] min-h-[200px] bg-base-200 text-white text-center p-3 xs:p-4 rounded-neo overflow-hidden relative !bg-cover !bg-no-repeat !bg-center;
 
   article {
     @apply flex flex-col items-center justify-center h-full p-2.5
@@ -160,7 +156,7 @@
     @apply flex flex-col justify-center xs:px-1;
 
     &.text-with-border {
-      @apply xs:border border-dashed border-gray-200 rounded;
+      @apply xs:border-2 border-dashed border-bc rounded-neo;
 
       span {
         @apply line-clamp-2;
@@ -294,10 +290,10 @@
   }
 
   .tab-trigger {
-    @apply text-gray-800;
+    @apply text-text-color;
 
     &.is-active button {
-      @apply text-primary-reverse bg-primary-dark border-primary-dark;
+      @apply text-primary-reverse bg-primary border-bc shadow-neo;
     }
   }
 }
@@ -316,10 +312,10 @@
   }
 
   .tab-trigger {
-    @apply text-gray-800 font-bold leading-7;
+    @apply text-text-color font-bold leading-7;
 
     &.is-active button {
-      @apply text-primary-dark border-primary-dark;
+      @apply text-primary border-bc;
     }
   }
 }
@@ -349,7 +345,7 @@
   }
 
   .tab-trigger {
-    @apply inline-flex items-center justify-center rounded-full px-5 h-11 shrink-0 text-sm font-semibold leading-none text-gray-700 bg-transparent transition-colors;
+    @apply inline-flex items-center justify-center rounded-neo border-2 border-bc px-5 h-11 shrink-0 text-sm font-semibold leading-none text-text-color bg-base-50 transition-colors;
 
     .s-button-text {
       @apply leading-[1.6];
@@ -378,7 +374,7 @@
 
 /* slider with bg block */
 .s-block--slider-with-bg {
-  @apply bg-gray-100 pb-8 sm:pb-16 mt-8 sm:mt-16 first-of-type:mt-0;
+  @apply bg-base-100 pb-8 sm:pb-16 mt-8 sm:mt-16 first-of-type:mt-0;
 
   .slider-bg {
     @apply transition-opacity bg-center bg-cover text-white relative;
@@ -411,7 +407,7 @@
   Main Links Block
 */
 .slide--cat-entry {
-  @apply bg-white rounded h-36 p-3 text-center flex flex-col items-center justify-center transition duration-500 hover:shadow-default hover:text-gray-500 border border-gray-100;
+  @apply bg-base-50 rounded-neo shadow-neo h-36 p-3 text-center flex flex-col items-center justify-center transition duration-500 hover:text-my-gray border-2 border-bc;
 
   i {
     @apply inline-block text-primary text-icon-lg mb-4;
@@ -426,7 +422,7 @@
   offers slider
 */
 .slide--offer-entry {
-  @apply bg-white rounded h-36 text-center flex flex-col items-center justify-between text-gray-600 transition duration-500 hover:shadow-default border border-gray-200;
+  @apply bg-base-50 rounded-neo shadow-neo h-36 text-center flex flex-col items-center justify-between text-my-gray transition duration-500 border-2 border-bc;
 }
 
 /*
@@ -435,7 +431,7 @@
   products sliders). Markup: app/components/home/PhotosSlider.tsx
 */
 .s-photos-slider__slide {
-  @apply block shrink-0 rounded overflow-hidden bg-gray-100;
+  @apply block shrink-0 rounded-neo overflow-hidden bg-base-200;
   flex: 0 0 88%;
   aspect-ratio: 3 / 2;
   scroll-snap-align: start;
@@ -520,14 +516,14 @@
 
   &--features {
     &__item {
-      @apply cursor-pointer bg-white transition-shadow duration-500 shadow-[5px_10px_30px_rgba(43,45,52,0.12)] hover:shadow-[5px_10px_30px_rgba(43,45,52,0.2)] rounded flex-grow flex flex-col items-center px-4 py-8 md:px-8 text-center;
+      @apply cursor-pointer bg-base-50 transition-shadow duration-500 shadow-neo rounded-neo border-2 border-bc flex-grow flex flex-col items-center px-4 py-8 md:px-8 text-center;
 
       &:first-child {
         @apply col-span-2 md:col-span-1;
       }
 
       .feature-icon {
-        @apply mb-3 bg-primary w-16 h-16 rounded-full flex items-center justify-center overflow-hidden;
+        @apply mb-3 bg-primary w-16 h-16 rounded-neo border-2 border-bc flex items-center justify-center overflow-hidden;
 
         i {
           @apply text-primary-reverse text-3xl;
@@ -535,11 +531,11 @@
       }
 
       h2 {
-        @apply font-bold text-sm text-gray-800 mb-1;
+        @apply font-bold text-sm text-text-color mb-1;
       }
 
       p {
-        @apply text-sm text-gray-500;
+        @apply text-sm text-my-gray;
       }
 
       &:hover {
@@ -638,7 +634,7 @@
 
 .s-block--brands {
   @extend .s-block--full-bg;
-  @apply bg-gray-100 pt-8 sm:pt-12 pb-8 sm:pb-20;
+  @apply bg-base-100 pt-8 sm:pt-12 pb-8 sm:pb-20;
 }
 
 .s-block--enhanced-slider {
@@ -648,7 +644,7 @@
   /* CTA pill under the title / subtitle — `EnhancedSlider.tsx` only renders it
      when the slide has a `btnname`. */
   .home-slider__cta {
-    @apply mt-6 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-bold text-gray-900 shadow-lg transition-transform hover:scale-[1.03] hover:no-underline;
+    @apply mt-6 inline-flex items-center justify-center rounded-neo border-2 border-bc bg-base-50 px-7 py-3 text-sm font-bold text-text-color shadow-neo transition-transform hover:scale-[1.03] hover:no-underline;
   }
 
   salla-slider.fullwidth-slider {
@@ -785,7 +781,7 @@
   Markup: app/components/home/CustomTestimonials.tsx
 */
 .s-block--custom-testimonials {
-  @apply bg-gray-50 py-10 lg:py-16 overflow-hidden;
+  @apply bg-base-50 py-10 lg:py-16 overflow-hidden;
 }
 
 /*
@@ -803,11 +799,11 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__title {
-    @apply text-xl font-bold text-gray-900;
+    @apply text-xl font-bold text-text-color;
   }
 
   &__desc {
-    @apply mt-2 text-sm text-gray-500;
+    @apply mt-2 text-sm text-my-gray;
   }
 
   &__scroller {
@@ -834,7 +830,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
     @apply flex items-center gap-2 shrink-0;
 
     button {
-      @apply w-11 h-11 rounded-full border border-gray-300 text-gray-600 inline-flex items-center justify-center transition-colors hover:border-primary hover:text-primary;
+      @apply w-11 h-11 rounded-neo border-2 border-bc bg-base-50 text-my-gray inline-flex items-center justify-center transition-colors hover:border-primary hover:text-primary;
 
       svg {
         @apply w-5 h-5;
@@ -843,16 +839,16 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__progress {
-    @apply relative flex-1 h-0.5 bg-gray-200 rounded-full;
+    @apply relative flex-1 h-0.5 bg-base-300 rounded-full;
   }
 
   &__progress-thumb {
-    @apply absolute top-0 h-0.5 bg-gray-900 rounded-full transition-all duration-200;
+    @apply absolute top-0 h-0.5 bg-bc rounded-full transition-all duration-200;
   }
 }
 
 .testimonial-card {
-  @apply flex-shrink-0 flex flex-col bg-white rounded p-5 lg:p-6;
+  @apply flex-shrink-0 flex flex-col bg-base-50 rounded-neo border-2 border-bc shadow-neo p-5 lg:p-6;
   flex-basis: clamp(260px, 30%, 340px);
   scroll-snap-align: start;
 
@@ -861,7 +857,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__rating {
-    @apply inline-flex items-center gap-1 shrink-0 bg-gray-100 rounded-full px-2.5 py-1 text-sm font-bold text-gray-800;
+    @apply inline-flex items-center gap-1 shrink-0 bg-base-200 rounded-neo border-2 border-bc px-2.5 py-1 text-sm font-bold text-text-color;
 
     svg {
       @apply w-3.5 h-3.5 fill-current text-amber-400;
@@ -873,15 +869,15 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__name {
-    @apply text-sm font-bold text-gray-900 whitespace-nowrap;
+    @apply text-sm font-bold text-text-color whitespace-nowrap;
   }
 
   &__avatar {
-    @apply w-11 h-11 rounded-full object-cover shrink-0 bg-gray-100;
+    @apply w-11 h-11 rounded-full object-cover shrink-0 border-2 border-bc bg-base-200;
   }
 
   &__text {
-    @apply text-sm leading-6 text-gray-600 line-clamp-4;
+    @apply text-sm leading-6 text-my-gray line-clamp-4;
   }
 }
 
@@ -909,7 +905,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
     @apply flex items-center gap-2 shrink-0;
 
     button {
-      @apply w-11 h-11 rounded-full border border-gray-300 text-gray-600 inline-flex items-center justify-center transition-colors hover:border-primary hover:text-primary;
+      @apply w-11 h-11 rounded-neo border-2 border-bc bg-base-50 text-my-gray inline-flex items-center justify-center transition-colors hover:border-primary hover:text-primary;
 
       svg {
         @apply w-5 h-5;
@@ -918,13 +914,13 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__progress {
-    @apply relative flex-1 h-0.5 bg-gray-200 rounded-full;
+    @apply relative flex-1 h-0.5 bg-base-300 rounded-full;
   }
 
   &__progress-thumb {
     /* no transition — it must track `scrollLeft` frame-for-frame, otherwise it
        lags behind (most visible at the start/end of a scroll). */
-    @apply absolute top-0 h-0.5 bg-gray-900 rounded-full;
+    @apply absolute top-0 h-0.5 bg-bc rounded-full;
   }
 }
 
@@ -936,7 +932,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__title {
-    @apply text-lg font-bold text-gray-900;
+    @apply text-lg font-bold text-text-color;
   }
 
   /* Mobile shows two cards + a peek of the third; 4–5 across on desktop. */
@@ -972,7 +968,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
     @apply flex flex-col items-center gap-3 h-auto p-0 bg-transparent border-0 shadow-none hover:shadow-none hover:text-inherit;
 
     &__media {
-      @apply flex shrink-0 items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-100 overflow-hidden transition-colors duration-300;
+      @apply flex shrink-0 items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-bc bg-base-200 overflow-hidden transition-colors duration-300;
     }
 
     /* An item's image (a link's own, or a category's) fills the circle. */
@@ -985,12 +981,12 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
     }
 
     h2 {
-      @apply text-sm font-bold text-gray-800 line-clamp-2;
+      @apply text-sm font-bold text-text-color line-clamp-2;
     }
 
     &:hover {
       .slide--cat-entry__media {
-        @apply bg-gray-200;
+        @apply bg-base-300;
       }
 
       h2 {
@@ -1104,6 +1100,27 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__cta {
-    @apply mt-3 inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-bold text-gray-900 shadow-lg transition-transform hover:scale-[1.03] hover:no-underline;
+    @apply mt-3 inline-flex items-center justify-center rounded-neo border-2 border-bc bg-base-50 px-6 py-2.5 text-sm font-bold text-text-color shadow-neo transition-transform hover:scale-[1.03] hover:no-underline;
+  }
+}
+
+/*
+  Brutal categories (`home.categories`) — animated underline on the label.
+  Ported from the Twig theme's `04-components/home-blocks.scss`.
+*/
+.cat-entry-br {
+  &:hover {
+    span {
+      background-size: 100% 2px;
+    }
+  }
+
+  span {
+    transition: background-size 300ms;
+    text-decoration: none;
+    background-image: linear-gradient(var(--base-300), var(--base-300));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
   }
 }

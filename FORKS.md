@@ -18,6 +18,7 @@ upstream change the fork might have taken in, not proof that it was synced then.
 | `cart/CartItem.tsx`           | `components/cart/CartItem.tsx`                | `CartPage`                                         | 1.0.64 | Flat row, no "Total:" label, trash icon at row end, React quantity stepper                                 |
 | `page/PageSingle.tsx`         | `routes/page/PageSingle.tsx`                  | `app/routes/$slug.page-$id.tsx`                    | 1.0.78 | `customised` pages render only the `information_page.information_page` hook                                |
 | `home/FixedProducts.tsx`      | `components/home/FixedProducts.tsx`           | `registerHomeComponents` in `app/router.tsx`       | 1.0.47 | Same markup, uses the theme `ProductCard`, and shows the block's `limit` products instead of always 4        |
+| `layout/Footer.tsx`           | `components/layout/Footer.tsx`                | `ThemeLayout` (`app/components/layout/ThemeLayout.tsx`) | 1.0.102 | Adds the Twig settings `sub_logo`, `show_store_name_footer` and `lang_button_bottom`; brutal base colours |
 
 ## Upgrading the engine
 

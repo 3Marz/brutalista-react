@@ -286,7 +286,7 @@ export const featuredProductsConfig = {
       return `${base} s-block--features-products${twoCols} container`;
     }
     if (isTabbedStyle(style)) {
-      return `${base} s-block--tabs-produtcs bg-gray-100 py-8 sm:py-16 ${
+      return `${base} s-block--tabs-produtcs bg-base-100 py-8 sm:py-16 ${
         data.is_slider ? 'as-slider' : 'as-grid'
       }`;
     }

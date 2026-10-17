@@ -13,11 +13,11 @@ salla-slider{
     }
 
     .s-slider-container{
-      @apply bg-white border-[1px] rounded;
+      @apply bg-transparent;
     }
 
     .swiper-slide{
-      @apply relative rounded bg-white ring-1 ring-inset ring-gray-100;
+      @apply relative overflow-hidden rounded-neo border-2 border-bc bg-base-100;
     }
 
     /* Fixed 80×80 thumbnails. The theme `ProductGallery` fork runs the thumbs
@@ -69,22 +69,23 @@ salla-slider{
       .swiper-pagination.swiper-pagination-bullets{
         @apply absolute inset-x-0 bottom-4 z-[3] mx-auto flex w-max items-center justify-center gap-1.5;
         padding: 5px 12px;
-        border-radius: 9999px;
-        background: rgba(255, 255, 255, 0.6);
+        border-radius: var(--br);
+        border: 2px solid var(--bc);
+        background: var(--base-50);
         backdrop-filter: blur(4px);
       }
 
       .swiper-pagination-bullet{
         @apply block h-1.5 w-1.5 rounded-full opacity-100;
         margin: 0 !important;
-        background: rgba(0, 0, 0, 0.25);
+        background: color-mix(in srgb, var(--bc) 30%, transparent);
         transition:
           width 0.25s ease,
           background-color 0.25s ease;
       }
 
       .swiper-pagination-bullet-active{
-        @apply w-5 bg-gray-900;
+        @apply w-5 bg-bc;
       }
     }
   }
@@ -110,7 +111,7 @@ salla-slider{
 }
 
 .promotion-title{
-  @apply absolute z-10 top-4 rtl:right-0 ltr:left-0 font-bold text-sm bg-red-800 text-white rtl:rounded-l ltr:rounded-r;
+  @apply absolute z-10 top-4 rtl:right-0 ltr:left-0 font-bold text-sm bg-danger text-white rtl:rounded-l ltr:rounded-r;
   @apply w-auto m-0 px-3 py-2 #{!important};
 }
 
@@ -147,7 +148,7 @@ salla-slider{
       @apply hidden lg:flex max-w-[88%] top-[65%] #{!important};
 
       button{ 
-        @apply border-gray-100 shadow-gray-300 #{!important};
+        @apply border-bc shadow-bc #{!important};
       }
     }
   }

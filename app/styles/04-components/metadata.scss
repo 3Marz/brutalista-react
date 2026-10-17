@@ -26,12 +26,12 @@
 
     &::after {
       content: '+';
-      @apply grid h-5 w-5 shrink-0 place-items-center text-lg font-normal leading-none text-gray-400;
+      @apply grid h-5 w-5 shrink-0 place-items-center text-lg font-normal leading-none text-my-gray;
     }
   }
 
   .s-metadata-box.is-open > .s-metadata-box-header {
-    @apply border-b border-gray-200;
+    @apply border-b border-base-300;
 
     &::after {
       content: '\2212'; /* minus sign */
@@ -51,16 +51,16 @@
     @apply flex items-center justify-between gap-4 px-2 py-3 text-sm;
 
     &:nth-child(even) {
-      background: #fafafa;
+      background: var(--base-50);
     }
   }
 
   .s-metadata-row-name {
-    @apply m-0 shrink-0 text-gray-400;
+    @apply m-0 shrink-0 text-my-gray;
   }
 
   .s-metadata-row-value {
-    @apply m-0 text-end text-gray-700;
+    @apply m-0 text-end text-text-color;
 
     a {
       @apply text-primary underline;

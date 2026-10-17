@@ -6,11 +6,11 @@
    ========================================================================= */
 
 .mobile-page-title {
-  @apply flex h-12 mb-5 items-center gap-1 border-b border-gray-100 bg-white px-2 md:hidden;
+  @apply flex h-12 mb-5 items-center gap-1 border-b-2 border-bc bg-base-50 px-2 md:hidden;
 }
 
 .mobile-page-title__back {
-  @apply -ms-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-gray-700;
+  @apply -ms-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-neo border-2 border-bc bg-base-50 text-text-color;
 
   svg {
     @apply h-5 w-5;
@@ -18,7 +18,7 @@
 }
 
 .mobile-page-title__text {
-  @apply m-0 min-w-0 truncate text-base font-bold text-gray-900;
+  @apply m-0 min-w-0 truncate text-base font-bold text-text-color;
 }
 
 /* Home + product pages have their own headers / overlay bar. */

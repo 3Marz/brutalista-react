@@ -61,7 +61,7 @@ describe('page footer on mobile', () => {
 });
 
 describe('account sheet copyright strip', () => {
-  it('is white only inside the sheet, footer_is_dark or not', async () => {
+  it('paints the sheet base only inside the sheet, footer_is_dark or not', async () => {
     const root = await compile('mobile-account-sheet.scss');
 
     expect(rulesFor(root, '.store-footer__bottom')).toHaveLength(0);
@@ -69,7 +69,7 @@ describe('account sheet copyright strip', () => {
     const backgrounds = rulesFor(root, '.store-footer--sheet .store-footer__bottom').map((rule) =>
       decl(rule, 'background-color')
     );
-    expect(backgrounds.some((bg) => bg?.includes('rgb(255 255 255'))).toBe(true);
+    expect(backgrounds.some((bg) => bg === 'var(--base-50)')).toBe(true);
   });
 });
 
@@ -95,17 +95,16 @@ describe('account sheet footer under footer_is_dark', () => {
   it('puts the menu links and the copyright back to the light footer colours', async () => {
     const root = await compile('mobile-account-sheet.scss');
     const sheet = 'body.footer-is-dark .store-footer--sheet';
-    const gray600 = 'rgb(75 85 99';
 
     const [stacked] = rulesFor(root, `${sheet} .store-footer__menu--stacked .s-menu-footer-item`);
-    expect(decl(stacked, 'color')).toContain(gray600);
+    expect(decl(stacked, 'color')).toBe('var(--my-gray)');
 
     const [inline] = rulesFor(root, `${sheet} .store-footer__menu--inline .s-menu-footer-item`);
-    expect(decl(inline, 'color')).toContain(gray600);
-    expect(decl(inline, 'border-color')).toContain('rgb(209 213 219'); // gray-300
+    expect(decl(inline, 'color')).toBe('var(--my-gray)');
+    expect(decl(inline, 'border-color')).toBe('var(--bc)');
 
     const [copyright] = rulesFor(root, `${sheet} .copyright-text`);
-    expect(decl(copyright, 'color')).toContain('rgb(55 65 81'); // gray-700
+    expect(decl(copyright, 'color')).toBe('var(--text-color)');
   });
 });
 

@@ -38,7 +38,7 @@
    line between the first and second rows: the first has no bottom and
    nothing below it has a top to draw one either. */
 .account-sheet__list-item {
-  @apply flex w-full items-center gap-3 border-x border-b border-gray-100 bg-white px-4 py-3.5 text-start text-sm font-medium text-gray-800 hover:bg-gray-50;
+  @apply flex w-full items-center gap-3 border-x border-b border-bc bg-base-50 px-4 py-3.5 text-start text-sm font-medium text-text-color hover:bg-base-200;
   /* Entrance (opacity/transform, staggered below) alongside the hover
      background-color -- one combined list, same reasoning as the
      important-links sheet's own rows (see that file's comment). */
@@ -59,7 +59,7 @@
 }
 
 .account-sheet__list-icon {
-  @apply flex h-6 w-6 shrink-0 items-center justify-center text-gray-500;
+  @apply flex h-6 w-6 shrink-0 items-center justify-center text-my-gray;
 
   svg {
     @apply h-6 w-6;
@@ -78,12 +78,12 @@
 }
 
 .account-sheet__list-value {
-  @apply shrink-0 truncate text-gray-400;
+  @apply shrink-0 truncate text-my-gray;
   max-width: 40%;
 }
 
 .account-sheet__list-chevron {
-  @apply h-4 w-4 shrink-0 text-gray-400;
+  @apply h-4 w-4 shrink-0 text-my-gray;
 
   [dir='ltr'] & {
     transform: scaleX(-1);
@@ -100,7 +100,7 @@
    than one it means no divider line between the first and second rows,
    since neither side draws it). */
 .account-sheet__contact-item {
-  @apply flex w-full items-center justify-between gap-3 border-x border-gray-100 bg-white px-4 py-3.5 text-start hover:bg-gray-50;
+  @apply flex w-full items-center justify-between gap-3 border-x border-bc bg-base-50 px-4 py-3.5 text-start hover:bg-base-200;
   opacity: 0;
   transform: translateY(10px);
   transition:
@@ -126,17 +126,17 @@
 }
 
 .account-sheet__contact-label {
-  @apply text-sm font-medium text-gray-800;
+  @apply text-sm font-medium text-text-color;
 }
 
 /* `.unicode` (common.scss) on the element itself handles LTR content like
    phone numbers and emails reading correctly within RTL flow. */
 .account-sheet__contact-value {
-  @apply truncate text-sm text-gray-400;
+  @apply truncate text-sm text-my-gray;
 }
 
 .account-sheet__contact-item i {
-  @apply shrink-0 text-xl text-gray-500;
+  @apply shrink-0 text-xl text-my-gray;
 }
 
 /* The footer widgets under the menu: bleed to the sheet edges (the sheet body
@@ -149,7 +149,7 @@
    content (tax number, SBC badge, trust badges) is unchanged here too, only
    its container is recentred. */
 .store-footer--sheet {
-  @apply -mx-4 mt-6 mb-0 sm:mt-6;
+  @apply -mx-4 mt-6 mb-0 text-text-color sm:mt-6;
 
   &.store-footer{
     @apply bg-transparent;
@@ -165,7 +165,7 @@
 
   .store-footer__brand,
   .store-footer__centered {
-    @apply flex flex-col items-center gap-5 rounded border border-gray-100 bg-white px-5 py-6 text-center;
+    @apply flex flex-col items-center gap-5 rounded-neo border-2 border-bc bg-base-50 px-5 py-6 text-center;
   }
 
   .store-footer__logo {
@@ -191,7 +191,7 @@
   }
 
   .store-footer__apps {
-    @apply flex flex-col items-center gap-3 rounded border border-gray-100 bg-white px-5 py-6 text-center;
+    @apply flex flex-col items-center gap-3 rounded-neo border-2 border-bc bg-base-50 px-5 py-6 text-center;
   }
 
   .store-footer__bottom {
@@ -210,7 +210,7 @@
    to the tax / SBC labels; footer.scss turns the menu links white. All of it
    is put back to the light footer's colours here. */
 body.footer-is-dark .store-footer--sheet {
-  @apply text-gray-600;
+  @apply text-my-gray;
 
   .store-footer__inner {
     @apply bg-transparent;
@@ -219,29 +219,29 @@ body.footer-is-dark .store-footer--sheet {
   .store-footer__brand,
   .store-footer__centered,
   .store-footer__apps {
-    @apply text-gray-600;
+    @apply text-my-gray;
 
     /* An attribute selector, not `.text-white`: Tailwind folds any `.text-white`
        rule into that utility, which breaks every `@apply text-white`. */
     [class~='text-white'] {
-      @apply text-gray-600;
+      @apply text-my-gray;
     }
 
     h3 {
-      @apply text-gray-900;
+      @apply text-text-color;
     }
   }
 
   .store-footer__menu--stacked .s-menu-footer-item {
-    @apply text-gray-600;
+    @apply text-my-gray;
   }
 
   .store-footer__menu--inline .s-menu-footer-item {
-    @apply border-gray-300 text-gray-600;
+    @apply border-bc text-my-gray;
   }
 
   .copyright-text {
-    @apply text-gray-700;
+    @apply text-text-color;
   }
 }
 
@@ -314,11 +314,11 @@ body.footer-is-dark .store-footer--sheet {
 }
 
 .store-footer--sheet .store-footer__bottom {
-  @apply bg-white;
+  @apply bg-base-50;
 }
 
 .account-sheet .bottom-sheet__close {
-  @apply text-[#ff443a] hover:text-[#ff443a];
+  @apply text-danger hover:text-danger;
 
   svg {
     @apply h-6 w-6;
@@ -355,11 +355,11 @@ body.footer-is-dark .store-footer--sheet {
    rendered elements, no element to put the `account-sheet__list-item` class
    on). */
 .user-menu-sheet__menu .s-user-menu-inline {
-  @apply block overflow-hidden rounded border border-gray-100;
+  @apply block overflow-hidden rounded-neo border-2 border-bc;
 }
 
 .user-menu-sheet__menu .s-user-menu-dropdown-item {
-  @apply border-b border-gray-100 bg-white last:border-b-0;
+  @apply border-b border-bc bg-base-50 last:border-b-0;
   opacity: 0;
   transform: translateY(10px);
   transition:
@@ -368,12 +368,12 @@ body.footer-is-dark .store-footer--sheet {
 }
 
 .user-menu-sheet__menu .s-user-menu-dropdown-item-link {
-  @apply flex w-full items-center gap-3 px-4 py-3.5 text-start text-sm font-medium text-gray-800 transition-colors hover:bg-gray-50;
+  @apply flex w-full items-center gap-3 px-4 py-3.5 text-start text-sm font-medium text-text-color transition-colors hover:bg-base-200;
 
   /* Icon -- an inline SVG the component renders itself (`innerHTML`), sized
      to match the 24px icons elsewhere in this sheet. */
   .s-user-menu-dropdown-item-prefix {
-    @apply flex h-6 w-6 shrink-0 items-center justify-center text-gray-500;
+    @apply flex h-6 w-6 shrink-0 items-center justify-center text-my-gray;
 
     svg {
       @apply h-6 w-6;
@@ -391,7 +391,7 @@ body.footer-is-dark .store-footer--sheet {
   &::after {
     font-family: 'sallaicons';
     content: '\ea65';
-    @apply shrink-0 text-base leading-none text-gray-400;
+    @apply shrink-0 text-base leading-none text-my-gray;
 
     [dir='ltr'] & {
       transform: scaleX(-1);
@@ -404,14 +404,14 @@ body.footer-is-dark .store-footer--sheet {
    marks it with this class on the `<li>` itself (always the last item --
    see salla-user-menu.tsx), not a separate wrapper. */
 .user-menu-sheet__menu .s-user-menu-dropdown-item-logout .s-user-menu-dropdown-item-link {
-  @apply text-[#ff443a];
+  @apply text-danger;
 
   &:hover {
-    @apply bg-red-50;
+    background: color-mix(in srgb, var(--danger) 10%, transparent);
   }
 
   .s-user-menu-dropdown-item-prefix {
-    @apply text-[#ff443a];
+    @apply text-danger;
   }
 
   &::after {
@@ -440,11 +440,11 @@ body.footer-is-dark .store-footer--sheet {
    so there's no element to put the `account-sheet__list-item` class on). */
 
 .important-links-sheet__menu .s-menu-footer-list {
-  @apply block rounded border border-gray-100;
+  @apply block rounded-neo border-2 border-bc;
 }
 
 .important-links-sheet__menu .s-menu-footer-item {
-  @apply flex w-full items-center justify-between gap-3 border-b border-gray-100 bg-white px-4 py-3.5 text-start text-sm font-medium text-gray-800 last:border-b-0 hover:bg-gray-50 mb-0;
+  @apply flex w-full items-center justify-between gap-3 border-b border-bc bg-base-50 px-4 py-3.5 text-start text-sm font-medium text-text-color last:border-b-0 hover:bg-base-200 mb-0;
   /* Entrance (opacity/transform, staggered below) alongside the hover
      background-color -- one combined transition list so the stagger's
      `transition-delay` doesn't also push the hover feedback out, the way it
@@ -463,7 +463,7 @@ body.footer-is-dark .store-footer--sheet {
   &::after {
     font-family: 'sallaicons';
     content: '\ea65';
-    @apply shrink-0 text-base leading-none text-gray-400;
+    @apply shrink-0 text-base leading-none text-my-gray;
 
     [dir='ltr'] & {
       transform: scaleX(-1);

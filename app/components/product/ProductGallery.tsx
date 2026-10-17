@@ -181,9 +181,9 @@ export function ProductGallery({ product }: ProductGalleryProps) {
         )}
 
         {product.calories && (
-          <div className="absolute z-[2] top-4 rtl:left-4 ltr:right-4 bg-white shadow-sm flex flex-col justify-center items-center rounded-full w-20 h-20 md:w-24 md:h-24">
+          <div className="absolute z-[2] top-4 rtl:left-4 ltr:right-4 bg-base-50 border-2 border-bc shadow-neo flex flex-col justify-center items-center rounded-neo w-20 h-20 md:w-24 md:h-24">
             <span className="text-red-500 text-xl leading-none font-bold">{product.calories}</span>
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-my-gray">
               {t('pages.products.calories', 'Calories')}
             </span>
           </div>
@@ -338,7 +338,7 @@ function ImageSlide({
       aria-label={product.name}
       className={`swiper-slide magnify-wrapper homeslider__slide ${image.video_url ? 'video-entry' : ''}`}
     >
-      <div className={`w-full ${loaded ? '' : 'aspect-square bg-gray-100 animate-pulse'}`}>
+      <div className={`w-full ${loaded ? '' : 'aspect-square bg-base-200 animate-pulse'}`}>
         <Image
           id={String(image.id)}
           src={image.url}
@@ -363,7 +363,7 @@ function ThumbSlide({ image, index }: { image: ProductImage; index: number }) {
       <Image
         src={image.url}
         alt={image.alt || ''}
-        className="object-cover w-full h-full bg-gray-100 rounded overflow-hidden"
+        className="object-cover w-full h-full bg-base-200 rounded-neo overflow-hidden"
         title={image.alt}
         priority={index < 5}
         noWrapper

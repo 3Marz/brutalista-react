@@ -112,14 +112,14 @@ function BrandHeader({ source }: { source: ProductListLoaderData['source'] }) {
       <Image
         width={1200}
         height={300}
-        className="w-full max-h-[300px] object-cover rounded bg-gray-100"
+        className="w-full max-h-[300px] object-cover rounded-neo bg-base-200"
         src={brand.banner || undefined}
         alt={brand.name}
         priority
       />
       <header className="flex flex-col md:flex-row items-center md:items-start text-center rtl:md:text-right ltr:md:text-left mt-2 mb-8">
         <Image
-          className="rounded w-40 h-24 object-contain shadow-md p-4 bg-white shrink-0"
+          className="rounded-neo w-40 h-24 object-contain shadow-neo border-2 border-bc p-4 bg-base-50 shrink-0"
           src={brand.logo || undefined}
           alt={brand.name}
           aspectRatio="5/3"
@@ -128,7 +128,7 @@ function BrandHeader({ source }: { source: ProductListLoaderData['source'] }) {
           <h1 className="text-2xl font-bold mb-1">{brand.name}</h1>
           {brand.description && (
             <p
-              className="text-base text-gray-500 font-medium"
+              className="text-base text-my-gray font-medium"
               dangerouslySetInnerHTML={{ __html: brand.description }}
             />
           )}

@@ -1,0 +1,1 @@
+import{Rn as e}from"./shared-home-BfEhk7CK.js";var t=e();function n({currency:e}){return e===`SAR`?(0,t.jsx)(`i`,{className:`sicon-sar`,"aria-hidden":`true`}):(0,t.jsx)(`span`,{children:e})}export{n as CurrencySymbol};

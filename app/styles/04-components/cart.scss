@@ -28,7 +28,7 @@
 
   /* spinner shown in place of the trash icon while the row is being removed */
   &__delete-spinner {
-    @apply inline-block h-5 w-5 animate-spin rounded-full border-2 border-gray-200 border-t-gray-500;
+    @apply inline-block h-5 w-5 animate-spin rounded-full border-2 border-base-300 border-t-bc;
   }
 
   /* per-item product options render inside the flat row — drop the wrapper's
@@ -41,14 +41,15 @@
 }
 
 /*
-  Sidebar cards (engine): the Order Summary box (`… transition-height`) and the
-  free-shipping progress box (`#free-shipping`) — flat and gray instead of the
-  default white drop-shadow card.
+  Sidebar blocks (engine): the Order Summary box (`… transition-height`), the
+  free-shipping progress box (`#free-shipping`) and the gifting box. Brutal
+  paints them on the light base; `cool_cart_page` (below) chooses between the
+  scalloped "ticket" card and the plain bordered card.
 */
 #cart-gifting,
 .cart .shadow-default.transition-height,
 .cart #free-shipping {
-  @apply bg-gray-100 shadow-none rounded;
+  @apply bg-base-50 shadow-none relative;
 }
 
 #cart-gifting .s-gifting-widget .s-list-tile-item{
@@ -62,11 +63,74 @@ salla-list-tile.s-gifting-widget .s-list-tile-item-content::before{
 /* Free-shipping progress track (engine default `bg-border-color`) — darken it so
    it reads against the now-gray card behind it. The fill stays `bg-primary`. */
 .cart #free-shipping-bar {
-  @apply bg-gray-200;
+  @apply bg-base-200;
 }
 
-/* Coupon field — match the 16px button roundness (`.s-button-btn`), not the
-   6px `.form-input` default. */
+/* Coupon field — match the neobrutalist control radius, not the 6px
+   `.form-input` default. */
 #coupon-input {
-  @apply rounded;
+  @apply rounded-neo;
+}
+
+/*
+  "Cool cart page" (`cool_cart_page`) ticket edges — ported from the Twig theme's
+  `04-components/order-summary.scss`. `ThemeLayout` adds `cool-cart-page` to
+  <body> when the setting is on.
+*/
+%ticket {
+  filter: drop-shadow(1px 0px var(--bc)) drop-shadow(-1px 0px var(--bc))
+    drop-shadow(0px 1px var(--bc)) drop-shadow(0px -1px var(--bc));
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    height: 6px;
+    width: 100%;
+  }
+
+  &::before {
+    top: -6px;
+    background: radial-gradient(
+          circle,
+          transparent,
+          transparent 50%,
+          var(--base-50) 50%,
+          var(--base-50) 100%
+        )
+        -4px -8px / 14px 16px repeat-x;
+  }
+
+  &::after {
+    bottom: -6px;
+    background: radial-gradient(
+          circle,
+          transparent,
+          transparent 50%,
+          var(--base-50) 50%,
+          var(--base-50) 100%
+        )
+        -4px -2px / 14px 16px repeat-x;
+  }
+}
+
+.ticket {
+  @extend %ticket;
+}
+
+body.cool-cart-page {
+  #cart-gifting,
+  .cart .shadow-default.transition-height,
+  .cart #free-shipping {
+    @extend %ticket;
+  }
+}
+
+body:not(.cool-cart-page) {
+  #cart-gifting,
+  .cart .shadow-default.transition-height,
+  .cart #free-shipping {
+    @apply border-2 border-bc rounded-neo shadow-neo;
+  }
 }

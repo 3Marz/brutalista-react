@@ -15,12 +15,12 @@
       position: absolute;
       z-index: -1;
       left: auto;
-      background: #fff;
+      background: var(--base-50);
       width: 20px;
       height: 20px;
       transform: rotate(45deg);
-      border-radius: 2px;
-      @apply shadow-md;
+      border-radius: var(--br);
+      @apply shadow-neo;
       left: 43%;
       bottom: -7px;
     }

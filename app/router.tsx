@@ -20,6 +20,20 @@ import {
   ProductsSlider,
   SliderProductsWithHeader,
   EnhancedSquareBanners,
+  // Brutal home blocks ported from the Twig theme.
+  Marquee,
+  Categories,
+  SquareBannerBrutal,
+  Questions,
+  SquarePhotos,
+  PhotoAndText,
+  OffersProducts,
+  BrutalTestimonials,
+  TextAndButton,
+  Stats,
+  Separator,
+  BannersBrutal,
+  CustomReviewsBrutal,
 } from './components/home';
 import { registerThemeHooks } from './hooks';
 import { ProductListSkeleton } from './components/product/ProductListSkeleton';
@@ -63,6 +77,22 @@ registerHomeComponents({
   'fixed-products': FixedProducts,
   'slider-products-with-header': SliderProductsWithHeader,
   'enhanced-square-banners': EnhancedSquareBanners,
+
+  // Brutal home blocks (ported from the Twig theme). Registry key is
+  // `home:<path>` — the block `path` without the `home.` prefix.
+  marquee: Marquee,
+  categories: Categories,
+  'square-banner-brutal': SquareBannerBrutal,
+  questions: Questions,
+  'square-photos': SquarePhotos,
+  'photo-and-text': PhotoAndText,
+  'offers-products': OffersProducts,
+  brutal_testimonials: BrutalTestimonials,
+  text_and_button: TextAndButton,
+  stats: Stats,
+  separator: Separator,
+  banners_brutal: BannersBrutal,
+  'custom-reviews-brutal': CustomReviewsBrutal,
 });
 
 // Wrapper `<section>` classes for `featured-products` — the engine only styles
@@ -111,6 +141,46 @@ registerHomeComponentConfig({
     placeholder: <SliderSkeleton />,
     className: (data) =>
       `s-block s-block--photos-slider${data.is_repeated ? ' repeated-block' : ''}`,
+  },
+
+  // ---- Brutal blocks ------------------------------------------------------
+  // Wrapper `<section>` classes (the engine would otherwise fall back to
+  // `s-block s-block--<path>`, which is fine here, but the sliders need a
+  // skeleton sized like the real content to avoid CLS on scroll-in).
+  marquee: {
+    height: '56px',
+    className: (data) => `s-block--marquee w-full${data.top_margin ? ' s-block' : ''}`,
+  },
+  categories: { className: 's-block s-block--categories' },
+  'square-banner-brutal': { className: 's-block s-block--square-banner-brutal' },
+  questions: { height: '300px', className: 's-block s-block--questions' },
+  'square-photos': { className: 's-block s-block--square-photos' },
+  'photo-and-text': { height: '400px', className: 's-block s-block--photo-and-text' },
+  'offers-products': {
+    height: '480px',
+    placeholder: <SliderSkeleton />,
+    className: 's-block s-block--offers-products',
+  },
+  brutal_testimonials: {
+    height: '420px',
+    placeholder: <SliderSkeleton />,
+    className: 's-block s-block--brutal_testimonials',
+  },
+  text_and_button: { height: '300px', className: 's-block s-block--text_and_button' },
+  stats: { height: '220px', className: 's-block s-block--stats' },
+  separator: { height: '24px', className: 's-block s-block--separator' },
+  banners_brutal: {
+    height: 'clamp(160px, 26vw, 340px)',
+    placeholder: <SliderSkeleton />,
+    className: (data) =>
+      `s-block--banners_brutal ${data.top_margin ? 's-block' : ''} ${
+        data.full_banners ? 'overflow-hidden' : 'container'
+      }`,
+  },
+  'custom-reviews-brutal': {
+    height: '380px',
+    placeholder: <SliderSkeleton />,
+    className: 's-block s-block--custom-reviews-brutal',
   },
 });
 

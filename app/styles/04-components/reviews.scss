@@ -14,13 +14,13 @@
    ========================================================================= */
 
 .s-comments-product {
-  /* Rating accent — a warm brown that reads as "rating" regardless of the
-     store's primary colour (same rationale as the cart-count badge). */
-  --rev-accent: #fbbf24;
-  --rev-accent-d: #d8a116;
-  --rev-line: #f0f0f0;
-  --rev-muted: #9ca3af;
-  --rev-ink: #1f2937;
+  /* Rating accent + ink follow the theme's neobrutalist palette so the review
+     card matches the rest of the store (was a fixed warm-brown/raed set). */
+  --rev-accent: var(--color-primary);
+  --rev-accent-d: var(--color-primary-dark);
+  --rev-line: var(--base-300);
+  --rev-muted: var(--my-gray);
+  --rev-ink: var(--text-color);
 
   /* ---- section heading + comment form (full-width band) ---------------- */
   .s-comments-title {
@@ -29,7 +29,7 @@
   }
 
   .s-comment-form-input {
-    @apply w-full rounded border border-gray-200 px-4 py-3 text-sm;
+    @apply w-full rounded-neo border-2 border-bc px-4 py-3 text-sm;
 
     &:focus {
       @apply outline-none;
@@ -120,7 +120,7 @@
       height: 60%;
       width: 1px;
       transform: translateY(-50%);
-      @apply bg-gray-200;
+      @apply bg-base-300;
     }
 
     .s-reviews-summary-recommendation-percentage {
@@ -140,7 +140,7 @@
   .s-reviews-summary-row-rate {
     @apply inline-flex shrink-0 items-center justify-end gap-1 text-xs;
     min-width: 2.4ch;
-    color: #6b7280;
+    color: var(--rev-muted);
 
     span {
       @apply inline-flex h-3 w-3;
@@ -172,14 +172,14 @@
 
     .s-progress-bar-wrapper {
       height: 7px;
-      border-radius: 9999px;
-      background: #ededed;
+      border-radius: var(--br);
+      background: var(--base-300);
       overflow: hidden;
     }
 
     .s-progress-bar-progress {
       height: 100%;
-      border-radius: 9999px;
+      border-radius: var(--br);
       background: var(--rev-accent) !important; /* engine paints it black */
     }
   }
@@ -214,7 +214,7 @@
   }
 
   .s-comments-sort-input {
-    @apply rounded-full border border-gray-200 bg-white py-1.5 pe-8 ps-3.5 text-xs;
+    @apply rounded-neo border-2 border-bc bg-base-50 py-1.5 pe-8 ps-3.5 text-xs;
   }
 
   .s-translate-all-wrap {
@@ -241,7 +241,7 @@
   }
 
   .s-comments-item-avatar-img {
-    @apply h-11 w-11 rounded-full object-cover;
+    @apply h-11 w-11 rounded-full border-2 border-bc object-cover;
   }
 
   /* name over verified-buyer line, stacked and hugging the avatar side.
@@ -285,11 +285,11 @@
      opposite the avatar. No numeric value is exposed in the DOM, so it stays a
      5-star pill rather than "★ 5.0". */
   .s-comments-item-inner > .s-comments-flex-1 > div[class~='flex-row'] {
-    @apply absolute m-0 items-center rounded-full px-2 py-1;
+    @apply absolute m-0 items-center rounded-neo px-2 py-1;
     inset-block-start: 1.25rem;
     inset-inline-end: 0;
     gap: 0.3rem;
-    background: #f4f4f5;
+    background: var(--base-200);
   }
 
   .s-comments-item salla-rating-stars {

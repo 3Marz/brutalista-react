@@ -42,9 +42,30 @@ module.exports = {
       colors: {
         dark: '#1D1F1F',
         darker: '#0E0F0F',
-        danger: '#AE0A0A',
+
+        success: 'var(--success)',
+        danger: 'var(--danger)',
+        warning: 'var(--warning)',
+        'my-dark': 'var(--my-dark)',
+        'my-gray': 'var(--my-gray)',
+        light: 'var(--light)',
+
         primary: 'var(--color-primary)',
         'primary-dark': 'var(--color-primary-dark)',
+        'primary-d': 'var(--color-primary-dark)',
+        'primary-l': 'var(--color-primary-light)',
+        'primary-reverse': 'var(--color-primary-reverse)',
+
+        // Brutal design system (see app/components/layout/ThemeTokens.tsx).
+        'text-color': 'var(--text-color)',
+        bc: 'var(--bc)',
+        'bg-base': 'var(--base)',
+        base: {
+          50: 'var(--base-50)',
+          100: 'var(--base-100)',
+          200: 'var(--base-200)',
+          300: 'var(--base-300)',
+        },
       },
       spacing: {
         3.75: '15px',
@@ -55,12 +76,15 @@ module.exports = {
         116: '464px',
         132: '528px',
         200: '800px',
+        'x-shadow': 'var(--x-shadow-offset)',
+        'y-shadow': 'var(--y-shadow-offset)',
       },
       borderRadius: {
+        neo: 'var(--br)',
         large: '22px',
         big: '40px',
         tiny: '3px',
-        DEFAULT: '16px',
+        DEFAULT: 'var(--br, 16px)',
       },
       fontSize: {
         'icon-lg': '33px',
@@ -86,6 +110,7 @@ module.exports = {
         progress: '0 5px 15px rgba(92, 213, 196, 0.4)',
         mobile:
           'rgb(0 0 0 / 9%) 0px 2px 1px, rgb(0 0 0 / 9%) 0px 4px 2px, rgb(0 0 0 / 9%) 0px 8px 4px, rgb(0 0 0 / 9%) 0px 16px 18px, rgb(0 0 0 / 9%) -15px 10px 7px, rgb(0 0 0 / 9%) -20px 10px 20px, rgb(0 0 0 / 9%) -20px 10px 20px, rgb(0 0 0 / 9%) -25px 20px 20px',
+        neo: 'var(--neo-shadow)',
       },
       width: {
         18: '4.5rem',

@@ -48,11 +48,11 @@
 }
 
 .mobile-bottom-bar__inner {
-  @apply flex w-full max-w-md items-center justify-between gap-1 bg-white;
+  @apply flex w-full max-w-md items-center justify-between gap-1 bg-base-50 border-2 border-bc;
   height: 52px;
-  border-radius: 9999px;
+  border-radius: var(--br);
   padding: 0 8px;
-  box-shadow: 0 8px 30px rgb(0 0 0 / 12%);
+  box-shadow: var(--neo-shadow);
   pointer-events: auto;
   /* Not `overflow: hidden` — on the narrowest phones the active tab's
      expanded pill (padding + label, below) can come within a few px of the
@@ -154,7 +154,7 @@
   min-width: 16px;
   height: 16px;
   padding: 0 3px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--bc);
   background: var(--mbb-badge-bg);
   color: var(--mbb-badge-text);
   font-size: 10px;

@@ -62,7 +62,7 @@ salla-button {
   }
 
   &--quantity {
-    @apply text-gray-400 w-11 hover:text-primary transition-colors duration-300;
+    @apply text-my-gray w-11 hover:text-primary transition-colors duration-300;
   }
 
   &__text {
@@ -73,30 +73,30 @@ salla-button {
     @apply m-0 rtl:mr-0.5 ltr:ml-0.5;
 
     &:hover{
-      @apply text-gray-600;
+      @apply text-text-color;
     }
 
     &.is-added {
-      @apply text-red-500;
+      @apply text-danger;
     }
   }
 
   &--rounded-gray {
-    @apply inline-flex grow-0 justify-center w-full rounded-full px-3.5 py-2 items-center transition-colors bg-gray-200/50 hover:bg-gray-200/70 text-sm font-medium whitespace-nowrap;
+    @apply inline-flex grow-0 justify-center w-full rounded border-2 border-bc px-3.5 py-2 items-center transition-colors bg-base-50 hover:bg-base-200 text-sm font-medium whitespace-nowrap;
   }
 
   &--circle-gray {
-    @apply inline-flex justify-center items-center rounded-full px-3 py-3 h-9 w-9 transition-colors bg-gray-200/30 hover:bg-gray-200/50 text-sm font-medium;
+    @apply inline-flex justify-center items-center rounded border-2 border-bc px-3 py-3 h-9 w-9 transition-colors bg-base-50 hover:bg-base-200 text-sm font-medium;
   }
 
   &--icon {
-    @apply flex items-center justify-center transition bg-white text-gray-500 border-gray-200  hover:border-gray-200 hover:text-gray-600 mx-1 border rounded-full w-10 h-10 font-medium flex-shrink-0;
+    @apply flex items-center justify-center transition bg-base-50 text-my-gray border-bc hover:border-bc hover:text-text-color mx-1 border-2 rounded w-10 h-10 font-medium flex-shrink-0;
 
     i {
       @apply pointer-events-none;
 
       &.sicon-heart {
-        @apply text-red-400;
+        @apply text-danger;
       }
     }
   }
@@ -106,20 +106,20 @@ salla-button {
   }
 
   &--close {
-    @apply hidden xs:block h-12 w-14 text-red-500 text-2xl absolute top-0 rtl:left-0 ltr:right-0 z-50;
+    @apply hidden xs:block h-12 w-14 text-danger text-2xl absolute top-0 rtl:left-0 ltr:right-0 z-50;
   }
 
   &--close-sm {
-    @apply opacity-0 -translate-y-full transition duration-300 h-[51px] w-[51px] bg-red-500 text-white text-xl fixed top-0 rtl:left-0 ltr:right-0 z-50;
+    @apply opacity-0 -translate-y-full transition duration-300 h-[51px] w-[51px] bg-danger text-white text-xl fixed top-0 rtl:left-0 ltr:right-0 z-50;
   }
 
   &--collapse {
-    @apply w-full bg-gray-100 py-2.5 rtl:xs:pr-7 ltr:xs:pl-7 rtl:xs:pl-5 ltr:xs:pr-5 rounded flex items-center text-gray-700 justify-center text-sm;
+    @apply w-full bg-base-50 border-2 border-bc py-2.5 rtl:xs:pr-7 ltr:xs:pl-7 rtl:xs:pl-5 ltr:xs:pr-5 rounded flex items-center text-text-color justify-center text-sm;
   }
 
   /* Disabled state */
   &.btn:disabled {
-    @apply text-gray-300 bg-transparent hover:bg-transparent shadow-sm border border-gray-200 cursor-default;
+    @apply text-base-300 bg-transparent hover:bg-transparent border-2 border-base-300 cursor-default;
   }
 
   &:disabled {
@@ -130,19 +130,19 @@ salla-button {
 
   /* Button Variants */
   &--danger {
-    @apply bg-red-400 text-white hover:opacity-80;
+    @apply bg-danger text-white border-2 border-bc hover:opacity-80;
   }
 
   &--primary {
-    @apply text-primary-reverse border border-primary bg-primary;
+    @apply text-primary-reverse border-2 border-bc bg-primary shadow-neo;
   }
 
   &--outline-primary {
-    @apply border border-primary text-primary hover:bg-primary hover:text-primary-reverse;
+    @apply border-2 border-bc text-primary hover:bg-primary hover:text-primary-reverse;
   }
 
   &--outline {
-    @apply text-gray-400 bg-white hover:bg-primary hover:text-white hover:border-primary shadow-sm border border-gray-200;
+    @apply text-text-color bg-base-50 hover:bg-primary hover:text-primary-reverse hover:border-bc border-2 border-bc;
 
     &.light {
       @apply bg-transparent text-white border-white;

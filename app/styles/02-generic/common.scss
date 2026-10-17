@@ -306,7 +306,7 @@ salla-localization-modal {
 
 // grid trigger
 .grid-trigger {
-  @apply cursor-pointer mx-1 text-xl w-10 h-10 rounded flex items-center justify-center text-gray-400;
+  @apply cursor-pointer mx-1 text-xl w-10 h-10 rounded-neo border-2 border-bc bg-base-50 flex items-center justify-center text-my-gray;
 }
 
 // center classes
@@ -346,7 +346,7 @@ salla-localization-modal {
         a,
         span,
         .arrow {
-          @apply text-gray-600;
+          @apply text-my-gray;
         }
       }
     }
@@ -358,7 +358,7 @@ salla-localization-modal {
   @apply p-1 min-w-[20px] h-5 rounded-full inline-flex items-center justify-center text-xs;
 
   &--red {
-    @apply bg-red-400 text-white;
+    @apply bg-danger text-white;
   }
 }
 
@@ -426,7 +426,7 @@ salla-localization-modal {
 
 // salla app install banner
 .s-app-install-banner {
-  @apply hidden flex-row items-center fixed left-0 right-0 w-[95%] my-4 mx-auto z-[999] rounded p-3 gap-2 drop-shadow-md;
+  @apply hidden flex-row items-center fixed left-0 right-0 w-[95%] my-4 mx-auto z-[999] rounded-neo border-2 border-bc shadow-neo p-3 gap-2;
   background-color: color-mix(in srgb, var(--color-primary) 15%, white);
   &[open='false'] {
     @apply hidden;
@@ -596,4 +596,17 @@ main > .s-block:nth-of-type(n + 4)[style*='min-height'] {
   .s-skeleton-detail-images .s-skeleton-slider-thumbs {
     display: none #{!important};
   }
+}
+
+/* Dotted background (`home.text_and_button` `doted_bg`) — ported from the Twig
+   theme's `02-generic/common.scss`. */
+.dots-bg {
+  background-image: radial-gradient(
+      circle at center,
+      var(--base-300) 0.1rem,
+      var(--base-100) 0
+    ),
+    radial-gradient(circle at center, var(--base-300) 0.1rem, var(--base-100) 0);
+  background-size: 0.8rem 0.8rem;
+  background-position: 0 0, 0.4rem 0.4rem;
 }

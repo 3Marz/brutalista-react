@@ -1,6 +1,6 @@
 // Dropdown toggler
 .dropdown__trigger {
-  @apply rounded-full overflow-hidden w-10 h-10 font-medium focus:ring-offset-transparent;
+  @apply rounded-neo overflow-hidden w-10 h-10 font-medium focus:ring-offset-transparent;
 
   &.filter {
     @apply rounded-none w-auto h-auto overflow-visible;
@@ -8,12 +8,12 @@
 }
 
 .dropdown__menu {
-  @apply origin-top-right duration-200 transition-all scale-y-90 absolute opacity-0 -translate-y-4 invisible rtl:left-0 ltr:right-0 z-30 w-80 lg:w-60 rounded-t lg:rounded-t-none rounded-b shadow-default bg-white top-full lg:border-t lg:border-gray-300/30;
+  @apply origin-top-right duration-200 transition-all scale-y-90 absolute opacity-0 -translate-y-4 invisible rtl:left-0 ltr:right-0 z-30 w-80 lg:w-60 rounded-neo border-2 border-bc shadow-neo bg-base-50 top-full;
   outline: none;
 }
 
 .dropdown-toggler {
-  @apply inline-flex items-center lg:h-full w-10 mx-0 text-gray-500;
+  @apply inline-flex items-center lg:h-full w-10 mx-0 text-my-gray;
 
   &.cat-filter {
     @apply static w-auto;
@@ -62,7 +62,7 @@
    the store doesn't render (wallet, loyalty) keep their built-in icon. */
 @mixin account-menu-icon($d) {
   .s-user-menu-dropdown-item-prefix {
-    @apply block h-[18px] w-[18px] bg-gray-400;
+    @apply block h-[18px] w-[18px] bg-my-gray;
     margin-inline-end: 0.75rem;
     $src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='#{$d}'/%3E%3C/svg%3E";
     -webkit-mask: url($src) center / contain no-repeat;
@@ -122,6 +122,6 @@
   .s-user-menu-dropdown-item-logout
     .s-user-menu-dropdown-item-link
     .s-user-menu-dropdown-item-prefix {
-    background-color: #ff443a;
+    background-color: var(--danger);
   }
 }

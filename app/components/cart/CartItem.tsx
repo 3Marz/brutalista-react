@@ -17,7 +17,7 @@ interface CartItemProps {
  * Theme fork of the engine `CartItem`.
  *
  * Differences from upstream:
- *  - flat row (border-separated) instead of a padded `bg-white` card;
+ *  - flat row (border-separated) instead of a padded `bg-base-50` card;
  *  - the "Total:" label is dropped (the cart-page column heading covers it);
  *  - the delete control is a plain trash icon at the row end, not a red icon
  *    button in the corner.
@@ -137,7 +137,7 @@ function CartItemInfo({ item }: { item: CartItemType }) {
 
   return (
     <div className="space-y-1">
-      <div className="text-gray-900 leading-6 text-lg font-bold">
+      <div className="text-text-color leading-6 text-lg font-bold">
         <Link to={item.url} className="text-base">
           {item.product_name}
         </Link>
@@ -145,7 +145,7 @@ function CartItemInfo({ item }: { item: CartItemType }) {
 
       <div className="flex items-center gap-2 flex-wrap">
         {item.offer && (
-          <span className="text-sm text-gray-500 line-through item-regular-price">
+          <span className="text-sm text-my-gray line-through item-regular-price">
             {format(toNumber(item.product_price), {
               currency: moneyCurrency(item.product_price),
             })}
@@ -153,7 +153,7 @@ function CartItemInfo({ item }: { item: CartItemType }) {
         )}
 
         {item.is_on_sale && (
-          <span className="inline-flex gap-1 leading-4 text-sm text-gray-500 line-through item-original-price">
+          <span className="inline-flex gap-1 leading-4 text-sm text-my-gray line-through item-original-price">
             {format(toNumber(item.original_price), {
               currency: moneyCurrency(item.original_price),
             })}
@@ -161,22 +161,22 @@ function CartItemInfo({ item }: { item: CartItemType }) {
         )}
 
         <span
-          className={`inline-flex gap-1 leading-4 item-price ${item.has_discount ? 'text-red-800' : 'text-sm text-gray-500'}`}
+          className={`inline-flex gap-1 leading-4 item-price ${item.has_discount ? 'text-danger' : 'text-sm text-my-gray'}`}
         >
           {format(toNumber(item.price), { currency: moneyCurrency(item.price) })}
         </span>
       </div>
 
       {item.weight_label && (
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-my-gray">
           {t('pages.products.weight')}: <span>{item.weight_label}</span>
         </p>
       )}
 
       {item.offer && !item.detailed_offers?.length && (
         <span className="old-offers flex items-center gap-1 mx-1.5">
-          <i className="sicon-discount-calculator text-gray-500 offer-icon"></i>
-          <span className="text-sm text-gray-500 offer-name">{item.offer.names}</span>
+          <i className="sicon-discount-calculator text-my-gray offer-icon"></i>
+          <span className="text-sm text-my-gray offer-name">{item.offer.names}</span>
         </span>
       )}
 
@@ -301,7 +301,7 @@ export function CartItem({ item, isFirst = false, onMutated }: CartItemProps) {
 
   return (
     <form ref={formRef} onChange={handleChange} id={`item-${item.id}`}>
-      <section className="cart-item relative border-b border-gray-200 pb-6 mb-6">
+      <section className="cart-item relative border-b border-base-300 pb-6 mb-6">
         <input type="hidden" name="id" value={item.id} />
 
         <div className="md:flex rtl:space-x-reverse md:space-x-12 items-start justify-between mb-4 last:mb-0">
@@ -310,13 +310,13 @@ export function CartItem({ item, isFirst = false, onMutated }: CartItemProps) {
               <Image
                 src={item.product_image}
                 alt={item.product_name}
-                className="flex-none w-24 h-20 object-center object-cover"
+                className="flex-none w-24 h-20 rounded-neo border-2 border-bc bg-base-200 object-center object-cover"
                 aspectRatio="6/5"
                 priority={isFirst}
               />
 
               {isFreeProduct && (
-                <div className="free-ribbon absolute top-[11px] right-[-38px] w-32 bg-red-600 text-white text-xs font-bold text-center py-1 rotate-45 shadow-md">
+                <div className="free-ribbon absolute top-[11px] right-[-38px] w-32 bg-danger text-white text-xs font-bold text-center py-1 rotate-45 shadow-neo">
                   {t('pages.loyalty_program.free_product', 'Free')}
                 </div>
               )}
@@ -336,7 +336,7 @@ export function CartItem({ item, isFirst = false, onMutated }: CartItemProps) {
 
             <button
               type="button"
-              className="cart-item__delete shrink-0 text-gray-400 transition-colors hover:text-red-600"
+              className="cart-item__delete shrink-0 text-my-gray transition-colors hover:text-danger"
               aria-label={t('common.elements.remove', 'Remove from the cart')}
               aria-busy={deleting}
               disabled={deleting}

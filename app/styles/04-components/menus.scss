@@ -1,7 +1,7 @@
 
 // Main Menu
 .main-menu > li > a[href*="offer"]{
-  @apply text-red-800
+  @apply text-danger
 }
 
 @media only screen and (min-width: 1024px) {
@@ -42,7 +42,7 @@
       li a:hover,
       .has-children:hover > a{
         color: var(--color-primary);
-        @apply bg-gray-200/20;
+        @apply bg-base-200;
       }
 
       > a:after{
@@ -64,7 +64,7 @@
     }
 
     .sub-menu {
-      @apply z-20 transition opacity-0 invisible pointer-events-none absolute bg-white -translate-y-3 shadow-default rounded-b border-t border-gray-300/30 max-h-[400px] overflow-y-auto;
+      @apply z-20 transition opacity-0 invisible pointer-events-none absolute bg-base-50 -translate-y-3 shadow-neo rounded-neo border-2 border-bc max-h-[400px] overflow-y-auto;
 
       .sub-menu {
         top: -1px;
@@ -77,7 +77,7 @@
       }
 
       .s-product-card-entry{
-        @apply border border-gray-100;
+        @apply border-2 border-bc;
       }
 
       .btn {

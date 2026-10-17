@@ -2,23 +2,30 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useRouterState } from '@tanstack/react-router';
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
+import { useDocumentClass } from '@salla.sa/twilight-theme-engine/hooks';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { useUser } from '@salla.sa/twilight-theme-engine/hooks/useUser';
-import { Footer } from '@salla.sa/twilight-theme-engine/layout';
+import { Footer } from './Footer';
 import { Header } from './Header';
 import { ImportantLinksSheet } from './ImportantLinksSheet';
 import { MobileAccountSheet } from './MobileAccountSheet';
 import { MobileBottomBar } from './MobileBottomBar';
 import { MobilePageTitleBar } from './MobilePageTitleBar';
 import { UserMenuSheet } from './UserMenuSheet';
+import {
+  THEME_TOKENS_STYLE_ID,
+  themeTokensCss,
+  type BrutalTokenSettings,
+} from './ThemeTokens';
 
 /**
  * Theme layout — passed to `<TwilightProvider layout={ThemeLayout}>` in
  * `app/routes/__root.tsx` to swap in the rebuilt {@link Header} and the same
  * global modals (offer / login / scopes) as the engine's `MasterLayout`.
  *
- * `Footer` is the engine's own shared component (`@salla.sa/twilight-theme-engine/layout`)
- * now, not a theme-owned fork -- `Header` stays theme-owned since it's deeply
+ * `Footer` is a theme fork of the engine component (see `./Footer.tsx` and
+ * FORKS.md) that adds the Twig theme's `sub_logo` / `show_store_name_footer` /
+ * `lang_button_bottom` settings; `Header` stays theme-owned since it's deeply
  * specific to this theme's nav/search/account UI.
  */
 const SallaLoginModal = lazy(() =>
@@ -116,6 +123,24 @@ function GlobalModals() {
 
 export function ThemeLayout({ children }: ThemeLayoutProps) {
   const { theme } = useTwilight();
+  const settings = theme?.settings as Record<string, unknown> | undefined;
+
+  // Body classes the engine does not add itself. `master.twig` put both on
+  // `<body>`: the header light/dark state and the global "hide add to cart" flag.
+  const extraBodyClasses: string[] = [
+    settings?.header_is_dark ? 'header-is-dark' : 'header-is-light',
+  ];
+  if (settings?.hide_add_to_cart_button) extraBodyClasses.push('hide-add-to-cart');
+  if (settings?.cool_cart_page) extraBodyClasses.push('cool-cart-page');
+  useDocumentClass({ body: { class: extraBodyClasses } });
+
+  // Re-sync the server-rendered token `<style>` when settings change live
+  // (theme editor preview / dev settings panel).
+  const tokensCss = themeTokensCss(settings as BrutalTokenSettings | undefined);
+  useEffect(() => {
+    document.getElementById(THEME_TOKENS_STYLE_ID)?.replaceChildren(tokensCss);
+  }, [tokensCss]);
+
   // Owned here so the header's nav drawer and the mobile bottom bar's Categories
   // tab drive the same slide-in panel.
   const [navOpen, setNavOpen] = useState(false);
