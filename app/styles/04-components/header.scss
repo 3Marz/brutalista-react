@@ -127,7 +127,7 @@
 }
 
 .header-action {
-  @apply inline-grid place-items-center w-10 h-10 rounded-neo border-2 border-bc bg-base-50 text-text-color transition-colors hover:bg-base-200 hover:text-primary;
+  @apply inline-grid place-items-center w-10 h-10 text-text-color transition hover:translate-y-[-2px];
 
   /* Size the action-button icons only — not the icons inside the user-menu
      dropdown items, which keep their own (smaller) size. */
@@ -192,6 +192,9 @@
 /* Like the other header icons, without Twilight's outline; apps reuse this class for their own buttons. */
 .site-header__actions .s-user-menu-login-btn {
   @apply border-none text-text-color transition-colors hover:text-primary;
+  svg {
+    @apply fill-text-color;
+  }
 }
 
 /* Desktop: with `relativeDropdown` the panel is positioned against the
@@ -707,7 +710,7 @@
 }
 
 .site-header__topnav-action {
-  @apply inline-flex items-center gap-1.5 rounded-neo border-2 border-bc px-2 py-1 text-text-color transition-colors hover:bg-base-200 hover:text-primary;
+  @apply inline-flex items-center gap-1.5 rounded-neo px-2 py-1 text-text-color transition-colors hover:bg-base-200 hover:text-primary;
 }
 
 .site-header__topnav-action + .site-header__topnav-action {
@@ -759,18 +762,18 @@ body.topnav-is-dark .site-header__topnav {
 }
 
 /* The lite layout has no top bar, so the setting darkens its only bar. */
-body.topnav-is-dark .site-header--lite .site-header__bar {
-  @apply bg-bc;
-
-  &.is-scrolled {
-    @apply bg-bc border-bc;
-  }
-
-  .header-action,
-  .s-cart-summary-wrapper {
-    @apply border-base-100 bg-transparent text-base-100 hover:bg-white/10 hover:text-base-100 hover:opacity-80;
-  }
-}
+// body.topnav-is-dark .site-header--lite .site-header__bar {
+//   @apply bg-bc;
+//
+//   &.is-scrolled {
+//     @apply bg-bc border-bc;
+//   }
+//
+//   .header-action,
+//   .s-cart-summary-wrapper {
+//     @apply bg-transparent text-base-100;
+//   }
+// }
 
 /* `header_is_dark` setting (ThemeLayout adds `header-is-dark` to <body>) — the
    whole header takes the primary colour with the light base text, as in the
@@ -781,17 +784,26 @@ body.header-is-dark {
     @apply bg-primary border-bc;
   }
 
-  .site-header__topnav {
-    @apply bg-primary text-base-100 border-bc;
-  }
+  // .site-header__topnav {
+  //   @apply bg-primary text-base-100 border-bc;
+  // }
 
   .header-action,
-  .site-header__topnav-menu a,
-  .site-header__topnav-action,
-  .site-header__topnav-icon,
-  .site-header__topnav-caret,
+  // .site-header__topnav-menu a,
+  // .site-header__topnav-action,
+  // .site-header__topnav-icon,
+  // .site-header__topnav-caret,
+  .s-cart-summary-wrapper,
   .site-header__actions .s-user-menu-login-btn {
     @apply text-base-100;
+  }
+
+  .site-header__actions .s-user-menu-login-btn > svg{
+    @apply fill-base-100;
+  }
+
+  .s-menu-root-level > a {
+    color: var(--base-100) !important;
   }
 
   /* bordered icon squares on the primary bar */
@@ -802,12 +814,12 @@ body.header-is-dark {
 
   .header-action:hover,
   .site-header__actions .s-user-menu-login-btn:hover {
-    @apply bg-white/10 text-base-100;
+    @apply text-base-100;
   }
 
-  .site-header__topnav-action:hover {
-    @apply bg-white/10;
-  }
+  // .site-header__topnav-action:hover {
+  //   @apply bg-white/10;
+  // }
 }
 
 /* --- main row (logo · menu · actions) --------------------------------- */

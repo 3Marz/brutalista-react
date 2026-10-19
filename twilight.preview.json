@@ -1,17 +1,30 @@
 {
   "enabled": true,
   "settings": {
+    "bg_color": "#f2efdd",
+    "border_color": "#3d081b",
+    "shadow_color": "#3d081b",
+    "text_color": "#000000",
+    "border-radius": true,
+    "x_shadow_offset": 0,
+    "y_shadow_offset": 3,
+    "cool_cart_page": true,
+    "hide_add_to_cart_button": false,
     "header_layout": "lite",
     "enable_more_menu": true,
-    "header_show_store_info": true,
+    "header_show_store_info": false,
     "header_store_info_home_only": true,
     "header_is_sticky": true,
-    "topnav_is_dark": true,
+    "topnav_is_dark": false,
+    "header_is_dark": true,
     "important_links": true,
-    "squar_photo_bg_image_size": "contain",
+    "squar_photo_bg_image_size": "cover",
     "vertical_fixed_products": false,
-    "is_more_button_enabled": false,
+    "is_more_button_enabled": true,
     "footer_is_dark": true,
+    "sub_logo": "/__twilight/preview/image/eab64d95c3724000.png",
+    "show_store_name_footer": false,
+    "lang_button_bottom": true,
     "product_show_breadcrumbs": true,
     "product_index_show_breadcrumbs": true,
     "enable_add_product_toast": true,
@@ -21,5 +34,1089 @@
     "slider_background_size": "contain",
     "imageZoom": false
   },
-  "layout": null
+  "layout": [
+    {
+      "id": "b-0ea6eec8c75b",
+      "path": "enhanced-slider",
+      "fields": {
+        "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
+        "slides": [
+          {
+            "ar": {
+              "title": "أفضل أنواع الحلويات والمفرحات !",
+              "ns_alrabt": "تسوق كل الحلويات",
+              "description": "تسوق في مجموعة كبيرة ومتنوعة من الحلويات  الحامضة والحلوة"
+            },
+            "en": {
+              "title": "The best kinds of sweets and delights!",
+              "ns_alrabt": "Shop all candy",
+              "description": "Shop a wide variety of sweet and sour candies and endless delights."
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1350682222",
+            "image": "https://cdn.salla.sa/form-builder/mBKDV32CdXZL46shd9H7Vyolo1B8bHpwuBXIzLeI.png",
+            "title": "أفضل أنواع الحلويات والمفرحات !",
+            "ns_alrabt": "تسوق كل الحلويات",
+            "description": "تسوق في مجموعة كبيرة ومتنوعة من الحلويات  الحامضة والحلوة"
+          },
+          {
+            "ar": {
+              "title": "كل ماتتخيله موجود !",
+              "ns_alrabt": "",
+              "description": "مجموعة لاتنتهي من اللذة والحلاوة"
+            },
+            "en": {
+              "title": "Everything you can imagine is here!",
+              "ns_alrabt": "",
+              "description": "An endless collection of deliciousness and sweetness"
+            },
+            "url": "#",
+            "image": "https://cdn.salla.sa/form-builder/0H2nTehtRHCvQZy0afXALBxeul7y1suJhBKj6vlM.png",
+            "title": "كل ماتتخيله موجود !",
+            "ns_alrabt": "",
+            "description": "مجموعة لاتنتهي من اللذة والحلاوة"
+          }
+        ],
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-dbcedcab66cd",
+      "path": "marquee",
+      "fields": {
+        "ar": {
+          "moving_text": "تخفيضات تصل إلى 85% على جميع الحلويات"
+        },
+        "en": {
+          "moving_text": "Discounts up to 85% on all sweets"
+        },
+        "key": "478a5c1b-8ab0-4869-b3c1-d5d9d5e5a90c",
+        "bg_color": "#7a0000",
+        "text_color": "#ffffff",
+        "top_margin": false,
+        "border_color": "#510000",
+        "default_colors": true,
+        "animation_speed": 4,
+        "moving_text": "تخفيضات تصل إلى 85% على جميع الحلويات",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-722a3eddb012",
+      "path": "text_and_button",
+      "fields": {
+        "ar": {
+          "text": "منورين في بروتال, استمتع بعروض وخصومات في المتجر الي يوفر لك كل احتياجاتك من انواع متنوعة من الحلويات الى محاصيل القهوة الفاخرة وأيضا أهم أدوات القهوة.",
+          "title": "حياكم الله في بروتال",
+          "button_title": ""
+        },
+        "en": {
+          "text": "Welcome to Brutal. Enjoy the offers and discounts at the store that provides all your needs, from a variety of sweets to premium coffee crops and the most important coffee tools.",
+          "title": "Welcome to Brutal",
+          "button_title": ""
+        },
+        "key": "a899e36e-fa56-4cef-8eb8-3a011d5679ae",
+        "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/طاحونة-قهوة-إلكترونية/p461660495",
+        "doted_bg": true,
+        "text": "منورين في بروتال, استمتع بعروض وخصومات في المتجر الي يوفر لك كل احتياجاتك من انواع متنوعة من الحلويات الى محاصيل القهوة الفاخرة وأيضا أهم أدوات القهوة.",
+        "title": "حياكم الله في بروتال",
+        "button_title": "",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-220e64afcd5f",
+      "path": "featured-products",
+      "fields": {
+        "items": [
+          {
+            "products": [
+              {
+                "id": 461660495,
+                "name": "طاحونة قهوة إلكترونية",
+                "price": 120
+              },
+              {
+                "id": 948996917,
+                "name": "طاحونة قهوة يدوية",
+                "price": 55
+              },
+              {
+                "id": 444889663,
+                "name": "فلتر قهوة V60 - مية قطعة",
+                "price": 15
+              },
+              {
+                "id": 949445131,
+                "name": "قهوة أوغاندية - 250 جم",
+                "price": 50
+              },
+              {
+                "id": 170089730,
+                "name": "قهوة كولومبيا - 225 جم",
+                "price": 65
+              },
+              {
+                "id": 401237802,
+                "name": "قهوة إثيوبية - 225 جم",
+                "price": 59
+              },
+              {
+                "id": 767829886,
+                "name": "3 ألواح سنكرس كبيرة",
+                "price": 15
+              },
+              {
+                "id": 660873317,
+                "name": "فستق مغطى بالشوكولاتة - 250 جم",
+                "price": 15
+              }
+            ],
+            "label": "أحدث المنتجات",
+            "name": "أحدث المنتجات"
+          },
+          {
+            "products": {
+              "0": {
+                "id": 2110482294,
+                "name": "قطع الليمون الحامضة - 1 كجم",
+                "price": 30
+              },
+              "1": {
+                "id": 25128624,
+                "name": "حلوة جولي - 250 جم",
+                "price": 20
+              },
+              "2": {
+                "id": 732828039,
+                "name": "حلوة القلب الحامضة - 150 جم",
+                "price": 10
+              },
+              "3": {
+                "id": 2071192214,
+                "name": "الدبب الحامصة - 250 جم",
+                "price": 10
+              },
+              "4": {
+                "id": 721472323,
+                "name": "حلاوة بقر",
+                "price": 29
+              },
+              "5": {
+                "id": 767829886,
+                "name": "3 ألواح سنكرس كبيرة",
+                "price": 15
+              },
+              "6": {
+                "id": 401237802,
+                "name": "قهوة إثيوبية - 225 جم",
+                "price": 59
+              },
+              "7": {
+                "id": 949445131,
+                "name": "قهوة أوغاندية - 250 جم",
+                "price": 50
+              }
+            },
+            "label": "الاكثر مبيعا",
+            "name": "الأكثر بيعا",
+            "type": "most_sales"
+          }
+        ],
+        "is_slider": false,
+        "position": null,
+        "is_repeated": false,
+        "view_style": "products_without_special_product",
+        "key": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-556b231a89f5",
+      "path": "categories",
+      "fields": {
+        "ar": {
+          "title": "تسوق حسب الأقسام"
+        },
+        "en": {
+          "title": ""
+        },
+        "key": "4db147de-aef1-4d88-b601-1d552cafc841",
+        "categories": [
+          {
+            "name": "أدوات القهوة",
+            "id": 1806860057,
+            "sub_categories": [
+              {
+                "name": "أدوات يدوية",
+                "id": 1549600988,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-يدوية/c1549600988",
+                "icon": "sicon-store",
+                "image": null
+              },
+              {
+                "name": "أدوات كهربائية",
+                "id": 182992422,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-كهربائية/c182992422",
+                "icon": "sicon-store",
+                "image": null
+              }
+            ],
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-القهوة/c1806860057",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/Ncyisd98GmMn6eyeBB0whznJA8XDxv9I97s4au0C.png"
+          },
+          {
+            "name": "القهوة",
+            "id": 270722448,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/القهوة/c270722448",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/hDigSy1eil6HWdWU0kV50PuIMDnb6ZP5TyYvuW8G.png"
+          },
+          {
+            "name": "الشوكولاتة",
+            "id": 1912170106,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الشوكولاتة/c1912170106",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/6SzapL3NUPqZ8SDo9zTHOH1Us4dyFwMLPFYw0QDv.png"
+          },
+          {
+            "name": "المغلفة",
+            "id": 1361920373,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/المغلفة/c1361920373",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/pbSZpv28sIOinzlCNhS6p1mIX8xnAxhMDeCCFwel.png"
+          },
+          {
+            "name": "الحامضة",
+            "id": 1987655325,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الحامضة/c1987655325",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/4BICJMnUVvwnXshU6D6KW7J9soQWGehcKo8FyIX1.png"
+          },
+          {
+            "name": "أدوات",
+            "id": 541520669,
+            "sub_categories": [
+              {
+                "name": "أدوات الحلوة",
+                "id": 1210262632,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-الحلوة/c1210262632",
+                "icon": "sicon-store",
+                "image": null
+              },
+              {
+                "name": "أدوات القهوة",
+                "id": 1806860057,
+                "sub_categories": [
+                  {
+                    "name": "أدوات يدوية",
+                    "id": 1549600988,
+                    "sub_categories": null,
+                    "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-يدوية/c1549600988",
+                    "icon": "sicon-store",
+                    "image": null
+                  },
+                  {
+                    "name": "أدوات كهربائية",
+                    "id": 182992422,
+                    "sub_categories": null,
+                    "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-كهربائية/c182992422",
+                    "icon": "sicon-store",
+                    "image": null
+                  }
+                ],
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-القهوة/c1806860057",
+                "icon": "sicon-store",
+                "image": "https://cdn.salla.sa/PdgEYq/Ncyisd98GmMn6eyeBB0whznJA8XDxv9I97s4au0C.png"
+              }
+            ],
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات/c541520669",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/E2sCZgeFUVTwyyqM8ycSwjZmPLa5tSKpelDyuzNT.png"
+          }
+        ],
+        "title": "تسوق حسب الأقسام",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-8401e23bcacf",
+      "path": "photo-and-text",
+      "fields": {
+        "ar": {
+          "sub_text": "لاتروح بعيد. نحن نقدم مجموعة مختارة من حبوب القهوة المستدامة، التي تم زراعتها بعناية في أفضل المزارع حول العالم. تتميز هذه المحاصيل بعمق نكهتها وتوازنها المثالي، ما يجعلها الخيار المثالي لعشاق القهوة الذين يسعون لتجربة فريدة ومميزة في كل فنجان.",
+          "link_title": "تسوق المحاصيل !",
+          "main_title": "تبحث عن محاصيل قهوة فخمة ؟"
+        },
+        "en": {
+          "sub_text": "Look no further. We offer a selection of sustainable coffee beans, carefully grown in the finest farms around the world. These crops are characterized by their deep flavor and perfect balance, making them the ideal choice for coffee lovers seeking a unique and distinctive experience in every cup.",
+          "link_title": "Shop for crops",
+          "main_title": "Looking for premium coffee beans?"
+        },
+        "key": "803d7adf-315e-471b-8d43-c7cb22d6c867",
+        "image": "https://cdn.salla.sa/form-builder/NtfXYQQdZ2rxUOIGkJdWi9RY6pzRhL8XPtA9yzt0.png",
+        "link_url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c270722448",
+        "sub_text": "لاتروح بعيد. نحن نقدم مجموعة مختارة من حبوب القهوة المستدامة، التي تم زراعتها بعناية في أفضل المزارع حول العالم. تتميز هذه المحاصيل بعمق نكهتها وتوازنها المثالي، ما يجعلها الخيار المثالي لعشاق القهوة الذين يسعون لتجربة فريدة ومميزة في كل فنجان.",
+        "link_title": "تسوق المحاصيل !",
+        "main_title": "تبحث عن محاصيل قهوة فخمة ؟",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-6c11183837bf",
+      "path": "offers-products",
+      "fields": {
+        "key": "d8a33b89-3f21-4d96-964f-cbc2dd9dec9f",
+        "offers": [
+          {
+            "ar": {
+              "title": "عرض الاسبوع"
+            },
+            "en": {
+              "title": "Offer of the week"
+            },
+            "product": [
+              {
+                "id": 380335631,
+                "name": "شوكولاتة بالبستاشيو",
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/شوكولاتة-بالبستاشيو/p380335631",
+                "image": "https://cdn.salla.sa/PdgEYq/e308ca0f-2608-4f42-9916-9d4b8867fe32-498.5x500-Ae1jeDzhZKWQLY8t0DV1E3BzyRgtLX8AhCu9iE32.png"
+              }
+            ],
+            "title": "عرض الاسبوع"
+          }
+        ],
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-d1a6a66eb438",
+      "path": "square-photos",
+      "fields": {
+        "ar": {
+          "title": ""
+        },
+        "en": {
+          "title": ""
+        },
+        "key": "081b0f6c-932c-4443-9407-6cb3e8aab8b1",
+        "links": [
+          {
+            "ar": {
+              "name": "محاصيل القهوة"
+            },
+            "en": {
+              "name": "Coffee crops"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c270722448",
+            "image": "https://cdn.salla.sa/form-builder/2e7Ukv3n1vMZlbo7suhUtLIG26oHKbIk1efPHXW3.png",
+            "name": "محاصيل القهوة"
+          },
+          {
+            "ar": {
+              "name": "أدوات القهوة"
+            },
+            "en": {
+              "name": "Coffee tools"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1806860057",
+            "image": "https://cdn.salla.sa/form-builder/TCAHDfpjzQV6pMLmkGzDQalv5gcrde3fe1cDVnQa.png",
+            "name": "أدوات القهوة"
+          },
+          {
+            "ar": {
+              "name": "كل الحلويات"
+            },
+            "en": {
+              "name": "All candies"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1350682222",
+            "image": "https://cdn.salla.sa/form-builder/Qr8QXFtaLaVuAA6gaZeZMMLL2bMVYkH0HFkx5m0z.png",
+            "name": "كل الحلويات"
+          }
+        ],
+        "title": "",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-017716ba2c7a",
+      "path": "separator",
+      "fields": {
+        "key": "b134ede8-7102-4556-bbe1-e870f0139220",
+        "border_color": "#000000",
+        "border_style": "solid",
+        "border_width": 2,
+        "theme_colors": true,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-f2d3b5cb26cd",
+      "path": "store-features",
+      "fields": {
+        "features": [
+          {
+            "icon": "sicon-store2",
+            "title": "تنوع المنتجات",
+            "description": "يقدم متجر الحلويات مجموعة واسعة من الحلويات التقليدية والحديثة."
+          },
+          {
+            "icon": "sicon-art-palette",
+            "title": "المكونات الطبيعية",
+            "description": "نلتزم باستخدام مكونات طبيعية عالية الجودة في جميع منتجاتنا، مما يضمن أن تكون الحلويات صحية ولذيذة."
+          },
+          {
+            "icon": "sicon-chat-person-alt",
+            "title": "خدمة الزبائن الممتازة",
+            "description": "نحن نؤمن بأهمية تقديم تجربة تسوق مميزة، لذا نسعى جاهدين لتقديم خدمة زبائن ممتازة."
+          }
+        ],
+        "position": 1,
+        "key": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-86e7a36ac3e4",
+      "path": "stats",
+      "fields": {
+        "key": "575b1985-c2e0-422b-b4ba-7f76fbf22f58",
+        "stats": [
+          {
+            "ar": {
+              "title": "عميل سعيد"
+            },
+            "en": {
+              "title": "Happy customers"
+            },
+            "icon": "sicon-face-id",
+            "number": 2000,
+            "more_then": true,
+            "title": "عميل سعيد"
+          },
+          {
+            "ar": {
+              "title": "طلب منفذ"
+            },
+            "en": {
+              "title": "Orders"
+            },
+            "icon": "sicon-cart2",
+            "number": 25000,
+            "more_then": true,
+            "title": "طلب منفذ"
+          },
+          {
+            "ar": {
+              "title": "منتج رهيب"
+            },
+            "en": {
+              "title": "Product"
+            },
+            "icon": "sicon-packed-box",
+            "number": 100,
+            "more_then": true,
+            "title": "منتج رهيب"
+          }
+        ],
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-c8899d42c972",
+      "path": "separator",
+      "fields": {
+        "key": "b134ede8-7102-4556-bbe1-e870f0139220",
+        "border_color": "#000000",
+        "border_style": "solid",
+        "border_width": 2,
+        "theme_colors": true,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-c7f6326f6592",
+      "path": "products-slider",
+      "fields": {
+        "products": {
+          "source_value": [
+            2110482294,
+            25128624,
+            732828039,
+            2071192214,
+            721472323,
+            380335631,
+            660873317,
+            767829886
+          ],
+          "source": "selected"
+        },
+        "title": "",
+        "limit": 8,
+        "display_all_url": "",
+        "position": 1,
+        "key": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-9cb432d5e4f9",
+      "path": "photos-slider",
+      "fields": {
+        "items": [
+          {
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/p380335631",
+            "image": "https://cdn.salla.sa/form-builder/dd3A742k8rIZGYiYZdETcto4uN7yxFHM2HLCykYE.png"
+          },
+          {
+            "url": "",
+            "image": "https://cdn.salla.sa/form-builder/xvIImj2MGfzRHXcYk6dK6PVMBfbkIGG05NcmUxIm.png"
+          }
+        ],
+        "is_repeated": false,
+        "position": 1,
+        "key": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-de50664a9b17",
+      "path": "separator",
+      "fields": {
+        "key": "b134ede8-7102-4556-bbe1-e870f0139220",
+        "border_color": "#000000",
+        "border_style": "dashed",
+        "border_width": 3,
+        "theme_colors": true,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-4d866b81c2a2",
+      "path": "brands",
+      "fields": {
+        "ar": {
+          "title": "تصفح من خلال العلامات التجارية"
+        },
+        "en": {
+          "title": "Browse All Brands"
+        },
+        "key": "25f6cf26-a53f-4954-9b32-739b311b32c7",
+        "brands": [
+          {
+            "id": "إم-أند-إمز/brand-348116630",
+            "name": "إم أند إمز",
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/إم-أند-إمز/brand-348116630",
+            "logo": "https://cdn.salla.sa/PdgEYq/uUU6tdIfZYNqpLQGLvM2hJvdxu9fuWhGyaTtRKfY.png",
+            "banner": null,
+            "description": ""
+          },
+          {
+            "id": "كيت-كات/brand-986888085",
+            "name": "كيت كات",
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/كيت-كات/brand-986888085",
+            "logo": "https://cdn.salla.sa/PdgEYq/thTAv126Pf10LJuA4xiUt7qZEmzC21ef9HAx5MK0.png",
+            "banner": null,
+            "description": ""
+          },
+          {
+            "id": "مارس/brand-1296198282",
+            "name": "مارس",
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/مارس/brand-1296198282",
+            "logo": "https://cdn.salla.sa/PdgEYq/aaqdFGfYhcTkrgzKALagdYouW197LGEZtj3UVh0W.png",
+            "banner": null,
+            "description": ""
+          },
+          {
+            "id": "سنكر/brand-1471352207",
+            "name": "سنكر",
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/سنكر/brand-1471352207",
+            "logo": "https://cdn.salla.sa/PdgEYq/pAJZf50DqomiBDf2tzp1ARPek9W259Szyfz4dvy6.png",
+            "banner": null,
+            "description": ""
+          },
+          {
+            "id": "جلكسي/brand-1936018313",
+            "name": "جلكسي",
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/جلكسي/brand-1936018313",
+            "logo": "https://cdn.salla.sa/PdgEYq/Tz8MWOa68keqNn7GJg1hNLkbBIwdE6XLFwzWKSoP.png",
+            "banner": null,
+            "description": ""
+          }
+        ],
+        "title": "تصفح من خلال العلامات التجارية",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-a5b469543190",
+      "path": "separator",
+      "fields": {
+        "key": "b134ede8-7102-4556-bbe1-e870f0139220",
+        "border_color": "#000000",
+        "border_style": "dashed",
+        "border_width": 3,
+        "theme_colors": true,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-5878c455731e",
+      "path": "fixed-products",
+      "fields": {
+        "products": {
+          "source": "selected",
+          "source_value": [
+            461660495,
+            948996917,
+            444889663,
+            949445131,
+            170089730,
+            401237802
+          ]
+        },
+        "title": "قسم القهوة",
+        "limit": 6,
+        "isVertical": true,
+        "display_all_url": "",
+        "position": 1,
+        "key": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-6bc479cb42a5",
+      "path": "square-banner-brutal",
+      "fields": {
+        "key": "6eae83e4-10f8-4c9d-b60f-4606d801b14e",
+        "banners": [
+          {
+            "ar": {
+              "title": "تصفَّح أدوات القهوة"
+            },
+            "en": {
+              "title": "Browse coffee tools"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1806860057",
+            "image": "https://cdn.salla.sa/form-builder/4V777w8CahMKLPjByjmpVlgdT7xF7MthcRn3wetN.png",
+            "title": "تصفَّح أدوات القهوة"
+          },
+          {
+            "ar": {
+              "title": "تصفَّح الحلويات الحامضة"
+            },
+            "en": {
+              "title": "Browse sour sweets"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1987655325",
+            "image": "https://cdn.salla.sa/form-builder/kBUycJglQraC0Waqvr4242pSROSNT8PP9ukx5Mvr.jpg",
+            "title": "تصفَّح الحلويات الحامضة"
+          },
+          {
+            "ar": {
+              "title": "تصفَّح الشوكولاتة"
+            },
+            "en": {
+              "title": "Browse chocolates"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1912170106",
+            "image": "https://cdn.salla.sa/form-builder/O1l4RQLjWiK3CSFQrZRUEXijQKXbIi7QkyRr4mTF.jpg",
+            "title": "تصفَّح الشوكولاتة"
+          },
+          {
+            "ar": {
+              "title": "تصفَّح التخفيضات"
+            },
+            "en": {
+              "title": "Browse sales"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/offers",
+            "image": "https://cdn.salla.sa/form-builder/uhwingGnUMxKIey0vUDgjit5mNfBQsk0Tt5WEiTW.jpg",
+            "title": "تصفَّح التخفيضات"
+          },
+          {
+            "ar": {
+              "title": "تصفَّح محاصيل القهوة"
+            },
+            "en": {
+              "title": "Browse coffee crops"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c270722448",
+            "image": "https://cdn.salla.sa/form-builder/bNIJzCNjaHExmH5ZEVUmXrVFHp91c7m0tndLsZEo.png",
+            "title": "تصفَّح محاصيل القهوة"
+          },
+          {
+            "ar": {
+              "title": "تصفَّح الحلويات المغلفة"
+            },
+            "en": {
+              "title": "Browse wrapped sweets"
+            },
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/c1361920373",
+            "image": "https://cdn.salla.sa/form-builder/9vZGXha8DwClWYqoBKbIa9fiKAWhoO1uJgLR1qUQ.jpg",
+            "title": "تصفَّح الحلويات المغلفة"
+          }
+        ],
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-c59dac62b12f",
+      "path": "marquee",
+      "fields": {
+        "ar": {
+          "moving_text": "توصيل مجاني للطلبات فوق الـ100 ريال"
+        },
+        "en": {
+          "moving_text": "Free delivery for orders over 100 riyals"
+        },
+        "key": "478a5c1b-8ab0-4869-b3c1-d5d9d5e5a90c",
+        "bg_color": "#bf4040",
+        "text_color": "#ffffff",
+        "top_margin": true,
+        "border_color": "#000000",
+        "default_colors": false,
+        "animation_speed": 3,
+        "moving_text": "توصيل مجاني للطلبات فوق الـ100 ريال",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-feb9a378a7be",
+      "path": "main-links",
+      "fields": {
+        "ar": {
+          "title": "الأقسام"
+        },
+        "en": {
+          "title": "Categories"
+        },
+        "key": "2b1b130b-5b37-422a-9683-e0fd367460c0",
+        "show_cats": true,
+        "categories": [
+          {
+            "name": "أدوات القهوة",
+            "id": 1806860057,
+            "sub_categories": [
+              {
+                "name": "أدوات يدوية",
+                "id": 1549600988,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-يدوية/c1549600988",
+                "icon": "sicon-store",
+                "image": null
+              },
+              {
+                "name": "أدوات كهربائية",
+                "id": 182992422,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-كهربائية/c182992422",
+                "icon": "sicon-store",
+                "image": null
+              }
+            ],
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-القهوة/c1806860057",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/Ncyisd98GmMn6eyeBB0whznJA8XDxv9I97s4au0C.png"
+          },
+          {
+            "name": "أدوات",
+            "id": 541520669,
+            "sub_categories": [
+              {
+                "name": "أدوات الحلوة",
+                "id": 1210262632,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-الحلوة/c1210262632",
+                "icon": "sicon-store",
+                "image": null
+              },
+              {
+                "name": "أدوات القهوة",
+                "id": 1806860057,
+                "sub_categories": [
+                  {
+                    "name": "أدوات يدوية",
+                    "id": 1549600988,
+                    "sub_categories": null,
+                    "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-يدوية/c1549600988",
+                    "icon": "sicon-store",
+                    "image": null
+                  },
+                  {
+                    "name": "أدوات كهربائية",
+                    "id": 182992422,
+                    "sub_categories": null,
+                    "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-كهربائية/c182992422",
+                    "icon": "sicon-store",
+                    "image": null
+                  }
+                ],
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات-القهوة/c1806860057",
+                "icon": "sicon-store",
+                "image": "https://cdn.salla.sa/PdgEYq/Ncyisd98GmMn6eyeBB0whznJA8XDxv9I97s4au0C.png"
+              }
+            ],
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/أدوات/c541520669",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/E2sCZgeFUVTwyyqM8ycSwjZmPLa5tSKpelDyuzNT.png"
+          },
+          {
+            "name": "القهوة",
+            "id": 270722448,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/القهوة/c270722448",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/hDigSy1eil6HWdWU0kV50PuIMDnb6ZP5TyYvuW8G.png"
+          },
+          {
+            "name": "الشوكولاتة",
+            "id": 1912170106,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الشوكولاتة/c1912170106",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/6SzapL3NUPqZ8SDo9zTHOH1Us4dyFwMLPFYw0QDv.png"
+          },
+          {
+            "name": "المغلفة",
+            "id": 1361920373,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/المغلفة/c1361920373",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/pbSZpv28sIOinzlCNhS6p1mIX8xnAxhMDeCCFwel.png"
+          },
+          {
+            "name": "الحامضة",
+            "id": 1987655325,
+            "sub_categories": null,
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الحامضة/c1987655325",
+            "icon": "sicon-store",
+            "image": "https://cdn.salla.sa/PdgEYq/4BICJMnUVvwnXshU6D6KW7J9soQWGehcKo8FyIX1.png"
+          },
+          {
+            "name": "الحلويات",
+            "id": 1350682222,
+            "sub_categories": [
+              {
+                "name": "الحامضة",
+                "id": 1987655325,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الحامضة/c1987655325",
+                "icon": "sicon-store",
+                "image": "https://cdn.salla.sa/PdgEYq/4BICJMnUVvwnXshU6D6KW7J9soQWGehcKo8FyIX1.png"
+              },
+              {
+                "name": "المغلفة",
+                "id": 1361920373,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/المغلفة/c1361920373",
+                "icon": "sicon-store",
+                "image": "https://cdn.salla.sa/PdgEYq/pbSZpv28sIOinzlCNhS6p1mIX8xnAxhMDeCCFwel.png"
+              },
+              {
+                "name": "الشوكولاتة",
+                "id": 1912170106,
+                "sub_categories": null,
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الشوكولاتة/c1912170106",
+                "icon": "sicon-store",
+                "image": "https://cdn.salla.sa/PdgEYq/6SzapL3NUPqZ8SDo9zTHOH1Us4dyFwMLPFYw0QDv.png"
+              }
+            ],
+            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/الحلويات/c1350682222",
+            "icon": "sicon-art-palette",
+            "image": "https://cdn.salla.sa/PdgEYq/cJrtpaEbSilcKVMxRM8REPsN6H9EQBoekYFqD7ib.jpg"
+          }
+        ],
+        "show_controls": true,
+        "merge_with_top_component": false,
+        "title": "الأقسام",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-3db4abe6669c",
+      "path": "brutal_testimonials",
+      "fields": {
+        "ar": {
+          "title": "آراء العملاء"
+        },
+        "en": {
+          "title": ""
+        },
+        "key": "629fff08-7693-483d-a2df-bf90f991efcc",
+        "limit": 5,
+        "order_by": "highest",
+        "hide_names": false,
+        "display_all_url": true,
+        "title": "آراء العملاء",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "b-b1698736c3fc",
+      "path": "questions",
+      "fields": {
+        "ar": {
+          "title": "الاسئلة الشائعة"
+        },
+        "en": {
+          "title": ""
+        },
+        "key": "d6a9fe9f-9fdf-46ac-8663-ceaca83e40af",
+        "questions": [
+          {
+            "ar": {
+              "answer": "نقدم مجموعة متنوعة من الحلويات تشمل الكعك، البسكويت، الحلويات العربية، الشوكولاتة، والحلويات الخالية من الغلوتين.",
+              "question": "ما هي أنواع الحلويات التي تقدمونها؟"
+            },
+            "en": {
+              "answer": "We offer a variety of sweets including cakes, cookies, Arabic sweets, chocolates, and gluten-free sweets.",
+              "question": "What types of sweets do you serve?"
+            },
+            "answer": "نقدم مجموعة متنوعة من الحلويات تشمل الكعك، البسكويت، الحلويات العربية، الشوكولاتة، والحلويات الخالية من الغلوتين.",
+            "question": "ما هي أنواع الحلويات التي تقدمونها؟"
+          },
+          {
+            "ar": {
+              "answer": "نعم، نحن نستخدم مكونات طبيعية عالية الجودة في جميع منتجاتنا. نحرص على تجنب المواد الحافظة والملونات الصناعية لضمان أن تكون الحلويات صحية ولذيذة.",
+              "question": "هل تستخدمون مكونات طبيعية؟"
+            },
+            "en": {
+              "answer": "Yes, we use high-quality, natural ingredients in all our products. We are careful to avoid artificial preservatives and colors to ensure our sweets are healthy and delicious.",
+              "question": "Do you use natural ingredients?"
+            },
+            "answer": "نعم، نحن نستخدم مكونات طبيعية عالية الجودة في جميع منتجاتنا. نحرص على تجنب المواد الحافظة والملونات الصناعية لضمان أن تكون الحلويات صحية ولذيذة.",
+            "question": "هل تستخدمون مكونات طبيعية؟"
+          },
+          {
+            "ar": {
+              "answer": "بالطبع! نحن نقدم خدمة تخصيص الطلبات للمناسبات الخاصة مثل حفلات الزفاف، أعياد الميلاد، والمناسبات الأخرى. يرجى الاتصال بنا مسبقًا لترتيب التفاصيل.",
+              "question": "هل يمكنني تخصيص الطلبات الخاصة؟"
+            },
+            "en": {
+              "answer": "Of course! We offer custom orders for special occasions such as weddings, birthdays, and other events. Please contact us in advance to arrange details.",
+              "question": "Can I customize special orders?"
+            },
+            "answer": "بالطبع! نحن نقدم خدمة تخصيص الطلبات للمناسبات الخاصة مثل حفلات الزفاف، أعياد الميلاد، والمناسبات الأخرى. يرجى الاتصال بنا مسبقًا لترتيب التفاصيل.",
+            "question": "هل يمكنني تخصيص الطلبات الخاصة؟"
+          },
+          {
+            "ar": {
+              "answer": "يمكنك الدفع باستخدام عدة خيارات تشمل النقد، البطاقات الائتمانية، أو الدفع الإلكتروني او تقسيم الدفع على دفعات عن طريق تابي وتمارا. جميع طرق الدفع آمنة وسهلة.",
+              "question": "كيف يمكنني الدفع؟"
+            },
+            "en": {
+              "answer": "You can pay using several options, including cash, credit cards, electronic payments, or splitting the payment into installments via Tabby and Tamara. All payment methods are safe and easy.",
+              "question": "How can I pay?"
+            },
+            "answer": "يمكنك الدفع باستخدام عدة خيارات تشمل النقد، البطاقات الائتمانية، أو الدفع الإلكتروني او تقسيم الدفع على دفعات عن طريق تابي وتمارا. جميع طرق الدفع آمنة وسهلة.",
+            "question": "كيف يمكنني الدفع؟"
+          },
+          {
+            "ar": {
+              "answer": "نحن نحرص على رضا الزبائن، لذا إذا لم تكن راضيًا عن طلبك، يرجى الاتصال بنا خلال 24 ساعة من استلام المنتج وسنكون سعداء لمساعدتك في معالجة الاسترجاع أو الاستبدال.",
+              "question": "ما هي سياسة الاسترجاع؟"
+            },
+            "en": {
+              "answer": "We care about customer satisfaction, so if you are not satisfied with your order, please contact us within 24 hours of receiving the product and we will be happy to assist you in processing a return or exchange.",
+              "question": "What is the return policy?"
+            },
+            "answer": "نحن نحرص على رضا الزبائن، لذا إذا لم تكن راضيًا عن طلبك، يرجى الاتصال بنا خلال 24 ساعة من استلام المنتج وسنكون سعداء لمساعدتك في معالجة الاسترجاع أو الاستبدال.",
+            "question": "ما هي سياسة الاسترجاع؟"
+          },
+          {
+            "ar": {
+              "answer": "نعم، نحن نقدم مجموعة من الحلويات الصحية والخالية من السكر لتلبية احتياجات الزبائن الذين يتبعون أنظمة غذائية خاصة. يمكنكم الاطلاع على هذه الخيارات في قسم الحلويات الصحية لدينا.",
+              "question": "هل تقدمون خيارات صحية أو خالية من السكر؟"
+            },
+            "en": {
+              "answer": "Yes, we offer a range of healthy, sugar-free desserts to meet the needs of customers with special diets. You can check out these options in our healthy desserts section.",
+              "question": "Do you offer healthy or sugar-free options?"
+            },
+            "answer": "نعم، نحن نقدم مجموعة من الحلويات الصحية والخالية من السكر لتلبية احتياجات الزبائن الذين يتبعون أنظمة غذائية خاصة. يمكنكم الاطلاع على هذه الخيارات في قسم الحلويات الصحية لدينا.",
+            "question": "هل تقدمون خيارات صحية أو خالية من السكر؟"
+          }
+        ],
+        "title": "الاسئلة الشائعة",
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    }
+  ]
 }

@@ -27,4 +27,7 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 .DS_Store
 
+# Wrangler / Cloudflare Workers
+.wrangler/
+
 

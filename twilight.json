@@ -244,7 +244,14 @@
       "format": "switch",
       "required": false,
       "value": true,
-      "selected": false
+      "selected": false,
+      "conditions": [
+        {
+          "id": "header_layout",
+          "operation": "=",
+          "value": "default"
+        }
+      ]
     },
     {
       "type": "boolean",
