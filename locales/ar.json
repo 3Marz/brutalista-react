@@ -7,6 +7,8 @@
   "pages.cart.apply_coupon_btn": "تطبيق",
   "pages.products.add_to_cart": "أضف للسلة",
   "pages.products.out_of_stock": "نفذت الكمية",
+  "pages.products.quick_view": "عرض سريع",
+  "pages.product_card.discount_ends": "ينتهي الخصم خلال",
   "common.actions.save": "حفظ",
   "common.actions.cancel": "إلغاء",
   "pages.thank_you.hero_title": "شكراً لتسوقكم عبر متجرنا... 😊",

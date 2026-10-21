@@ -18,6 +18,12 @@ salla-button {
   }
 }
 
+/* Twig's `.no-background` (the Brutal card passes it to the add-to-cart
+   button) — keeps the button chrome but drops the filled background. */
+.no-background {
+  background-color: transparent !important;
+}
+
 .btn {
   @apply transition duration-300 flex-1 inline-flex justify-center items-center px-6 pb-2.5 pt-2 text-sm font-bold rounded hover:opacity-80 whitespace-nowrap;
 

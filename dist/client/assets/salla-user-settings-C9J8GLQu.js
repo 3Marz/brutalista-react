@@ -1,1 +1,0 @@
-import{i as e}from"./rolldown-runtime-COiEfhsA.js";import{Ht as t,Kr as n,sn as r}from"./shared-home-BfEhk7CK.js";var i=e(n()),a=r({tagName:`salla-user-settings`,elementClass:typeof HTMLElement<`u`?HTMLElement:class{},react:i.default,events:{},defineCustomElement:()=>{}});a.displayName=`SallaUserSettingsCore`;var o=t(a,`SallaUserSettings`);export{o as t};

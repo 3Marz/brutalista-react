@@ -36,6 +36,14 @@ export function ProductCard(props: ProductCardProps) {
     if (!root) return;
 
     const sync = () => {
+      // The Brutal card renders its own wishlist/add-to-cart; the engine-card
+      // fixes below (solid fill, centring the loader, hiding the image-corner
+      // heart, portalling into `.s-product-card-content-footer`) don't apply.
+      if (root.querySelector('.s-product-card--brutal')) {
+        setFooterEl(null);
+        return;
+      }
+
       root.querySelectorAll<HTMLElement>('salla-add-product-button').forEach((el) => {
         // engine ships the card button fill="outline"; make it solid + centre its spinner
         el.setAttribute('fill', 'solid');

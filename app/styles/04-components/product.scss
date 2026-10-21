@@ -70,6 +70,12 @@
 }
 
 .s-product-card {
+  /* Twig's `custom-salla-product-card` ("Brutal" card, `BrutalProductCard.tsx`)
+     draws its own border/shadow/radius on the image tile. */
+  &-entry {
+    @apply rounded-none bg-transparent;
+  }
+
   &-content-footer {
     > div {
       @apply w-full;
@@ -132,6 +138,22 @@
       margin-bottom: 3px;
       color: var(--color-primary);
     }
+  }
+}
+
+/* Brutal product card action stack — wishlist above quick view.
+   Salla's base styles absolutely position `.s-product-card-wishlist-btn` on
+   vertical/minimal cards, which pulled the heart out of this column. Keep both
+   actions in normal flow so the flex-col stack works. */
+.s-product-card-actions {
+  .s-product-card-wishlist-btn {
+    position: static !important;
+    inset: auto !important;
+    opacity: 1 !important;
+  }
+
+  .s-button-wrap {
+    position: static;
   }
 }
 
@@ -1012,5 +1034,10 @@ body.hide-add-to-cart {
     > div:has(salla-add-product-button) {
       display: none #{!important};
     }
+  }
+
+  /* Brutal card — same Twig `.hide-add-to-cart .custom-add-to-cart-button`. */
+  .custom-add-to-cart-button {
+    display: none #{!important};
   }
 }

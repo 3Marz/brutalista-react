@@ -37,6 +37,7 @@ import {
 } from './components/home';
 import { registerThemeHooks } from './hooks';
 import { ProductListSkeleton } from './components/product/ProductListSkeleton';
+import { BrutalProductCard } from './components/product/BrutalProductCard';
 
 const ProductListPage = lazy(() =>
   import('./components/product/ProductListPage').then((m) => ({ default: m.ProductListPage }))
@@ -47,6 +48,10 @@ registerThemeHooks();
 
 registry.register('product:list-page', ProductListPage);
 registry.register('product:list-skeleton', ProductListSkeleton);
+
+//Brutal Product Card
+registry.register('product:card', BrutalProductCard);
+registry.override('product:card', BrutalProductCard);
 
 registerHomeComponents({
   ...DefaultHomeComponents,
