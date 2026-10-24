@@ -5,6 +5,7 @@ import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
 import { useDocumentClass } from '@salla.sa/twilight-theme-engine/hooks';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { useUser } from '@salla.sa/twilight-theme-engine/hooks/useUser';
+import { QuickViewHost } from '../product/QuickViewHost';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { ImportantLinksSheet } from './ImportantLinksSheet';
@@ -214,6 +215,7 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
       <UserMenuSheet open={userMenuOpen} onClose={() => setUserMenuOpen(false)} />
 
       <GlobalModals />
+      <QuickViewHost />
     </>
   );
 }

@@ -1,7 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { ReactNode } from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { BrutalProductCard } from '../../../app/components/product/BrutalProductCard';
+import { QUICK_VIEW_EVENT } from '../../../app/lib/quickView';
 
 const wishlistState = { ids: [] as number[], toggle: vi.fn() };
 
@@ -133,6 +134,23 @@ describe('BrutalProductCard', () => {
 
     getByLabelText('Add or remove to wishlist').click();
     expect(wishlistState.toggle).toHaveBeenCalledWith(42);
+  });
+
+  it('asks the quick-view host to open the product', () => {
+    const listener = vi.fn();
+    window.addEventListener(QUICK_VIEW_EVENT, listener);
+
+    const { getByLabelText } = render(
+      <BrutalProductCard product={baseProduct as never} />
+    );
+    fireEvent.click(getByLabelText('Quick view product'));
+
+    expect(listener).toHaveBeenCalledTimes(1);
+    expect((listener.mock.calls[0][0] as CustomEvent).detail).toEqual({
+      productId: 42,
+    });
+
+    window.removeEventListener(QUICK_VIEW_EVENT, listener);
   });
 
   it('renders the Twig out-of-stock ribbon when there is no promotion title', () => {

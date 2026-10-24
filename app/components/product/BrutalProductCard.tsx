@@ -8,6 +8,7 @@ import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { SallaAddProductButton } from '@salla.sa/twilight-components-react/add-product-button';
 import { SallaButton } from '@salla.sa/twilight-components-react/button';
 import { SallaCountDown } from '@salla.sa/twilight-components-react/count-down';
+import { openQuickView as dispatchQuickView } from '../../lib/quickView';
 import { WishlistHeartButton } from './WishlistHeartButton';
 
 export interface BrutalProductCardProps extends ProductCardProps {
@@ -153,12 +154,9 @@ export const BrutalProductCard = memo(function BrutalProductCard({
     .filter(Boolean)
     .join(' ');
 
-  const openQuickView = useCallback(() => {
-    const modal = document.getElementById('quick-view-modal') as
-      | (HTMLElement & { loadProduct?: (id: number) => void })
-      | null;
-    modal?.loadProduct?.(productId);
-  }, [productId]);
+  // The Twig card called `#quick-view-modal.loadProduct(id)`; the React modal is
+  // mounted on demand, so announce the id through the shared event instead.
+  const handleQuickView = useCallback(() => dispatchQuickView(productId), [productId]);
 
   // Twig suppresses the badge only on the horizontal / minimal cards.
   const badge = isMinimal || isHorizontal ? null : preorder ? (
@@ -247,7 +245,7 @@ export const BrutalProductCard = memo(function BrutalProductCard({
               color="dark"
               name={`product-name-${product.id}`}
               ariaLabel={t('pages.products.quick_view', 'Quick view product')}
-              onClick={openQuickView}
+              onClick={handleQuickView}
             >
               <i className="sicon-eye" />
             </SallaButton>

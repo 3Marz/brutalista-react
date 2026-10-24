@@ -1,0 +1,104 @@
+/* Quick view (product card overlay).
+   Reimplemented from the Twig `quick-view.js` custom element on top of the
+   engine's controlled `Modal`. The panel classes below replace the engine
+   modal's plain white/rounded defaults with the Brutal frame. */
+/* The engine Modal portal is z-50, below the theme's mobile bottom bar (220)
+   and header drawers (200–210). Lift only the quick-view portal so its
+   backdrop covers them and nothing paints above the modal. */
+body > div:has(> .quick-view-modal) {
+  z-index: 230 !important;
+}
+
+.quick-view-modal {
+  @apply mx-4 overflow-hidden #{!important};
+  max-width: 64rem;
+  max-height: calc(100dvh - 1.5rem);
+  border: 2px solid var(--bc) !important;
+  border-radius: var(--br) !important;
+  background: var(--base-50) !important;
+  box-shadow: var(--neo-shadow) !important;
+}
+
+.quick-view {
+  @apply relative grid gap-5 px-5 pb-5 xs:grid-cols-2 md:px-6 md:pb-6;
+  /* Reserve the floating close button, and keep the panel itself scrollable
+     on short screens instead of letting the modal overflow the viewport. */
+  padding-top: 3.25rem;
+  max-height: calc(100dvh - 1.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.quick-view__close {
+  @apply absolute end-3 top-3 z-[6] inline-flex h-9 w-9 items-center justify-center rounded-neo border-2 border-bc bg-base-50 text-bc shadow-neo transition-all;
+
+  &:hover {
+    @apply translate-x-0.5 translate-y-0.5 shadow-none;
+  }
+}
+
+.quick-view__gallery {
+  @apply min-w-0;
+
+  .details-slider {
+    @apply mb-0;
+  }
+}
+
+.quick-view__slide {
+  @apply flex h-full w-full items-center justify-center overflow-hidden;
+}
+
+.quick-view__image-placeholder {
+  @apply aspect-square w-full rounded-neo border-2 border-bc bg-base-200;
+}
+
+.quick-view__details {
+  @apply flex min-w-0 flex-col gap-4;
+}
+
+.quick-view__description {
+  @apply text-sm leading-6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.quick-view__actions {
+  @apply flex items-center gap-2;
+}
+
+.quick-view__form {
+  @apply flex flex-col gap-4;
+}
+
+.quick-view__options {
+  @apply bg-transparent #{!important};
+  padding: 0 !important;
+}
+
+.quick-view__loading {
+  @apply grid gap-5 xs:grid-cols-2;
+}
+
+.quick-view__skeleton {
+  @apply animate-pulse rounded-neo border-2 border-bc bg-base-200;
+}
+
+.quick-view__error {
+  @apply flex min-h-48 flex-col items-center justify-center gap-4 text-center;
+}
+
+.quick-view__retry {
+  @apply inline-flex items-center justify-center rounded-neo border-2 border-bc bg-base-50 px-5 py-2 text-sm font-bold shadow-neo transition-all;
+
+  &:hover {
+    @apply translate-x-0.5 translate-y-0.5 shadow-none;
+  }
+}
+
+/* Twig's quick-view share button drops the filled background. */
+.quick-view-share-button .s-social-share-btn {
+  background: transparent !important;
+}
