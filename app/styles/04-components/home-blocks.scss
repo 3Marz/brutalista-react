@@ -3,7 +3,7 @@
 */
 .s-block {
   &__title {
-    @apply flex justify-center items-center mb-4 md:mb-8 gap-4;
+    @apply flex justify-center items-center mb-4 md:mb-8 flex-col md:flex-row gap-4;
 
     h2 {
       @apply underline underline-offset-8 mb-2 text-xl font-bold relative leading-[1.2];

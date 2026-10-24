@@ -43,7 +43,7 @@ export const SquarePhotos = memo(function SquarePhotos({ data }: { data: SquareP
           <Link
             key={index}
             to={link.url || '#'}
-            className={`flex group flex-col gap-2 w-full h-full ${
+            className={`flex group flex-col gap-2 w-full h-full min-w-0 min-h-0 ${
               index === 2 ? 'row-span-2 col-span-2' : ''
             }`}
           >
