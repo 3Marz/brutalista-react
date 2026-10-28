@@ -93,6 +93,7 @@ function FooterWishlistButton({ productId }: { productId: number }) {
   return (
     <WishlistHeartButton
       productId={productId}
+      color={inWishlist ? 'danger' : 'dark'}
       ariaLabel={t('pages.wishlist.toggle', 'Add or remove to wishlist')}
       className={`s-product-card-wishlist-btn animated ${inWishlist ? 's-product-card-wishlist-added pulse-anime' : 'not-added un-favorited'}`}
       onClick={() => wishlist.toggle(productId)}

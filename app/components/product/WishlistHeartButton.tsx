@@ -13,7 +13,7 @@ export function WishlistHeartButton({
   className,
   ariaLabel,
   onClick,
-  color = 'light',
+  color = 'dark',
 }: WishlistHeartButtonProps) {
   return (
     <div className="s-button-wrap">

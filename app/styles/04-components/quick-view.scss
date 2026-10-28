@@ -67,6 +67,20 @@ body > div:has(> .quick-view-modal) {
 
 .quick-view__actions {
   @apply flex items-center gap-2;
+
+  .btn--wishlist,
+  button.s-social-share-btn {
+    @include neo-icon-action;
+  }
+
+  .btn--wishlist.is-added {
+    border-color: var(--danger) !important;
+    color: var(--danger) !important;
+  }
+
+  .s-social-share-wrapper {
+    @apply flex items-center justify-center;
+  }
 }
 
 .quick-view__form {
@@ -98,7 +112,4 @@ body > div:has(> .quick-view-modal) {
   }
 }
 
-/* Twig's quick-view share button drops the filled background. */
-.quick-view-share-button .s-social-share-btn {
-  background: transparent !important;
-}
+

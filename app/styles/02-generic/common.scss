@@ -247,6 +247,14 @@ salla-scopes {
   z-index: 50;
 }
 
+/* The login modal can be opened from inside the quick-view modal (wishlist as
+   a guest). `salla-login-modal` teleports its `salla-modal` to <body>, so the
+   host's z-index does not apply; lift the actual modal above the quick-view
+   portal (230) and the mobile bottom bar (220). */
+.s-modal-container.s-login-modal {
+  z-index: 999;
+}
+
 salla-localization-modal {
   position: fixed;
   inset: 0;

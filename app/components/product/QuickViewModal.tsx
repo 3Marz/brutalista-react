@@ -195,7 +195,7 @@ function QuickViewActions({ product }: { product: Product }) {
   return (
     <div className="quick-view__actions">
       <SallaSocialShare
-        className="inline-flex quick-view-share-button"
+        className="inline-flex"
         url={product.url}
         urlName={product.name}
         aria-label={t('pages.wishlist.share', 'Share')}

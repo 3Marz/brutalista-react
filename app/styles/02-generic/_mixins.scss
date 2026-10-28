@@ -4,3 +4,46 @@
   justify-content: $justify;
   flex-direction: $direction;
 }
+
+/*
+  The 40×40 neo icon button used when share and wishlist sit side by side.
+  Both triggers are Salla buttons: the share web component asks for `light`
+  (then the theme greys it), while the wishlist used to default to `light` —
+  a white-on-white outline on a light page. This gives both the same visible
+  base: `--base-50` surface, `--bc` frame and the hard neo shadow.
+*/
+@mixin neo-icon-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 2px solid var(--bc) !important;
+  border-radius: var(--br) !important;
+  background-color: var(--base-50) !important;
+  color: var(--text-color) !important;
+  box-shadow: var(--neo-shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  i {
+    font-size: 1.15rem;
+  }
+
+  &:hover {
+    transform: translate(var(--x-shadow-offset), var(--y-shadow-offset));
+    box-shadow: none;
+    background-color: var(--base-50) !important;
+    color: var(--text-color) !important;
+  }
+}

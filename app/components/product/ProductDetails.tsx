@@ -76,7 +76,7 @@ export function ProductDetails({
         {/* share + wishlist, pulled up beside the title on the end side.
             On mobile these move to the gallery overlay bar (`ProductGallery`),
             so this copy is hidden — see `product.scss`. */}
-        <div className="product-details__title-actions flex shrink-0">
+        <div className="product-details__title-actions flex shrink-0 items-center gap-2">
           <SallaSocialShare className="inline-flex" aria-label="social share" />
 
           <TitleWishlistButton productId={Number(product.id)} />
@@ -191,6 +191,7 @@ function TitleWishlistButton({ productId }: { productId: number }) {
   return (
     <WishlistHeartButton
       productId={productId}
+      color={wishlist.has(productId) ? 'danger' : 'dark'}
       className={`btn--wishlist animated hidden sm:inline-flex ${wishlist.has(productId) ? 'is-added' : 'not-added'}`}
       onClick={() => window.salla?.wishlist.toggle(productId)}
       ariaLabel={t('pages.products.add_to_wishlist', 'Add to wishlist')}

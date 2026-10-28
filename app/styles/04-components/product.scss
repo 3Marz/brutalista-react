@@ -569,6 +569,30 @@ salla-gifting {
   @apply rtl:left-2.5 ltr:right-2.5 top-2.5;
 }
 
+/* Desktop title actions: share + wishlist use one neo icon button. The share
+   trigger lives inside `<salla-social-share>`, so the mixin is applied to the
+   `.s-social-share-btn` it renders; the wishlist trigger is the `.btn--wishlist`
+   button itself. */
+.product-details__title-actions {
+  .btn--wishlist,
+  button.s-social-share-btn {
+    @include neo-icon-action;
+  }
+
+  /* Saved wishlist items stay red, hover included (the mixin's hover resets
+     the colour, so this rule comes after it). */
+  .btn--wishlist.is-added {
+    border-color: var(--danger) !important;
+    color: var(--danger) !important;
+  }
+
+  /* `<salla-social-share>` renders `.s-social-share-wrapper` around the
+     trigger; keep it button-sized so the popup list stays anchored. */
+  .s-social-share-wrapper {
+    @apply flex items-center justify-center;
+  }
+}
+
 /* =========================================================================
    Product page — mobile. The image slider is the first thing on
    the page (no breadcrumb, no top gap, edge-to-edge), with a floating bar
