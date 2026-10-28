@@ -47,6 +47,32 @@ salla-slider{
       @apply hidden;
     }
 
+  }
+
+  &.enhanced-s-slider, &.details-slider { 
+
+    .swiper-pagination.swiper-pagination-bullets{
+      @apply absolute inset-x-0 bottom-4 z-[3] mx-auto flex w-max items-center justify-center gap-1.5;
+      padding: 5px 12px;
+      border-radius: var(--br);
+      border: 2px solid var(--bc);
+      background: var(--base-50);
+      backdrop-filter: blur(4px);
+    }
+
+    .swiper-pagination-bullet{
+      @apply block h-1.5 w-1.5 rounded-full opacity-100;
+      margin: 0 !important;
+      background: color-mix(in srgb, var(--bc) 30%, transparent);
+      transition:
+        width 0.25s ease,
+        background-color 0.25s ease;
+    }
+
+    .swiper-pagination-bullet-active{
+      @apply w-5 bg-bc;
+    }
+
     /* Mobile: no thumbs — a frosted pill of dots over the image instead.
        The active dot elongates. */
     @media (max-width: 767px){
@@ -64,28 +90,6 @@ salla-slider{
 
       .swiper-slide{
         @apply ring-0;
-      }
-
-      .swiper-pagination.swiper-pagination-bullets{
-        @apply absolute inset-x-0 bottom-4 z-[3] mx-auto flex w-max items-center justify-center gap-1.5;
-        padding: 5px 12px;
-        border-radius: var(--br);
-        border: 2px solid var(--bc);
-        background: var(--base-50);
-        backdrop-filter: blur(4px);
-      }
-
-      .swiper-pagination-bullet{
-        @apply block h-1.5 w-1.5 rounded-full opacity-100;
-        margin: 0 !important;
-        background: color-mix(in srgb, var(--bc) 30%, transparent);
-        transition:
-          width 0.25s ease,
-          background-color 0.25s ease;
-      }
-
-      .swiper-pagination-bullet-active{
-        @apply w-5 bg-bc;
       }
     }
   }

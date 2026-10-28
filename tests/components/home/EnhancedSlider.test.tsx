@@ -58,7 +58,8 @@ describe('EnhancedSlider', () => {
     );
     const slider = container.querySelector('salla-slider');
     expect(slider?.getAttribute('auto-play')).not.toBe('true');
-    expect(slider?.getAttribute('show-controls')).toBe('true');
+    // The old Twig slider never showed arrows, even with autoplay off.
+    expect(slider?.getAttribute('show-controls')).toBe('false');
   });
 
   it('autoplays when auto_play is on', () => {
@@ -119,6 +120,45 @@ describe('EnhancedSlider', () => {
       />
     );
     expect(container.querySelector('.home-slider__cta')).toBeNull();
+  });
+
+  it('renders the old Twig `ns_alrabt`/`url` CTA', () => {
+    const { container } = render(
+      <EnhancedSlider
+        data={{
+          slider_banner: [
+            { ...mockSlides[0], ns_alrabt: 'تسوق الآن', url: '/offers' },
+          ],
+        }}
+      />
+    );
+    const cta = container.querySelector('.home-slider__cta');
+    expect(cta?.textContent).toBe('تسوق الآن');
+    expect(cta?.getAttribute('href')).toBe('/offers');
+    // The old Twig button is a primary solid salla button.
+    expect(cta?.classList.contains('s-button-solid')).toBe(true);
+    expect(cta?.classList.contains('s-button-primary')).toBe(true);
+  });
+
+  it('omits the CTA when the old link picker has a label but no URL', () => {
+    const { container } = render(
+      <EnhancedSlider
+        data={{
+          slider_banner: [{ ...mockSlides[0], ns_alrabt: 'تسوق الآن' }],
+        }}
+      />
+    );
+    expect(container.querySelector('.home-slider__cta')).toBeNull();
+  });
+
+  it('renders the brutal content card with the title and description', () => {
+    const { container } = render(<EnhancedSlider data={{ slider_banner: mockSlides }} />);
+    const card = container.querySelector('.home-slider__content > div > div');
+    expect(card?.classList.contains('border-2')).toBe(true);
+    expect(card?.classList.contains('border-bc')).toBe(true);
+    expect(card?.classList.contains('shadow-neo')).toBe(true);
+    expect(card?.querySelector('h2')?.textContent).toBe('Slide 1');
+    expect(card?.querySelector('p')?.textContent).toBe('Description 1');
   });
 
   it('renders slides with overlay background', () => {

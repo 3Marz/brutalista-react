@@ -56,7 +56,8 @@
             "image": "https://cdn.salla.sa/form-builder/mBKDV32CdXZL46shd9H7Vyolo1B8bHpwuBXIzLeI.png",
             "title": "أفضل أنواع الحلويات والمفرحات !",
             "ns_alrabt": "تسوق كل الحلويات",
-            "description": "تسوق في مجموعة كبيرة ومتنوعة من الحلويات  الحامضة والحلوة"
+            "description": "تسوق في مجموعة كبيرة ومتنوعة من الحلويات  الحامضة والحلوة",
+            "without_overlay": true
           },
           {
             "ar": {
@@ -79,7 +80,8 @@
         "channel_visibility": {
           "desktop": true,
           "mobile": true
-        }
+        },
+        "auto_play": false
       }
     },
     {

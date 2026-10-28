@@ -112,7 +112,7 @@ registerHomeComponentConfig({
   // same SliderSkeleton the SSR path shows (sized in home-blocks.scss), not the
   // engine's 400px/200px defaults with mismatched skeletons (CLS on scroll-in).
   'enhanced-slider': {
-    height: 'calc(100vw / 2.4)', // the 12:5 slide ratio
+    height: '528px', // the old Twig slide height (`min-h-[528px]`, 600px at lg)
     placeholder: <SliderSkeleton />,
     // The boxed variant (`in_container`) is capped at the container width, so
     // its skeleton must be too (home-blocks.scss) or the reservation oversizes.

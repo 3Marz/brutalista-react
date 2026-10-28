@@ -4,6 +4,11 @@ import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { parseSlideVideo, youtubeEmbedUrl } from '../../lib/slideVideo';
 
 export interface SliderBanner {
+  /** Brutal setting: `slides.url` (the old Twig link picker). */
+  url?: string;
+  /** Brutal setting: `slides.ns_alrabt` (the old Twig button label). */
+  ns_alrabt?: string;
+  /** Engine setting kept for backwards compatibility with the migrated slides. */
   link?: string;
   image?: string;
   mobile_image?: string;
@@ -202,35 +207,52 @@ function SlideVideo({ url, poster }: { url?: string; poster?: string }) {
   );
 }
 
+/**
+ * The old Twig `enhanced-slider.twig` card: image on the right (start in RTL),
+ * a neo-brutalist panel with the title, description and CTA, bottom-aligned on
+ * phones and vertically centred from `sm` up.
+ */
 function SlideText({ slide, poster }: { slide: SliderBanner; poster?: boolean }) {
+  const href = slide.url || slide.link;
+  // `ns_alrabt` is the old Brutal setting; `btnname`/`show_button` keep the
+  // migrated slides working. The label alone never renders a dead link.
+  const label = slide.ns_alrabt || (slide.show_button ? slide.btnname : undefined);
+
   return (
-    <div className="flex-center container py-16 sm:py-0 home-slider__content relative h-full">
-      <div className="w-4/6 text-center md:w-7/12 lg:w-5/12 text-white">
-        {slide.title && (
-          <h2
-            data-swiper-parallax="-500"
-            className="lg:text-title-size font-bold leading-tight mb-4 last:mb-0"
-          >
-            {slide.title}
-          </h2>
-        )}
-        {(slide.subtitle || slide.description) && (
-          <p data-swiper-parallax="-300" className="line-clamp-2 description">
-            {slide.subtitle || slide.description}
-          </p>
-        )}
-        {slide.show_button && slide.btnname && (
-          <Link
-            to={slide.link || '#'}
-            data-swiper-parallax="-100"
-            className="home-slider__cta"
-            // The poster is aria-hidden, so its copy stays out of the tab order. Both link
-            // adapters forward it; BaseLinkProps just doesn't declare it.
-            {...(poster && { tabIndex: -1 })}
-          >
-            {slide.btnname}
-          </Link>
-        )}
+    <div className="flex-center container pb-4 home-slider__content relative h-full flex-1">
+      <div className="flex h-full w-full items-end justify-center sm:h-4/5 sm:w-4/5 sm:items-center sm:ltr:justify-end sm:rtl:justify-start">
+        <div
+          data-swiper-parallax="-300"
+          className="flex w-62 flex-col gap-4 rounded-neo border-2 border-bc bg-base-100 p-6 shadow-neo lg:w-96"
+        >
+          {slide.title && (
+            <h2
+              data-swiper-parallax="-500"
+              className="text-lg font-bold leading-tight lg:text-2xl xl:text-3xl"
+            >
+              {slide.title}
+            </h2>
+          )}
+          {(slide.description || slide.subtitle) && (
+            <p data-swiper-parallax="-300" className="description line-clamp-4 text-sm md:text-base">
+              {slide.description || slide.subtitle}
+            </p>
+          )}
+          {href && label && (
+            <div className="s-button-wrap mt-auto">
+              <Link
+                to={href}
+                data-swiper-parallax="-100"
+                className="s-button-element s-button-btn s-button-solid s-button-primary home-slider__cta"
+                // The poster is aria-hidden, so its copy stays out of the tab order. Both link
+                // adapters forward it; BaseLinkProps just doesn't declare it.
+                {...(poster && { tabIndex: -1 })}
+              >
+                <span className="s-button-text">{label}</span>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -272,10 +294,11 @@ export const EnhancedSlider = memo(function EnhancedSlider({ data }: EnhancedSli
         // Swiper's autoplay redraws every frame for its countdown, so a single slide skips it.
         autoPlay={hasMultipleSlides && data.auto_play !== false}
         sliderConfig={{ lazy: false, watchOverflow: true }}
-        showControls={hasMultipleSlides}
+        // The old Twig slider moved with the dots only (`show-controls="false"`).
+        showControls={false}
         pagination={hasMultipleSlides}
         type="fullwidth"
-        className={inContainer ? 'in-container' : undefined}
+        className={`enhanced-s-slider ${inContainer ? 'in-container' : ''}`}
         onAfterInit={showPoster ? hidePoster : undefined}
       >
         <div slot="items">
