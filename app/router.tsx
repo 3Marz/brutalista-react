@@ -17,6 +17,7 @@ import {
   FixedProducts,
   MainLinks,
   PhotosSlider,
+  BrutalPhotoSlider,
   ProductsSlider,
   SliderProductsWithHeader,
   EnhancedSquareBanners,
@@ -67,6 +68,9 @@ registerHomeComponents({
   // progress bar + arrows as testimonials/products, cards instead of a thin
   // full-width banner strip.
   'photos-slider': PhotosSlider,
+  // Twig-parity variant: the old 1200×300 banner proportions in the same
+  // scroll carousel. Exposed from `twilight.json` as a separate block.
+  'brutal-photo-slider': BrutalPhotoSlider,
   // The renderer checks `home:featured-products:<view_style>` before the bare
   // key (theme-engine `HomePageRenderer.getComponentByPath`), and
   // `...DefaultHomeComponents` above still has the engine's own component
@@ -160,6 +164,13 @@ registerHomeComponentConfig({
   'square-banner-brutal': { className: 's-block s-block--square-banner-brutal' },
   questions: { height: '300px', className: 's-block s-block--questions' },
   'square-photos': { className: 's-block s-block--square-photos' },
+  // Twig-sized banner slides: 80% wide at lg with a 4:1 image, so reserve the
+  // shorter height to avoid shifting the page when the block scrolls in.
+  'brutal-photo-slider': {
+    height: 'clamp(150px, 26vw, 360px)',
+    placeholder: <SliderSkeleton />,
+    className: 's-block s-block--brutal-photo-slider',
+  },
   'photo-and-text': { height: '400px', className: 's-block s-block--photo-and-text' },
   'offers-products': {
     height: '480px',

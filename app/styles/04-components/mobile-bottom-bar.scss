@@ -62,12 +62,11 @@
 }
 
 .mobile-bottom-bar__item {
-  @apply relative inline-flex flex-none items-center justify-center gap-0 no-underline;
+  @apply relative rounded-neo inline-flex flex-none items-center justify-center gap-0 no-underline;
   min-width: 40px;
   height: 36px;
   padding: 0 6px;
   border: 0;
-  border-radius: 9999px;
   background: transparent;
   color: var(--mbb-muted);
   font: inherit;

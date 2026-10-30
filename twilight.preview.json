@@ -620,26 +620,20 @@
       }
     },
     {
-      "id": "b-9cb432d5e4f9",
-      "path": "photos-slider",
+      "id": "b-ed2a179a69e7",
+      "path": "brutal-photo-slider",
       "fields": {
+        "key": "636f7385-f842-4dec-8395-71feb6c300fd",
         "items": [
           {
-            "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/-/p380335631",
-            "image": "https://cdn.salla.sa/form-builder/dd3A742k8rIZGYiYZdETcto4uN7yxFHM2HLCykYE.png"
+            "image": "/__twilight/preview/image/50dc275bde1c76a5.png",
+            "url": ""
           },
           {
-            "url": "",
-            "image": "https://cdn.salla.sa/form-builder/xvIImj2MGfzRHXcYk6dK6PVMBfbkIGG05NcmUxIm.png"
+            "image": "/__twilight/preview/image/674cda6e8df0176d.png",
+            "url": ""
           }
-        ],
-        "is_repeated": false,
-        "position": 1,
-        "key": null,
-        "channel_visibility": {
-          "desktop": true,
-          "mobile": true
-        }
+        ]
       }
     },
     {

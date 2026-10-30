@@ -450,7 +450,25 @@
   }
 }
 
-.s-block--photos-slider {
+/* Twig parity (`home/photos-slider.twig`): one banner per view on small
+   screens, 80% from `lg`, at the old 1200×300 proportion. */
+.s-brutal-photo-slider__slide {
+  @apply block shrink-0 rounded-neo overflow-hidden;
+  flex: 0 0 100%;
+  aspect-ratio: 1200 / 500;
+  scroll-snap-align: start;
+
+  @media (min-width: 1024px) {
+    flex-basis: 80%;
+  }
+
+  img {
+    @apply w-full h-full object-cover rounded-neo;
+  }
+}
+
+.s-block--photos-slider,
+.s-block--brutal-photo-slider {
   /* Same container treatment as the testimonials carousel: the row starts
      flush with the container's edge but is free to bleed past it into the
      viewport edge, instead of being boxed in on both sides. */
