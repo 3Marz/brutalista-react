@@ -3,7 +3,7 @@ import type { Product } from '@salla.sa/twilight-theme-engine/types';
 import { product } from '@salla.sa/twilight-theme-engine/api/product';
 import { SallaSlider } from '@salla.sa/twilight-components-react/slider';
 import { SallaProductsList, ProductsListSkeleton } from '@salla.sa/twilight-components-react';
-import { ProductCard } from '../product/ProductCard';
+import { DiscountProductCard } from './DiscountProductCard';
 import { firstId } from '../../lib/blockValue';
 
 interface Offer {
@@ -21,9 +21,9 @@ export interface OffersProductsData {
  * `offers-products` home block — a centered slider where each slide pairs an
  * offer title with its product card.
  *
- * Replaces the Twig theme's `<discount-product-card>` custom element with the
- * engine's {@link ProductCard} (same sale/countdown/add-to-cart behaviour),
- * loading the selected products through `product.list`.
+ * Uses {@link DiscountProductCard}, the React port of the Twig theme's
+ * `<discount-product-card>` custom element, so each slide keeps the same wide
+ * image + details card as `master`.
  */
 export const OffersProducts = memo(function OffersProducts({
   data,
@@ -59,16 +59,17 @@ export const OffersProducts = memo(function OffersProducts({
               <div slot="items">
                 {offers.map((offer, index) => {
                   const id = firstId(offer.product);
-                  const item = items.find((entry) => entry.id === id);
+                  // List responses send product ids as numeric strings.
+                  const item = items.find((entry) => Number(entry.id) === id);
                   return (
                     <div
                       key={index}
-                      className="w-[80%] mx-3 md:mx-4 flex flex-col gap-4"
+                      className="offer-product-swiper mx-3 md:mx-4 flex flex-col gap-4"
                     >
                       <h2 className="text-lg text-center underline underline-offset-8 md:text-xl font-bold">
                         {offer.title}
                       </h2>
-                      {item ? <ProductCard product={item} /> : null}
+                      {item ? <DiscountProductCard product={item} /> : null}
                     </div>
                   );
                 })}

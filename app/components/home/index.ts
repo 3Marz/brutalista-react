@@ -17,6 +17,7 @@ export { Questions } from './Questions';
 export { SquarePhotos } from './SquarePhotos';
 export { PhotoAndText } from './PhotoAndText';
 export { OffersProducts } from './OffersProducts';
+export { DiscountProductCard } from './DiscountProductCard';
 export { BrutalTestimonials } from './BrutalTestimonials';
 export { TextAndButton } from './TextAndButton';
 export { Stats } from './Stats';

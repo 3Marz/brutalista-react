@@ -116,3 +116,11 @@
 .s-add-product-button-mini-checkout {
   --salla-fast-checkout-button-border-radius: var(--br) !important;
 }
+
+
+.discount-product-card {
+  .quick-view-offer {
+     @apply m-0 h-full w-full aspect-square;
+  }
+}
+

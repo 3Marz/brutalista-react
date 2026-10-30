@@ -480,7 +480,7 @@ function QuickViewForm({ product }: { product: Product }) {
       >
         {product.status === 'sale' ? (
           <i
-            className={`text-base sicon-${
+            className={`text-base mx-2 sicon-${
               product.type === 'booking' ? 'calendar-time' : 'shopping-bag'
             }`}
           />

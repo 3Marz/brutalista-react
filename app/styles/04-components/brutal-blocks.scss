@@ -49,6 +49,23 @@ salla-slider.discount-offer-slider {
   }
 }
 
+/* Offer product card (`home.offers-products`). The deferred loader wraps the
+   add-to-cart in a bare <div>, so `width="wide"` alone leaves it at the
+   button's intrinsic width. Stretch the wrapper and host to fill the row
+   beside the quick-view button, as the Twig card did. */
+.discount-product-card__actions {
+  @apply flex gap-2 w-5/6;
+
+  > div:has(> salla-add-product-button),
+  > salla-add-product-button {
+    @apply flex-1 min-w-0;
+  }
+
+  > div > salla-add-product-button {
+    @apply w-full;
+  }
+}
+
 /* Brutal banner slider — the swiper keeps no outer padding. */
 salla-slider.banner-slider {
   .swiper {

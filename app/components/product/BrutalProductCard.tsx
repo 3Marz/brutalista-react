@@ -208,7 +208,7 @@ export const BrutalProductCard = memo(function BrutalProductCard({
           <img
             className={`${
               isFullImage ? 'brightness-75 ' : ''
-            }group-hover/img:scale-110 transition-transform w-full h-full duration-500`}
+            }s-product-card-img group-hover/img:scale-110 transition-transform w-full h-full duration-500`}
             src={product.image?.url}
             alt={product.image?.alt ?? product.name}
             loading={imagePriority ? 'eager' : 'lazy'}
@@ -301,7 +301,7 @@ export const BrutalProductCard = memo(function BrutalProductCard({
             >
               {product.status === 'sale' ? (
                 <i
-                  className={`text-base sicon-${
+                  className={`text-base mx-2 sicon-${
                     product.type === 'booking' ? 'calendar-time' : 'shopping-bag'
                   }`}
                 />

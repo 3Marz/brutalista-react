@@ -115,8 +115,8 @@ salla-slider{
 }
 
 .promotion-title{
-  @apply absolute z-10 top-4 rtl:right-0 ltr:left-0 font-bold text-sm bg-danger text-white rtl:rounded-l ltr:rounded-r;
-  @apply w-auto m-0 px-3 py-2 #{!important};
+  @apply truncate max-w-full font-bold px-2 py-1 sm:py-2 sm:px-3 text-xs sm:text-sm md:text-sm whitespace-nowrap absolute bg-primary border border-bc text-base-100 z-[3] top-2 right-2 rounded-neo;
+  @apply w-auto m-0 #{!important};
 }
 
 .home-slider {

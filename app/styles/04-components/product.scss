@@ -163,6 +163,26 @@
   - add-to-cart is solid + pill-rounded
   - content order becomes: subtitle, title, price
 */
+/* The engine's `.s-product-card-image img` sets `transition-property: opacity`,
+   which silently cancels `transition-transform` on the image. Keep the lazy
+   fade and animate the hover scale too. */
+.s-product-card--brutal .s-product-card-img {
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.s-product-card--brutal:hover .s-product-card-img {
+  will-change: transform;
+}
+
+/* The engine dims `.s-product-card-image` on hover (`hover:opacity-90`).
+   The Brutal card should only scale the image, not fade or darken it. */
+.s-product-card--brutal .s-product-card-image,
+.s-product-card--brutal .s-product-card-image:hover {
+  opacity: 1;
+}
+
 .s-product-card {
   /* `ProductCard.tsx` relocates the wishlist button into the footer, but only
      from a mount effect — every vertical card briefly shows the engine's
@@ -640,10 +660,9 @@ salla-gifting {
     /* the promo badge shares the inline-start edge with the floating bar's back
        button — push it below the bar */
     .details-slider .promotion-title {
+      /* keep the old badge styling, but clear the floating gallery bar */
       top: auto;
       bottom: 3rem;
-      font-size: 0.725rem;
-      padding: 0.25rem 0.5rem !important;
     }
 
     /* the loaded slider shows no dots here */

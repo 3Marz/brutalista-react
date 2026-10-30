@@ -10,18 +10,18 @@
     "y_shadow_offset": 3,
     "cool_cart_page": true,
     "hide_add_to_cart_button": false,
-    "header_layout": "lite",
+    "header_layout": "default",
     "enable_more_menu": true,
     "header_show_store_info": false,
     "header_store_info_home_only": true,
     "header_is_sticky": true,
     "topnav_is_dark": false,
-    "header_is_dark": true,
-    "important_links": true,
+    "header_is_dark": false,
+    "important_links": false,
     "squar_photo_bg_image_size": "cover",
     "vertical_fixed_products": false,
     "is_more_button_enabled": true,
-    "footer_is_dark": true,
+    "footer_is_dark": false,
     "sub_logo": "/__twilight/preview/image/eab64d95c3724000.png",
     "show_store_name_footer": false,
     "lang_button_bottom": true,
@@ -395,6 +395,17 @@
       "fields": {
         "key": "d8a33b89-3f21-4d96-964f-cbc2dd9dec9f",
         "offers": [
+          {
+            "title": "عرض الصيف",
+            "product": [
+              {
+                "id": 401237802,
+                "name": "قهوة إثيوبية - 225 جم",
+                "url": "https://demostore.salla.sa/ar/dev-vvfitwcsji22oqlk/قهوة-إثيوبية-225-جم/p401237802",
+                "image": "https://cdn.salla.sa/PdgEYq/f7b94663-2731-4db8-9791-dc43bbb34580-500x500-gRxhkQUHSPhPaq4ml42DFvuZT9qxJweOPeJW51Rp.png"
+              }
+            ]
+          },
           {
             "ar": {
               "title": "عرض الاسبوع"

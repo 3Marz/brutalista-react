@@ -1105,3 +1105,19 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
     background-size: 0% 2px;
   }
 }
+
+.s-block--offers-products {
+  /* `SallaProductsList` puts the slider in a grid whose item defaults to
+     `min-width: auto`; on a narrow phone the card's min-content width then
+     pushes the slider wider than the viewport. Let the slider track shrink. */
+  .s-items-list-items-wrapper > div {
+    min-width: 0;
+  }
+}
+
+.offer-product-swiper {
+  width: 80%;
+  /* Swiper slides are flex items with `min-width: auto`; without this the
+     card's min-content width keeps the slider wider than a narrow phone. */
+  min-width: 0;
+}

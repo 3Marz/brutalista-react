@@ -13,11 +13,11 @@ vi.mock('@salla.sa/twilight-theme-engine/api/product', () => ({
   product: { list: (...args: unknown[]) => listMock(...args) },
 }));
 
-// The theme `ProductCard` re-exports the engine one; mock the engine so the
-// fetched products render as plain nodes.
-vi.mock('@salla.sa/twilight-theme-engine/product', () => ({
-  ProductCard: ({ product }: { product: { name?: string } }) => (
-    <div data-testid="product-card">{product.name}</div>
+// Keep this test focused on pairing offers with products; the card itself is
+// covered by DiscountProductCard.test.tsx.
+vi.mock('../../../app/components/home/DiscountProductCard', () => ({
+  DiscountProductCard: ({ product }: { product: { name?: string } }) => (
+    <div data-testid="discount-product-card">{product.name}</div>
   ),
 }));
 
@@ -35,8 +35,9 @@ vi.mock('@salla.sa/twilight-components-react', () => ({
       <div data-testid="salla-products-list">
         {
           children([
-            { id: 11, name: 'Offer Eleven' },
-            { id: 22, name: 'Offer Twenty Two' },
+            // Product-list responses send numeric strings, not numbers.
+            { id: '11', name: 'Offer Eleven' },
+            { id: '22', name: 'Offer Twenty Two' },
           ]) as never
         }
       </div>
