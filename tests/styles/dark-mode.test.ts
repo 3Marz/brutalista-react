@@ -56,6 +56,25 @@ describe('footer_is_dark (body.footer-is-dark)', () => {
   });
 });
 
+describe('footer_is_dark off (store-footer--light)', () => {
+  it('switches the footer menu items to the light ink and border', async () => {
+    const root = await compile('footer.scss');
+
+    const stacked = declarations(
+      root,
+      '.store-footer--light .store-footer__menu--stacked .s-menu-footer-item'
+    );
+    expect(stacked.color).toBe('var(--text-color)');
+
+    const inline = declarations(
+      root,
+      '.store-footer--light .store-footer__menu--inline .s-menu-footer-item'
+    );
+    expect(inline.color).toBe('var(--text-color)');
+    expect(inline['border-color']).toBe('var(--bc)');
+  });
+});
+
 describe('topnav_is_dark (body.topnav-is-dark)', () => {
   it('paints the header top bar on the brutal `bc` band', async () => {
     const root = await compile('header.scss');

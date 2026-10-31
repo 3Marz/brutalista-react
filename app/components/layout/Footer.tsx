@@ -11,11 +11,16 @@ import { HookSlot, useIsClient } from '@salla.sa/twilight-theme-engine/hooks';
 import { Link, Image } from '@salla.sa/twilight-theme-engine/common';
 import { ImageModal } from '@salla.sa/twilight-theme-engine/components/modal';
 import { openStoreSwitcher } from '../../lib/storeSwitchers';
+import { scalar } from '../../lib/blockValue';
 
 /**
  * Fork of the engine `Footer` (`components/layout/Footer.tsx`).
  *
  * Differs from the engine only where the Twig theme's footer settings need it:
+ *  - `footer_is_dark`: switches between the Twig dark `bg-bc` band and the
+ *    light `bg-base-50` palette (trust badges follow the same setting);
+ *  - `footer_layout`: `centered` (single stacked column) or `columns`
+ *    (brand / links / apps grid);
  *  - `sub_logo`: uses the merchant's alternate logo (for dark footers) instead
  *    of `store.logo`;
  *  - `show_store_name_footer`: prints the store name under the logo;
@@ -134,10 +139,12 @@ function FooterLinksMenu({
   inSheet,
   className,
   heading,
+  dark,
 }: {
   inSheet: boolean;
   className: string;
   heading?: string;
+  dark: boolean;
 }) {
   if (inSheet) return null;
 
@@ -146,8 +153,11 @@ function FooterLinksMenu({
 
   return (
     <div className="store-footer__links">
-      {/* The brutal footer is always the dark `bg-bc` band, so headings are light. */}
-      <h3 className="mb-3 text-lg font-bold text-base-100 lg:mb-5">{heading}</h3>
+      <h3
+        className={`mb-3 text-lg font-bold lg:mb-5 ${dark ? 'text-base-100' : 'text-text-color'}`}
+      >
+        {heading}
+      </h3>
       {menu}
     </div>
   );
@@ -246,8 +256,6 @@ function FooterLanguageButton() {
           <i className="sicon-world" />
         </span>
         <span>{languageName}</span>
-        <span className="mx-1.5">|</span>
-        <span>{currency?.symbol}</span>
       </button>
     </div>
   );
@@ -264,6 +272,7 @@ function FooterCenteredBody({ inSheet, isDark }: { inSheet: boolean; isDark: boo
       <FooterLinksMenu
         inSheet={inSheet}
         className="store-footer__menu store-footer__menu--inline"
+        dark={isDark}
       />
 
       <FooterTrust dark={isDark} centered />
@@ -277,8 +286,8 @@ function FooterColumnsBody({ inSheet, isDark }: { inSheet: boolean; isDark: bool
   const { t } = useTranslation();
 
   return (
-    <div className="container grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-16">
-      <div className="store-footer__brand rtl:lg:pl-16 ltr:lg:pr-16 sm:col-span-2">
+    <div className="container px-8 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-16">
+      <div className="store-footer__brand rtl:lg:pl-16 ltr:lg:pr-16 sm:col-span-2 flex flex-col items-center">
         <FooterLogo className="mb-5" />
         <FooterDescription className="max-w-sm leading-6 my-5" />
         <FooterContacts className="mb-6" />
@@ -290,6 +299,7 @@ function FooterColumnsBody({ inSheet, isDark }: { inSheet: boolean; isDark: bool
         inSheet={inSheet}
         className="store-footer__menu store-footer__menu--stacked"
         heading={t('blocks.footer.important_links', 'Important links')}
+        dark={isDark}
       />
 
       <FooterApps className="" />
@@ -305,7 +315,7 @@ export function Footer({ inSheet = false }: FooterProps) {
   const { store, theme } = useTwilight();
   const { t } = useTranslation();
   const year = new Date().getFullYear();
-  const isCentered = theme.settings?.footer_layout === 'centered';
+  const isCentered = scalar(theme.settings?.footer_layout) === 'centered';
   const isDark = !!theme.settings?.footer_is_dark;
   const langButtonBottom = !!(theme.settings as Record<string, unknown> | undefined)
     ?.lang_button_bottom;
@@ -314,16 +324,20 @@ export function Footer({ inSheet = false }: FooterProps) {
 
   return (
     <Root
-      className={`store-footer store-footer--${isCentered ? 'centered' : 'columns'}${
-        inSheet ? ' store-footer--sheet' : ''
-      } relative mt-8 sm:mt-16 bg-bc text-base-100`}
+      className={`store-footer store-footer--${isCentered ? 'centered' : 'columns'} store-footer--${
+        isDark ? 'dark' : 'light'
+      }${inSheet ? ' store-footer--sheet' : ''} relative mt-8 sm:mt-16 ${
+        isDark ? 'bg-bc text-base-100' : 'bg-base-50 text-text-color'
+      }`}
       suppressHydrationWarning
     >
       {!inSheet && <HookSlot name="footer:start" />}
 
       <div
         aria-label="footer"
-        className="store-footer__inner border-b border-dashed border-base-100 bg-bc py-8 lg:py-16"
+        className={`store-footer__inner border-b border-dashed py-8 lg:py-16 ${
+          isDark ? 'bg-bc border-base-100' : 'bg-base-50 border-bc'
+        }`}
       >
         {isCentered ? (
           <FooterCenteredBody inSheet={inSheet} isDark={isDark} />
@@ -335,7 +349,7 @@ export function Footer({ inSheet = false }: FooterProps) {
       <div className="store-footer__bottom container flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 py-4 lg:py-7 text-center">
         {langButtonBottom && <FooterLanguageButton />}
 
-        <span className="text-sm text-base-100 copyright-text">
+        <span className={`text-sm copyright-text ${isDark ? 'text-base-100' : 'text-text-color'}`}>
           <HookSlot
             name="copyright"
             context={{ storeName: store.name }}

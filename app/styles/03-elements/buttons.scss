@@ -88,7 +88,7 @@ salla-button {
   }
 
   &--rounded-gray {
-    @apply inline-flex grow-0 justify-center w-full rounded border-2 border-bc px-3.5 py-2 items-center transition-colors bg-base-50 hover:bg-base-200 text-sm font-medium whitespace-nowrap;
+    @apply text-text-color inline-flex grow-0 justify-center w-full rounded border-2 border-bc px-3.5 py-2 items-center transition-colors bg-base-50 hover:bg-base-200 text-sm font-medium whitespace-nowrap;
   }
 
   &--circle-gray {

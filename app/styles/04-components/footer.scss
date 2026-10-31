@@ -18,13 +18,30 @@
     @apply underline-offset-2 hover:underline;
   }
 
+  &__apps {
+    text-align: center;
+
+    .s-apps-icons-list {
+      @apply mt-4 justify-center;
+    }
+  }
+
+  .s-contacts-header {
+    display: flex !important;
+  }
+
   .s-contacts-icon,
   .s-social-link a {
     @apply border-none hover:opacity-100;
   }
 
-  .social-link {
-    @apply flex h-8 w-8 items-center justify-center rounded-full border border-base-100 text-sm transition duration-300 hover:opacity-75;
+  .s-social-link {
+    @apply flex h-8 w-8 items-center justify-center text-sm transition duration-300 hover:opacity-75  hover:scale-[1.2];
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   /* Footer menu — `<salla-menu source="footer">` renders a bare
@@ -96,9 +113,7 @@
   }
 }
 
-/* The brutal footer is always the dark `bg-bc` band (see `Footer.tsx`), so its
-   menu text is light in both `footer_is_dark` states. `footer_is_dark` itself
-   now only feeds the trust badges. */
+/* `footer_is_dark` keeps the Twig dark `bg-bc` band. */
 body.footer-is-dark .store-footer {
   &__menu--stacked .s-menu-footer-item {
     @apply text-base-100;
@@ -106,6 +121,25 @@ body.footer-is-dark .store-footer {
 
   &__menu--inline .s-menu-footer-item {
     @apply border-base-100 text-base-100;
+  }
+}
+
+/* `footer_is_dark` off: Twig's `.footer-is-light` palette. */
+.store-footer--light {
+  .store-footer__menu--stacked .s-menu-footer-item {
+    @apply text-text-color;
+  }
+
+  .store-footer__menu--inline .s-menu-footer-item {
+    @apply border-bc text-text-color;
+  }
+
+  .btn--rounded-gray {
+    @apply border-base-300;
+  }
+
+  .s-payments-list-item {
+    @apply border border-base-200;
   }
 }
 

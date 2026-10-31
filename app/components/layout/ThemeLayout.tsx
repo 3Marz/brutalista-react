@@ -130,6 +130,7 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
   // `<body>`: the header light/dark state and the global "hide add to cart" flag.
   const extraBodyClasses: string[] = [
     settings?.header_is_dark ? 'header-is-dark' : 'header-is-light',
+    settings?.footer_is_dark ? 'footer-is-dark' : 'footer-is-light',
   ];
   if (settings?.hide_add_to_cart_button) extraBodyClasses.push('hide-add-to-cart');
   if (settings?.cool_cart_page) extraBodyClasses.push('cool-cart-page');

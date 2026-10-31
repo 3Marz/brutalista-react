@@ -340,6 +340,36 @@
       "variant": "h6"
     },
     {
+      "id": "footer_layout",
+      "type": "items",
+      "format": "dropdown-list",
+      "label": "تخطيط أسفل الصفحة",
+      "description": null,
+      "labelHTML": null,
+      "icon": "sicon-layout-grid",
+      "selected": [
+        {
+          "label": "أعمدة",
+          "value": "columns",
+          "key": "f43f858d-83b0-4639-bac7-8edbaffae70a"
+        }
+      ],
+      "options": [
+        {
+          "label": "أعمدة",
+          "value": "columns",
+          "key": "f43f858d-83b0-4639-bac7-8edbaffae70a"
+        },
+        {
+          "label": "في المنتصف",
+          "value": "centered",
+          "key": "ece589d0-fddd-4bf1-9a70-1252c13ccb47"
+        }
+      ],
+      "source": "Manual",
+      "required": false
+    },
+    {
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "الوضع الداكن",
@@ -359,14 +389,7 @@
       "description": "شعار بديل لأسفل الصفحة يُستخدم إذا كان الشعار الأساسي غير متناسق مع الخلفية الداكنة",
       "placeholder": "e.g. https://hostname.com/image.png",
       "required": false,
-      "value": null,
-      "conditions": [
-        {
-          "id": "footer_is_dark",
-          "operation": "=",
-          "value": true
-        }
-      ]
+      "value": null
     },
     {
       "type": "boolean",
@@ -382,7 +405,7 @@
     {
       "type": "boolean",
       "icon": "sicon-toggle-off",
-      "label": "جعل زر اللغة والعملة أسفل الصفحة",
+      "label": "إظهار زر اللغة والعملة أسفل الصفحة",
       "description": null,
       "id": "lang_button_bottom",
       "format": "switch",
