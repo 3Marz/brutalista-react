@@ -778,9 +778,61 @@
 /*
   Custom testimonials — full-width gray band with a horizontal card scroller.
   Markup: app/components/home/CustomTestimonials.tsx
+
+  The card follows the Twig `home/custom-testimonials.twig` / brutal reviews
+  design. It is rendered by the theme rather than by the engine `salla-reviews`
+  web component, so these classes are fully under our control.
 */
 .s-block--custom-testimonials {
   @apply bg-base-50 py-10 lg:py-16 overflow-hidden;
+
+  .s-reviews-testimonial {
+    /* The engine sets `height: 100%` + padding on this class. Reset both so all
+       cards stretch to the tallest card in the row, like product sliders. */
+    @apply relative opacity-100 flex flex-shrink-0 self-stretch bg-base-50 border-2 border-bc rounded-neo shadow-neo min-h-80 h-auto p-0;
+    flex-basis: clamp(260px, 30%, 360px);
+    scroll-snap-align: start;
+  }
+
+  .s-reviews-testimonial__inner {
+    @apply relative w-full flex flex-col text-center gap-5 justify-between px-4 pt-16 pb-6;
+  }
+
+  .s-reviews-testimonial__avatar {
+    @apply absolute w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-bc top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1];
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  .s-reviews-testimonial__text {
+    @apply flex flex-col gap-4 h-full justify-center;
+
+    p {
+      @apply text-base text-text-color opacity-80 line-clamp-5;
+    }
+  }
+
+  .s-reviews-testimonial__icon {
+    @apply absolute top-6 text-bc ltr:left-6 rtl:right-6;
+
+    i {
+      @apply text-3xl;
+    }
+  }
+
+  .s-reviews-testimonial__name_wrapper {
+    @apply flex flex-col items-center gap-1;
+  }
+
+  .s-reviews-testimonial__info h2 {
+    @apply text-lg font-normal;
+  }
+
+  .s-reviews-testimonial__rating {
+    @apply flex justify-center mx-0;
+  }
 }
 
 /*
@@ -798,7 +850,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__title {
-    @apply text-xl font-bold text-text-color;
+    @apply text-xl font-bold text-text-color underline underline-offset-8;
   }
 
   &__desc {
@@ -806,7 +858,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__scroller {
-    @apply flex gap-4 lg:gap-6 overflow-x-auto pb-1 cursor-grab;
+    @apply flex items-stretch gap-4 lg:gap-6 overflow-x-auto pt-14 pb-3 cursor-grab;
     scroll-snap-type: x proximity;
     /* the row starts at the container's start edge (right in RTL) and its tail
        bleeds to the opposite viewport edge */
@@ -843,40 +895,6 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
 
   &__progress-thumb {
     @apply absolute top-0 h-0.5 bg-bc rounded-full transition-all duration-200;
-  }
-}
-
-.testimonial-card {
-  @apply flex-shrink-0 flex flex-col bg-base-50 rounded-neo border-2 border-bc shadow-neo p-5 lg:p-6;
-  flex-basis: clamp(260px, 30%, 340px);
-  scroll-snap-align: start;
-
-  &__head {
-    @apply flex items-start justify-between gap-3 mb-4;
-  }
-
-  &__rating {
-    @apply inline-flex items-center gap-1 shrink-0 bg-base-200 rounded-neo border-2 border-bc px-2.5 py-1 text-sm font-bold text-text-color;
-
-    svg {
-      @apply w-3.5 h-3.5 fill-current text-amber-400;
-    }
-  }
-
-  &__person {
-    @apply flex items-center gap-2.5 rtl:text-right ltr:text-left;
-  }
-
-  &__name {
-    @apply text-sm font-bold text-text-color whitespace-nowrap;
-  }
-
-  &__avatar {
-    @apply w-11 h-11 rounded-full object-cover shrink-0 border-2 border-bc bg-base-200;
-  }
-
-  &__text {
-    @apply text-sm leading-6 text-my-gray line-clamp-4;
   }
 }
 

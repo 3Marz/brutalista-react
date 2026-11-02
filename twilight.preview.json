@@ -1035,6 +1035,39 @@
       }
     },
     {
+      "id": "b-9a7f2b95105e",
+      "path": "custom-testimonials",
+      "fields": {
+        "key": "541cc423-90c7-4230-8a33-a0342cfde4ad",
+        "items": [
+          {
+            "name": "ندى الحسيني",
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_female.png",
+            "stars": 5,
+            "text": "وصلتني اليوم  وطلعت جميلة متحمسة أجربها ❤️"
+          },
+          {
+            "name": "خالد الأحمد",
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+            "stars": 5,
+            "text": "اشتريت من هنا لعيالي وصراحة شئ لا يعلى عليه 👏"
+          },
+          {
+            "name": "خالد المسعودي",
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+            "stars": 5,
+            "text": "رهيبين يفكون أزمة. 👌"
+          },
+          {
+            "name": "عبدالعزيز اليامي",
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+            "stars": 5,
+            "text": "أحب هذا المتجر وتعاملهم الراقي مع العملاء ❤️"
+          }
+        ]
+      }
+    },
+    {
       "id": "b-b1698736c3fc",
       "path": "questions",
       "fields": {

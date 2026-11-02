@@ -17,12 +17,10 @@ export interface BrutalTestimonialsData {
 }
 
 /**
- * `brutal_testimonials` home block — the store's reviews in a slider.
- *
- * Replaces the Twig theme's `<brutal-reviews>` custom element with the engine's
- * {@link SallaReviews} (which itself renders a `salla-slider`), styled to the
- * brutal card look by `.s-block--brutal_testimonials` in
- * `04-components/home-blocks.scss`.
+ * `brutal_testimonials` home block — the store's reviews through the engine's
+ * {@link SallaReviews}. The engine owns that markup, so the theme leaves it
+ * with its default styling; the brutal card look is implemented by the
+ * merchant-authored `custom-testimonials` block instead.
  */
 export const BrutalTestimonials = memo(function BrutalTestimonials({
   data,

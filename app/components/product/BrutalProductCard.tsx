@@ -261,7 +261,7 @@ export const BrutalProductCard = memo(function BrutalProductCard({
         <div className={`h-full w-full flex flex-col gap-2 ${isSpecial ? 'lg:gap-4' : ''} px-2`}>
           <h5 className={isSpecial ? 'lg:text-xl' : ''}>
             <a
-              className={`hover:underline underline-offset-2 ${
+              className={`hover:underline underline-offset-2 line-clamp-2 ${
                 isFullImage ? 'text-base-100' : 'text-text-color'
               }`}
               href={product.url}

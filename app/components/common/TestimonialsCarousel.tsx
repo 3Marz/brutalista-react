@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
-import { ArrowLeftIcon, ArrowRightIcon, StarIcon } from '../icons';
+import { ArrowLeftIcon, ArrowRightIcon } from '../icons';
 import { useDragScroll } from '../../hooks/useDragScroll';
 
 export interface TestimonialItem {
@@ -10,50 +10,25 @@ export interface TestimonialItem {
   stars?: number;
 }
 
-function TestimonialCard({ item, index }: { item: TestimonialItem; index: number }) {
-  return (
-    <article className="testimonial-card">
-      <div className="testimonial-card__head">
-        <div className="testimonial-card__person">
-          {item.avatar && (
-            <img
-              className="testimonial-card__avatar"
-              src={item.avatar}
-              alt={item.name?.trim() ? item.name : `testimonial-${index}`}
-              width={44}
-              height={44}
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-            />
-          )}
-          <b className="testimonial-card__name">{item.name}</b>
-        </div>
-
-        <span className="testimonial-card__rating">
-          <StarIcon aria-hidden="true" />
-          {Number(item.stars ?? 0).toFixed(1)}
-        </span>
-      </div>
-
-      <p className="testimonial-card__text">{item.text}</p>
-    </article>
-  );
-}
-
 export interface TestimonialsCarouselProps {
   items: TestimonialItem[];
   title: string;
   description?: string;
+  renderItem: (item: TestimonialItem, index: number) => ReactNode;
 }
 
 /**
  * Horizontal card scroller for customer reviews — ~3.x cards per view, a
- * drag-scrollable row, and a progress bar + prev/next controls below. Used by
- * the `custom-testimonials` home block ({@link CustomTestimonials}). Styling:
- * `04-components/home-blocks.scss` (`.s-testimonials` / `.testimonial-card`).
+ * drag-scrollable row, and a progress bar + prev/next controls below. The
+ * consuming block owns the card markup through `renderItem`; this component
+ * only handles layout, dragging, snapping, progress and navigation.
  */
-export function TestimonialsCarousel({ items, title, description }: TestimonialsCarouselProps) {
+export function TestimonialsCarousel({
+  items,
+  title,
+  description,
+  renderItem,
+}: TestimonialsCarouselProps) {
   const { t } = useTranslation();
   const scroller = useRef<HTMLDivElement>(null);
   const drag = useDragScroll(scroller);
@@ -84,7 +59,7 @@ export function TestimonialsCarousel({ items, title, description }: Testimonials
   const scrollByCard = (dir: number) => {
     const el = scroller.current;
     if (!el) return;
-    const card = el.querySelector<HTMLElement>('.testimonial-card');
+    const card = el.querySelector<HTMLElement>('[data-testimonial-card]');
     const step = (card?.offsetWidth || el.clientWidth * 0.8) + 24;
     el.scrollBy({ left: dir * step, behavior: 'smooth' });
   };
@@ -110,7 +85,9 @@ export function TestimonialsCarousel({ items, title, description }: Testimonials
           // A static settings list whose items have no id: see
           // .react-doctor/false-positives.md.
           // react-doctor-disable-next-line react-doctor/no-array-index-as-key
-          <TestimonialCard key={`${index}-${item.name ?? ''}`} item={item} index={index} />
+          <Fragment key={`${index}-${item.name ?? ''}`}>
+            {renderItem(item, index)}
+          </Fragment>
         ))}
       </div>
 

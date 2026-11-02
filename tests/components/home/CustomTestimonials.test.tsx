@@ -22,25 +22,28 @@ describe('CustomTestimonials', () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it('renders the heading and one card per item', () => {
+  it('renders the heading and one brutal card per item', () => {
     const { container, getByText } = render(<CustomTestimonials data={{ items }} />);
     expect(getByText('Customer reviews')).toBeTruthy();
-    expect(container.querySelectorAll('.testimonial-card')).toHaveLength(3);
+    expect(container.querySelectorAll('.s-reviews-testimonial')).toHaveLength(3);
     expect(container.querySelector('.s-testimonials__scroller')).toBeTruthy();
   });
 
-  it('renders the rating as "N.0" with the star icon', () => {
+  it('renders the rating stars with each item value', () => {
     const { container } = render(<CustomTestimonials data={{ items }} />);
-    const rating = container.querySelector('.testimonial-card__rating');
-    expect(rating?.textContent?.trim()).toBe('5.0');
-    expect(rating?.querySelector('svg')).toBeTruthy();
+    const ratings = container.querySelectorAll(
+      '.s-reviews-testimonial__rating salla-rating-stars'
+    );
+    expect(ratings).toHaveLength(3);
+    expect(ratings[0].getAttribute('value')).toBe('5');
+    expect(ratings[1].getAttribute('value')).toBe('4');
   });
 
   it('renders name, text and avatar for each card', () => {
     const { container, getByText } = render(<CustomTestimonials data={{ items }} />);
     expect(getByText('ندى الحسيني')).toBeTruthy();
     expect(getByText('رائحة رائعة')).toBeTruthy();
-    expect(container.querySelector('.testimonial-card__avatar')?.getAttribute('src')).toBe(
+    expect(container.querySelector('.s-reviews-testimonial__avatar img')?.getAttribute('src')).toBe(
       'a1.jpg'
     );
   });

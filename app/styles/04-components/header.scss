@@ -40,7 +40,7 @@
     box-shadow 0.25s ease;
 
   &.is-scrolled {
-    @apply fixed inset-x-0 bg-base-50 border-b-2 border-bc shadow-neo;
+    @apply fixed inset-x-0 bg-base-50 border-b-2 border-bc;
     /* below the status bar inside the Salla app; 0 in a browser */
     top: var(--app-safe-area-top, 0px);
   }

@@ -1,17 +1,16 @@
 /*
-  Brutal sliders and testimonial cards.
+  Brutal sliders.
 
   Scoped to the brutal blocks' own slider classes (`brutal-reviews-slider`,
-  `discount-offer-slider`, `banner-slider`, `s-reviews-testimonials-slider`) so
-  the theme's other sliders keep the raed look. Arrows/port from the Twig
-  theme's `04-components/slider.scss`; the `salla-reviews` card restyle targets
-  the markup the engine `SallaReviews` wrapper renders (see
-  `home/brutal_testimonials.twig` in the Twig theme).
+  `discount-offer-slider`, `banner-slider`) so the theme's other sliders keep
+  the raed look. Arrows/port from the Twig theme's `04-components/slider.scss`.
+  Store reviews (`salla-reviews`) are left alone: the engine owns that markup,
+  so the brutal card look lives in the merchant-authored `custom-testimonials`
+  block instead.
 */
 
 salla-slider.brutal-reviews-slider,
-salla-slider.discount-offer-slider,
-salla-slider.s-reviews-testimonials-slider {
+salla-slider.discount-offer-slider {
   .s-slider-nav-arrow {
     @apply border !border-solid border-base-300 hover:border-primary !bg-base-100 transition-all !shadow-none;
 
@@ -88,60 +87,5 @@ salla-slider.discount-offer-slider {
 salla-slider.banner-slider {
   .swiper {
     padding: 0 !important;
-  }
-}
-
-/*
-  Store testimonials (`brutal_testimonials`) — restyle the engine
-  `salla-reviews` card to the brutal testimonial look: a bordered, shadowed
-  card with a circular avatar straddling the top edge and a quote mark.
-*/
-.s-block--brutal_testimonials {
-  .s-reviews-header {
-    @apply underline underline-offset-8 text-xl font-bold;
-  }
-
-  salla-slider.s-reviews-testimonials-slider {
-    @apply pt-12;
-  }
-
-  .s-reviews-testimonial {
-    @apply relative flex bg-base-50 border-2 border-bc rounded-neo shadow-neo min-h-80 mx-6;
-  }
-
-  .s-reviews-testimonial__inner {
-    @apply relative w-full flex flex-col text-center gap-5 justify-between px-4 pt-16 pb-6;
-  }
-
-  .s-reviews-testimonial__avatar {
-    @apply absolute w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-bc top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
-
-    img {
-      @apply w-full h-full object-cover;
-    }
-  }
-
-  .s-reviews-testimonial__text {
-    @apply flex flex-col gap-4 h-full justify-center;
-
-    p {
-      @apply text-base text-text-color opacity-80 line-clamp-5;
-    }
-  }
-
-  .s-reviews-testimonial__icon {
-    @apply absolute top-6 text-bc ltr:left-6 rtl:right-6;
-
-    svg {
-      @apply w-6 h-6 fill-bc;
-    }
-  }
-
-  .s-reviews-testimonial__name_wrapper {
-    @apply flex flex-col items-center;
-  }
-
-  .s-reviews-testimonial__info h2 {
-    @apply text-lg font-normal;
   }
 }
