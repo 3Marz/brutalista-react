@@ -22,6 +22,13 @@ vi.mock('@salla.sa/twilight-theme-engine/providers', () => ({
   }),
 }));
 
+vi.mock('@salla.sa/twilight-theme-engine/i18n', () => ({
+  useTranslation: () => ({
+    locale: 'ar',
+    t: (_key: string, fallback?: string) => fallback ?? _key,
+  }),
+}));
+
 vi.mock('@salla.sa/twilight-theme-engine/common', () => ({
   Link: ({
     to,
@@ -169,11 +176,20 @@ describe('Brutal home blocks', () => {
       />
     );
     expect(screen.getByText('Testimonials')).toBeTruthy();
+    expect(screen.getByRole('link', { name: /View All/ }).getAttribute('href')).toBe(
+      '/testimonials'
+    );
     const reviews = screen.getByTestId('reviews');
     expect(reviews.getAttribute('data-sort')).toBe('top_rating');
     expect(reviews.getAttribute('data-limit')).toBe('4');
 
     rerender(<BrutalTestimonials data={{ order_by: 'newest' }} />);
     expect(screen.getByTestId('reviews').getAttribute('data-sort')).toBe('latest');
+    expect(screen.queryByRole('link', { name: /View All/ })).toBeNull();
+
+    rerender(
+      <BrutalTestimonials data={{ ar: { title: 'آراء العملاء' }, order_by: 'newest' }} />
+    );
+    expect(screen.getByText('آراء العملاء')).toBeTruthy();
   });
 });

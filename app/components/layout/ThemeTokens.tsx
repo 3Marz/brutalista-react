@@ -49,7 +49,7 @@ export function themeTokensCss(settings?: BrutalTokenSettings): string {
     `--bc-dark:${darken(borderColor, 0.25)};`,
     `--bc-light:${lighten(borderColor, 0.25)};`,
     `--base:${base};`,
-    `--base-50:${lighten(base, 0.075)};`,
+    `--base-50:${lighten(base, 0.65)};`,
     `--base-100:${base};`,
     `--base-200:${darken(base, 0.18)};`,
     `--base-300:${darken(base, 0.28)};`,

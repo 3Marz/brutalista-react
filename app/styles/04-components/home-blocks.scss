@@ -404,6 +404,17 @@
   }
 }
 
+// ALL SLIDERS
+.s-slider-block {
+  &__title {
+    @apply justify-center;
+
+    &-right {
+      @apply underline underline-offset-8 mb-2 text-xl font-bold relative leading-[1.2] !p-0;
+    }
+  }
+}
+
 /*
   Main Links Block
 */
@@ -784,7 +795,7 @@
   web component, so these classes are fully under our control.
 */
 .s-block--custom-testimonials {
-  @apply bg-base-50 py-10 lg:py-16 overflow-hidden;
+  @apply py-10 lg:py-16 overflow-hidden;
 
   .s-reviews-testimonial {
     /* The engine sets `height: 100%` + padding on this class. Reset both so all
@@ -835,6 +846,71 @@
   }
 }
 
+// For SallaReviews
+.s-block--brutal_testimonials {
+  /* SallaReviews always renders its own heading + display-all link. The block
+     renders both in the theme's centered title wrapper instead. */
+  .s-reviews-header-wrapper {
+    @apply hidden;
+  }
+
+  .s-reviews-testimonial {
+    @apply bg-base-50 rounded-neo border-2 border-bc shadow-neo;
+  }
+  .s-reviews-header-wrapper {
+    @apply pb-8 justify-center gap-5;
+  }
+  .s-reviews-header {
+    @apply underline underline-offset-8 mb-2 text-xl font-bold relative leading-[1.2];
+  }
+
+  .s-reviews-container .swiper-slide-active .s-reviews-testimonial {
+    @apply shadow-neo;
+  }
+
+  .s-reviews-swiper-slide {
+    @apply pb-2;
+  }
+
+  @media (max-width: 767px) {
+    /* The engine lays the card out as text + avatar side by side. At phone
+       widths the avatar wins the space and the text overflows outside the
+       card, so stack them instead. */
+    .s-reviews-testimonial__inner {
+      @apply flex-col items-center text-center;
+      gap: 0.75rem;
+    }
+
+    .s-reviews-container .swiper-slide-active .s-reviews-testimonial__avatar {
+      /* Physical shorthand: the engine's physical margin-left would otherwise
+         beat Tailwind's logical mx-auto in RTL. */
+      margin: 0 auto 0.5rem;
+    }
+
+    .s-reviews-testimonial__text {
+      @apply w-full min-w-0 flex-none text-center;
+    }
+
+    .s-reviews-testimonial__name_wrapper {
+      @apply items-center;
+    }
+
+    .s-reviews-testimonial__rating {
+      @apply m-0;
+    }
+
+    /* The arrows sit on top of the card at this width; swiping still works. */
+    .s-slider-block__title-nav {
+      @apply hidden;
+    }
+
+    /* Reclaim the space reserved for the arrows and center the card. */
+    .s-reviews-container .swiper {
+      padding-inline: 1rem;
+    }
+  }
+}
+
 /*
   `salla-reviews` (the engine "testimonials" block, also rendered at the bottom
   of the product page) always paints its heading + an empty slider even with no
@@ -850,7 +926,7 @@ salla-reviews:not(:has(.s-reviews-swiper-slide)) {
   }
 
   &__title {
-    @apply text-xl font-bold text-text-color underline underline-offset-8;
+    @apply text-center text-xl font-bold text-text-color underline underline-offset-8;
   }
 
   &__desc {
