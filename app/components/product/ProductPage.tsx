@@ -152,7 +152,9 @@ export function ProductPage({ product: initialProduct, page }: ProductPageProps)
         scope={blockScope}
       />
 
-      {store.settings?.rating?.show_on_product && (
+      {store.settings?.rating?.show_on_product && (product.rating?.count ?? 0) > 0 && (
+        // SallaComments renders its comment form / empty summary even when the
+        // product has no reviews, so only mount it when there is at least one.
         // `estimatedHeight="0"`: `RenderWhenVisible` hard-codes `min-height` on its
         // wrapper section and never clears it, so the default 400px leaves an empty
         // gap when the product has no reviews. Comments size themselves once present.

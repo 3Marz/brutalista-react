@@ -78,6 +78,7 @@ salla-list-tile.s-gifting-widget .s-list-tile-item-content::before{
   <body> when the setting is on.
 */
 %ticket {
+  border-radius: 0;
   filter: drop-shadow(1px 0px var(--bc)) drop-shadow(-1px 0px var(--bc))
     drop-shadow(0px 1px var(--bc)) drop-shadow(0px -1px var(--bc));
 
@@ -119,18 +120,18 @@ salla-list-tile.s-gifting-widget .s-list-tile-item-content::before{
   @extend %ticket;
 }
 
-body.cool-cart-page {
+body.cart.cool-cart-page {
   #cart-gifting,
-  .cart .shadow-default.transition-height,
-  .cart #free-shipping {
+  .shadow-default.transition-height,
+  #free-shipping {
     @extend %ticket;
   }
 }
 
-body:not(.cool-cart-page) {
+body.cart:not(.cool-cart-page) {
   #cart-gifting,
-  .cart .shadow-default.transition-height,
-  .cart #free-shipping {
+  .shadow-default.transition-height,
+  #free-shipping {
     @apply border-2 border-bc rounded-neo shadow-neo;
   }
 }

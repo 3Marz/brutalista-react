@@ -413,8 +413,8 @@ export function MobileBottomBar({
             data-testid="mobile-bottom-bar-cart"
             onClick={() => openTab('cart')}
           >
-            <span className="mobile-bottom-bar__icon">
-              <ShoppingBagIcon aria-hidden="true" />
+            <span className="mobile-bottom-bar__icon shopping-cart-icon">
+              <ShoppingBagIcon viewBox='0 0 1024 1024' aria-hidden="true" />
               {cartCount > 0 && (
                 <span
                   key={cartCount}

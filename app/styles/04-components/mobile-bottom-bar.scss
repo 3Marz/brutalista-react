@@ -86,6 +86,11 @@
     background: var(--color-primary, #9ca3af);
     color: var(--color-primary-reverse, #ffffff);
     padding: 0 10px;
+
+    .mobile-bottom-bar__icon.shopping-cart-icon > svg {
+      @apply fill-primary-reverse;
+    }
+
   }
 }
 
@@ -93,6 +98,10 @@
   @apply relative flex flex-none items-center justify-center;
   width: 24px;
   height: 24px;
+  &.shopping-cart-icon > svg {
+    @apply fill-text-color;
+    transition: fill;
+  }
 }
 
 .mobile-bottom-bar svg {
@@ -146,10 +155,11 @@
    alert regardless of the store's primary colour. */
 .mobile-bottom-bar__badge {
   @apply absolute flex items-center justify-center rounded-full font-bold;
-  /* Bottom-centred on the icon, matching the header cart badge. */
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Top-right on the icon, matching the header cart badge. */
+  top: -6px;
+  right: -6px;
+  bottom: auto;
+  left: auto;
   min-width: 16px;
   height: 16px;
   padding: 0 3px;
@@ -167,11 +177,11 @@
 
 @keyframes mbb-badge-pop {
   from {
-    transform: translateX(-50%) scale(0.4);
+    transform: scale(0.4);
     opacity: 0;
   }
   to {
-    transform: translateX(-50%) scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 }

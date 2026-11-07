@@ -96,10 +96,11 @@ function HeaderIntro() {
  * Two layouts, chosen by the `header_layout` theme setting:
  *  - **lite** (default): centered logo, a menu button that opens the slide-in
  *    drawer, action icons, then a store-name / description / social row.
- *  - **default**: a `lg+` top bar ({@link HeaderTopnav}) with the footer menu +
- *    language / branch / currency switchers, then a row of logo · horizontal
- *    mega-menu (`HeaderMainMenu`) · action icons. Below `lg` it collapses to the
- *    same mobile bar as lite (burger + drawer + icons).
+ *  - **default**: an optional `lg+` top bar ({@link HeaderTopnav}) with the
+ *    footer menu + language / branch / currency switchers, then a row of logo ·
+ *    horizontal mega-menu (`HeaderMainMenu`) · action icons. The top bar can be
+ *    hidden with `header_show_topnav`. Below `lg` it collapses to the same
+ *    mobile bar as lite (burger + drawer + icons).
  *
  * The menu opens a slide-in drawer at every breakpoint ({@link HeaderNav}); the
  * search icon opens the Salla search modal through the `search::open` event
@@ -120,6 +121,8 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
   const { store, theme } = useTwilight();
   const { t } = useTranslation();
   const isDefaultLayout = theme?.settings?.header_layout === 'default';
+  const showTopnav =
+    (theme?.settings as { header_show_topnav?: boolean } | undefined)?.header_show_topnav !== false;
   const stickyEnabled = theme?.settings?.header_is_sticky !== false;
   const [navOpenState, setNavOpenState] = useState(false);
   const navOpen = navOpenProp ?? navOpenState;
@@ -206,13 +209,14 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
       </div>
 
       {/* "Delivering to …" tag (bullet delivery). Phones get it above the bars; on
-          desktop it sits in the top nav (default layout) or its own slim row (lite).
-          The element renders nothing when the store / market has no bullet delivery. */}
+          desktop it sits in the top nav (default layout, when enabled) or its own
+          slim row (lite). The element renders nothing when the store / market has
+          no bullet delivery. */}
       <div className="site-header__bullet lg:hidden">
         <salla-bullet-delivery-tag data-testid="store-header-bullet-delivery-mobile" />
       </div>
       {isDefaultLayout ? (
-        <HeaderTopnav />
+        showTopnav ? <HeaderTopnav /> : null
       ) : (
         <div className="site-header__bullet site-header__bullet--desktop hidden lg:block">
           <div className="container">
@@ -272,7 +276,7 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
                 <ScopeButton label={store.scope.name || t('blocks.header.branches', 'Branches')} />
               )}
               <SallaCartSummary className="header-action">
-                <ShoppingBagIcon slot="icon" aria-hidden="true" />
+                <ShoppingBagIcon className='fill-text-color' viewBox='0 0 1024 1024' slot="icon" aria-hidden="true" />
               </SallaCartSummary>
               <SearchButton label={searchLabel} />
             </div>

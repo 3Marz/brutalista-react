@@ -656,11 +656,14 @@
 }
 
 .s-cart-summary-count {
-  /* Smaller than the plugin default (h-5 w-5, p-1) so it clears the bag icon;
-     `top/right: auto` cancel the plugin's corner anchor so the values below win. */
-  @apply h-4 w-4 p-0 text-[10px] leading-none -bottom-1.5 left-1/2 -translate-x-1/2 bg-danger;
-  top: auto !important;
-  right: auto;
+  /* Smaller than the plugin default (h-5 w-5, p-1) so it clears the bag icon.
+     Pin it to the icon's top-right corner, overriding the plugin's own anchor. */
+  @apply h-4 w-4 p-0 text-[10px] leading-none bg-danger;
+  top: -0.375rem !important;
+  right: -0.375rem !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
 }
 
 /* =========================================================================
@@ -879,7 +882,15 @@ body.header-is-dark {
     }
 
     .s-menu-root-level > a {
-      @apply inline-flex items-center gap-1 whitespace-nowrap rounded px-3 py-2 text-sm font-medium text-text-color transition-colors hover:text-primary;
+      @apply inline-flex items-center gap-1 whitespace-nowrap rounded px-3 py-2 text-sm font-medium text-text-color transition hover:text-primary;
+      span { 
+        @apply transition;
+      }
+      &:hover {
+        span {
+          @apply -translate-y-[2px] underline underline-offset-8; 
+        }
+      }
     }
 
     /* rows inside a panel — stacked */

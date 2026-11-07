@@ -194,3 +194,16 @@ describe('default layout dropdown panels', () => {
     expect(decl(products, 'overflow-y')).toBe('auto');
   });
 });
+
+describe('header cart count badge', () => {
+  it("anchors to the cart icon's top-right corner", async () => {
+    const css = await compileHeader();
+    const selector = '.s-cart-summary-count';
+
+    expect(declFor(css, selector, 'top')).toBe('-0.375rem');
+    expect(declFor(css, selector, 'right')).toBe('-0.375rem');
+    expect(declFor(css, selector, 'bottom')).toBe('auto');
+    expect(declFor(css, selector, 'left')).toBe('auto');
+    expect(declFor(css, selector, 'transform')).toBe('none');
+  });
+});

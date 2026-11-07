@@ -325,7 +325,7 @@ function StickyProductBar({
     el?.setAttribute('type', 'submit');
   }, []);
   return (
-    <section className="sticky-product-bar bg-base-50">
+    <section className="sticky-product-bar bg-base-50 md:bg-base-100 p-5 border-2 border-bc rounded-neo shadow-neo">
       {/* Live price on the start side, quantity stepper on the end side
           (replaces the standalone price section and the "Quantity" label). */}
       <div className="sticky-product-bar__quantity center-between mb-5">

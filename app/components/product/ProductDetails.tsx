@@ -57,7 +57,6 @@ export function ProductDetails({
               src={product.brand.logo}
               title={product.brand.name}
               alt={product.brand.name}
-              aspectRatio="1/1"
             />
           </Link>
         </div>

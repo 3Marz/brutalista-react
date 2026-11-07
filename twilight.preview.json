@@ -33,7 +33,8 @@
     "sticky_add_to_cart": true,
     "show_tags": true,
     "slider_background_size": "contain",
-    "imageZoom": false
+    "imageZoom": false,
+    "header_show_topnav": false
   },
   "layout": [
     {

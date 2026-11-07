@@ -189,6 +189,35 @@ describe('Header', () => {
     expect(container.querySelector('.site-header__intro')).toBeNull();
   });
 
+  it('shows the top bar in the default header layout by default', () => {
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        observe() {}
+        unobserve() {}
+        disconnect() {}
+      }
+    );
+    state.theme = { settings: { header_layout: 'default' } };
+    const { container } = render(<Header />);
+    expect(container.querySelector('.site-header__topnav')).toBeTruthy();
+  });
+
+  it('hides the top bar when header_show_topnav is off', () => {
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        observe() {}
+        unobserve() {}
+        disconnect() {}
+      }
+    );
+    state.theme = { settings: { header_layout: 'default', header_show_topnav: false } };
+    const { container } = render(<Header />);
+    expect(container.querySelector('.site-header__topnav')).toBeNull();
+    expect(container.querySelector('.site-header__bar')).toBeTruthy();
+  });
+
   it('opens the nav drawer when the menu button is clicked', () => {
     const { getByLabelText, getByTestId } = render(<Header />);
     const button = getByLabelText('Menu');
