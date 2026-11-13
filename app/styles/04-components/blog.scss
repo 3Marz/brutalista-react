@@ -1,0 +1,67 @@
+/* =========================================================================
+   Blog — restored from the Twig theme.
+
+   The React engine renders the same blog structure as the Twig theme, but its
+   cards use the engine's default white / rounded-lg treatment. These rules
+   restyle that markup to the Brutal card language: hard border, base surface,
+   neo shadow, and the old image zoom on hover.
+   ========================================================================= */
+
+/* Article cards on the blog index, category, tag and author pages. */
+.post-entry {
+  @apply border-2 border-bc bg-base-50 hover:shadow-neo shadow-neo rounded-neo;
+  @apply transition duration-300;
+
+  &:hover {
+    @apply -translate-y-1 !shadow-neo;
+  }
+}
+
+.post-entry__image {
+  @apply border-b-2 border-bc;
+
+  img {
+    @apply transition-transform duration-300;
+  }
+
+  &:hover {
+    @apply opacity-100;
+
+    img {
+      @apply scale-105;
+    }
+  }
+}
+
+/* Engine renders tags as bordered pills; the Twig cards used plain text tags. */
+.s-blog-tags {
+  @apply gap-0;
+}
+
+.s-blog-tags-item,
+.s-blog-tags-more {
+  @apply rounded-large border-0 px-4 py-2 text-sm;
+}
+
+/* Blog slider — the Twig slides sat in a rounded-neo frame. */
+.blog-slider,
+.blog-slider .swiper-slide {
+  @apply rounded-neo;
+}
+
+/* Single article */
+.blog-single .main-content {
+  @apply border-2 border-bc bg-base-50 rounded-neo p-5 lg:p-8;
+}
+
+.blog-single .main-content > img {
+  @apply rounded-neo;
+}
+
+.blog-single aside .mt-5 {
+  @apply bg-base-50 rounded-neo;
+}
+
+.blog-single aside .mt-5 .shrink-0 a {
+  @apply rounded-neo;
+}

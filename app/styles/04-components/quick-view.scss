@@ -23,7 +23,7 @@ body > div:has(> .quick-view-modal) {
   @apply relative grid gap-5 px-5 pb-5 xs:grid-cols-2 md:px-6 md:pb-6;
   /* Reserve the floating close button, and keep the panel itself scrollable
      on short screens instead of letting the modal overflow the viewport. */
-  padding-top: 3.25rem;
+  padding-top: 1.25rem;
   max-height: calc(100dvh - 1.5rem);
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -42,6 +42,10 @@ body > div:has(> .quick-view-modal) {
 
   .details-slider {
     @apply mb-0;
+
+    .swiper-slide {
+      @apply rounded-neo;
+    }
   }
 }
 

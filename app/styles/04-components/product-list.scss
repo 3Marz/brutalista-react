@@ -75,20 +75,349 @@
 }
 
 /*
-  Filter widgets — the engine gives each `.s-filters-widget-container` 1.25rem of
-  top + bottom padding *and* a 1.25rem bottom margin, so the collapsed accordion
-  sections sit far apart. Tighten to a compact divided list.
+  Filter panel (`<salla-filters>`) — the web component renders plain white
+  rounded groups, so give each group the Brutal card treatment: hard frame,
+  neo shadow, bordered plus/minus control and brutal inputs.
 */
+#filters-menu-mobile {
+  display: flex;
+}
+
+/* `#filters-menu` is `hidden md:block`; only make it a flex column where it is
+   meant to show, otherwise the ID would beat the utility and leak the desktop
+   panel onto phones. */
+@media (min-width: 768px) {
+  #filters-menu {
+    display: flex;
+  }
+}
+
 #filters-menu,
 #filters-menu-mobile {
-  .s-filters-widget-container {
-    @apply border-b border-base-300 py-3.5;
-    margin-bottom: 0;
+  flex-direction: column;
+  gap: 0.75rem;
 
-    &:last-child {
-      @apply border-b-0;
+  /* the component leaves an empty widget between real groups */
+  > salla-filters-widget:not(.s-filters-widget-container) {
+    display: none;
+  }
+
+  .s-filters-widget-container {
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid var(--bc);
+    border-radius: var(--br);
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+  }
+
+  .s-filters-widget-title {
+    gap: 0.75rem;
+    padding: 0.875rem;
+    color: var(--text-color);
+    font-size: 0.9375rem;
+    font-weight: 800;
+  }
+
+  .s-filters-widget-plusminus {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex: none;
+    margin: 0;
+    border: 2px solid var(--bc);
+    border-radius: calc(var(--br) * 0.5);
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+    color: var(--bc);
+    transform: none;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+
+    &::before,
+    &::after {
+      left: 50%;
+      top: 50%;
+      width: 0.625rem;
+      height: 2px;
+      background-color: currentColor;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    /* `-active` is the open state: show a minus; collapsed shows a plus. */
+    &.s-filters-widget-plusminus-active::before {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    &.s-filters-widget-plusminus-active::after {
+      opacity: 0;
     }
   }
+
+  .s-filters-widget-title:hover .s-filters-widget-plusminus {
+    transform: translate(var(--x-shadow-offset), var(--y-shadow-offset));
+    box-shadow: none;
+  }
+
+  .s-filters-widget-values {
+    padding: 0 0.875rem 0.875rem;
+    border-top: 1px dashed var(--base-300);
+  }
+
+  .s-filters-label {
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: calc(var(--br) * 0.5);
+    transition: background-color 150ms ease;
+
+    &:hover {
+      background-color: var(--base-200);
+    }
+
+    &:has(.s-filters-checkbox:checked),
+    &:has(.s-filters-radio:checked) {
+      background-color: var(--base-200);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .s-filters-option-name {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .s-filters-label:has(:checked) .s-filters-option-name {
+    font-weight: 700;
+  }
+
+  .s-filters-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
+    margin: 0;
+    border: 2px solid var(--bc);
+    border-radius: calc(var(--br) * 0.5);
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    transition:
+      background-color 150ms ease,
+      transform 150ms ease,
+      box-shadow 150ms ease;
+
+    &:checked {
+      border-color: var(--bc);
+      background-color: var(--color-primary);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 0.75rem;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translate(var(--x-shadow-offset), var(--y-shadow-offset));
+      box-shadow: none;
+    }
+  }
+
+  .s-filters-radio {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
+    margin: 0;
+    border: 2px solid var(--bc);
+    border-radius: 9999px;
+    background-color: var(--base-50) !important;
+    box-shadow: var(--neo-shadow);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &:checked {
+      border-color: var(--bc);
+      background-color: var(--color-primary) !important;
+
+      &::after {
+        inset: 0.25rem;
+        width: auto;
+        height: auto;
+        border-radius: 9999px;
+        background-color: var(--color-primary-reverse);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .s-filters-widget-search-input {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--bc);
+    border-radius: var(--br);
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+    color: var(--text-color);
+    font-size: 0.875rem;
+
+    &::placeholder {
+      color: var(--my-gray);
+    }
+
+    &:focus {
+      border-color: var(--color-primary);
+      outline: none;
+      box-shadow: var(--neo-shadow), 0 0 0 2px var(--color-primary);
+    }
+  }
+
+  .s-filters-widget-more {
+    display: inline-flex;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid var(--bc);
+    border-radius: var(--br);
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+    color: var(--text-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    &:hover {
+      transform: translate(var(--x-shadow-offset), var(--y-shadow-offset));
+      box-shadow: none;
+    }
+  }
+
+  .s-filters-widget-empty-state {
+    padding: 0.5rem;
+    color: var(--my-gray);
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .s-price-range-inputs {
+    gap: 0.375rem;
+    padding-top: 0.75rem;
+  }
+
+  .s-price-range-number-input {
+    width: 5.75rem;
+    height: 2.5rem;
+    padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+    border: 2px solid var(--bc);
+    border-radius: var(--br);
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    &::placeholder {
+      color: var(--my-gray);
+    }
+
+    &:focus {
+      border-color: var(--color-primary);
+      outline: none;
+      box-shadow: var(--neo-shadow), 0 0 0 2px var(--color-primary);
+    }
+  }
+
+  .s-price-range-currency,
+  .s-price-range-gray-text {
+    color: var(--my-gray);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .s-price-range-bar {
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--base-200);
+  }
+
+  .s-price-range-active-bar {
+    border-radius: 9999px;
+    background-color: var(--color-primary);
+  }
+
+  .s-price-range-left-handle,
+  .s-price-range-right-handle {
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-top: -0.3125rem;
+    border: 2px solid var(--bc);
+    border-radius: 9999px;
+    background-color: var(--base-50);
+    box-shadow: var(--neo-shadow);
+  }
+
+  .s-price-range-inputs .s-button-element {
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    border: 2px solid var(--bc);
+    border-radius: var(--br);
+    background-color: var(--color-primary);
+    box-shadow: var(--neo-shadow);
+    color: var(--color-primary-reverse);
+
+    &:hover {
+      background-color: var(--color-primary-dark);
+      opacity: 1;
+      transform: translate(var(--x-shadow-offset), var(--y-shadow-offset));
+      box-shadow: none;
+    }
+
+    svg,
+    svg path {
+      width: 1rem;
+      height: 1rem;
+      fill: currentColor;
+    }
+  }
+
+  .s-filters-footer {
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+
+    .s-button-element {
+      border: 2px solid var(--bc);
+      border-radius: var(--br);
+      box-shadow: var(--neo-shadow);
+      font-weight: 700;
+    }
+  }
+}
+
+/* The bottom sheet is already base-50; use the page tone inside it so the
+   bordered cards do not disappear into their own background. */
+#filters-menu-mobile .s-filters-widget-container {
+  background-color: var(--base-100);
 }
 
 /*
@@ -103,21 +432,31 @@
 }
 
 /*
-  List view — the engine's horizontal product card. Space the image off the
-  content and make the add-to-cart solid + pill, matching the grid card.
+  List view — the horizontal card. Use the card frame itself for the border /
+  shadow / padding instead of the card's utility `pb-5`, so the image and text
+  sit inside an even frame. The image is a fixed column that stretches to the
+  content height; the outer frame replaces its own border and shadow.
 */
 .s-products-list-horizontal-cards .s-product-card-horizontal {
-  @apply gap-4 overflow-hidden rounded border-2 border-bc bg-base-50 shadow-neo sm:gap-6;
+  @apply gap-3 overflow-hidden rounded-neo border-2 border-bc bg-base-50 p-3 shadow-neo sm:gap-4 sm:p-4;
 
-  .s-product-card-content {
-    @apply py-3 rtl:pl-4 ltr:pr-4;
+  > div:first-child {
+    @apply aspect-auto w-24 shrink-0 self-stretch rounded-neo border-0 shadow-none sm:w-32 lg:w-36;
   }
 
-  /* add-to-cart is already solid + rounded by the card rules */
+  > div:nth-child(2) {
+    @apply min-w-0 flex-1;
+  }
+
+  > div:nth-child(2) > div:first-child {
+    @apply px-0;
+  }
+
+  /* match the theme's bordered add-to-cart button */
   salla-add-product-button {
     .s-button-btn,
     .s-button-element {
-      @apply rounded border-primary bg-primary text-primary-reverse;
+      @apply h-9 rounded-neo border-2 border-bc bg-primary px-3 text-primary-reverse shadow-neo;
     }
 
     .s-button-btn:hover,

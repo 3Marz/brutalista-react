@@ -155,6 +155,21 @@
   .s-button-wrap {
     position: static;
   }
+
+  /* Phones show these actions permanently over the image. Keep them compact
+     so they do not cover most of a horizontal card's 96px image column. */
+  @media (max-width: 767px) {
+    .s-button-element {
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+      font-size: 0.875rem;
+    }
+
+    .s-button-text {
+      font-size: inherit;
+    }
+  }
 }
 
 /*
@@ -904,16 +919,6 @@ salla-count-down {
       &-label {
         @apply text-text-color opacity-100;
       }
-    }
-  }
-}
-
-// filters
-@media (max-width: 1024px) {
-  salla-filters {
-    &,
-    > * {
-      @apply px-5 #{!important};
     }
   }
 }
