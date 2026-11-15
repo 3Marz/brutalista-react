@@ -24,16 +24,44 @@
     "menu-images",
     "filters"
   ],
-  "settings": [
+  "groups": [
     {
-      "type": "static",
-      "format": "title",
-      "id": "brutal-general-title",
-      "value": "<div class='rounded-lg' style='background-color: #3d081b; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'>تخصيص بروتال</h6></div>",
-      "variant": "h6"
+      "id": "general",
+      "icon": "sicon-home",
+      "type": "main",
+      "label": "عام"
     },
     {
+      "id": "header",
+      "icon": "sicon-add_row_before",
+      "type": "header",
+      "label": "الهيدر"
+    },
+    {
+      "id": "footer",
+      "icon": "sicon-add_row_after",
+      "type": "footer",
+      "label": "الفوتر"
+    },
+    {
+      "id": "product-page",
+      "icon": "sicon-clothes-hanger",
+      "type": "page",
+      "label": "صفحة المنتج"
+    },
+    {
+      "id": "cart-page",
+      "icon": "sicon-shopping-bag",
+      "type": "page",
+      "label": "صفحة السلة"
+    }
+  ],
+  "settings": [
+    {
       "id": "bg_color",
+      "groups": [
+        "general"
+      ],
       "type": "string",
       "format": "color",
       "icon": "sicon-format-fill",
@@ -44,6 +72,9 @@
     },
     {
       "id": "border_color",
+      "groups": [
+        "general"
+      ],
       "type": "string",
       "format": "color",
       "icon": "sicon-format-fill",
@@ -54,6 +85,9 @@
     },
     {
       "id": "shadow_color",
+      "groups": [
+        "general"
+      ],
       "type": "string",
       "format": "color",
       "icon": "sicon-format-fill",
@@ -64,6 +98,9 @@
     },
     {
       "id": "text_color",
+      "groups": [
+        "general"
+      ],
       "type": "string",
       "format": "color",
       "icon": "sicon-format-fill",
@@ -73,6 +110,9 @@
     },
     {
       "id": "border-radius",
+      "groups": [
+        "general"
+      ],
       "type": "boolean",
       "format": "switch",
       "icon": "sicon-toggle-off",
@@ -84,6 +124,9 @@
     },
     {
       "id": "x_shadow_offset",
+      "groups": [
+        "general"
+      ],
       "type": "number",
       "format": "integer",
       "icon": "sicon-percentage",
@@ -95,6 +138,9 @@
     },
     {
       "id": "y_shadow_offset",
+      "groups": [
+        "general"
+      ],
       "type": "number",
       "format": "integer",
       "icon": "sicon-percentage",
@@ -105,206 +151,10 @@
       "maximum": 20
     },
     {
-      "id": "cool_cart_page",
-      "type": "boolean",
-      "format": "switch",
-      "icon": "sicon-toggle-off",
-      "label": "تفعيل شكل ملخص الطلب المميز",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "hide_add_to_cart_button",
-      "type": "boolean",
-      "format": "switch",
-      "icon": "sicon-toggle-off",
-      "label": "إخفاء زر \"إضافة إلى السلة\" في بطاقة المنتج",
-      "required": false,
-      "value": false,
-      "selected": false
-    },
-    {
-      "type": "static",
-      "id": "static-line-brutal",
-      "format": "line"
-    },
-    {
-      "type": "static",
-      "format": "title",
-      "id": "static-label2",
-      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات الهيدر</h6></div>",
-      "variant": "h6"
-    },
-    {
-      "id": "header_layout",
-      "type": "items",
-      "format": "dropdown-list",
-      "icon": "sicon-layout-01",
-      "label": "تخطيط الهيدر",
-      "description": "الافتراضي: شريط علوي (روابط + اللغة والعملة والفروع) وقائمة رئيسية أفقية. المبسّط: لوجو في المنتصف وزر قائمة منسدلة.",
-      "source": "Manual",
-      "required": true,
-      "selected": [
-        {
-          "label": "المبسّط (Lite)",
-          "value": "lite",
-          "key": "header-layout-lite"
-        }
-      ],
-      "options": [
-        {
-          "label": "المبسّط (Lite)",
-          "value": "lite",
-          "key": "header-layout-lite"
-        },
-        {
-          "label": "الافتراضي (Default)",
-          "value": "default",
-          "key": "header-layout-default"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "عرض القائمة الرئيسية في سطر واحد مع قائمة «المزيد»",
-      "description": "الروابط التي لا تتسع في السطر تنتقل إلى قائمة منسدلة باسم «المزيد» في آخر القائمة. عند الإيقاف تمتد القائمة على أكثر من سطر.",
-      "id": "enable_more_menu",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true,
-      "conditions": [
-        {
-          "id": "header_layout",
-          "operation": "=",
-          "value": "default"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "عرض معلومات المتجر أسفل الشريط الرئيسي",
-      "description": "اسم المتجر ووصفه وروابط التواصل الاجتماعي وبيانات التواصل أسفل اللوجو (في الهيدر المبسّط فقط)",
-      "id": "header_show_store_info",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true,
-      "conditions": [
-        {
-          "id": "header_layout",
-          "operation": "=",
-          "value": "lite"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "عرض معلومات المتجر في الصفحة الرئيسية فقط",
-      "description": "عند إلغاء التفعيل تظهر معلومات المتجر في جميع الصفحات",
-      "id": "header_store_info_home_only",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true,
-      "conditions": [
-        {
-          "id": "header_layout",
-          "operation": "=",
-          "value": "lite"
-        },
-        {
-          "id": "header_show_store_info",
-          "operation": "=",
-          "value": true
-        }
-      ]
-    },
-    {
-      "id": "header_is_sticky",
-      "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
-      "description": "يُنصح بالغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "عرض الشريط العلوي",
-      "description": "الشريط العلوي الذي يعرض روابط القائمة واللغة والعملة والفروع. عند الإيقاف يبدأ الهيدر بالشريط الرئيسي مباشرة.",
-      "id": "header_show_topnav",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true,
-      "conditions": [
-        {
-          "id": "header_layout",
-          "operation": "=",
-          "value": "default"
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "شريط علوي داكن",
-      "description": null,
-      "id": "topnav_is_dark",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": false,
-      "conditions": [
-        {
-          "id": "header_layout",
-          "operation": "=",
-          "value": "default"
-        },
-        {
-          "id": "header_show_topnav",
-          "operation": "=",
-          "value": true
-        }
-      ]
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "الوضع الداكن للرأس",
-      "description": "يجعل خلفية الهيدر بلون الحواف الداكن مع نص فاتح",
-      "id": "header_is_dark",
-      "format": "switch",
-      "required": false,
-      "value": false,
-      "selected": false
-    },
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
-      "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية",
-      "id": "important_links",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "type": "static",
-      "id": "static-line1",
-      "format": "line"
-    },
-    {
       "id": "squar_photo_bg_image_size",
+      "groups": [
+        "general"
+      ],
       "type": "items",
       "format": "dropdown-list",
       "label": "طريقة عرض الصور في قسم قائمة عناصر ",
@@ -334,36 +184,222 @@
       "required": true
     },
     {
+      "id": "vertical_fixed_products",
+      "groups": [
+        "general"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "وضع عمودي للمنتجات في مربع المنتجات الثابتة في الصفحة الرئيسية",
       "description": null,
-      "id": "vertical_fixed_products",
       "format": "switch",
       "required": false,
       "value": false,
       "selected": false
     },
     {
-      "type": "boolean",
       "id": "is_more_button_enabled",
+      "groups": [
+        "general"
+      ],
+      "type": "boolean",
       "label": "عرض (زر الكل) في الصفحة الرئيسية",
       "format": "switch"
     },
     {
-      "type": "static",
-      "id": "static-line3",
-      "format": "line"
+      "id": "header_layout",
+      "groups": [
+        "header"
+      ],
+      "type": "items",
+      "format": "dropdown-list",
+      "icon": "sicon-layout-01",
+      "label": "تخطيط الهيدر",
+      "description": "الافتراضي: شريط علوي (روابط + اللغة والعملة والفروع) وقائمة رئيسية أفقية. المبسّط: لوجو في المنتصف وزر قائمة منسدلة.",
+      "source": "Manual",
+      "required": true,
+      "selected": [
+        {
+          "label": "المبسّط (Lite)",
+          "value": "lite",
+          "key": "header-layout-lite"
+        }
+      ],
+      "options": [
+        {
+          "label": "المبسّط (Lite)",
+          "value": "lite",
+          "key": "header-layout-lite"
+        },
+        {
+          "label": "الافتراضي (Default)",
+          "value": "default",
+          "key": "header-layout-default"
+        }
+      ]
     },
     {
-      "type": "static",
-      "format": "title",
-      "id": "static-label4",
-      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات أسفل الصفحة</h6></div>",
-      "variant": "h6"
+      "id": "enable_more_menu",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض القائمة الرئيسية في سطر واحد مع قائمة «المزيد»",
+      "description": "الروابط التي لا تتسع في السطر تنتقل إلى قائمة منسدلة باسم «المزيد» في آخر القائمة. عند الإيقاف تمتد القائمة على أكثر من سطر.",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true,
+      "conditions": [
+        {
+          "id": "header_layout",
+          "operation": "=",
+          "value": "default"
+        }
+      ]
+    },
+    {
+      "id": "header_show_store_info",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض معلومات المتجر أسفل الشريط الرئيسي",
+      "description": "اسم المتجر ووصفه وروابط التواصل الاجتماعي وبيانات التواصل أسفل اللوجو (في الهيدر المبسّط فقط)",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true,
+      "conditions": [
+        {
+          "id": "header_layout",
+          "operation": "=",
+          "value": "lite"
+        }
+      ]
+    },
+    {
+      "id": "header_store_info_home_only",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض معلومات المتجر في الصفحة الرئيسية فقط",
+      "description": "عند إلغاء التفعيل تظهر معلومات المتجر في جميع الصفحات",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true,
+      "conditions": [
+        {
+          "id": "header_layout",
+          "operation": "=",
+          "value": "lite"
+        },
+        {
+          "id": "header_show_store_info",
+          "operation": "=",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "header_is_sticky",
+      "groups": [
+        "header"
+      ],
+      "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
+      "description": "يُنصح بالغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة",
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
+    },
+    {
+      "id": "header_show_topnav",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض الشريط العلوي",
+      "description": "الشريط العلوي الذي يعرض روابط القائمة واللغة والعملة والفروع. عند الإيقاف يبدأ الهيدر بالشريط الرئيسي مباشرة.",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true,
+      "conditions": [
+        {
+          "id": "header_layout",
+          "operation": "=",
+          "value": "default"
+        }
+      ]
+    },
+    {
+      "id": "topnav_is_dark",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "شريط علوي داكن",
+      "description": null,
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": false,
+      "conditions": [
+        {
+          "id": "header_layout",
+          "operation": "=",
+          "value": "default"
+        },
+        {
+          "id": "header_show_topnav",
+          "operation": "=",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "header_is_dark",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "الوضع الداكن للرأس",
+      "description": "يجعل خلفية الهيدر بلون الحواف الداكن مع نص فاتح",
+      "format": "switch",
+      "required": false,
+      "value": false,
+      "selected": false
+    },
+    {
+      "id": "important_links",
+      "groups": [
+        "header"
+      ],
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
+      "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
     },
     {
       "id": "footer_layout",
+      "groups": [
+        "footer"
+      ],
       "type": "items",
       "format": "dropdown-list",
       "label": "تخطيط أسفل الصفحة",
@@ -393,11 +429,14 @@
       "required": false
     },
     {
+      "id": "footer_is_dark",
+      "groups": [
+        "footer"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
-      "label": "الوضع الداكن",
+      "label": "الوضع الداكن لأسفل الصفحة",
       "description": null,
-      "id": "footer_is_dark",
       "format": "switch",
       "required": false,
       "value": true,
@@ -405,6 +444,9 @@
     },
     {
       "id": "sub_logo",
+      "groups": [
+        "footer"
+      ],
       "type": "string",
       "format": "image",
       "icon": "sicon-image",
@@ -415,100 +457,125 @@
       "value": null
     },
     {
+      "id": "show_store_name_footer",
+      "groups": [
+        "footer"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "إظهار اسم المتجر بجانب الشعار",
       "description": null,
-      "id": "show_store_name_footer",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": false
     },
     {
+      "id": "lang_button_bottom",
+      "groups": [
+        "footer"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "إظهار زر اللغة والعملة أسفل الصفحة",
       "description": null,
-      "id": "lang_button_bottom",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": true
     },
     {
-      "type": "static",
-      "id": "static-line5",
-      "format": "line"
-    },
-    {
-      "type": "static",
-      "format": "title",
-      "id": "static-label6",
-      "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات صفحة المنتج</h6></div>",
-      "variant": "h6"
-    },
-    {
+      "id": "product_show_breadcrumbs",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "إظهار مسار التنقل في صفحة المنتج",
       "description": null,
-      "id": "product_show_breadcrumbs",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": true
     },
     {
+      "id": "product_index_show_breadcrumbs",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "إظهار مسار التنقل في صفحة قائمة المنتجات",
       "description": null,
-      "id": "product_index_show_breadcrumbs",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": true
     },
     {
+      "id": "enable_add_product_toast",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "تفعيل إشعار الإضافة للسلة المحسن",
       "description": null,
-      "id": "enable_add_product_toast",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": true
     },
     {
+      "id": "hide_add_to_cart_button",
+      "groups": [
+        "product-page"
+      ],
+      "type": "boolean",
+      "format": "switch",
+      "icon": "sicon-toggle-off",
+      "label": "إخفاء زر \"إضافة إلى السلة\" في بطاقة المنتج",
+      "required": false,
+      "value": false,
+      "selected": false
+    },
+    {
+      "id": "notify_when_available_in_card",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "إظهار زر \"أعلمني عند التوفر\" في بطاقة المنتج",
       "description": "يظهر زر إشعار التوفر في بطاقات المنتجات التي نفذت كميتها",
-      "id": "notify_when_available_in_card",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": true
     },
     {
+      "id": "sticky_add_to_cart",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "تثبيت زر الإضافة والكمية أسفل شاشة الجوال",
       "description": null,
-      "id": "sticky_add_to_cart",
       "format": "switch",
       "required": false,
       "value": true,
       "selected": true
     },
     {
+      "id": "show_tags",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "اظهار الوسوم",
       "description": null,
-      "id": "show_tags",
       "format": "switch",
       "required": false,
       "value": true,
@@ -516,6 +583,9 @@
     },
     {
       "id": "slider_background_size",
+      "groups": [
+        "product-page"
+      ],
       "type": "items",
       "format": "dropdown-list",
       "label": "طريقة عرض الصور في سليدر صور المنتج",
@@ -545,15 +615,31 @@
       "required": true
     },
     {
+      "id": "imageZoom",
+      "groups": [
+        "product-page"
+      ],
       "type": "boolean",
       "icon": "sicon-toggle-off",
       "label": "تكبير الصور في سليدر صور المنتج",
       "description": "هذه الخاصية تمكنك من تكبير الصورة لتسهل رؤية المزيد من التفاصيل بها",
-      "id": "imageZoom",
       "format": "switch",
       "required": false,
       "value": false,
       "selected": false
+    },
+    {
+      "id": "cool_cart_page",
+      "groups": [
+        "cart-page"
+      ],
+      "type": "boolean",
+      "format": "switch",
+      "icon": "sicon-toggle-off",
+      "label": "تفعيل شكل ملخص الطلب المميز",
+      "required": false,
+      "value": true,
+      "selected": true
     }
   ],
   "components": [
