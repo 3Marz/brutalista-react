@@ -1,0 +1,1 @@
+export{it as WidgetHead}from"./shared-home-DqhvjD_P.js";

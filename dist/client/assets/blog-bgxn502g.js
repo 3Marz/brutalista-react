@@ -1,0 +1,1 @@
+import{Rn as e}from"./shared-home-DqhvjD_P.js";import{t}from"./blog-DqCT37lJ.js";import{M as n}from"./hydrate-CntzUyN_.js";var r=e();function i(){let e=n.useLoaderData();return(0,r.jsx)(t.Component,{...e})}export{i as component};
