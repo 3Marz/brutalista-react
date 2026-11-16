@@ -461,8 +461,8 @@
   }
 }
 
-/* Twig parity (`home/photos-slider.twig`): one banner per view on small
-   screens, 80% from `lg`, at the old 1200×300 proportion. */
+/* Twig-derived banner slider: one banner per view on small screens, 80% from
+   `lg`, with a 1200×500 frame that keeps the whole image visible. */
 .s-brutal-photo-slider__slide {
   @apply block shrink-0 rounded-neo overflow-hidden;
   flex: 0 0 100%;
@@ -474,7 +474,7 @@
   }
 
   img {
-    @apply w-full h-full object-cover rounded-neo;
+    @apply w-full h-full object-contain rounded-neo;
   }
 }
 

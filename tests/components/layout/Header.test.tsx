@@ -203,6 +203,21 @@ describe('Header', () => {
     expect(container.querySelector('.site-header__topnav')).toBeTruthy();
   });
 
+  it('hides the important links menu when important_links is off', () => {
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        observe() {}
+        unobserve() {}
+        disconnect() {}
+      }
+    );
+    state.theme = { settings: { header_layout: 'default', important_links: false } };
+    const { container } = render(<Header />);
+    expect(container.querySelector('.site-header__topnav')).toBeTruthy();
+    expect(container.querySelector('.site-header__topnav-menu')).toBeNull();
+  });
+
   it('hides the top bar when header_show_topnav is off', () => {
     vi.stubGlobal(
       'IntersectionObserver',

@@ -19,7 +19,7 @@
     "header_is_dark": false,
     "important_links": false,
     "squar_photo_bg_image_size": "cover",
-    "vertical_fixed_products": false,
+    "vertical_fixed_products": true,
     "is_more_button_enabled": true,
     "footer_layout": "columns",
     "footer_is_dark": true,
@@ -33,7 +33,6 @@
     "sticky_add_to_cart": true,
     "show_tags": true,
     "slider_background_size": "contain",
-    "imageZoom": false,
     "header_show_topnav": false
   },
   "layout": [

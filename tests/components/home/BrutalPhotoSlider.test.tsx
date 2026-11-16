@@ -45,14 +45,14 @@ describe('BrutalPhotoSlider', () => {
     expect(slides[0].getAttribute('href')).toBe('/photo1');
   });
 
-  it('keeps the old 1200px banner width and contain fit', () => {
+  it('uses the 1200×500 banner frame with contain fit', () => {
     const { container } = render(<BrutalPhotoSlider data={{ items: mockItems }} />);
     const imgs = container.querySelectorAll<HTMLImageElement>(
       '.s-brutal-photo-slider__slide img'
     );
     expect(imgs[0].getAttribute('src')).toBe('photo1.jpg');
     expect(imgs[0].getAttribute('width')).toBe('1200');
-    expect(Number(imgs[0].getAttribute('height'))).toBeGreaterThan(0);
+    expect(imgs[0].getAttribute('height')).toBe('500');
     expect(imgs[0].className).toContain('object-contain');
   });
 

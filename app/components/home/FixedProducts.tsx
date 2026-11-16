@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { FixedProductsSkeleton } from '@salla.sa/twilight-components-react';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
+import { useTheme } from '@salla.sa/twilight-theme-engine/hooks/useTheme';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { product, type ProductsListSource } from '@salla.sa/twilight-theme-engine/api/product';
 import { ProductCard } from '../product/ProductCard';
@@ -30,16 +31,24 @@ export interface FixedProductsProps {
  * Registered in `app/router.tsx`.
  *
  * Unlike the engine block, it shows as many products as the merchant's `limit`,
- * not always the first 4.
+ * not always the first 4, and reads the theme's `vertical_fixed_products`
+ * setting for the card layout.
  *
  * Upgrade notes: `FORKS.md`.
  */
 export function FixedProducts({ data }: FixedProductsProps) {
   const { t } = useTranslation();
+  const { settings } = useTheme();
 
   const title = data.title;
   const limit = blockLimit(data.limit);
-  const isVertical = data.isVertical ?? true;
+  // A block's own layout choice wins, but the theme's "vertical products"
+  // switch can force it on. This keeps the per-block `isVertical` field from
+  // being overridden by the theme's default `false`.
+  const isVertical =
+    settings?.vertical_fixed_products === true
+      ? true
+      : (data.isVertical ?? settings?.vertical_fixed_products ?? true);
 
   const { data: result, isLoading } = useQuery(
     product.queries.list({
@@ -78,8 +87,13 @@ export function FixedProducts({ data }: FixedProductsProps) {
           (isVertical ? 's-products-list-vertical-cards' : 's-products-list-horizontal-cards')
         }
       >
-        {products.slice(0, limit).map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.slice(0, limit).map((product, index) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            index={index}
+            layout={isVertical ? 'vertical' : 'horizontal'}
+          />
         ))}
       </div>
     </Suspense>

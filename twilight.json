@@ -1,11 +1,11 @@
 {
   "type": "react",
   "name": {
-    "ar": "Brutal",
+    "ar": "بروتال",
     "en": "Brutal"
   },
-  "repository": "https://github.com/SallaApp/theme-raed-react",
-  "author_email": "support@salla.sa",
+  "repository": "https://github.com/3Marz/brutalista",
+  "author_email": "omarbasalamah1@gmail.com",
   "features": [
     "mega-menu",
     "fonts",
@@ -613,20 +613,6 @@
       ],
       "source": "Manual",
       "required": true
-    },
-    {
-      "id": "imageZoom",
-      "groups": [
-        "product-page"
-      ],
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "تكبير الصور في سليدر صور المنتج",
-      "description": "هذه الخاصية تمكنك من تكبير الصورة لتسهل رؤية المزيد من التفاصيل بها",
-      "format": "switch",
-      "required": false,
-      "value": false,
-      "selected": false
     },
     {
       "id": "cool_cart_page",
@@ -3331,7 +3317,7 @@
           "type": "static",
           "format": "title",
           "label": "تنبيه",
-          "value": "يفضل أن تكون جميع الصور بنفس المقاس (1200×300)",
+          "value": "يفضل أن تكون جميع الصور بنفس المقاس (1200×500)",
           "variant": "h4",
           "icon": "sicon-format-text"
         },
@@ -3428,7 +3414,7 @@
       ]
     }
   ],
-  "support_url": "https://salla.com/",
+  "support_url": "https://3marz.github.io/brutal-docs/docs/intro",
   "description": {
     "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
     "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"

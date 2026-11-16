@@ -23,11 +23,10 @@ export interface BrutalPhotoSliderProps {
  * `brutal-photo-slider` home block, ported from the Twig theme's
  * `home/photos-slider.twig`.
  *
- * The Twig block was a Swiper carousel with a 1200×300 image per slide. This
- * keeps the theme's newer {@link ScrollCarousel} (drag, progress bar, arrows)
- * but restores the old slide width and image proportions: full-width on small
- * screens, 80% from `lg`, and a 4:1 `object-contain` image with the old
- * `rounded-neo` frame.
+ * The Twig block was a Swiper carousel. This keeps the theme's newer
+ * {@link ScrollCarousel} (drag, progress bar, arrows) with the chosen
+ * 1200×500 frame: full-width on small screens, 80% from `lg`, and an
+ * `object-contain` image with the old `rounded-neo` frame.
  *
  * `PhotosSlider` remains the default `photos-slider` block; this variant is
  * added to `twilight.json` as a separate merchant block.

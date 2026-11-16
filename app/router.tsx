@@ -68,8 +68,8 @@ registerHomeComponents({
   // progress bar + arrows as testimonials/products, cards instead of a thin
   // full-width banner strip.
   'photos-slider': PhotosSlider,
-  // Twig-parity variant: the old 1200×300 banner proportions in the same
-  // scroll carousel. Exposed from `twilight.json` as a separate block.
+  // Twig-derived variant: a 1200×500 banner frame in the same scroll
+  // carousel. Exposed from `twilight.json` as a separate block.
   'brutal-photo-slider': BrutalPhotoSlider,
   // The renderer checks `home:featured-products:<view_style>` before the bare
   // key (theme-engine `HomePageRenderer.getComponentByPath`), and
