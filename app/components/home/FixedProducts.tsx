@@ -45,10 +45,10 @@ export function FixedProducts({ data }: FixedProductsProps) {
   // A block's own layout choice wins, but the theme's "vertical products"
   // switch can force it on. This keeps the per-block `isVertical` field from
   // being overridden by the theme's default `false`.
-  const isVertical =
-    settings?.vertical_fixed_products === true
-      ? true
-      : (data.isVertical ?? settings?.vertical_fixed_products ?? true);
+  let isVertical = false;
+  if (settings?.vertical_fixed_products === true) {
+    isVertical = true;
+  } 
 
   const { data: result, isLoading } = useQuery(
     product.queries.list({

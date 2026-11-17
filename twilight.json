@@ -163,9 +163,9 @@
       "icon": "sicon-list",
       "selected": [
         {
-          "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
-          "value": "contain",
-          "key": "f4adec13-6e4c-654b-b978-b2807935ced9"
+          "label": "تغطية الصورة كامل المساحة مع المحافظة على أبعاد الصورة (Cover)",
+          "value": "cover",
+          "key": "e9c8ea8f-c5c6-234e-935-3bce269afde4"
         }
       ],
       "options": [
@@ -194,7 +194,7 @@
       "description": null,
       "format": "switch",
       "required": false,
-      "value": false,
+      "value": true,
       "selected": false
     },
     {
@@ -220,9 +220,9 @@
       "required": true,
       "selected": [
         {
-          "label": "المبسّط (Lite)",
-          "value": "lite",
-          "key": "header-layout-lite"
+          "label": "الافتراضي (Default)",
+          "value": "default",
+          "key": "header-layout-default"
         }
       ],
       "options": [
@@ -467,7 +467,7 @@
       "description": null,
       "format": "switch",
       "required": false,
-      "value": true,
+      "value": false,
       "selected": false
     },
     {
